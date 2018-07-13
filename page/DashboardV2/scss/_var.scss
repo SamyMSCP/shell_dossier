@@ -1,0 +1,30 @@
+$mscpi-color: (#01528A, #4681A9, #8BB0C9, #D0DFE9);
+$dynam-color: (#1781E0, #0E6DBB, #FF9F1C, #EF6228, #20BF55);
+$gray-shade:  (#FFFFFF, #F7F7F7, #DDDDDD, #828282, #505050);
+$font: ("Montserrat", "Open Sans");
+
+$common-margin: 3px;
+$common-padding: 20px;
+$common-radius: 3px;
+
+$font-size: (20px);
+
+$lg: (1200px, 4096px);
+
+
+
+@mixin mq($arg...){
+	//@usage:
+	//    - mq(max)
+	//    - mq(min, max)
+	@if (length($arg) == 1){
+		@media screen and (max-width: nth($arg, 1)) {
+			@content
+		}
+	}
+	@if (length($arg) == 2){
+		@media screen and (max-width: nth($arg, 2)) and (min-width: nth($arg, 1)) {
+			@content
+		}
+	}
+}

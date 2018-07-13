@@ -1,0 +1,12 @@
+#loading {
+	position:fixed;
+	background-color: rgba(235, 235, 235, 0.8);
+	z-index:9000;
+	height:100%;
+	width:100%;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	display:none;
+}

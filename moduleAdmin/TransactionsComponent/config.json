@@ -1,0 +1,28 @@
+[
+    {
+        "type": "event",
+        "condition": "0-0:1-.*",
+        "action": "php.mail.transaction_valide"
+    },
+	{
+		"type": "event",
+		"condition": ".*-.*:1-2",
+		"action": "php.mail.transaction_incomplete"
+	},
+    {
+        "type": "event",
+        "condition": ".*-.*:6-0",
+        "action": "php.mail.transaction_terminee"
+    },
+    {
+        "type": "lock",
+        "condition": "Document:9",
+        "action": "0-0:.*-.*"
+    },
+    {
+        "type": "lock",
+        "condition": "Document:12",
+        "action": "0-0:.*-.*"
+    }
+]
+

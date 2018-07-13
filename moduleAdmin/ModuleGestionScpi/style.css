@@ -1,0 +1,21 @@
+.tableScpi {
+	width:100%;
+}
+
+.tableScpi th {
+	background-color: #01528a;
+	color: white;
+}
+
+.tableScpi td {
+	background-color:white;
+}
+
+.tableScpi th, .tableScpi td{
+	padding:15px;
+	text-align:center;
+}
+
+.tableScpi .isShow td {
+	background-color: #aac5d8;
+}

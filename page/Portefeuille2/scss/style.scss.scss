@@ -1,0 +1,180 @@
+@import "_var.scss";
+
+body {
+	background-color: #EBEBEB;
+	color: #01528a;
+}
+
+.containerPerso {
+	padding-top: 20px;
+	top: 113px;
+	margin-left: 40px;
+	margin-right: 40px;
+	position: relative;
+	@include mq('lg') {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.trait {
+	background-color: #ff9f1c;
+	height: 5px;
+	width: 120px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	border-radius: 3px;
+}
+
+h1, h2, h3, h4, h5, h6, input, .typeoMontSerra {
+	font-family: 'Open Sans', sans-serif;
+	color: #01528a;
+	text-align: center;
+}
+
+span {
+	font-family: 'Open Sans', sans-serif;
+}
+
+
+body.modal-open {
+	overflow: hidden;
+}
+
+.modal {
+	overflow-y:auto;
+}
+
+.button {
+	border-radius: $common-radius;
+	padding: 6px 15px 6px 15px;
+	font-size: 14px;
+	text-align: center;
+	&:hover {
+		cursor: pointer;
+	}
+	&:active {
+		box-shadow: 0 0 4px 4px inset #808080
+	}
+	&.white {
+		&.outline {
+			color: #ffffff;
+			border: 1px solid #ffffff;
+			border-radius: $common-radius;
+		}
+	}
+	&.orange {
+		background-color: $mango;
+		&:hover {
+			background-color: darken($mango, $col-mod);
+		}
+	}
+}
+
+.row {
+	padding-bottom: 34px;
+}
+
+.module {
+	border-radius: $common-radius;
+	box-shadow: 0 0 3px 0 $greyish-brown-30;
+	background-color: $white;
+	//height: 447px;
+	//TODO: auto size height
+
+	height: auto;
+	.header {
+		height: 52px;
+		background-color: $nice-blue;
+		color: $white;
+		font-size: 20px;
+		font-family: "MontSerrat", serif;
+		border-radius: $common-radius $common-radius 0 0;
+		padding: $common-space;
+
+		.icon {
+			position: relative;
+			top: -2px;
+			left: 2px;
+			bottom: 0px;
+			min-width: 30px !important;
+			min-height: 22px !important;
+			max-width: 30px !important;
+			max-height: 22px !important;
+		}
+		.left {
+			float: left;
+			width: 45%;
+			@media Screen and (max-width: 950px) {
+				width: 60%;
+			}
+			@media Screen and (max-width: 950px) {
+				width: 10%;
+				span {
+					display: none;
+				}
+			}
+			@media Screen and (max-width: 347px) {
+				width: 0%;
+				img { display: none; }
+			}
+		}
+		.right {
+			float: right;
+		}
+	}
+	.content {
+		padding: 15px;
+	}
+}
+
+.main-portefeuille {
+}
+
+.data-info {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.total {
+	padding: 13px;
+	margin-top: 50px;
+	border-radius: $common-radius;
+	position: relative;
+	bottom: 16px;
+	left: 2.5px;
+	right: 30px;
+	.left {
+		font-family: 'Montserrat', serif;
+		font-size: 20px;
+		font-weight: 600;
+		letter-spacing: 0;
+		color: $white;
+		float: left;
+	}
+	.right {
+		float: right;
+		height: 24px;
+		font-family: 'Montserrat', serif;
+		font-size: 20px;
+		font-weight: 600;
+		letter-spacing: 0;
+		color: $white;
+	}
+}
+
+img.icon {
+	min-width: 30px !important;
+	min-height: 22px !important;
+	max-width: 30px !important;
+	max-height: 22px !important
+}
+
+.background {
+	&.blue {
+		background-color: $water-blue;
+		color: $white;
+	}
+}

@@ -1,0 +1,710 @@
+b {
+	font-weight: 600 !important;
+}
+
+.progress-bar-info2{
+	width: 1%;
+	margin-left:0px;
+	background-color: #01528a;
+}
+.progress2 {
+	height: 20px;
+	margin-bottom: 20px;
+	overflow: hidden;
+	background-color: #f5f5f5;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+	box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+	height: 40px;
+	border-radius: 30px;
+	width: 100%;
+	background-color: #1781e0;
+	margin:0px;
+}
+
+.progress-bar2 {
+	float: left;
+	width: 0;
+	height: 100%;
+	font-size: 12px;
+	line-height: 20px;
+	color: #fff;
+	text-align: center;
+	background-color: #5a8ebb;
+	-webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+	box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+	-webkit-transition: width .6s ease;
+	-o-transition: width .6s ease;
+	transition: width .6s ease;
+	border-right: 2px solid white;
+}
+
+.tofVar {
+	text-align: left;
+	width: 100%;
+	color: #5a8ebb;
+	padding:10px;
+}
+
+.tofFix{
+	text-align: right;
+	width: 100%;
+	color: #1781e0;
+	padding:10px;
+}
+
+
+table td,
+table th {
+	text-align: center;
+}
+
+table td {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.tableLstProject {
+	width:100%;
+	border:none;
+}
+
+.tableLstProject td, .tableLstProject th {
+	border-color:grey;
+	font-size: 14px;
+	height: 55px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.tableLstProject th {
+	color:#1781e0;
+	text-align:center;
+	background-color:#ebebeb;
+	border-top: 1px solid #969696;
+	border-bottom: 1px solid #969696;
+	font-weight: 600;
+}
+
+.tableLstProject td {
+	font-weight: 400;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.tableLstProject tbody > tr {
+	color:black;
+	font-weight:400;
+	background-color:white;
+	border-bottom: 1px solid #969696;
+}
+
+.tableLstProject .canClick:hover {
+	background-color:#d0e4f7;
+}
+
+.tableLstProject .canClick {
+	cursor:pointer;
+}
+
+.etatProjet,
+.infoProjet {
+}
+
+.etatProjet > div {
+	display:flex;
+	margin: 0 auto;
+	width: 170px;
+	align-items: center;
+}
+
+.etatProjet > div > div{
+	flex: 1;
+	font-weight: 700;
+	line-height: 130%;
+	display: flex;
+	align-items: center;
+	text-align: left;
+}
+
+.etatProjet img, 
+.infoProjet img {
+	flex:0 1 0;
+}
+
+.etatProjet img{
+	margin-right: 10px;
+	height: 33px;
+}
+.infoProjet img {
+	margin-left: 10px;
+	height: 22px;
+}
+
+
+.modalViewBeneficiaireBntClose {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	cursor:pointer;
+}
+
+.modalViewBeneficiaireBntClose button {
+	margin: 4px 15px;
+	border-radius: 7px;
+	font-family: 'Montserrat', sans-serif;
+	box-shadow: 0px 0px 5px 0px #3c3c3c;
+}
+
+.modalViewBeneficiaireBntClose img {
+	width: 30px;
+}
+
+.modalViewProjectBlockInfos {
+	width:100%;
+	margin: 0px;
+	display:flex;
+	flex-wrap: wrap;
+}
+
+
+.modalViewProjectBlockInfosInner {
+	flex:1;
+	padding:10px;
+	flex-direction:row;
+	display: flex;
+}
+
+.modalViewProjectBlockInfosInner2 {
+	flex:1;
+	color:#1781e0;
+	border-radius:10px;
+	background-color:white;
+	text-align:center;
+	padding:20px;
+}
+
+.blockProjectModule {
+	font-size: 20px;
+	font-weight: 600;
+	font-family: 'Montserrat', sans-serif;
+	-spacing: 2px;
+	line-height: 0px;
+	padding-top: 12px;
+	padding-bottom: 7px;
+	margin-bottom: 20px;
+}
+
+.nomBeneficiaire {
+	display: flex;
+	font-family: 'Montserrat', sans-serif;
+	color: #01528a;
+	font-size: 26px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	cursor:pointer;
+}
+
+.modalViewProjectBlockInfosInner2 h3 {
+	text-align:center;
+	display:inline-block;
+	vertical-align: bottom;
+	margin: 0px;
+	font-size: 21px;
+	color:#1781e0;
+	margin-top: 20px;
+	font-size: 30px;
+}
+
+.modalViewProjectBlockInfosInner3 {
+	display:flex;
+	flex-direction: column;
+}
+
+.budgetBeneficiaire,
+.budgetBeneficiaire2,
+.budgetBeneficiaire3 {
+	display:flex;
+	flex-direction: row;
+	margin-bottom: 10px;
+	align-items: center;
+}
+
+.budgetBeneficiaire .budgetBeneficiaireBudget1 {
+	flex: 1;
+	text-align:left;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.budgetBeneficiaireBudget2 {
+	flex: 2;
+	text-align:left;
+	font-size: 20px;
+	font-weight: normal;
+}
+
+.budgetBeneficiaire2 .budgetBeneficiaireBudget1,
+.budgetBeneficiaire3 .budgetBeneficiaireBudget1{
+	font-size: 26px;
+	color:#ff9f1c;
+	text-align: right;
+	margin-right:10px;
+	margin-left:40px;
+}
+
+
+.traitOrangeProjet {
+	width: 110px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #ff9f1c;
+	height: 5px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	border-radius: 3px;
+}
+
+.listObjectif {
+	text-align:left;
+	padding-left: 0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.listObjectif li{
+	list-style:none;
+	font-size: 14px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin: 0px 0px 10px 0px;
+}
+
+.listObjectif li span {
+	font-weight: 600;
+}
+
+.listObjectif li .objectPuce {
+	font-size: 20px;
+	margin-right: 20px;
+	font-weight: 600;
+	font-family: montserrat;
+}
+
+.modalViewProjectContent {
+	border-radius: 12px !important;
+	padding:10px;
+}
+
+.projetModuleDetail {
+	flex:1;
+	display:flex;
+	flex-direction: row;
+	font-size: 14px;
+	text-align: left;
+	margin-bottom: 7px;
+}
+
+.projetModuleDetail .left {
+	flex:3;
+	color: #01528a;
+}
+
+.projetModuleDetail .right {
+	flex:5;
+	font-weight: 700;
+}
+.block_move {
+	height:100px;
+	top:0;
+	padding:0px;
+	z-index: 3;
+	flex:0;
+}
+
+.block_move > div {
+	width: 100px;
+	height: 100px;
+	cursor:pointer;
+	position:absolute;
+	display:block;
+	color: #ff9f1c;
+	font-size: 65px;
+	background:white;
+	-webkit-box-shadow: 0px 0px 20px 20px rgba(255,255,255,1);
+	-moz-box-shadow: 0px 0px 20px 20px rgba(255,255,255,1);
+	box-shadow: 0px 0px 20px 20px rgba(255,255,255,1);
+	border-radius:50px;
+}
+
+.block_move > .left {
+	left:0px;
+}
+
+.block_move > .right {
+	right:0px;
+}
+
+.block_move > div:hover {
+	font-size: 70px;
+}
+
+.blockPhoto {
+	flex:2;
+}
+
+.blockPhoto img {
+	width:80px;
+	height:100px;
+	background:grey;
+}
+
+.blockConseiller > div {
+	margin-bottom: 5px;
+}
+
+.blockConseiller {
+	flex:5;
+	text-align: left;
+	padding: 0px 20px;
+	display:flex;
+	flex-direction: column;
+	font-size:12px;
+}
+
+.blockConseiller > .conseillerNom  {
+	color: #0E6DBB;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.modalViewProjectTitre {
+	position: relative;
+	margin-right: 50px;
+}
+
+.modalViewProjectTitre h2 {
+	margin-top: 30px;
+	font-size: 40px;
+	text-align: left;
+}
+
+.modalViewFrontProject .modal-lg {
+	max-width: 1200px !important;
+}
+
+.projectTitle {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 28px;
+	color: #01528a;
+	font-weight: 600;
+	padding-top: 4px;
+	margin: 10px 10px 0px 10px;
+	line-height: 100%;
+	display:flex;
+	align-items: flex-end;
+}
+
+
+.projectTitle > span {
+	line-height:22px;
+	font-weight: 700;
+}
+
+.projectTitle > div {
+	border-radius:7px;
+	border-width:1px;
+	border-style:solid;
+	display:flex;
+	padding: 0px 10px;
+	margin-left: 10px;
+	align-items: center;
+	height: 32px;
+}
+
+.projectTitle > div > div {
+	display:flex;
+	font-size:14px;
+	font-family:'Montserrat', sans-serif;
+	margin-top: 5px;
+	font-weight: 500;
+}
+
+.projectTitle > div > img {
+	display:flex;
+	height: 18px;
+	margin-right:7px;
+}
+
+.blockCree {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color:#969696;
+	font-size: 14px;
+	padding: 6px 10px;
+	margin-top: 10px;
+	line-height: 0px;
+	margin-bottom: 10px;
+}
+
+.blockProjetOngletSelected {
+	background:white !important;
+	cursor: initial !important;
+}
+
+.blockProjetOnglet {
+	padding: 0px 20px;
+	display: flex;
+}
+
+.blockProjetOnglet > div {
+	display: inline-block;
+	text-align: center;
+	padding: 10px;
+	font-size: 14px;
+	border-radius: 10px 10px 0px 0px;
+	cursor: pointer;
+	color: #1781e0;
+	flex:1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	border: 2px solid transparent;
+	letter-spacing: 1px;
+}
+
+.blockProjetOnglet > div:hover {
+	border: 2px solid white;
+	background: rgba(255, 255, 255, 0.3);
+}
+
+.modalViewProjectBlockOngletInner {
+	flex:1;
+	padding:10px;
+	flex-direction:row;
+	min-width: 380px;
+}
+
+.modalViewProjectBlockOngletInner2 {
+	color:#1781e0;
+	border-radius:10px;
+	background-color:white;
+	text-align:center;
+	padding:20px;
+}
+.tableSimulation td{
+	border-bottom: 1px solid #969696;
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color:black;
+	padding: 20px 10px;
+}
+
+.tableSimulation th{
+	background: #ebebeb;
+	border-top: 1px solid #969696;
+	border-bottom: 1px solid #969696;
+	padding: 20px 10px;
+	font-size: 16px;
+	color: #1781e0;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+}
+
+.tableSimulation {
+	width:100%;
+}
+
+.selectSendDocument {
+	margin-top: 32px;
+	cursor:pointer;
+}
+
+.tableDocumentsProject {
+	color: #1781e0 !important;
+	text-align:left;
+}
+
+.tableDocumentsProject img {
+	height: 32px;
+	margin: 0px 10px;
+}
+
+.categorie_picto {
+	height: 33px;
+}
+
+.tableProposition td {
+	padding:0px;
+	height: 84px;
+	position:relative;
+}
+
+.tableProposition select {
+	width: 100%;
+	height: 100%;
+	border: none;
+	background-color: transparent;
+}
+
+.tableProposition input {
+	width:100%;
+	height:100%;
+	border:none;
+	background-color:transparent;
+}
+
+.tableLstProject .tablePropositionComm td {
+	border-bottom: 4px solid #969696;
+	height: 60px;
+	color:#01528a;
+	font-weight: 600;
+}
+
+.propositionTotal .precision {
+	color:#969696;
+	font-size: 12px;
+	text-align:left;
+	font-weight:400;
+}
+
+.propositionTotal {
+	border-top: 2px solid #1781e0;
+	border-bottom:none !important;
+	font-size: 24px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.propositionTotal > td {
+	padding: 5px;
+	height: 40px;
+	font-weight:600;
+}
+
+.propositionTotal > td > div {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color:#1781e0;
+}
+
+.propositionInvestTotal {
+	color:#1781e0;
+}
+
+
+.Inner2Title {
+	border-radius:10px 10px 0px 0px !important;
+	height:60px;
+	background-color:#1781e0;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: white;
+	padding: 10px;
+	font-size: 18px;
+	display: flex;
+	align-items: center;
+	flex: 0 1 50px;
+}
+
+.Inner2Title span {
+	flex:1;
+	text-align: left;
+	font-family: 'Montserrat', sans-serif;
+	line-height: 23px;
+}
+
+.Inner2Title img {
+	height: 30px;
+	margin: 0px 10px 0px 5px;
+	flex: 0 1 0;
+}
+
+.Inner2Content {
+	border-radius:0px 0px 10px 10px !important;
+	flex:1;
+}
+
+.blockProjectRepartition {
+	display: flex;
+	flex-direction: row;
+	align-items: stretch;
+	flex:1;
+}
+
+.listRepartition > div {
+	font-size: 14px;
+}
+
+.listRepartition {
+	display: flex;
+	flex: 2 1 0%;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+
+.btn-profil {
+	box-shadow: none;
+	border:1px solid #ff9f1c;
+	color:#ff9f1c;
+	background-color:white;
+	width: 270px;
+	border-radius:5px;
+	font-weight: 500;
+	font-size: 13px;
+}
+
+.btn-profil:hover  {
+	color:white;
+	background-color: #ff9f1c;
+}
+
+.contour_RepCat {
+	max-width:150px;
+	max-height:150px;
+}
+
+.expandable {
+	border: 1px solid #1781e0;
+	padding: 0px 5px;
+	border-radius: 3px;
+	margin-left: 4px;
+	cursor: pointer;
+}
+
+@media (min-width: 2350px) {
+	.modalViewBeneficiairePp1 {
+		width:33%;
+	}
+}
+
+@media (max-width: 1550px) {
+	.modalViewBeneficiairePp1 {
+		width:100%;
+	}
+}
+
+@media (max-width: 1400px) {
+	.listBeneficiaireElmt1 {
+		width:25%;
+	}
+}
+
+@media (max-width: 1100px) {
+	.listBeneficiaireElmt1 {
+		width:33%;
+	}
+}
+
+
+@media (max-width: 700px) {
+	.modalViewBeneficiaireBlockInfoIn {
+		width:100%;
+		padding-left:20px;
+		padding-right:20px;
+	}
+}
+
+
+

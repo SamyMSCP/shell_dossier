@@ -1,0 +1,80 @@
+table {
+	//min-width:100%;
+}
+
+table th {
+	padding:15px;
+	background-color:#0e6dbb;
+	color:#fff;
+	text-align:right;
+	border-bottom: 1px solid white;
+	border-right: 1px solid white;
+}
+
+table td {
+	padding:0px;
+	text-align:left;
+	color:#0e6dbb;
+}
+
+table tr {
+	border-bottom:1px solid #0e6dbb;
+}
+
+table td ul{
+	list-style: none;
+	padding:0px;
+}
+
+table td ul li{
+	padding-left: 0px;
+}
+
+table td td{
+	border-right:1px solid #e9eef3;
+}
+
+table {
+	width:100%;
+	height:100%;
+}
+
+table table td {
+	min-width: 100px;
+	padding:10px;
+}
+
+table table .excelColor {
+	background:#36af7f;
+}
+
+table table .calcColor {
+	background:#8c2967;
+}
+
+table table .dbColor {
+	background:#b77508;
+}
+
+table table .manualColor {
+	background:#05232d;
+}
+
+table .infoTrans th {
+	min-width:250px;
+}
+
+table .infoTrans td {
+	min-width:250px;
+}
+table .infoTimeline th {
+	min-width: 161px;
+}
+
+table .infoTimeline td {
+	text-align:center;
+}
+
+table .infoScpi th {
+	min-width: 200px;
+}

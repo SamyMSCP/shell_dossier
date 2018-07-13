@@ -1,0 +1,188 @@
+$water-blue: #1781e0;
+$mango: #ff9f1c;
+$white: #ffffff;
+$greyish-brown-30: rgba 80 80 80, 0.3;
+$OpenSans: "Open Sans";
+
+@import "mixin";
+
+.container-landing-content {
+	background-image: url("/module/LandingLinxoContent/res/mon-compte-scpi.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	padding: 0;
+	height: 700px;
+	@include mq(768px) {
+		height: 880px;
+	}
+
+	.filter {
+		margin: 0 !important;
+		padding: 0;
+		background-color: rgba(23, 129, 224, 0.5);
+		width: 100%;
+		height: 100%;
+	}
+	.container-form-spacing {
+		padding-right: 54px;
+		@include mq(550px, 768px) {
+			padding-left: 64px;
+			padding-right: 64px;
+		}
+		@include mq(480px, 550px) {
+			padding-left: 32px;
+			padding-right: 32px;
+		}
+		@include mq(360px, 480px) {
+			padding-left: 8px;
+			padding-right: 8px;
+		}
+		@include mq(360px) {
+			padding: 0;
+		}
+	}
+	.form-part {
+		//width: 391px;
+		height: 700px;
+		@include mq(768px) {
+			height: 880px;
+		}
+		//height: 100%;
+		background-color: $water-blue;
+		.form-content {
+			padding-top: 20px;
+			.check {
+				width: 16px;
+				height: 16px;
+			}
+			.row {
+				//padding-bottom: 15px;
+			}
+			input[type=radio] {
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				background-color: $water-blue;
+				border-radius: 4px;
+				border: solid 1px #ffffff;
+				outline: none;
+				margin: 0px 2px 0 9px;
+
+				box-sizing: border-box;
+				height: 16px;
+				width: 16px;
+				padding: 0 0 1px 0;
+				&:checked {
+					&:before {
+						//padding: 0 0 4px 0;
+						background-color: #ffffff;
+					}
+					+ label[for^="civilite-"] {
+						text-decoration: underline;
+					}
+				}
+
+				&:before {
+					content: '';
+					display: block;
+					width: 70%;
+					height: 70%;
+					margin: 20% auto;
+				}
+			}
+
+			label[for^="civilite-"] {
+				font-family: $OpenSans;
+				font-size: 14px;
+				color: #ffffff;
+			}
+			.captcha-container {
+				//width: 100%;
+				margin: 0 auto;
+				margin-top: 24px;
+				@include mq(330px) {
+					padding: 0px;
+				}
+			}
+			.g-recaptcha {
+				//width: 100%;
+				//margin: 0 auto;
+			}
+
+			.btn-create {
+				margin-top: 32px;
+				width: 209px;
+				height: 30px;
+				//padding-bottom: 45px;
+				border-radius: 3px;
+				background-color: $mango;
+				box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2), 0 0 3px 0 $greyish-brown-30;
+				&:hover {
+					background-color: darken($mango, 10%);
+				}
+
+				font-family: Montserrat;
+				font-size: 14px;
+				font-weight: 500;
+				letter-spacing: 1px;
+				text-align: center;
+				color: $white;
+			}
+			.conditions {
+				font-family: $OpenSans;
+				font-size: 14px;
+				font-weight: normal;
+				text-align: left;
+				color: $white;
+				a {
+					font-family: $OpenSans;
+					font-size: 14px;
+					font-weight: normal;
+					text-align: left;
+					color: $white;
+					font-weight: bold;
+					text-decoration: underline;
+				}
+			}
+		}
+		h4 {
+			font-family: Montserrat;
+			font-size: 24px;
+			font-weight: 500;
+			letter-spacing: 0;
+			$mrg: 16px;
+			margin-left: $mrg;
+			margin-right: $mrg;
+			text-align: center;
+			color: $white;
+		}
+
+		.line {
+			width: 100px;
+			height: 2px;
+			margin: 0 auto;
+			border: solid 2px $mango;
+			border-radius: 4px;
+		}
+	}
+	.left-data {
+		padding-top: 45px;
+
+		padding-left: 70px;
+		@include mq(1060px) {
+			padding-left: 30px;
+		}
+		@include mq(992px) {
+			padding-left: 10px;
+		}
+		.text-pres {
+			font-family: Montserrat;
+			font-size: 52px;
+			font-weight: 300;
+			text-align: left;
+			color: $white;
+			text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+		}
+
+	}
+}

@@ -1,0 +1,131 @@
+.space-more{
+		margin-top: 110px;
+	}
+	input{
+		border: 3px solid #01528A;
+	}
+	header img{
+		margin-top: -17px;
+		width: 100%;
+		min-height: 140px;
+	}
+	.label_step{
+		margin-left: auto;
+		margin-right: auto;
+	}
+	/*
+	.pos_step{
+		color: #01528A;
+	    font-weight: bold;
+	    margin-left: -78px;
+	    margin-top: 62px;
+    	position: absolute;
+	}
+	*/
+	.tosend{
+		width: 300px;
+		float: right;
+		border: 0px;
+	}
+	.toreturn{
+		width: 300px;
+		border: 0px;
+	}
+	.well{
+		width: 815px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.form-control{
+		border: 3px solid #01528A;
+	}
+	/*
+	.progress-bar-info{
+		background-color: #01528A;
+	}
+	.progress{
+		background-color: #80A4BC;
+		margin-top: 60px;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 500px;
+	}
+	.progress-bar{
+		width: 0%;
+	}
+	.icon-progress img{
+		position: absolute;
+		width: 100px;
+		margin-top: -40px;
+		margin-left: -69px;
+	}
+	*/
+	h1{
+		margin-bottom: 30px;
+		color: #ffffff;
+		font-family: 'Montserrat', sans-serif;
+	}
+	.navbar-inverse{
+		border-color: #01528A;
+	}
+	.alert_info{
+		visibility: visible;
+		color: red;
+		margin-top: 14px;
+	}
+	.line_red{
+		visibility: visible;
+		display: inline;
+  		border-right:1px solid #FF0000;
+	}
+	.imgTop {
+		padding:0px;
+	}
+	body {
+    	padding-top: 70px;
+	}
+.uil-reload-css {
+	margin-left:auto;
+	margin-right:auto;
+}
+	.mdlProgressBlock {
+		width:70%;
+		max-width:500px;
+		margin-left:auto;
+		margin-right:auto;
+		margin-top:30px;
+		margin-bottom:80px;
+		left:0px;
+		right:0px;
+		position:relative;
+		height:100px;
+	}
+@media (max-width: 575px) {
+	.mdlProgressBlock {
+		width: 70%;
+		height: 70px;
+	}
+	.icon-progress p{
+		font-size:14px;
+	}
+}
+@media (max-width: 470px) {
+	.mdlProgressBlock {
+		width: 60%;
+		height: 60px;
+	}
+}
+@media (max-width: 360px) {
+	.mdlProgressBlock {
+		width: 50%;
+		height: 50px;
+	}
+	.icon-progress p{
+		font-size:10px;
+	}
+}
+@media (min-width: 1200px) {
+	.container {
+		width: 1025px;
+	}
+}

@@ -1,0 +1,56 @@
+h1, h2, h3, h4, h5, h6, input, .typeoMontSerra{
+    font-family: 'Montserrat', sans-serif;
+    color:#01528a;
+    text-align:center;
+}
+span {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    font-size: 42px;
+    margin-bottom:20px;
+}
+
+body {
+    background-color:#EBEBEB;
+    color:#01528a;
+}
+.containerPerso {
+    padding-top:20px;
+    top:113px;
+    margin-left: 40px;
+    margin-right: 40px;
+    position: relative;
+}
+.trait {
+    background-color: #ff9f1c;
+    height: 5px;
+    width: 120px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 30px;
+    border-radius: 3px;
+}
+.row-padding {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+.img-right-bottom {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+}
+.log{
+    position: absolute;
+    top : 3px;
+    right: 3px;
+}
+.policeimp{
+    font-family: 'Montserrat', sans-serif;
+}
+.PageCsv {
+    margin-top: 90px;
+    text-align: center;
+}
+

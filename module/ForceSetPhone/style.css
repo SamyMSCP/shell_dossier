@@ -1,0 +1,55 @@
+
+.inputForm img {
+	height:32px;
+	display:block;
+	position:absolute;
+	right:-52px;
+	top:1px;
+}
+
+.form-change-phone {
+	max-width:400px;
+	margin-left: auto;
+	margin-right: auto;
+	position:relative;
+	margin-top: 40px;
+}
+
+#phoneRenseignement .labelForm,
+#phoneRenseignement .inputForm {
+	position:relative;
+	display:inline-block;
+	width: 49% !important;
+}
+
+#phoneRenseignement .inputForm input {
+	text-align: left;
+	border: 2px solid #018A13;
+}
+
+#phoneRenseignement .labelForm {
+	text-align: right;
+	padding-right:10px;
+}
+
+.notValid {
+	border: 1px solid #ccc !important;
+}
+
+.notValid + img {
+	display:none;
+}
+
+.modal-backdrop.in {
+	filter: alpha(opacity=80) !important;
+	opacity: 0.8 !important;
+}
+
+#linkToResetPhone {
+	text-align:center;
+	text-decoration:underline;
+}
+#linkToResetPhone:hover {
+	color:red;
+	cursor:pointer;
+}

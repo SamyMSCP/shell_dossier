@@ -1,0 +1,73 @@
+@import "_var";
+
+#multi-modal-action {
+	.modal-header {
+		width: 100%;
+		text-align: center;
+		padding: 0px;
+		padding-top: 30px;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.modal-title {
+		width: 100%;
+		font-family: "Montserrat";
+		font-size: 32px;
+		letter-spacing: 0.5px;
+		text-align: center;
+	}
+	.close {margin: 10px;}
+
+	.modal-body {
+		.button {
+			padding: 30px;
+			color: $white !important;
+			font-family: "Montserrat";
+			font-size: 18px;
+			font-weight: 500;
+			text-align: center;
+			.text-content {
+				margin-top: 12px;
+			}
+			&.big {
+				width: 100%;
+				height: 166px;
+			}
+			&.blue {
+				background-color: $deep-sea-blue;
+				&:hover {background-color: darken($deep-sea-blue, $percent-button)}
+				&.light {
+					background-color: $water-blue;
+					&:hover {background-color: darken($water-blue, $percent-button)}
+				}
+			}
+			&.green {
+				background-color: $algae-green;
+				&:hover {background-color: darken($algae-green, $percent-button)}
+			}
+			&.orange {
+				background-color: $mango;
+				&:hover {background-color: darken($mango, $percent-button)}
+			}
+			img {
+				max-height: 50px;
+				max-width: 50px;
+			}
+		}
+	}
+}
+
+
+.right {
+	float: right;
+}
+
+.line {
+	width: 100px;
+	height: 2px;
+	border: solid 4px $mango;
+
+	border-radius: 4px;
+
+	margin-bottom: 30px;
+}

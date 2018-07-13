@@ -1,0 +1,73 @@
+.informative-no-data {
+  background-color: #FFFFFF !important;
+  border-radius: 10px;
+  height: 100% !important;
+  flex: 1; }
+.informative-no-data h3 {
+  color: #505050;
+  font-weight: normal;
+  font-family: "Open Sans";
+  font-size: 14px; }
+.informative-no-data .btn-mscpi-transac {
+  background-color: #FF9F1C;
+  color: #FFFFFF;
+  font-family: "Open Sans"; }
+.informative-no-data .btn-mscpi-transac:hover {
+  background-color: #ffb54f; }
+
+#repartition_scpi {
+  max-height: 128px; }
+
+.moduleRepartition .moduleContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  padding-top: 32px; }
+
+.contour_RepGeo {
+  margin: 0px !important; }
+
+.name_scpi {
+  margin-top: 48px;
+  margin-bottom: 0;
+  padding-bottom: 0px; }
+.name_scpi ul {
+  text-align: left;
+  padding-left: 0px;
+  list-style: none; }
+.name_scpi ul .el-color-7 {
+  color: #eff8fe; }
+.name_scpi ul .el-color-6 {
+  color: #bee2fc; }
+.name_scpi ul .el-color-5 {
+  color: #8dcbfa; }
+.name_scpi ul .el-color-4 {
+  color: #5db5f8; }
+.name_scpi ul .el-color-3 {
+  color: #2c9ff5; }
+.name_scpi ul .el-color-2 {
+  color: #0b87e4; }
+.name_scpi ul .el-color-1 {
+  color: #086ab3; }
+.name_scpi ul > {
+  width: 100%; }
+.name_scpi ul .pill-color {
+  position: absolute;
+  left: 15px; }
+.name_scpi ul .name {
+  position: relative;
+  left: 32px;
+  font-family: "Open Sans";
+  font-weight: normal;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  margin-left: 8px;
+  color: #505050; }
+.name_scpi ul .purcent-info {
+  float: right;
+  font-family: "Open Sans";
+  font-weight: bold;
+  font-size: 0.9em; }
+
+/*# sourceMappingURL=style.scss.css.map */

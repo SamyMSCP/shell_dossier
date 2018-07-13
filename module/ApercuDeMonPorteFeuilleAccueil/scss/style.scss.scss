@@ -1,0 +1,207 @@
+@import "_var.scss";
+
+table, tbody, thead, tfoot, tr, td {
+	border: none;
+	collapse: collapse;
+}
+
+.moduleTitle {
+	.btn-mscpi-blanc {
+		cursor: pointer;
+		margin-right: $common-margin * 3;
+	}
+}
+
+.moduleDividendes {
+
+}
+
+.moduleApercuDeMonPorteFeuille {
+	.moduleContent {
+		@media screen and (max-width: 465px) {
+			padding: 0px !important;
+		}
+	}
+}
+
+#valeur_cont {
+	padding: 20px;
+	@media screen and (max-width: 465px) {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}
+
+.tablePortefeuille {
+
+	@media screen and (min-width: 0px) { width: 100vw; }
+	@media screen and (min-width: 465px) { width: 80vw; }
+	@media screen and (min-width: 900px) { width: 85vw; }
+	@media screen and (min-width: 1300px) { width: 90vw; }
+
+	//@media screen and (max-width: 900px) { width: 80vw; }
+	//@media screen and (max-width: 350px) { width: 100vw; }
+	font-family: nth($font, 2);
+	thead tr {
+		height: 64px !important;
+	}
+	tfoot tr {
+		height: 28px !important;
+	}
+	thead, tfoot {
+		background-color: nth($gray-shade, 2);
+		th {
+			height: auto;
+			//background-color: #ff00ff;
+			color: nth($dynam-color, 1) !important;
+			font-size: 1.05em;
+			font-weight: bold;
+		}
+	}
+	tr {
+		margin: 0px;
+		height: 48px;
+	}
+	th, td {
+		color: nth($gray-shade, 5);
+		vertical-align: center;
+		@media (max-width: 580px) {
+			width: 50%;
+			&:nth-child(6) {
+				display: none;
+			}
+			&:nth-child(8) {
+				display: none;
+			}
+		}
+	}
+	thead tr {
+		th {
+			//display: table;
+			padding: 0;
+		}
+		border-top: 1px solid #9D9D9D;
+		border-bottom: 1px solid #C7C7C7;
+	}
+	tbody {
+		tr {
+			border-top: 1px solid #c7c7c7;
+		}
+		tr:first-child {
+			border: none;
+		}
+	}
+	tfoot tr {
+		border-top: 1px solid #9F9F9F;
+		border-bottom: 1px solid #B2B2B2;
+	}
+}
+
+.action-btn {
+	text-align: center;
+	color: nth($gray-shade, 1);
+	display: flex;
+	flex-direction: row;
+	vertical-align: middle;
+
+	* {
+		cursor: pointer;
+		width: 50%;
+		flex: 1;
+		vertical-align: middle;
+		border-radius: $common-radius;
+		border: 1px solid nth($gray-shade, 5);
+		color: nth($gray-shade, 1);
+		padding-bottom: 15%;
+		padding-top: 15%;
+		font-family: nth($font, 1);
+		margin-left: $common-margin;
+		margin-right: $common-margin;
+	}
+	.vendreBtn {
+		background-color: nth($dynam-color, 5);
+		&:hover {
+			background-color: lighten(nth($dynam-color, 5), $light-val);
+		}
+	}
+
+	.reinvestirBtn {
+		background-color: nth($dynam-color, 1);
+		&:hover {
+			background-color: lighten(nth($dynam-color, 1), $light-val);
+		}
+	}
+}
+
+.sortable-cursor {
+	cursor: alias;
+}
+
+.btn-scpi-add {
+
+	@media (max-width: 720px) {
+		span {
+			display: none;
+		}
+		text-align: center;
+		padding-top: 3px;
+		padding-bottom: 3px;
+		padding-left: 0px;
+		padding-right: 0px;
+		//padding: 0px !important;
+	}
+	background-color: nth($dynam-color, 3);
+	color: nth($gray-shade, 1);
+	font-family: nth($font, 2);
+
+	vertical-align: middle;
+	line-height: 20px;
+
+	&:hover {
+		background-color: lighten(nth($dynam-color, 3), 10%);
+		color: nth($gray-shade, 1);
+	}
+
+	&:active {
+		color: nth($gray-shade, 1);
+	}
+
+	font-size: 1em !important;
+	border-radius: 3px !important;
+	padding: 3px 15px 3px 0px;
+	display: flex;
+	align-items: flex-start !important;
+	margin-right: 10px;
+	img {
+		margin-left: 5px;
+	}
+
+	span {
+		margin-top: 7px;
+	}
+}
+
+@mixin borderize {
+	border-top: 1px solid #9D9D9D !important;
+	border-bottom: 1px solid #9D9D9D !important;
+	border-left: none;
+	border-right: none;
+}
+
+table#table {
+	//@include borderize;
+	#tbl_th, #tbl_tt {
+		background-color: lighten(nth($gray-shade, 4), 45%);
+	}
+
+	tr {
+		td {
+			//@include borderize;
+			padding: 6px;
+		}
+	}
+}
+
+.legend-out-table {
+	font-style: italic;
+}

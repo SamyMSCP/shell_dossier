@@ -1,0 +1,294 @@
+.projetGlob {
+	position:relative;
+	margin:-15px;
+	padding:8px;
+}
+
+.projetElement1 {
+	position:relative;
+	float:left;
+	margin:0px;
+	width:25%;
+	height:356px;
+	padding:8px;
+}
+
+.projetElement2_dashed {
+	position:relative;
+	border:5px dashed #1781e0;
+	color:#1781e0;
+	border-radius:10px;
+	width:100%;
+	height:100%;
+	cursor:pointer;
+}
+
+.projetElement2_dashed:hover {
+	background-color:#d6e5f2;
+}
+.projetElement2:hover {
+	background-color:#2e6392;
+}
+
+.projetElement2 {
+	position:relative;
+	background-color:#1781e0;
+	border-radius:10px;
+	width:100%;
+	height:100%;
+	color:#1781e0;
+	cursor:pointer;
+}
+
+.projetElement2_dashed h2{
+	display:inline-block;
+	font-weight:bold;
+	color:#1781e0;
+	width:100%;
+	top: 70px;
+	position: absolute;
+}
+
+.projetElement2 h3{
+	display:inline-block;
+	font-weight:bold;
+	width:100%;
+	color:white;
+}
+
+.projetElement2 h2{
+	display:inline-block;
+	font-weight:bold;
+	color:white;
+	width:100%;
+	bottom: 25px;
+	position: absolute;
+}
+
+.projetElement2 img{
+	height: 130px;
+}
+
+.projetElement2 div{
+	position: absolute;
+	overflow: hidden;
+	top: 29%;
+	width: 100%;
+	text-align: center;
+}
+
+.projetElement2_dashed img{
+	height: 80px;
+}
+
+.projetElement2_dashed div{
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	text-align: center;
+	top: 57%;
+}
+
+.modalViewProjectBlockInfos {
+	width:100%;
+	margin: 0px -10px 10px -10px;
+	display:flex;
+}
+
+.modalViewProjectBlockInfosInner {
+	flex:1;
+	padding:10px;
+	flex-direction:row;
+}
+
+.modalViewProjectBlockInfosInner2 {
+	color:#1781e0;
+	border-radius:10px;
+	background-color:white;
+	text-align:center;
+}
+
+.nomBeneficiaire {
+	display: flex;
+	font-family: 'Montserrat', sans-serif;
+	color: #01528a;
+	font-size: 26px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	cursor:pointer;
+}
+
+.nomBeneficiaire:hover {
+	color:#1781e0;
+}
+
+.modalViewProjectBlockInfosInner2 h3 {
+	text-align:center;
+	display:inline-block;
+	vertical-align: bottom;
+	margin: 0px;
+	font-size: 21px;
+	color:#1781e0;
+	margin-top: 20px;
+	font-size: 30px;
+}
+
+.modalViewProjectBlockInfosInner3 {
+	display:flex;
+	flex-direction:row;
+}
+
+.modalViewProjectBlockInfosInner3 > div{
+	flex:1;
+	padding:20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.budgetBeneficiaire,
+.budgetBeneficiaire2,
+.budgetBeneficiaire3 {
+	display:flex;
+	flex-direction: row;
+	margin-bottom: 10px;
+	align-items: center;
+}
+
+.budgetBeneficiaire .budgetBeneficiaireBudget1 {
+	flex: 1;
+	text-align:left;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.budgetBeneficiaireBudget2 {
+	flex: 2;
+	text-align:left;
+	font-size: 20px;
+	font-weight: normal;
+}
+
+.budgetBeneficiaire2 .budgetBeneficiaireBudget1,
+.budgetBeneficiaire3 .budgetBeneficiaireBudget1{
+	//flex: 1;
+	font-size: 26px;
+	color:#ff9f1c;
+	text-align: right;
+	margin-right:10px;
+	margin-left:40px;
+}
+
+.projectBeneficiaireViewBtn {
+position:relative;
+	right:0px;
+//	margin: 0px 20px 10px 10px;
+}
+
+.projectBeneficiaireViewBtn button{
+	font-size:14pt;
+	padding: 0px 10px 0px 10px;
+	width:100%;
+	height: 40px;
+	background-color: #ff9f1c;
+	border: none;
+	color:white;
+	-moz-box-shadow: 0px 0px 10px -2px #3c3c3c;
+	-webkit-box-shadow: 0px 0px 10px -2px #3c3c3c;
+	-o-box-shadow: 0px 0px 10px -2px #3c3c3c;
+	box-shadow: 0px 0px 10px -2px #3c3c3c;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#3c3c3c, Direction=NaN, Strength=10);
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	margin-top: 0px;
+	display:flex;
+	flex-direction:row;
+	height: 60px;
+}
+
+.projectBeneficiaireViewBtnBleu button {
+	background-color:#1781e0;
+	margin-bottom:10px;
+	align-items: center;
+}
+
+.projectObjectifNumber {
+	flex:1 1 0;
+	text-align: left;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 38px;
+}
+
+.projectObjectifText {
+	flex:4 1 0;
+}
+
+.projectObjectifArrows{
+	flex:1 1 0;
+}
+
+.modalViewProjectTitre h2 {
+	margin-top: 30px;
+	font-size: 40px;
+	text-align: left;
+}
+
+.firstBlock {
+	width:50%;
+	display:flex;
+	flex-direction:row;
+}
+
+.ProjectDate {
+	display:flex;
+	flex-direction:column;
+	flex:2;
+}
+
+.ProjectDateInner,
+.ProjectDateInner2 {
+	display:flex;
+	flex-direction:row;
+	flex:1;
+}
+
+
+.ProjectDateInner .Date1,
+.ProjectDateInner2 .Date1 {
+	flex:1;
+	font-size: 18px;
+	font-weight:bold;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.ProjectDateInner .Date2,
+.ProjectDateInner2 .Date2 {
+	flex:2;
+	font-size: 18px;
+	font-weight:normal;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.ProjectConseiller {
+	flex:3;
+	font-size: 34px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	color:#1781e0;
+}
+
+.modalViewProjectBlockDocuments {
+	overflow:hidden;
+	padding:15px;
+}
+
+.modalViewProjectDocument1 {
+	display:none;
+	float:left;
+	width:50%;
+}
+
+.modalViewProjectDocument2 {
+	padding: 5px;
+	width:100%;
+}

@@ -1,0 +1,51 @@
+.container-features {
+  background-color: #f7f7f7;
+  height: 155px; }
+  .container-features .row {
+    padding-left: 70px;
+    padding-right: 70px; }
+    @media screen and (max-width: 992px) {
+      .container-features .row {
+        padding-left: 0px;
+        padding-right: 0px; } }
+  @media screen and (max-width: 768px) {
+    .container-features {
+      height: 240px; } }
+  @media screen and (max-width: 480px) {
+    .container-features {
+      height: 300px; } }
+  @media screen and (max-width: 320px) {
+    .container-features {
+      height: 350px; } }
+  .container-features .feat {
+    position: relative;
+    top: 41px;
+    vertical-align: middle; }
+    .container-features .feat .blue {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      position: relative;
+      top: 4px; }
+    .container-features .feat h4 {
+      font-family: Montserrat;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: 0;
+      color: #1781e0; }
+  .container-features .clearfix::after {
+    display: block;
+    content: "";
+    clear: both; }
+  .container-features .legend {
+    position: absolute;
+    bottom: 0%;
+    font-family: "Open Sans";
+    font-size: 14px;
+    font-style: italic;
+    letter-spacing: 0;
+    color: #505050; }
+    .container-features .legend a {
+      color: #1781e0; }
+
+/*# sourceMappingURL=style.scss.css.map */

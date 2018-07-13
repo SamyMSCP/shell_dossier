@@ -1,0 +1,120 @@
+.subrow { width: 100%; }
+.left-part { float:left; }
+.line-spacing {
+	height: 8px;
+	width: 100%;
+}
+.block-spacing {
+	height: 32px;
+	width: 100%;
+}
+.moduleOpportunityVisual {
+	width: 100%;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+.header {
+	font-family: Montserrat;
+	font-size: 18px;
+	font-weight: 400;
+	color: #1781E0;
+	vertical-align: middle;
+}
+.opportunite {
+	background-color: #FFFFFF;
+	border-radius: 4px;
+	box-shadow: 0px 0px 3px #000000;
+	padding: 0px;
+}
+.header .title{
+	background-color: rgba(14, 109, 187, 0.10);
+	min-height: 100px;
+	max-height: 100px;
+	width: auto;
+	padding: 15px;
+	display: block;
+	vertical-align: middle;
+}
+.header .title.Usufruit{
+	background-color: rgba(255, 255, 255, 0.10);
+}
+.scpi-name { font-weight: 500;}
+.main-info-label {
+	font-family: Open Sans;
+	font-size: 16px;
+	font-weight: 700;
+	color: #828282;
+	margin-bottom: 10px;
+}
+.main-info {
+	font-family: Montserrat;
+	font-size: 32px;
+	font-weight: 600;
+	color: #1781E0;
+}
+.separator {
+	background-color: #DDDDDD;
+	min-height: 1px;
+	width: 100%;
+}
+.content { padding: 15px; }
+.main-content {
+	padding: 15px;
+	vertical-align: middle;
+}
+.second-info {
+	font-family: Open Sans;
+	font-size: 14px;
+	font-weight: 400;
+	color: #828282;
+}
+.second-value {
+	font-family: Open Sans;
+	font-size: 14px;
+	font-weight: 700;
+	color: #1781E0;
+}
+.btn-interest {
+	width: 100%;
+	margin: 0px;
+	margin-bottom: 0px;
+	margin-top: 30px;
+	background-color: #FF9F1C;
+	color: #FFFFFF;
+	border-radius: 3px;
+	height: 40px;
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	font-family: Montserrat;
+	vertical-align: middle;
+}
+
+.p-list {
+	color: #828282;
+	font-family: Open Sans;
+	font-weight: 700;
+	padding: 15px;
+	vertical-align: middle;
+}
+
+.p-list-item{
+	width: auto;
+	height: auto;
+}
+.p-list-item, .p-list-item a {
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	/*vertical-align: middle;*/
+}
+
+.p-list-item:hover{
+	border: 1px solid #1781e0;
+	color: #1781E0;
+}
+
+.p-list-item.active{
+	color: #FFFFFF;
+	background-color: #1781E0;
+}

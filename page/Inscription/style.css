@@ -1,0 +1,193 @@
+.imgTop {
+	padding:0px;
+}
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+}
+
+.navbar-fixed-top .nav {
+    padding: 15px 0;
+}
+
+.navbar-fixed-top .navbar-brand {
+    padding: 0 15px;
+}
+
+footer {
+    padding: 30px 0;
+}
+
+@media(min-width:768px) {
+    body {
+        padding-top: 100px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    }
+
+    .navbar-fixed-top .navbar-brand {
+        padding: 15px 0;
+    }
+}
+.ishere{
+    color: #dff0d8;
+}
+
+input{
+        border: 2px solid #01528A;
+    }
+    .form-horizontal .control-label{
+        padding-top: 2px;
+    }
+    header img{
+        margin-top: -17px;
+        width: 100%;
+        min-height: 140px;
+    }
+    .label_step{
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .tosend{
+        width: 300px;
+        margin-left: 61%;
+    }
+    .well{
+        max-width: 742px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .form-control{
+        border: 2px solid #01528A;
+        border-radius: 0px;
+        max-width: 195px;
+        max-height: 33px;
+    }
+    h1{
+        margin-bottom: 30px;
+        color: #ffffff;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .navbar-inverse{
+        border-color: #01528A;
+    }
+    .valid1, .valid2, .valid3, .valid4{
+        width: 30px;
+        margin-left: 5px;
+        display: none;
+    }
+    .erreur1, .erreur2, .erreur3, .erreur4{
+        width: 28px;
+        margin-left: -4px;
+        display: none;
+    }
+    .pass_erreur1, .pass_erreur2, .pass_erreur3, .pass_erreur4, .success_1, .success_2, .erreur5{
+        display: none;
+    }
+    /*.modal-lg{
+        width: 1080px;
+    }*/
+    #msgimp{
+        display: none;
+    }
+    form div p{
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+    }
+    .modal-body {
+        position: relative;
+        overflow-y: auto;
+        max-height: 80vh;
+        padding: 15px;
+    }
+    label{
+        font-family: "Raleway";
+        font-weight: inherit;
+    }
+
+.iframe-responsive-wrapper        {
+    position: relative;
+}
+.mdlProgressBlock {
+	width:70%;
+	max-width:500px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:30px;
+	margin-bottom:80px;
+	left:0px;
+	right:0px;
+	position:relative;
+	height:100px;
+}
+.outWell {
+	margin-left:15px;
+	margin-right:15px;
+}
+
+.forButton {
+	text-align:right;
+}
+input, select {
+	width:100%;
+	max-width:195px;
+	height:30px;
+}
+.form-control {
+	height:30px;
+}
+.maform {
+	margin-left: 32px;
+	margin-right: auto;
+	max-width:500px;
+}
+
+@media (max-width: 767px) {
+	.forButton {
+		text-align:center;
+	}
+	.maform {
+		max-width:350px;
+		text-align:center;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.form-control {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.valid1, .valid2, .valid3, .valid4, .erreur1, .erreur2, .erreur3, .erreur4, .pass_erreur1, .pass_erreur2, .pass_erreur3, .pass_erreur4, .success_1, .success_2, .erreur5{
+		visibility: hidden;
+		margin: 0px;
+		width: 0px;
+		height: 0px;
+	}
+}
+
+
+@media (max-width: 575px) {
+	.mdlProgressBlock {
+		width: 70%;
+		height: 70px;
+	}
+	.icon-progress p{
+		font-size:14px;
+	}
+	.captcha_mobile{
+		padding: 0;
+	}
+	.captcha_mobile > div{
+		margin-left: -10px;
+	}
+}
+@media (max-width: 360px) {
+	.mdlProgressBlock {
+		width: 50%;
+		height: 50px;
+	}
+	.icon-progress p{
+		font-size:10px;
+	}
+}
+@media (min-width: 1200px) {
+	.container {
+		width: 1025px;
+	}
+}

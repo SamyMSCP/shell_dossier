@@ -1,0 +1,17 @@
+.moduleTof h1{
+	color:#20BF55;
+	font-size: 59px;
+	font-weight: bold;
+}
+
+@media (max-width: 1450px) {
+	.moduleTof h1 {
+		font-size: 50px;
+	}
+}
+
+@media (max-width: 130px) {
+	.moduleTof h1 {
+		font-size: 40px;
+	}
+}

@@ -1,0 +1,25 @@
+body {
+	background-color:#ebebeb;
+}
+
+.containerPerso {
+	padding-top:133px;
+	padding-left: 40px;
+	padding-right: 40px;
+	position: relative;
+	background-color: #EBEBEB;
+}
+
+h1, h2, h3, h4, h5, h6, input, .typeoMontSerra{
+	font-family: 'Open Sans', sans-serif;
+	color:#01528a;
+	text-align:center;
+}
+span {
+	font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+	font-size: 42px;
+	margin-bottom:20px;
+}

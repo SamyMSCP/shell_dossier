@@ -1,0 +1,68 @@
+@import "mixin";
+
+$OpenSans: "Open Sans";
+
+$bg-color: #f7f7f7;
+.container-features {
+	background-color: $bg-color;
+	.row {
+		@include mq(992px) {
+			padding-left: 0px;
+			padding-right: 0px;
+		}
+		padding-left: 70px;
+		padding-right: 70px;
+	}
+	//background-color: #ff00ff;
+	height: 155px;
+	@include mq(768px) {
+		height: 240px;
+	}
+	@include mq(480px) {
+		height: 300px;
+	}
+	@include mq(320px) {
+		height: 350px;
+	}
+	//height: auto;
+	.feat {
+		position: relative;
+		top: 41px;
+		vertical-align: middle;
+		.blue {
+			width: 40px;
+			height: 40px;
+			object-fit: contain;
+			position: relative;
+			top: 4px;
+			//float: left;
+		}
+		h4 {
+			font-family: Montserrat;
+			font-size: 22px;
+			font-weight: 400;
+			letter-spacing: 0;
+			color: #1781e0;
+		}
+	}
+	.clearfix {
+		&::after {
+			display: block;
+			content: "";
+			clear: both;
+		}
+	}
+	.legend {
+		position: absolute;
+		bottom: 0%;
+
+		font-family: $OpenSans;
+		font-size: 14px;
+		font-style: italic;
+		letter-spacing: 0;
+		color: #505050;
+		a {
+			color: #1781e0;
+		}
+	}
+}

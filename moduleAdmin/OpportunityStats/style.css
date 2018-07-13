@@ -1,0 +1,13 @@
+.color-usu { background-color: #34495E; }
+
+.color-nue { background-color: #5C97BF; }
+
+.progress {
+	height: 32px;
+	text-align:center
+}
+.progress-bar {
+	padding: 5px;
+	font-size: larger;
+	font-weight: bold;
+}

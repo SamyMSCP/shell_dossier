@@ -1,0 +1,210 @@
+.personnesClient {
+
+}
+
+.personnesClient .BtnReturnPersonne{
+	cursor:pointer;
+}
+
+.personnesClientDetail {
+	display:none;
+	text-align:center;
+}
+
+.personnesClientDetail span{
+	font-size: 20px;
+}
+
+.personnesClientTable table {
+	width:100%;
+}
+
+.personnesClientTable table td{
+	background-color:transparent;
+	cursor:pointer;
+}
+
+.personnesClientTable table tr{
+	background-color:white;
+}
+
+.personnesClientTable table tr:hover {
+	background-color:#d5e4f1;
+}
+
+.personnesClientTable img{
+//	height: 130px;
+	height: 25px;
+	cursor:pointer;
+}
+
+.personnesClientDetail table{
+	//margin-left: auto;
+	//margin-right: auto;
+	//min-width: 500px;
+	width:100%;
+	float:left;
+	//margin:20px;
+}
+
+
+.personnesClientDetail table input{
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	border:none;
+	text-align:left;
+	padding-left: 10px;
+	background-color:transparent;
+}
+
+.personnesClientDetail table select{
+	width: 100%;
+	height: 100%;
+	padding: 0px;
+	border:none;
+	background-color:transparent;
+}
+
+.personnesClientDetail table th{
+	text-align:right;
+}
+
+.personnesClientDetail table .BtnSubmit input{
+	text-align:center;
+	font-size: 20px;
+	color: white;
+	background-color: #1781e0;
+}
+
+.personnesClientDetail table .BtnSubmit{
+	padding:0px;
+}
+
+.Locker img{
+	height:50px;
+	cursor:pointer;
+}
+
+.inLocked {
+	background-color:#b9c5cb;
+}
+.notOkay {
+	border: 2px dotted #ff0000 !important;
+}
+.blockDetail {
+	float:left;
+	width:33%;
+	padding:20px;
+}
+.enteteTableDetail {
+	width:100%;
+	text-align:center;
+}
+
+.tableDocument table th {
+	text-align:center;
+}
+.tableDocument table td {
+	text-align:center;
+}
+
+.DocumentShowList {
+	text-align: left;
+}
+
+.DocumentShowList li{
+	list-style:none;
+}
+.listePersonnes	 {
+	overflow: hidden;
+	position:relative;
+	margin:-15px;
+	padding:8px;
+}
+
+.personneElement1 {
+	position:relative;
+	float:left;
+	margin:0px;
+	width:20%;
+	height:250px;
+	padding:8px;
+}
+
+.personneElement2_dashed {
+	position:relative;
+	border:5px dashed #1781e0;
+	color:#1781e0;
+	border-radius:10px;
+	width:100%;
+	height:100%;
+	cursor:pointer;
+}
+
+.personneElement2_dashed:hover {
+	background-color:#d6e5f2;
+}
+.personneElement2:hover {
+	background-color:#2e6392;
+}
+
+.personneElement2 {
+	position:relative;
+	background-color:#1781e0;
+	border-radius:10px;
+	width:100%;
+	height:100%;
+	color:#1781e0;
+	cursor:pointer;
+}
+
+.personneElement2_dashed h2{
+	display:inline-block;
+	font-weight:bold;
+	color:#1781e0;
+	width:100%;
+	top: 30px;
+	position: absolute;
+	font-size: 24px;
+}
+
+.personneElement2 h3{
+	display:inline-block;
+	font-weight:bold;
+	width:100%;
+	color:white;
+}
+
+.personneElement2 h2{
+	display:inline-block;
+	font-weight:bold;
+	color:white;
+	width:100%;
+	bottom: 25px;
+	position: absolute;
+}
+
+.personneElement2 img{
+	height: 130px;
+}
+
+.personneElement2 div{
+	position: absolute;
+	overflow: hidden;
+	top: 35%;
+	width: 100%;
+	text-align: center;
+}
+
+.personneElement2_dashed img{
+	height: 80px;
+}
+
+.personneElement2_dashed div{
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	text-align: center;
+	top: 57%;
+}

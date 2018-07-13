@@ -1,0 +1,31 @@
+
+#msg_help {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.toolTipShow {
+	max-width:450px;
+	background: rgba(255,255,255,1);
+	z-index: 1048;
+	position: absolute;
+	padding: 10px;
+	margin: 2px 0 0;
+	font-size: 14px;
+	text-align: left;
+	list-style: none;
+	background-color: #fff;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0,0,0,.15);
+	border-radius: 4px;
+	-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	color:#1781e0;
+	font-size: 14px !important;
+}
+
+.toolTipShow h4 {
+	color:#1781e0;
+	margin-bottom:20px;
+}

@@ -1,0 +1,411 @@
+
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+.orange_back{
+	background-color:#dee1e2 !important;
+}
+
+.hover_blue_back:hover {
+	background-color:#dce7f1 !important;
+}
+
+.formToRemove td{
+	background-color:#f0ad4e;
+}
+.formToRemove .date{
+    max-width: 100px;
+}
+
+.formToRemove .nbr_part,
+.formToRemove .prix_part
+{
+    max-width: 50px;
+}
+
+.table_separateur {
+	height:20px;
+}
+
+.table_head td {
+	padding:0px;
+}
+.alignChildMiddle th{
+	vertical-align:middle;
+}
+
+.reinvestirBtn:hover {
+	background-color:#c9d7f2;
+}
+.vendreBtn:hover {
+	background-color:#d5d5d5;
+}
+.reinvestirBtn {
+	margin:0px;
+	margin-bottom:3px;
+	padding: 0px 2px 0px 2px;
+	cursor: pointer;
+	color: #01528a;
+	font-weight: bold;
+	display: inline-block;
+	width: 40%;
+	min-width: 120px;
+	border: 2px solid #01528a;
+	background-color:white;
+}
+.vendreBtn {
+	margin:0px;
+	padding: 0px 2px 0px 2px;
+	cursor: pointer;
+	color: #868686;
+	font-weight: bold;
+	display: inline-block;
+	width: 40%;
+	min-width: 120px;
+	border: 2px solid #868686;
+	background-color:white;
+}
+
+.blockContour {
+	pointer-events: none;
+	position:absolute;
+	border:2px solid red;
+	margin-left: -13px;
+	margin-top: -13px;
+	border: 2px solid rgb(228, 212, 22);
+	background: rgba(226, 230, 117, 0.14);
+}
+
+.flechAide {
+	position:absolute;
+	font-size: 45px;
+	margin-top: -53px;
+	width: 100%;
+	color:#fff;
+	text-shadow: 12px 6px 15px rgba(0, 0, 0, 0.5);
+	pointer-events: none;
+}
+
+.Total {
+	background-color:#e7edf2;
+}
+
+.tableTotal td {
+	font-size: 14px;
+	vertical-align:middle !important;
+	color: #1781e0;
+	color:#0e6dbb;
+}
+.tableTotal th {
+	background-color: #ebebeb;
+	color: #1781e0;
+	color:#0e6dbb;
+	height: 60px;
+	vertical-align:middle !important;
+	text-align:center;
+	font-size: 14px;
+	font-weight: 700;
+	border-bottom: 1px solid #a9b6c2;
+}
+
+.tableTotal {
+	margin-bottom: 0px;
+}
+.modal_title_sell
+{
+	font-weight: bold;
+	
+}
+
+.btn_left, .btn_right
+{
+	box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.75);
+	height: 52px;
+	text-align: center;
+	color: #FFFFFF;
+	cursor:pointer;
+	padding: 3px;
+	border-radius: 10px;
+	border: none;
+	font-size: 20px;
+	text-transform: uppercase;
+	margin-bottom:20px;
+}
+
+.btn_left{
+	background-color: #1681DF;
+	margin-right: 7.5px;
+}
+.btn_right{
+	background-color: #FF9F1C;
+	margin-left: 7.5px;
+}
+.btn_text{
+	position: relative;
+	font-size: 16px;
+	font-weight: bold;
+	top: 50%;
+	letter-spacing: 0.03em;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+.hr_bar{
+	width: 124px;
+	height: 3px;
+	background-color: #F9A02A;
+	border-radius: 23px;
+}
+.btn_close_prepapre{
+	font-size: 42px;
+	color: rgb(229, 146, 37);
+	font-weight: 100;
+}
+.btn_close{
+	position: absolute;
+	right: 11px;
+	top: -18px;
+	cursor: pointer;
+	font-size: 70px;
+}
+
+
+.tablePortefeuille {
+	margin-top: 15px;
+	border: 1px solid #a9b6c2;
+	margin-bottom:0px;
+}
+.tablePortefeuille tr{
+	background-color: white;
+}
+
+.tablePortefeuille th{
+	background-color:#0e6dbb;
+	text-align: center;
+	color:#fff;
+	padding: 5px;
+	height: 60px;
+	vertical-align: middle !important;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.tablePortefeuille td{
+	background-color: transparent;
+	text-align: center;
+	padding: 5px;
+	cursor: pointer;
+	vertical-align: middle !important;
+	min-height: 60px;
+	color:black;
+	font-weight:normal;
+	font-weight: 400;
+	color: #505050;
+	font-size: 14px;
+}
+
+.btnAddScpi {
+	padding: 0px 15px 0px 0px !important;
+	display:flex;
+	align-items:flex-start !important;
+	margin-right:10px;
+}
+.btnValeurIsf {
+	padding: 0 !important;
+	margin-right: 10px;
+	min-width: 180px;
+	display:flex;
+	align-items:flex-end !important;
+}
+.btnAddScpi img {
+	height: 24px !important;
+}
+
+.btnAddScpi span, .btnValeurIsf span {
+	flex: 1 !important;
+	margin-top:5px !important;
+	font-size:14px !important;
+}
+
+.table_modal {
+	margin-bottom: 0px;
+}
+
+.table_modal th{
+	font-family: ‘Open Sans’, sans-serif;
+	font-weight: 700;
+	font-size: 14px;
+	color:#fff;
+}
+
+.table_modal tr {
+	font-family: ‘Open Sans’, sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	color: #505050;
+}
+
+.mdlNew input {
+	text-align:left;
+}
+
+.mdlNew .control-label {
+	text-align:right !important;
+}
+
+.mdlNew div.col-xs-4 {
+	width:50%;
+}
+
+.btnNewAdd {
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+}
+
+.btnNewAdd img {
+	margin-left: 15px;
+}
+
+.btnNewAdd span{
+	margin-left: 15px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	letter-spacing: 0.05em;
+	line-height: 1.1;
+}
+
+@media (max-width: 640px) {
+	.btnAddScpi, ,.btnValeurIsf {
+		display:none !important;
+	}
+}
+
+@media (max-width: 770px) {
+	.btn-left {
+		width: 100%;
+	}
+	.btn_right {
+		width: 100%;
+	}
+	.margin_response{
+		margin-top: 10px;
+	}
+}
+
+@media (max-width: 940px){
+	form .modal-body{
+		overflow: scroll;
+	}
+}
+
+@media (min-width: 641px) {
+	.btnAddScpi, ,.btnValeurIsf {
+		display:flex !important;
+	}
+}
+
+.glyphicon-arrow-down:before {
+	font-family:'Glyphicons Halflings';
+}
+
+.formAddNewScpi .form-group label {
+	font-family: ‘Open Sans’, sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	color: #505050;
+}
+
+.formAddNewScpi .form-group input,
+.formAddNewScpi .form-group select {
+	font-family: ‘Open Sans’, sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	color: #1781E0;
+}
+
+.formAddNewScpi .modal-footer label {
+	font-family: ‘Open Sans’, sans-serif;
+	font-weight: 700;
+	font-size: 14px;
+	color: #1781E0;
+	text-align: left;
+	padding: 15px;
+}
+
+.MsgSeeScpi {
+	font-family: ‘Open Sans’, sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	color: #505050;
+}
+.modal.in .modal-dialog {
+	z-index:2000;
+}
+
+
+#modal_sellPart .modal-content {
+	background-color:#ebebeb;
+}
+
+#modal_sellPart .lineContent {
+	text-align:center;
+	width:100%;
+}
+
+.btn-mscpi-blanc {
+	border: 1px solid #FFF;
+	border-radius: 3px;
+	background-color: transparent;
+	font-family: MontSerrat, sans-serif;
+	font-size: 14px;
+	line-height: 30px;
+	letter-spacing: 0.05em;
+	padding-top: 5px;
+	margin-right: 10px;
+	height: 40px;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.btn-mscpi-blanc span {
+	margin-right: 25px;
+}
+.btn-mscpi-blanc img {
+	height: 25px !important;
+	width: auto;
+	margin-top: -5px !important;
+}
+
+@media (max-width: 902px) {
+	.txtDownloadRecap {
+		display:none;
+	}
+}
+
+@media (max-width: 1080px) {
+	.moduleTitle .btnAddScpi > span{
+		display:none;
+	}
+	.moduleTitle .btnAddScpi {
+		padding:0px !important;
+	}
+}
+
+@media (max-width: 640px) {
+	.moduleTitle .btnAddScpi {
+		display:none;
+	}
+}
+
+@media (max-width: 500px) {
+	.btnValeurIsf {
+		display:none;
+	}
+}

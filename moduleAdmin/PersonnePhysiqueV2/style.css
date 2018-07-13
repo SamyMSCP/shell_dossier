@@ -1,0 +1,67 @@
+.tableLstPersonnePhysique {
+	width:100%;
+	border:none;
+}
+
+.tableLstPersonnePhysique td, .tableLstPersonnePhysique th {
+	border-color:grey;
+	font-size: 14px;
+	height: 55px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.tableLstPersonnePhysique th {
+	color:#1781e0;
+	text-align:center;
+	background-color:#ebebeb;
+	border-top: 1px solid #969696;
+	border-bottom: 1px solid #969696;
+	font-weight: 600;
+}
+
+.tableLstPersonnePhysique td {
+	font-weight: 400;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.tableLstPersonnePhysique tbody > tr {
+	color:black;
+	font-weight:400;
+	background-color:white;
+	border-bottom: 1px solid #969696;
+}
+
+.tableLstPersonnePhysique .canClick:hover {
+	background-color:#d0e4f7;
+}
+
+.tableLstPersonnePhysique .canClick {
+	cursor:pointer;
+}
+
+
+.subtitle {
+	margin-top:40px;
+	font-family: 'Open Sans', sans-serif;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom:20px;
+}
+
+.subtitle > div {
+	color:#ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.ComponentEditPersonnesMorale,
+.ComponentEditPersonnesPhysiques {
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #EBEBEB;
+	padding: 15px;
+	border-radius: 3px;
+	box-shadow: 0 0 3px 0 rgba(80, 80, 80, 0.3);
+}
+

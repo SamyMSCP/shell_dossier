@@ -1,0 +1,72 @@
+body
+{
+	background-image: linear-gradient(to right, rgba(23,129,225,0.5), rgba(23,129,225,0.5)), url("<?= $this->getImage() ?>");
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	margin: 0;
+}
+.container-v
+{
+    min-height: 100%;
+    min-height: 100vh;
+}
+
+@media (min-width: 992px)
+{
+	.container-v
+	{
+	    display: flex;
+	    align-items: center;
+	}
+}
+
+@media (min-width: 1200px)
+{
+	.container > .row {
+		display: flex;
+	    flex-wrap: wrap;
+	}
+	.row > [class*='col-']
+	{
+		display: flex !important;
+		flex-direction: column;
+	}
+}
+#desc_connex p
+{
+	margin: auto;
+	font-family: ‘Montserrat’, sans-serif;
+	font-weight: 300;
+	font-size: 36px;
+	color: #FFFFFF;
+	text-shadow: 1px 1px 3px #3C3C3C;
+	line-height: 60px;
+}
+#cookie_banner
+{
+	background-color: #01528A;
+	width: 100%;
+	min-height: 45px;
+	line-height: 45px;
+	vertical-align: 45px;
+	position: fixed;
+	color: #fff;
+	top: 0;
+	display: none;
+}
+#cookie_banner button
+{
+	width: 50px;
+	border: none;
+	background-color: transparent;
+	font-weight: 600;
+}
+#cookie_banner a
+{
+	margin-right: 10px;
+	color: #fff;
+	font-weight: 300;
+	text-decoration: underline;
+}

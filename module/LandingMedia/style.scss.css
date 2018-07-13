@@ -1,0 +1,33 @@
+.container-press {
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 45px;
+  padding-bottom: 33px; }
+  @media screen and (max-width: 768px) {
+    .container-press {
+      padding-left: 0px;
+      padding-right: 0px; } }
+  .container-press .media-body {
+    text-align: center; }
+    .container-press .media-body img {
+      width: 100%; }
+    .container-press .media-body .citation {
+      font-family: "Open Sans";
+      font-size: 24px;
+      font-weight: 300;
+      letter-spacing: 0;
+      text-align: center;
+      color: #505050; }
+    .container-press .media-body .who {
+      font-family: "Open Sans";
+      font-size: 14px;
+      letter-spacing: 0;
+      text-align: center;
+      color: #505050;
+      margin-bottom: 30px; }
+  .container-press .bfm, .container-press .logos-presse {
+    object-fit: contain; }
+    .container-press .bfm.bfm-full, .container-press .logos-presse.bfm-full {
+      margin-left: 30px; }
+
+/*# sourceMappingURL=style.scss.css.map */

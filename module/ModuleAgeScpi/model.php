@@ -1,0 +1,2 @@
+<?php
+	$table = $this->table;

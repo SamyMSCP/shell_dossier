@@ -1,0 +1,27 @@
+@charset "utf-8";
+
+/*----------- Configuration de la TimeLine ------------------------- */
+.alphaLine {width:620px;position:relative;margin:10px; width: 900px;}
+.evenement {width:431px;position:absolute;z-index:4;margin:5px 0;padding:3px 10px;}
+.date {width:600px;position:absolute;z-index:5;margin:5px 0 5px 0;padding:10px;}
+
+/*-- Position de depart gauche - droite */
+.enAnimation.gauche {left:15px;}
+.enAnimation.droite {right:15px;}
+/*-- Position gauche - droite */
+.gauche {left:5px;}
+.droite {right:5px;}
+
+
+/*-- Positionnement de la fleche */
+.fleche {position:absolute;z-index:6;display:block;width:18px;height:11px;background-repeat:no-repeat;}
+.gauche .fleche {right:-18px;top:5px;background-image:url("images/fleche-gauche.gif");}
+.droite .fleche {left:-18px;top:15px;background-image:url("images/fleche-droite.gif");}
+
+
+/*-- Colors et Styles */
+.alphaLine {background:url("images/fond-timeLine.gif") repeat-y center top #e7ebf2; font-family:Arial, Helvetica, sans-serif;}
+.evenement {background:#fff;border:1px solid #c4cde0;font-size:11px;line-height:1.2em;}
+.evenement p {margin:5px 0;}
+.date {text-align:center;}
+.date span {background:#a9b5d3;padding:5px 10px;border-radius:4px;color:#fff;}

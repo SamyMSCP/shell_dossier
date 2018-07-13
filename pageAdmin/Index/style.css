@@ -1,0 +1,74 @@
+/*!
+ * Start Bootstrap - Small Business HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+}
+
+.navbar-fixed-top .nav {
+    padding: 15px 0;
+}
+
+.navbar-fixed-top .navbar-brand {
+    padding: 0 15px;
+}
+
+footer {
+    padding: 30px 0;
+}
+
+@media(min-width:768px) {
+    body {
+        padding-top: 100px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    }
+
+    .navbar-fixed-top .navbar-brand {
+        padding: 15px 0;
+    }
+}
+.ishere{
+    color: #dff0d8;
+}
+
+
+
+
+///////////////////////////////////////////////////////
+
+body{
+	background : url('img/backsecu.jpg') fixed;
+	background-size: cover;
+}
+.row-padding {
+margin-top: 25px;
+margin-bottom: 25px;
+}
+.img-right-bottom {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+}
+.log{
+	position: absolute;
+	top : 3px;
+	right: 3px;
+}
+th{
+	color : #fff;
+}
+.table-condensed thead{
+  background-color: #01528A;
+}
+#loading{
+	display: initial;
+}
+img{
+	margin-top: 200px;
+}
+#form{
+	display: none;
+	margin-top: 100px;
+}

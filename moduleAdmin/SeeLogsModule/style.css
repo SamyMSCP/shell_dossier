@@ -1,0 +1,39 @@
+.tableLogs {
+	width:100%;
+}
+
+.tableLogs th, .tableLogs td{
+	text-align:center;
+	padding:5px;
+}
+
+
+.tableLogs th {
+	background-color:#01528a;
+	color:white;
+}
+
+.tableLogs td {
+	background-color:white;
+}
+
+.tableLogs {
+	width:100%;
+}
+
+.tableLogs .tableDetail {
+	width:100%;
+}
+
+.tableLogs .tableDetail th {
+	width:30%;
+	text-align:right;
+	padding:2px 5px;
+	border-bottom: 2px solid white;
+	background-color: #67889e;
+}
+
+.tableLogs .tableDetail td {
+	text-align:left;
+	padding:2px 5px;
+}

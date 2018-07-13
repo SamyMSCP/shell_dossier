@@ -1,0 +1,523 @@
+.timeline text
+{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	font-size: 14px;
+	text-anchor: middle;
+}
+.timeline line {
+	stroke-width: 5;
+}
+.timeline-green circle {
+	fill: #20BF55;
+	stroke: #20BF55;
+}
+.timeline-orange circle {
+	fill: #FF9F1C;
+	stroke: #FF9F1C;
+}
+.timeline-red circle {
+	fill: #EF6228;
+	stroke: #EF6228;
+}
+.timeline-grey circle {
+	fill: #DDD;
+	stroke: #DDD;
+}
+.timeline-green line {
+	stroke: #20BF55;
+}
+.timeline-orange line {
+	stroke: #FF9F1C;
+}
+.timeline-red line {
+	stroke: #EF6228;
+}
+.timeline-grey line {
+	stroke: #DDD;
+}
+.timeline-grey text {
+	fill: #828282;
+}
+ .forcegrey {
+ 	stroke: #DDD !important;
+ }
+ 
+.modal-header .close
+{
+	margin-top: 0;
+}
+.modal-title
+{
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 28px;
+	color: #01528A;
+	letter-spacing: 0.1em;
+	line-height: normal;
+}
+.modal-subtitle
+{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	font-size: 28px;
+	color: #1781E0;
+	letter-spacing: 0.1em;
+	line-height: normal;
+}
+.modal-title-desc
+{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 0.9em;
+	color: #828282;
+	letter-spacing: 0.1em;
+}
+.modal-title-desc .bold
+{
+	font-weight: 700;
+}
+.modal-title-desc .bold + span
+{
+	margin-left: 12px;
+}
+ #modal_transactio .modal-title
+{
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 28px;
+	color: #01528A;
+	letter-spacing: 0.1em;
+	line-height: normal;
+}
+#modal_transactio .modal-subtitle
+{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	font-size: 28px;
+	color: #1781E0;
+	letter-spacing: 0.1em;
+	line-height: normal;
+}
+#modal_transactio .modal-title-desc
+{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 0.9em;
+	color: #828282;
+	letter-spacing: 0.1em;
+}
+#modal_transactio .modal-title-desc .bold
+{
+	font-weight: 700;
+}
+#modal_transactio .modal-title-desc .bold + span
+{
+	margin-left: 12px;
+}
+
+.close img
+{
+	opacity: 0.5;
+}
+.close:hover img
+{
+	opacity: 1;
+}
+.status-tr-mscpi
+{
+	border-radius: 3px;
+	height: 30px;
+	background-color: #DDD;
+	line-height: 30px;
+	padding: 0 10px;
+	margin-right: 15px;
+}
+.status-tr-mscpi-verified, .status-tr-mscpi-not-verified
+{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 12px;
+	letter-spacing: 0.1em;
+}
+.status-tr-mscpi img
+{
+	height: 20px;
+	position: relative;
+	margin-top: -2px;
+	margin-right: 12px;
+}
+.status-tr-mscpi-verified
+{
+	color: #20BF55;
+}
+.status-tr-mscpi-not-verified
+{
+	color: #EF6228;
+}
+.status-transaction
+{
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	color: #FF9F1C;
+	border-radius: 6px;
+	height: 50px;
+	line-height: 50px;
+	vertical-align: middle;
+	border: 1px solid #FF9F1C;
+	letter-spacing: 0.05em;
+}
+.status-transaction-fixed
+{
+	width: 540px;
+}
+.status-transaction-fondplein
+{
+	background-color: #FF9F1C;
+	color: #FFF;
+}
+.status-transaction-ml
+{
+	line-height: 25px;
+}
+.info_table h5
+{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 20px;
+	color: #1781E0;
+	letter-spacing: 0.1em;
+	margin-bottom: 10px;
+	margin-top: 0;
+}
+@media (min-width: 992px)
+{
+	.modal-lg {
+		width: 1170px;
+	}
+}
+.info_table
+{
+	padding: 17px;
+	border-radius: 6px;
+	background-color: #FFF;
+	box-shadow: 0 0 5px 0 #505050;
+}
+.info_table_line
+{
+	border-bottom: 1px solid #F7F7F7;
+	height: 40px;
+}
+.info_table_line span
+{
+	word-break: keep-all;
+	position: relative;
+	width: 100%;
+	top: -7px;
+}
+.info_table_line span + span
+{
+	top: 7px;
+}
+.info_table_title
+{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 14px;
+	color: #01528A;
+	text-align: right;
+	vertical-align: middle;
+	line-height: 40px;
+	padding: 0;
+}
+.info_table_data
+{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size: 14px;
+	color: #1781E0;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 40px;
+	padding: 0;
+}
+.info_table_title_ml
+{
+	line-height: 0.9 !important;
+	padding-top: 7px;
+}
+.credit_title_line
+{
+	background-color: #F7F7F7;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+	font-size: 14px;
+	color: #1781E0;
+	line-height: 60px;
+	height: 60px;
+	border-top: 1px solid #828282;
+}
+.credit_data_line
+{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 14px;
+	color: #505050;
+	line-height: 60px;
+	height: 60px;
+	border-top: 1px solid #828282;
+	border-bottom: 1px solid #828282;
+}
+.credit_data_line input
+{
+	color: #505050;
+}
+.credit_data_line .col-md-2
+{
+	line-height: 45px;
+}
+#modal_transactio .row
+{
+	margin: 0 0 30px 0;
+}
+.clear
+{
+	clear: both;
+}
+#modal_transactio .trait, #modal_transactio .modal-trait
+{
+	border: 1px solid #FF9F1C;
+	margin-top: 7px;
+	margin-bottom: 12px;
+}
+.prz
+{
+	padding-right: 0;
+}
+.plz
+{
+	padding-left: 0;
+}
+.bn
+{
+	border: none;
+}
+.btn-tr-edit
+{
+	-webkit-appearance: button;
+	border: none;
+	background: none;
+	margin-left: 15px;
+}
+.form-control-notalone
+{
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	display: inline-block;
+}
+.modal-trait
+{
+	width: 100px;
+	height: 3px;
+	border-radius: 6px;
+	background-color: #FF9F1C;
+	margin-bottom: 10px;
+}
+.trait
+{
+	border-radius: 6px;
+}
+.docu_type_title
+{
+	margin-top: 24;
+	margin-bottom: 0;
+	height: 30px;
+	text-align: center;
+	color: #1781E0;
+	font-weight: 300;
+	font-size: 14px;
+	letter-spacing: 0.05em;
+}
+.docu_desc
+{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 14px;
+	color: #828282;
+	/*margin-bottom: 12px;*/
+}
+.docu_bouton, .docu_bouton_uploaded, .docu_bouton_verified
+{
+	width: 190.8px;
+	height: 100px;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	font-size: 14px;
+	border-radius: 6px;
+	padding-top: 50px;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-size: 30px 30px;
+	background-position: 80px 10px;
+}
+.docu_bouton
+{
+	border: 1px dashed #1781E0;
+	background-color: #FFF;
+	color: #1781E0;
+}
+.docu_bouton_uploaded
+{
+	border: 1px solid #FF9F1C;
+	background-color: #FF9F1C;
+	color: #FFF;
+}
+.docu_bouton_verified
+{
+	border: 1px solid #1781E0;
+	background-color: #1781E0;
+	color: #FFF;
+}
+.docu_bouton
+{
+	background-image: url('<?= $this->getPath() ?>img/dossier-open-bleu.png');
+
+	background-position: center 10%;
+}
+.docu_bouton_uploaded
+{
+	background-image: url('<?= $this->getPath() ?>img/en-cours-realisation-blanc.svg');
+}
+.docu_bouton_verified
+{
+	background-image: url('<?= $this->getPath() ?>img/fleche-validee-Blanc.png');
+}
+#modal_transactio input[type=text], #modal_transactio select
+{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	border: none;
+	color: #1781E0;
+	margin: 5px auto 0 auto;
+	background-color: #F7F7F7;
+}
+#modal_transactio select option
+{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+#modal_transactio .credit_data_line input, #modal_transactio .credit_data_line select
+{
+	margin-top: 10px;
+}
+#modal_transactio input[type=file]
+{
+	height: 0;
+	width: 0;
+	overflow: hidden;
+}
+.btn-tr-edit
+{
+	position: absolute;
+	left: 55%;
+	-webkit-appearance: button;
+	border: none;
+	background: none;
+}
+/*.btn-tr-save
+{
+	border: 1px solid #FF9F1C;
+	background-color: #FF9F1C;
+	color: #FFF;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	font-size: 16px;
+	padding: 12px 15px 10px;
+	border-radius: 3px;
+	letter-spacing: 0.05em;
+	max-width: 310px;
+}
+.btn-tr-del
+{
+	border: 1px solid #EF6228;
+	background-color: #EF6228;
+	color: #FFF;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	font-size: 16px;
+	padding: 12px 15px 10px;
+	border-radius: 3px;
+	letter-spacing: 0.05em;
+	max-width: 310px;
+}*/
+.mz
+{
+	margin: 0 !important;
+}
+.internal_info
+{
+	padding: 17px;
+	border-radius: 6px;
+	box-shadow: 0 0 5px 0 #505050;
+	border-radius: 6px;
+	background-color: #0E6DBB !important;
+	color: white !important;
+}
+.internal_info h5
+{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 20px;
+	border-radius: 6px;
+	margin-bottom: 10px;
+	margin-top: 0;
+}
+.internal_info_content
+{
+	background-color: white;
+}
+.internal_info_content .info_table_line
+{
+	padding-left: 0;
+	padding-right: 0;
+}
+.internal_info_content .info_table_title
+{
+	padding-right: 10px;
+}
+.col-md-4 > .internal_info 
+{
+	margin-right: 15px;
+}
+.col-md-8 > .internal_info
+{
+	margin-left: 15px;
+}
+.status-transaction select
+{
+	width: 100% !important;
+	margin: auto !important;
+	background-color: transparent !important;
+	text-align-last: center !important;
+	font-family: 'Montserrat', sans-serif !important;
+	font-weight: 500 !important;
+	font-size: 20px !important;
+	letter-spacing: 0.05em !important;
+	color: #FF9F1C !important;
+	text-transform: uppercase;
+}
+.select-type-transac
+{
+	width: 150px !important;
+	background-color: #DDD !important;
+}

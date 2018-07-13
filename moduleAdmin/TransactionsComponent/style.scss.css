@@ -1,0 +1,50 @@
+.btn-select-courrier {
+  border: 1px solid #2ecc71;
+  background-color: #2ecc71;
+  color: #FFF;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-size: 16px;
+  padding: 12px 15px 10px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+  max-width: 310px; }
+  .btn-select-courrier:hover {
+    border: 1px solid #25a25a;
+    background-color: #25a25a;
+    cursor: pointer; }
+
+.btn-tr-save {
+  border: 1px solid #FF9F1C;
+  background-color: #FF9F1C;
+  color: #FFF;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-size: 16px;
+  padding: 12px 15px 10px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+  max-width: 310px; }
+  .btn-tr-save:hover {
+    border: 1px solid #e88600;
+    background-color: #e88600; }
+
+.btn-tr-del {
+  border: 1px solid #EF6228;
+  background-color: #EF6228;
+  color: #FFF;
+  font-family: Montserrat, sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  font-size: 16px;
+  padding: 12px 15px 10px;
+  border-radius: 3px;
+  letter-spacing: 0.05em;
+  max-width: 310px; }
+  .btn-tr-del:hover {
+    border: 1px solid #d44910;
+    background-color: #d44910; }
+
+/*# sourceMappingURL=style.scss.css.map */

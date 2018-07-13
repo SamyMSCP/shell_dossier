@@ -1,0 +1,208 @@
+h3{
+    font-family: "MONTSERRAT";
+}
+h4{
+  text-align: center;
+}
+h5{
+  font-weight: bold;
+}
+
+p {
+	color:#505050;
+}
+
+.bar-bor{
+  border-right: 2px solid;
+  color: #E74C3C;
+}
+.mention{
+  text-align: center;
+	margin-bottom:10px;
+}
+.cpos{
+  text-align:center;
+}
+.red_dis, .red_dis:hover{
+  color: #E74C3C;
+}
+.img-right-bottom{
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+}
+.form-signin {
+  max-width: 600px; 
+  display:block;
+  background-color: rgba(247,247,247,0.8);
+  border: 2px solid #01528A;
+  border-radius:2px;
+  margin: auto;
+}
+.main{
+    padding: 8px;
+}
+.social-box{
+  margin: 0 auto;
+  padding: 38px;
+  border-bottom:1px #ccc solid;
+}
+.social-box a{
+  font-weight:bold;
+  font-size:18px;
+  padding:8px;
+}
+.social-box a i{
+  font-weight:bold;
+  font-size:20px;
+}
+.heading-desc{
+    font-size:20px;
+    font-weight:bold;
+    padding:38px 38px 0px 38px;
+    
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: 0px;
+  border-radius: 5px;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 0px;
+  border-radius: 5px;
+}
+.input-group {
+    margin-bottom: 15px;
+}
+.left-section a{
+    font-weight:bold;
+    line-height:19px;
+}
+body{
+      background : url('img/bkg-connexion.jpg') fixed;
+        background-size: cover;
+        padding: 0;
+        margin: 0;
+}
+.loader{
+  display: initial;
+  padding: auto;
+}
+.pass_erreur1, .pass_erreur2, .pass_erreur3, .pass_erreur4, .success_1, .success_2, .erreur5{
+    display: none;
+  }
+
+.logoImg {
+	margin-top:10px;
+	position:relative;
+	width: 183px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto
+}
+.formIn {
+	max-width:400px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.formBtn {
+	max-width:422px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-bottom: 8px;
+}
+@media (max-width: 767px) {
+	.bar-bor {
+		border-right: none;
+	}
+	.mentionCol {
+		margin-bottom: 10px;
+	}
+}
+.mg-btm{
+	padding: 10px;
+}
+@media (max-width: 615px) {
+	.mg-btm{
+		margin:8px;
+	}
+}
+@media (min-width: 616px) {
+	.mg-btm{
+		margin-top: 50vh;
+		transform: translateY(-50%);
+	}
+}
+.btn-left{
+	background-color: #1681DF;
+	box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.75);
+	width: 260px;
+	height: 52px;
+	text-align: center;
+	color: #FFFFFF;
+	cursor:pointer;
+	padding: 3px;
+	border-radius: 10px;
+}
+.btn_right{
+	background-color: #FF9F1C;
+	box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.75);
+	width: 260px;
+	height: 52px;
+	text-align: center;
+	color: #FFFFFF;
+	cursor:pointer;
+	padding: 3px;
+	border-radius: 10px;
+}
+.btn_text{
+	position: relative;
+	font-size: 16px;
+	font-weight: bold;
+    top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+.hr_bar{
+	width: 124px;
+	height: 3px;
+	background-color: #F9A02A;
+	border-radius: 23px;
+}
+.btn_close_prepapre{
+	font-size: 42px;
+	color: rgb(229, 146, 37);
+	font-weight: 100;
+}
+.btn_close{
+	position: absolute;
+	right: 11px;
+	top: -18px;
+	cursor: pointer;
+	font-size: 70px;
+}
+
+
+@media (max-width: 991px) {
+	.btn-warning {
+		width: 100%;
+		margin-bottom: 30px;
+		margin-top: 20px;
+	}
+}

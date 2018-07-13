@@ -1,0 +1,35 @@
+.validate {
+	position: relative;
+	float: left;
+	margin-left: 30px;
+}
+
+.validate > div {
+	margin:10px;
+	font-size: 20px;
+}
+
+.validate div  > img {
+	height:32px;
+	display:none;
+}
+
+.validate .validateTrue  {
+	color:#20BF55;
+}
+
+.validate .validateTrue > img {
+	display:inline-block;
+}
+
+.unknow {
+	color: gray;
+}
+
+.inputToken {
+	font-family: monospace;
+	font-weight: normal;
+	font-size: 14px;
+	min-width: 250px;
+	color:#ccc;
+}

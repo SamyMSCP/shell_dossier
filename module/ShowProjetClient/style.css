@@ -1,0 +1,42 @@
+.infoProjetStatus {
+	display:flex;
+	flex-direction: row;
+	flex-wrap:wrap;
+	justify-content: space-around;
+}
+
+.infoProjetStatus > div {
+	width:16.66%;
+	display:flex;
+	flex-direction:column;
+	padding:20px;
+	min-width:186px;
+}
+
+.infoProjetStatus > div > div {
+	display:flex;
+	flex-direction:row;
+align-items:center;
+	width:170px;
+	height:38px;
+}
+
+.infoProjetStatus > div > div > div {
+	display:flex;
+	align-items:center;
+	flex: 1;
+	font-weight: 600;
+	line-height: 130%;
+	font-size:15px;
+}
+
+.infoProjetStatus > div > div> img {
+	height: 33px;
+	margin-right: 10px;
+}
+
+.infoProjetStatus > div > p {
+	margin-top: 7px;
+	color:black;
+	font-size: 12px;
+}

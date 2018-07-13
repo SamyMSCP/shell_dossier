@@ -1,0 +1,32 @@
+.tableMscpi {
+	width:100%;
+	margin:0px auto;
+}
+
+.tableMscpi th {
+	color:white;
+	background-color: #0e6dbb;
+	text-align: center;
+	color: #fff;
+	padding: 5px;
+	vertical-align: middle !important;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.tableMscpi tr {
+	background-color:white;
+}
+
+.tableMscpi td {
+	background-color: transparent;
+	text-align: center;
+	padding: 5px;
+	vertical-align: middle !important;
+	min-height: 60px;
+	color: black;
+	font-weight: 400;
+	color: #505050;
+	font-size: 14px;
+	border-bottom: 1px solid #CCC;
+}

@@ -1,0 +1,32 @@
+.tableStats {
+	border:1px solid #01528a;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.tableStats th {
+	background-color:#01528a;
+	color:white;
+}
+
+.tableStats td {
+	background-color:white;
+}
+
+.tableStats td, .tableStats th {
+	padding:20px;
+	text-align:center;
+}
+
+.nbrComteCree {
+	text-align:center;
+	margin: 20px;
+}
+
+.tableStats.cli > tbody > tr > td {
+	cursor:pointer;
+}
+
+.tableStats.cli > tbody  > tr:hover > td {
+	background-color:#d5e4f1;
+}

@@ -1,0 +1,39 @@
+$mango: #ff9f1c;
+$deep-sea-blue: #01528a;
+$grey: #D0D0D0;
+$change: 8px;
+
+$white: #ffffff;
+
+@mixin btn($x) {
+	color: $white;
+	border-radius: 8px;
+	padding: 10px;
+	background-color: $x;
+	&:hover {
+		cursor: pointer;
+		background-color: darken($x, $change);
+	}
+}
+
+#modale_vente {
+	.button {
+		min-height: 112px;
+		text-align: center;
+		font-size: 20px;
+		font-family: "Open Sans";
+		&.blue {
+			@include btn($deep-sea-blue);
+		}
+		&.grey {
+			@include btn($grey);
+		}
+		
+		&.orange {
+			@include btn($mango);
+		}
+		&.left {
+			padding-top: 27px !important;
+		}
+	}
+}

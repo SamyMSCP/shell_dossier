@@ -1,0 +1,31 @@
+#modale_vente .button {
+  min-height: 112px;
+  text-align: center;
+  font-size: 20px;
+  font-family: "Open Sans"; }
+  #modale_vente .button.blue {
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #01528a; }
+    #modale_vente .button.blue:hover {
+      cursor: pointer;
+      background-color: #013a61; }
+  #modale_vente .button.grey {
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #D0D0D0; }
+    #modale_vente .button.grey:hover {
+      cursor: pointer;
+      background-color: #bcbcbc; }
+  #modale_vente .button.orange {
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #ff9f1c; }
+    #modale_vente .button.orange:hover {
+      cursor: pointer;
+      background-color: #f28c00; }
+  #modale_vente .button.left {
+    padding-top: 27px !important; }

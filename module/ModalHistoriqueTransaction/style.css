@@ -1,0 +1,245 @@
+.modal-body
+{
+	padding: 0 15px;
+}
+.modal-header
+{
+	padding-bottom: 0;
+}
+.modal-header .close
+{
+	margin-top: 0;
+}
+.close img
+{
+	opacity: 0.5;
+}
+.close:hover img
+{
+	opacity: 1;
+}
+.modal-title
+{
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 600;
+	font-size: 28px;
+	color: #01528A;
+	letter-spacing: 0.1em;
+	line-height: normal;
+}
+.modal-subtitle
+{
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 300;
+	font-size: 28px;
+	color: #1781E0;
+	letter-spacing: 0.1em;
+	line-height: normal;
+	text-transform: uppercase;
+}
+ .modal-trait
+{
+	border: 1px solid #FF9F1C;
+	margin-top: 7px;
+	width: 100px;
+	height: 5px;
+	border-radius: 6px;
+	background-color: #FF9F1C;
+	margin-bottom: 10px;
+}
+.modal-title-desc
+{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	font-size: 0.9em;
+	color: #828282;
+	letter-spacing: 0.1em;
+}
+.modal-title-desc .bold
+{
+	font-weight: 700;
+}
+.modal-title-desc .bold + span
+{
+	margin-left: 12px;
+}
+.modal-footer
+{
+	border-top: none;
+	text-align: center;
+	padding: 0 0 15px 0 !important;
+}
+.row
+{
+	margin: 0;
+}
+.histo_transac .trait
+{
+	width: 65px;
+	height: 5px;
+	border-radius: 6px;
+	background-color: #FF9F1C;
+	margin: 0;
+}
+
+.bttn-mscpi-plainorange
+{
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	font-size: 16px;
+	padding: 12px 15px 10px;
+	border-radius: 3px;
+	letter-spacing: 0.05em;
+	margin-left: 30px;
+	margin-right: 30px;
+	width: 165px;
+	border: 1px solid #FF9F1C;
+	background-color: #FF9F1C;
+	color: #FFF;
+	box-shadow: 0 0 5px 0 #505050;
+}
+.histo_transac
+{
+	border-radius: 6px;
+	background-color: #FFF;
+	box-shadow: 0 0 5px 0 #505050;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding-bottom: 10px;
+}
+.histo_transac_title
+{
+	padding: 15px;
+	height: 50px;
+	line-height: 50px;
+	vertical-align: middle;
+	background-color: #0E6DBB;
+	border-top-left-radius: 6px;
+	border-top-right-radius: 6px;
+}
+.histo_transac_title h5
+{
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 200;
+	font-size: 20px;
+	letter-spacing: 0.1em;
+	color: #FFF;
+}
+.histo_transac_title img
+{
+	position: relative;
+	top: -10px;
+	margin: 5px;
+}
+.histo_transac table
+{
+	width: 97.3%;
+	margin: 15px;
+	border-collapse: collapse;
+}
+.histo_transac table caption
+{
+	font-style: italic;
+	padding-top: 0;
+}
+.histo_transac table caption span
+{
+	font-family: 'Montserrat', sans-serif;
+	font-size: 14px;
+	font-weight: 500;
+	font-style: normal;
+	color: #01528A;
+	letter-spacing: 0.05em;
+}
+.histo_transac table caption img
+{
+	width: 20px;
+	margin: 0 7px 0 10px;
+}
+.histo_transac table thead
+{
+	width: 100%;
+	background-color: #F7F7F7;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: bold;
+	font-size: 14px;
+	color: #1781E0;
+	height: 60px;
+	border-top: 1px solid #828282;
+}
+.histo_transac table thead th
+{
+	height: 61px;
+	text-align: center;
+}
+.histo_transac table tbody
+{
+	width: 100%;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+	font-size: 14px;
+	color: #505050;
+	line-height: 60px;
+	height: 60px;
+	border-top: 1px solid #828282;
+}
+.histo_transac_data_buy
+{
+	cursor: pointer;
+	text-align: center;
+	border-bottom: 1px solid #828282;
+}
+.histo_transac_data_sell
+{
+	cursor: pointer;
+	text-align: center;
+	border-top: 1px solid #828282;
+	background-color: #FFE9CC;
+	border-bottom: 1px solid #828282;
+}
+.histo_transac_data_sell *
+{
+	color: #000;
+}
+.histo_transac_data_precalcul
+{
+	font-weight: bold;
+	text-align: center;
+	height: 60px;
+}
+.histo_transac button
+{
+	background-color: transparent;
+	border: none;
+	font-size: 14px;
+	font-weight: bold;
+}
+.histo_transac button img
+{
+	position: relative;
+	top: -3px;
+	left: 4px;
+	width: 20px;
+	height: auto;
+}
+button.sell
+{
+	color: #FF9F1C;
+}
+button.details
+{
+	color: #1781E0;
+}
+@media (min-width: 992px)
+{
+	.modal-lg {
+		width: 1170px;
+	}
+}
+.clear
+{
+	clear: both;
+}

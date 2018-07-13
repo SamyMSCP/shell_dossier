@@ -1,0 +1,26 @@
+.barre-footer {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: #01528a;
+  box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.5);
+  color: #ffffff; }
+  .barre-footer .row {
+    padding: 17px; }
+  .barre-footer .orange {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 0px;
+    color: #ff9f1c; }
+    .barre-footer .orange a {
+      color: #ff9f1c;
+      text-decoration: underline; }
+      .barre-footer .orange a:hover {
+        color: #cf7700; }
+
+/*# sourceMappingURL=style.scss.css.map */

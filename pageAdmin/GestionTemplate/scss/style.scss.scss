@@ -1,0 +1,12 @@
+.vueApp {
+	.row.btn-list > * {
+		margin-top: 48px;
+		margin-bottom: 16px;
+		padding: 4px;
+		.btn.is-visible-client {
+			padding-bottom: 5px;
+			//padding: 0;
+			//margin: 0;
+		}
+	}
+}

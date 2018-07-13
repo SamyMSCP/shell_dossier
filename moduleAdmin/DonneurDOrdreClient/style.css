@@ -1,0 +1,191 @@
+.DonneurDOrdreGauche {
+	width:50%;
+	float:left;
+	text-align:left;
+}
+
+.DonneurDOrdreDroite {
+	width:50%;
+	float:left;
+	text-align:right;
+}
+
+.DonneurDOrdreGauche h2{
+	text-align:left;
+}
+
+.DonneurDOrdreDroite h2{
+	text-align:right;
+}
+
+.traitDonneurDOrdreG {
+	width:110px;
+	margin-left:0px;
+	background-color: #ff9f1c;
+	height: 5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	border-radius: 3px;
+}
+
+.traitDonneurDOrdreD {
+	width:110px;
+	margin-right:0px;
+	margin-left:auto;
+	background-color: #ff9f1c;
+	height: 5px;
+	margin-top: 15px;
+	margin-bottom: 35px;
+	border-radius: 3px;
+}
+.CreeLe {
+	font-family: 'Montserrat', sans-serif;
+	font-size:20px;
+}
+.lstInfosDh {
+	padding-left:0px;
+	margin-top: 15px;
+}
+
+.lstInfosDh li{
+	list-style:none;
+	overflow:hidden;
+	margin-bottom:10px;
+}
+
+
+.lstInfosDh li div{
+	color:#1781e0;
+	float:left;
+	font-size: 16px;
+	height:100%;
+//	max-width:225px;
+}
+.lstInfosDh li img{
+	margin-right: 20px;
+	max-height: 25px;
+	margin-top: 6px;
+}
+
+
+.Btn {
+	position:relative;
+	right:0px;
+}
+
+.Btn button{
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size:14pt;
+	padding: 0px 25px 0px 25px;
+	width:300px;
+	height: 40px;
+	background-color: #ff9f1c;
+	border: none;
+	color:white;
+	-moz-box-shadow: 0px 0px 10px -2px #3c3c3c;
+	-webkit-box-shadow: 0px 0px 10px -2px #3c3c3c;
+	-o-box-shadow: 0px 0px 10px -2px #3c3c3c;
+	box-shadow: 0px 0px 10px -2px #3c3c3c;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#3c3c3c, Direction=NaN, Strength=10);
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.viewDocumentValidationDh {
+	position: relative;
+	right: 0px;
+	display:none;
+}
+
+.viewDocumentValidationDh ul{
+	padding:0px;
+}
+
+.viewDocumentValidationDh li{
+	list-style:none;
+	margin: 10px;
+}
+
+.docValidate {
+	color: #ff9f1c;
+	font-weight:900;
+}
+
+.docActual {
+	padding: 5px;
+	border: 1px solid green;
+}
+
+.delocker {
+	cursor: pointer;
+}
+
+
+.btnChangeMail {
+	position:relative;
+	right:0px;
+}
+
+.btnChangeMail button{
+	display:none;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size:14pt;
+	padding: 0px 25px 0px 25px;
+	width:300px;
+	height: 40px;
+	background-color: #ff9f1c;
+	border: none;
+	color:white;
+	-moz-box-shadow: 0px 0px 10px -2px #3c3c3c;
+	-webkit-box-shadow: 0px 0px 10px -2px #3c3c3c;
+	-o-box-shadow: 0px 0px 10px -2px #3c3c3c;
+	box-shadow: 0px 0px 10px -2px #3c3c3c;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#3c3c3c, Direction=NaN, Strength=10);
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.modalChangeMail .modal-body{
+	display:flex;
+	flex-Direction:column;
+}
+
+.modalChangeMail .modal-body .forInput {
+	flex:1;
+	display:flex;
+	align-items:center;
+	margin-bottom: 20px;
+}
+
+.modalChangeMail .modal-body .forInput span,
+.modalChangeMail .modal-body .forInput input {
+	flex:1;
+}
+
+.modalChangeMail .modal-body .forInput input {
+	height:35px;
+	border:2px solid #01528A;
+}
+
+
+.avertissementMessage1 ,
+.avertissementMessage2 ,
+.avertissementMessage3 {
+	display:none;
+}
+
+.avertissementMessage1 span,
+.avertissementMessage2 span,
+.avertissementMessage3 span {
+	color:red;
+}
+
+.Btn .notComplete {
+	border: 2px solid #ff9f1c;
+	background: white;
+	color: #ff9f1c;
+}

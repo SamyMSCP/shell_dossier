@@ -1,0 +1,70 @@
+$water-blue: #1781e0;
+$mango: #ff9f1c;
+$greyish-brown-30: rgba 80 80 80, 0.3;
+$OpenSans: "Open Sans";
+
+@import "mixin";
+
+.container-bottom {
+	height: 222px;
+	@include mq(768px) { height: 300px; }
+	@include mq(510px) { height: 350px; }
+	@include mq(360px) { height: 450px; }
+	@include mq(320px) { height: 480px; }
+	background-color: $water-blue;
+	.container-partenariat {
+		position: relative;
+		top: 45px;
+		width: 100%;
+
+		font-family: $OpenSans;
+		font-size: 24px;
+		letter-spacing: 0;
+		text-align: center;
+		color: #ffffff;
+		font-weight: 300;
+		.info-part {
+			text-decoration: underline;
+		}
+	}
+	.contact {
+		position: relative;
+		top: 45px;
+		h4 {
+			font-family: Montserrat;
+			font-size: 24px;
+			font-weight: 500;
+			letter-spacing: 0;
+			text-align: center;
+			color: #FFFFFF;
+		}
+		.button-background {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: 0 0 0 -100px;
+			margin-top: 50px;
+			width: 196px;
+			height: 30px;
+			border-radius: 3px;
+			background-color: $mango;
+			&:hover {
+				cursor: pointer;
+				background-color: darken($mango, 10%);
+			}
+			box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2), 0 0 3px 0 $greyish-brown-30;
+			span {
+				position: relative;
+				top: 6px;
+				bottom: 6px;
+				width: 50px;
+				height: 18px;
+				font-family: Montserrat;
+				font-size: 14px;
+				letter-spacing: 1px;
+				text-align: center;
+				color: #FFFFFF;
+			}
+		}
+	}
+}

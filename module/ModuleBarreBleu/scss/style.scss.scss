@@ -1,0 +1,33 @@
+$mango: #ff9f1c;
+$deep-sea-blue: #01528a;
+
+
+.barre-footer {
+	position: fixed;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	background-color: $deep-sea-blue;
+	box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.5);
+	color: #ffffff;
+	.row {
+		padding: 17px;
+	}
+	.orange {
+		font-family: Montserrat;
+		font-size: 12px;
+		font-weight: normal;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: 0px;
+		color: $mango;
+		a {
+			color: $mango;
+			&:hover {
+				color: darken($mango, 15%);
+			}
+			text-decoration: underline;
+		}
+	}
+}

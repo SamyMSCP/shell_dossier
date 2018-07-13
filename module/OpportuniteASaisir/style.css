@@ -1,0 +1,116 @@
+#op-module {
+  border-radius: 12px;
+  background-color: #1781E0; }
+  #op-module * {
+    padding: 0px;
+    margin: 0px; }
+
+.main-carousel {
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
+
+.container-opportunite {
+  display: flex;
+  flex-direction: column;
+  flex: 1; }
+  .container-opportunite * {
+    flex: 1;
+    height: 50%; }
+
+.opportunite {
+  border-radius: 12px;
+  background-color: #1781E0;
+  color: #ffffff; }
+  .opportunite:nth-child(2n) .part-up {
+    border-radius: 12px 12px 0px 0px;
+    background-image: url("module/OpportuniteListComponent/img/Immeuble8.jpg"); }
+  .opportunite:nth-child(2n + 1) .part-up {
+    border-radius: 12px 12px 0px 0px;
+    background-image: url("module/OpportuniteListComponent/img/Logement2.jpg"); }
+  .opportunite .part-up {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; }
+    .opportunite .part-up .filter {
+      border-radius: 12px 12px 0px 0px;
+      position: absolute;
+      width: 100%;
+      height: 55%;
+      opacity: 0.6;
+      background-color: #0e6dbb;
+      z-index: 1;
+      box-sizing: border-box; }
+
+.part-up {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px; }
+  .part-up > {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle; }
+  .part-up a {
+    z-index: 4;
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 2.25em;
+    color: #FFFFFF;
+    text-shadow: 0px 0px 8px #505050; }
+
+.op-important-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  position: relative;
+  width: 90%;
+  left: 5%;
+  height: 48px;
+  top: -24px;
+  border-radius: 48px;
+  background-color: #FFFFFF;
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 1.5em;
+  color: #FF9F1C; }
+  .op-important-message > {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle; }
+
+.part-down {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  height: 200px; }
+  .part-down > {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle; }
+  .part-down div {
+    position: relative;
+    top: -32px; }
+  .part-down h1 {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 5.6em;
+    color: #FF9F1C;
+    text-shadow: 0px 0px 8px #505050; }
+  .part-down .info-rend {
+    position: relative;
+    top: 32px;
+    font-family: "Open Sans";
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #FFFFFF; }
+
+/*# sourceMappingURL=style.css.map */

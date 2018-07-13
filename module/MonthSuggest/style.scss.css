@@ -1,0 +1,175 @@
+#month-module {
+  height: 548px;
+  border-radius: 10px !important;
+  background-color: #FFFFFF; }
+  #month-module * {
+    padding: 0px;
+    margin: 0px; }
+
+.main-carousel {
+  display: flex;
+  flex-direction: column;
+  height: 100%; }
+
+.container-month {
+  display: flex;
+  flex-direction: column;
+  flex: 1; }
+  .container-month * {
+    flex: 1;
+    height: 50%; }
+
+.month-suggest {
+  border-radius: 10px !important;
+  background-color: #FFFFFF; }
+  @media (max-width: 580px) {
+    .month-suggest {
+      border-radius: 0 !important; } }
+  .month-suggest .part-up {
+    border-radius: 10px 10px 0px 0px;
+    background-image: url("module/OpportuniteListComponent/img/Immeuble8.jpg"); }
+    @media (max-width: 580px) {
+      .month-suggest .part-up {
+        border-radius: 0 !important;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%; } }
+  .month-suggest .part-up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; }
+    .month-suggest .part-up > {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle; }
+    .month-suggest .part-up .filter {
+      border-radius: 10px 10px 0px 0px;
+      position: absolute;
+      width: 100%;
+      height: 200px;
+      opacity: 0.7;
+      background-color: #FFFFFF;
+      z-index: 1;
+      box-sizing: border-box; }
+      @media (max-width: 580px) {
+        .month-suggest .part-up .filter {
+          border-radius: 0 !important; } }
+  .month-suggest .part-up {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px; }
+    .month-suggest .part-up > {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle; }
+    .month-suggest .part-up a {
+      z-index: 4;
+      font-family: "Montserrat";
+      font-weight: 400;
+      font-size: 2.25em;
+      color: #01528A !important;
+      text-shadow: 0px 0px 0px #505050; }
+  .month-suggest .month-important-message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 4;
+    position: relative;
+    width: 90%;
+    left: 5%;
+    height: 48px;
+    top: -24px;
+    border-radius: 48px;
+    background-color: #01528A;
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 1.5em;
+    color: #FFFFFF; }
+    .month-suggest .month-important-message > {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle; }
+  .month-suggest .part-down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    height: 300px;
+    color: #01528A; }
+    .month-suggest .part-down > {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      vertical-align: middle; }
+    .month-suggest .part-down a {
+      color: #01528A !important; }
+    .month-suggest .part-down div {
+      position: relative;
+      top: -64px; }
+    .month-suggest .part-down h1 {
+      font-family: "Montserrat";
+      font-weight: 400;
+      font-size: 5.6em;
+      color: #01528A;
+      text-shadow: 0px 0px 0px #505050; }
+    .month-suggest .part-down a[data-target="#action-month-suggest"] {
+      text-decoration: underline; }
+    .month-suggest .part-down .info-rend {
+      position: relative;
+      top: 32px;
+      font-family: "Open Sans";
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #01528A; }
+
+#action-month-suggest .modal-dialog {
+  padding: 15px !important; }
+#action-month-suggest .modal-title {
+  font-family: "Montserrat";
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em; }
+#action-month-suggest .modal-body .row > div {
+  padding: 0; }
+  #action-month-suggest .modal-body .row > div:first-child {
+    padding-left: 15px;
+    padding-right: 15px; }
+  #action-month-suggest .modal-body .row > div:last-child {
+    padding-right: 15px;
+    padding-left: 0px; }
+#action-month-suggest .close {
+  color: #FF9F1C; }
+  #action-month-suggest .close:hover {
+    color: #ffb54f; }
+#action-month-suggest .btn {
+  font: "Montserrat";
+  font-weight: 400;
+  color: #ffffff;
+  display: block;
+  width: 100% !important; }
+  #action-month-suggest .btn.btn-popup-consult {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    background-color: #1881E0; }
+    #action-month-suggest .btn.btn-popup-consult:hover {
+      background-color: #409aeb; }
+  #action-month-suggest .btn.btn-popup-contact {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    background-color: #FF9F1C; }
+    #action-month-suggest .btn.btn-popup-contact:hover {
+      background-color: #ffb54f; }
+
+/*# sourceMappingURL=style.scss.css.map */

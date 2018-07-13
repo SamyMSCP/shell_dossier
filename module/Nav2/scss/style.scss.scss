@@ -1,0 +1,113 @@
+@import "media_mixin.scss";
+//@import "_tmp.scss";
+//*
+.navBarOut {
+
+	@include mq("xl") {
+		.nav-btn div {
+			display: none;
+		}
+		.nav-btn span {
+			display: none;
+		}
+		.nav-btn div {
+			display: block;
+			margin-right: 0px;
+			height: 30px;
+			width: 30px;
+			background-size: 30px 30px;
+		}
+	}
+
+	@include mq("lg") {
+		.nav-btn span {
+			font-size: 12px;
+		}
+		.nav-msg img, .nav-msg a {
+			display: none;
+		}
+		.nav-btn span {
+			font-size: 12px;
+		}
+		.nav-btn a {
+			flex-direction: column;
+		}
+	}
+
+	@include mq("md") {
+		.nav-btn span {
+			display: none;
+		}
+		.nav-msg span {
+			display: none;
+		}
+		.navUser span > span {
+			display: none;
+		}
+		.navCreate {
+			display: none;
+		}
+
+	}
+
+	@include mq("sm") {
+		.nav-block-right {
+			position: absolute;
+			top: 128px;
+			left: 0px;
+			width: 100%;
+		}
+		.navBarOut {
+			position: absolute;
+		}
+		.navBar {
+			flex-direction: column;
+			margin-left: 0px;
+			margin-right: 0px;
+		}
+		.nav-btn {
+			flex: 1 0 0;
+		}
+		.nav-top {
+			display: none;
+		}
+		.nav-btn-compte {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-content: center
+		}
+		.containerPerso {
+			padding-top: 80px !important;
+		}
+		.dropdown-menu > ul {
+			width: 100%;
+		}
+		.dropdown-menu > li > span,
+		.dropdown-menu > li > a {
+			font-size: 18px;
+			padding-bottom: 5px;
+			padding-top: 5px;
+			text-align: left;
+		}
+		.moduleTitle span {
+			font-size: 22px;
+		}
+		.moduleTitle {
+			height: 45px;
+		}
+		.moduleTitle img {
+			height: 30px;
+		}
+		.nav-btn-block {
+			align-items: flex-start;
+		}
+		.nav-btn-mesProjets {
+			display: none;
+		}
+	}
+	.btn-selected {
+		color: #1781E0;
+	}
+}
+/**/

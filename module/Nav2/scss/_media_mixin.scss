@@ -1,0 +1,15 @@
+$size: (
+		"xxl": 1500px,
+		"xl": 1200px,
+		"lg": 992px,
+		"md": 768px,
+		"sm": 480px,
+		"xs": 320px);
+
+@mixin mq($arg) {
+	$m: map-get($size, $arg);
+
+	@media screen and (max-width: $m) {
+		@content
+	}
+}

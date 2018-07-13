@@ -1,0 +1,68 @@
+.moduleMonPortefeuille, .moduleDividendes {
+	color:#20BF55;
+	font-size: 40px;
+}
+
+.moduleMonPortefeuille h3,
+.moduleDividendes h3{
+	margin: 0px;
+}
+
+.moduleMonPortefeuille .moduleContent,
+.moduleDividendes  .moduleContent {
+	justify-content: space-around;
+	padding:20px;
+	flex-direction:row;
+}
+
+.moduleMonPortefeuille .moduleContent > div,
+.moduleDividendes .moduleContent > div {
+	flex-direction:column;
+	display:flex;
+	margin:10px;
+}
+
+.moduleMonPortefeuille .moduleContent span,
+.moduleDividendes .moduleContent span {
+	color:#505050;
+	font-size: 16px;
+	flex:1;
+	font-weight: 400;
+}
+
+
+@media (max-width: 1800px) {
+	.moduleMonPortefeuille,
+	.moduleMonDividendes {
+		font-size: 30px;
+	}
+}
+
+@media (max-width: 1500px) {
+	.moduleMonPortefeuille .moduleContent,
+	.moduleDividendes .moduleContent {
+		flex-direction:column;
+	}
+}
+
+@media (max-width: 1200px) {
+	.moduleMonPortefeuille .moduleContent,
+	.moduleDividendes .moduleContent {
+		flex-direction:row;
+		font-size: 40px;
+	}
+}
+
+@media (max-width: 700px) {
+	.moduleMonPortefeuille .moduleContent,
+	.moduleDividendes .moduleContent {
+		flex-direction:column;
+	}
+}
+
+@media (max-width: 500px) {
+	.moduleMonPortefeuille .moduleContent,
+	.moduleDividendes .moduleContent {
+		font-size: 30px;
+	}
+}

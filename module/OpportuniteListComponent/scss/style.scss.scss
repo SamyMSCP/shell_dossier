@@ -1,0 +1,114 @@
+@import "_var.scss";
+
+#op_modal {
+	.modal-dialog {
+		padding: 15px !important;
+	}
+	.modal-title {
+		font-family: nth($font, 1);
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.modal-body {
+		.row > div{
+			padding: 0;
+			&:first-child {
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+			&:last-child {
+				padding-right: 15px;
+				padding-left: 0px;
+			}
+		}
+	}
+
+	.close {
+		color: nth($dynam-color, 3);
+
+		&:hover {
+			color:lighten(nth($dynam-color, 3), 10%);
+		}
+	}
+
+	.btn {
+		font: nth($font, 1);
+		font-weight: 400;
+		color: #ffffff;
+		display: block;
+		width: 100% !important;
+		&.btn-popup-consult {
+			padding-left: 15px !important;
+			padding-right: 15px !important;
+			//margin-right: 15px;
+			background-color: #1881E0;
+			&:hover {
+				background-color: lighten(#1881E0, 10%);
+			}
+		}
+
+		&.btn-popup-contact {
+			padding-left: 15px !important;
+			padding-right: 15px !important;
+			//margin-left: 15px;
+			background-color: #FF9F1C;
+			&:hover {
+				background-color: lighten(#FF9F1C, 10%);
+			}
+		}
+	}
+}
+
+
+.pageNavgator {
+	width: 100%;
+	display: flex;
+	justify-content: stretch;
+	align-items: stretch;
+	padding-bottom: 15px;
+	div {
+		flex:1;
+		margin:15px;
+		height:40px;
+		padding:0px;
+		display:flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.navigator-intern {
+		max-width:100%;
+		display:flex;
+		flex-direction:row;
+		justify-content:space-between;;
+		align-items: center;
+		div {
+			font-family: 'Open Sans', sans-serif;
+			border-radius:40px;
+			flex:1;
+			display:flex;
+			justify-content:center;
+			align-items: center;
+			border: 1px solid transparent;
+			width:40px;
+			height:40px;
+			margin:5px;
+			font-weight:700;
+			color:#828282;
+			background-color:transparent;
+			cursor:pointer;
+			transition: all 0.3s;
+			&:hover {
+				color:#1781e0;
+				border-color:#1781e0;
+			}
+			&.pageSelected {
+				color:#ffffff;
+				background-color:#1781e0;
+				cursor:default;
+			}
+		}
+	}
+}

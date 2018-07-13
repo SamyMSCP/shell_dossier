@@ -1,0 +1,100 @@
+.bodyDocumentModal {
+	z-index:1002  !important;
+}
+
+.documentModal {
+	display:flex;
+	flex-direction:row;
+}
+.documentList img {
+	height:32px;
+	cursor:pointer;
+}
+.documentList {
+	text-align:center;
+	flex: 1;
+	border-radius: 20px;
+	display: flex;
+	background-color: white;
+	width: 100%;
+	padding: 15px;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.documentList button {
+	width:100%;
+	height: inherit;
+	padding: 10px;
+}
+
+.documentDetail .documentInformations {
+	display:flex;
+	flex: 1;
+}
+
+.documentDetail .documentInformations > div{
+	flex: 1;
+	text-align:center;
+}
+
+.documentDetail {
+	display:flex;
+	flex-direction:column;
+	flex:3;
+}
+
+
+.documentList > button {
+}
+
+.documentPreview iframe {
+	height: 350px;
+	margin-bottom: 20px;
+	width:100%;
+}
+
+.documentPreview {
+	display: flex;
+	justify-content: center;
+	padding: 20px;
+}
+
+.documentCom {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+}
+
+.documentCom > .ckeditor {
+	width:100%;
+}
+
+#bodyDocumentModal .traitOrange {
+	margin: 30px auto;
+}
+
+
+#dateExecutionDocument {
+	width: auto;
+	height: 20px;
+	display: inline;
+}
+
+.documentInformations .outRight {
+	top:-7px;
+	right:-30px;
+}
+
+.documentInformations .outRight > .outContent {
+	height:30px;
+	width:30px;
+}
+
+.documentInformations .outRight > .outContent > i {
+	font-size:23px;
+}
+

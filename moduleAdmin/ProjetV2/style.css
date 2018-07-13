@@ -1,0 +1,286 @@
+.tableLstProject {
+	width:100%;
+	border:none;
+}
+
+.tableLstProject td, .tableLstProject th {
+	border-color:grey;
+	font-size: 14px;
+	height: 55px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.tableLstProject th {
+	color:#1781e0;
+	text-align:center;
+	background-color:#ebebeb;
+	border-top: 1px solid #969696;
+	border-bottom: 1px solid #969696;
+	font-weight: 600;
+}
+
+.tableLstProject td {
+	font-weight: 400;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.tableLstProject tbody > tr {
+	color:black;
+	font-weight:400;
+	background-color:white;
+	border-bottom: 1px solid #969696;
+}
+
+.tableLstProject .canClick:hover {
+	background-color:#d0e4f7;
+}
+
+.tableLstProject .canClick {
+	cursor:pointer;
+}
+
+.etatProjet,
+.infoProjet {
+}
+
+.etatProjet > div {
+	display:flex;
+	margin: 0 auto;
+	width: 170px;
+	align-items: center;
+}
+
+.etatProjet > div > div{
+	flex: 1;
+	font-weight: 700;
+	line-height: 130%;
+	display: flex;
+	align-items: center;
+	text-align: left;
+}
+
+.etatProjet img, 
+.infoProjet img {
+	flex:0 1 0;
+}
+
+.etatProjet img{
+	margin-right: 10px;
+	height: 33px;
+}
+.infoProjet img {
+	margin-left: 10px;
+	height: 22px;
+}
+
+.infoProjetStatus {
+	display:flex;
+	flex-direction: row;
+	flex-wrap:wrap;
+	justify-content: space-around;
+}
+
+.infoProjetStatus > div {
+	width:16.66%;
+	display:flex;
+	flex-direction:column;
+	padding:20px;
+	min-width:186px;
+}
+
+.infoProjetStatus > div > div {
+	display:flex;
+	flex-direction:row;
+align-items:center;
+	width:170px;
+	height:38px;
+}
+
+.infoProjetStatus > div > div > div {
+	display:flex;
+	align-items:center;
+	flex: 1;
+	font-weight: 600;
+	line-height: 130%;
+	font-size:15px;
+}
+
+.infoProjetStatus > div > div> img {
+	height: 33px;
+	margin-right: 10px;
+}
+
+.infoProjetStatus > div > p {
+	margin-top: 7px;
+	color:black;
+	font-size: 12px;
+}
+
+.ComponentEditProjet {
+	width: 1600px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #EBEBEB;
+	padding:0px;
+	box-shadow: 0 5px 15px rgba(0,0,0,.5);
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: 6px;
+}
+
+.ComponentEditProjet .modalBlock {
+	min-width: 439px;
+}
+
+.ComponentEditProjet .top-modal .name {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.ComponentEditProjet .top-modal .name > span {
+	font-weight: 600;
+	color: #01528A;
+	flex:0;
+}
+
+.ComponentEditProjet .top-modal .name > div {
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 7px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	display:flex;
+	flex:0 1 auto;
+	margin-left: 20px;
+	font-size:14px;
+	font-weight: 400;
+	padding: 5px 10px;
+}
+
+
+.ComponentEditProjet .top-modal .name > div > img {
+	height:22px;
+	margin-right:5px;
+}
+
+.ComponentEditProjet .modalBlock_bottom_left> div {
+	margin:0px 10px !important;
+}
+
+.ComponentEditProjet .modalBlock_bottom_left.alignRight > div {
+	justify-content: flex-end;
+}
+
+.ComponentEditProjet .modalBlock_bottom_left.infos > div {
+	font-weight: 600 !important;
+	color: #1781e0 !important;
+}
+
+.ComponentEditProjet .blockCree {
+	font-family: 'Open Sans', sans-serif;
+	color:#969696;
+}
+
+.ComponentTypeToOneObjectifsListEdit > select {
+	max-width: 360px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	border-radius: 4px;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+	text-align: center;
+	width: 100%;
+	border: none;
+	color: #1781E0;
+	background-color: #F7F7F7;
+}
+
+.tableSimulation {
+	width:100%;
+	border:none;
+}
+
+.tableSimulation td, .tableSimulation th {
+	border-color:grey;
+	font-size: 14px;
+	height: 55px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.tableSimulation th {
+	text-align:center;
+	background-color:#ebebeb;
+	border-top: 1px solid #969696;
+	border-bottom: 1px solid #969696;
+	padding: 20px 10px;
+	color: #1781e0;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
+}
+
+.tableSimulation td {
+	border-bottom: 1px solid #969696;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	color:black;
+	padding: 20px 10px;
+}
+
+.tableSimulation td a {
+	display: flex;
+	align-items: center;
+}
+
+
+.tableSimulation tbody > tr {
+	color:black;
+	font-weight:400;
+	background-color:white;
+	border-bottom: 1px solid #969696;
+}
+
+.tableSimulation .canClick:hover {
+	background-color:#d0e4f7;
+}
+
+.tableSimulation .canClick {
+	cursor:pointer;
+}
+
+
+.tableSimulation {
+	width:100%;
+}
+
+.selectSendDocument {
+	margin-top: 32px;
+	cursor:pointer;
+}
+
+.tableDocumentsProject {
+	color: #1781e0 !important;
+	text-align:left;
+}
+
+.tableDocumentsProject img {
+	height: 32px;
+	margin: 0px 10px;
+}
+
+.ComponentEditProjetSimulationComparaison {
+	width:1500px;
+}
+
+.expandable {
+	border: 1px solid #1781e0;
+	padding: 0px 5px;
+	border-radius: 3px;
+	margin-left: 4px;
+	cursor: pointer;
+}

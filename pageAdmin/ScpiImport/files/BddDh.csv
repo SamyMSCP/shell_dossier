@@ -1,0 +1,11 @@
+;;;;;;;"TYPE DE COMPTE :- Si DO : Conseiller (autentifé via l'e-mail)- Si autre : CONSEILLER / BACKOFFICE / ADMINISTRATEUR / ANALYSTE"
+CIVILITE;PRENOM;NOM;INDICATIF PAYS;NUMERO DE TELEPHONE PORTABLE;NUMERO DE TELEPHONE FIXE;MAIL;TYPE DE COMPTE
+M.;Nicolas;KAMISKI;FR;0677787235;;nicolas@yopmail.com;jonathan.dhiver@yopmail.com
+M.;Eric;PLATIAU;FR;0614883254;;ericplatiau@yopmail.com;jonathan.dhiver@yopmail.com
+M.;Jonathan;DHIVER;FR;0666632004;;backoffice@yopmail.com;jonathan.dhiver@yopmail.com
+M.;Rayan;CHADLY;FR;;0185085604;rayan.chadly@yopmail.com;ANALYSTE
+M.;Adrien;DEKER;FR;;0185099718;adrien.deker@yopmail.com;BACKOFFICE
+Mme;Claire;BELLENGER;FR;;0185099983;claire.bellenger@yopmail.com;COMMUNICATION
+Mme;Lamiaa;HAFDANE;FR;;0177168266;lamiaa.hafdane@yopmail.com;CONSEILLER
+Mme;Camille;PILLON;FR;;0184176672;camille.pillon@yopmail.com;CONSEILLER
+M.;Jonathan;DHIVER;FR;;0182289028;jonathan.dhiver@yopmail.com;CONSEILLER

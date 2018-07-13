@@ -1,0 +1,206 @@
+@import "_var.scss";
+
+#month-module {
+	height: 548px;
+	@include borderize(0);
+	* {
+		padding: 0px;
+		margin: 0px;
+	}
+	background-color: nth($gray-shade, 1);
+}
+
+.main-carousel {
+	//@include debug;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.container-month {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	* {
+		flex: 1;
+		height: 50%;
+	}
+}
+
+.month-suggest {
+	@include borderize(0);
+	@media (max-width: 580px) {
+		border-radius: 0 !important;
+	}
+	background-color: nth($gray-shade, 1);
+
+	//ADDING IMAGE BACKGROUND 1/2 SEQUENTIAL TO HEAD OPPORTUNITY
+	.part-up {
+		@include borderize(1);
+		@media (max-width: 580px) {
+			border-radius: 0 !important;
+			margin-left: 0;
+			margin-right: 0;
+			width: 100%;
+		}
+		background-image: url("module/OpportuniteListComponent/img/Immeuble8.jpg");
+	}
+
+	.part-up {
+		@include flexify;
+		height: 200px;
+		.filter {
+			@include borderize(1);
+			@media (max-width: 580px) {
+				border-radius: 0 !important;
+			}
+			//border-radius: ($common-radius * 4) ($common-radius * 4) 0px 0px;
+
+			position: absolute;
+			width: 100%;
+			height: 200px;
+			opacity: 0.7;
+			background-color: nth($gray-shade, 1);
+			z-index: 1;
+			box-sizing: border-box;
+		}
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	.part-up {
+		@include flexify;
+		height: 200px;
+		a {
+			z-index: 4;
+			font-family: nth($font, 1);
+			font-weight: 400;
+			font-size: 2.25em;
+			color: nth($mscpi-color, 1) !important;
+			text-shadow: 0px 0px 0px nth($gray-shade, 5);
+		}
+	}
+
+	.month-important-message {
+		@include flexify;
+		$width: 90%;
+		$height: 48px;
+		z-index: 4;
+
+		position: relative;
+		width: $width;
+		left: (100 - $width) / 2;
+		height: $height;
+		top: - ($height / 2);
+
+		border-radius: $height;
+
+		background-color: nth($mscpi-color, 1);
+
+		font-family: nth($font, 1);
+		font-weight: 400;
+		font-size: 1.5em;
+		color: nth($gray-shade, 1);
+	}
+
+	.part-down {
+		@include flexify;
+
+
+		z-index: 2;
+		height: 300px;
+		//color: nth($dynam-color, 3);
+		color: nth($mscpi-color, 1);
+		a {
+			color: nth($mscpi-color, 1) !important;
+		}
+		div {
+			position: relative;
+			top: -64px;
+		}
+		h1 {
+			font-family: nth($font, 1);
+			font-weight: 400;
+			font-size: 5.6em;
+			color: nth($mscpi-color, 1);
+			text-shadow: 0px 0px 0px nth($gray-shade, 5);
+			//		margin: 0px;
+		}
+
+		a[data-target="#action-month-suggest"]{
+			text-decoration: underline;
+		}
+		.info-rend {
+			position: relative;
+			top: 32px;
+			font-family: nth($font, 2);
+			font-weight: bold;
+			font-size: 1.2em;
+			color: nth($mscpi-color, 1);
+			//color: nth($dynam-color, 1);
+		}
+	}
+}
+
+#action-month-suggest {
+	.modal-dialog {
+		padding: 15px !important;
+	}
+	.modal-title {
+		font-family: nth($font, 1);
+		font-weight: 500;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.modal-body {
+		.row > div{
+			padding: 0;
+			&:first-child {
+				padding-left: 15px;
+				padding-right: 15px;
+			}
+			&:last-child {
+				padding-right: 15px;
+				padding-left: 0px;
+			}
+		}
+	}
+
+	.close {
+		color: nth($dynam-color, 3);
+
+		&:hover {
+			color:lighten(nth($dynam-color, 3), 10%);
+		}
+	}
+
+	.btn {
+		font: nth($font, 1);
+		font-weight: 400;
+		color: #ffffff;
+		display: block;
+		width: 100% !important;
+		&.btn-popup-consult {
+			padding-left: 15px !important;
+			padding-right: 15px !important;
+			//margin-right: 15px !important;
+			background-color: #1881E0;
+			&:hover {
+				background-color: lighten(#1881E0, 10%);
+			}
+		}
+
+		&.btn-popup-contact {
+			padding-left: 15px !important;
+			padding-right: 15px !important;
+			//margin-left: 0px !important;
+			background-color: #FF9F1C;
+			&:hover {
+				background-color: lighten(#FF9F1C, 10%);
+			}
+		}
+	}
+}
+
+

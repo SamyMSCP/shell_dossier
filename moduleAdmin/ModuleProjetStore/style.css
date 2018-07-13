@@ -1,0 +1,321 @@
+.ComponentInputCheckboxToogleMscpi,
+.ComponentInputCheckboxMscpi > div {
+	margin-top:10px;
+	margin-bottom:10px;
+	cursor:pointer;
+}
+
+.ComponentInputCheckboxToogleMscpi .btn,
+.ComponentInputCheckboxMscpi > .btn {
+	border: 1px solid #969696;
+	border-radius: 6px;
+	width: 20px;
+	height: 20px;
+	background: #FFFFFF;
+	vertical-align: middle;
+	transition: width 0.1s, height 0.1s, margin 0.1s;
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+.ComponentInputCheckboxToogleMscpi > .btn.checked,
+.ComponentInputCheckboxMscpi > .btn.checked {
+	background-color:#0e6dbb;
+}
+
+.ComponentInputCheckboxToogleMscpi > .label,
+.ComponentInputCheckboxMscpi > .label {
+	font-family: 'Open Sans', sans-serif;
+	color:#01528a;
+	font-weight: 400;
+	font-size:14px;
+}
+
+
+
+.ComponentMessageBox {
+	display: flex;
+	justify-content: center;
+	width:100%;
+}
+
+.ComponentMessageBox > .MessageBoxContent {
+	position:relative;
+	min-width: 400px;
+	width:auto;
+	background-color: rgb(235, 235, 235);
+	border-radius: 15px;
+	padding: 40px 60px 20px 60px;
+	font-size: 14px;
+	max-width: 1000px;
+	text-align: center;
+}
+
+.ComponentMessageBox > .MessageBoxContent > .closeMsgBox {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor:pointer;
+}
+
+
+.ComponentModalBlockMscpi_noname > .block-title > .closeMsgBox {
+	position: absolute;
+	top: 11px;
+	right: 11px;
+	cursor:pointer;
+}
+
+
+.closeMsgBox > img {
+	height:30px;
+	opacity:0.5;
+}
+
+.closeMsgBox:hover > img {
+	opacity:1;
+}
+
+.ComponentMessageBox > .MessageBoxContent > .buttons {
+	display:flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+
+.component {
+	position:relative;
+}
+
+.simpleForm {
+	width:100%;
+	max-width:500px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+.simpleForm .component {
+	margin:10px;
+}
+
+.simpleForm > div {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.simpleForm > div > div {
+	flex:3;
+}
+
+.simpleForm > div > div.component {
+	margin-right:150px;
+}
+
+.simpleForm2 > div > div.component {
+	margin-right:0px;
+}
+
+.simpleForm > div > span {
+	flex:2;
+	text-align:right;
+}
+
+.simpleForm select,
+.simpleForm input[type=number],
+.simpleForm input[type=text] {
+	width: 100%;
+	text-align: left;
+	border-radius: 4px;
+	background: white;
+	color: #1781e0;
+	padding: 6px 12px;
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	height:34px;
+	background-color: #fff;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	flex: 1;
+	border: 2px solid #018A13;
+	border: 1px solid #ccc;
+}
+
+.errorInput > select,
+.errorInput > input {
+	border: 1px solid #ff0000a6 !important;
+	border-radius:4px 4px 0px 0px !important;
+}
+
+.errorMsg {
+	color: red;
+	pointer-events: none;
+	width: 100%;
+	text-align: center;
+	z-index: 900;
+}
+
+.errorMsg > div {
+	padding:1px 20px;
+	border-radius: 0px 0px 100px 100px;
+	color: white;
+	font-size: 13px;
+
+
+	padding: 2px 20px;
+	background-color: #ff0000a6;
+	border-radius: 0px 0px 100px 100px;
+	color: white;
+	font-size: 13px;
+	width: 100%;
+	display: block;
+	line-height: 13px;
+	text-align: center;
+}
+
+.ComponentTypeNafEdit .btnCodeNaf {
+	color: #01528a;
+	font-size: 12px;
+	text-decoration: underline;
+	cursor: pointer;
+	text-align:right;
+}
+
+
+.ComponentNafHelper {
+	display: flex;
+	justify-content: center;
+	width:100%;
+}
+
+.ComponentNafHelper > .NafHelperContent {
+
+
+	position:relative;
+	min-width: 900px;
+	width:auto;
+	max-width: 1140px;
+	text-align: center;
+	background-color: #ffffff;
+	padding: 15px;
+	border-radius: 3px;
+	box-shadow: 0 0 3px 0 rgba(80, 80, 80, 0.3);
+}
+
+.closeMsgBox,
+.ComponentNafHelper > .NafHelperContent > .closeMsgBox {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor:pointer;
+}
+
+.top-modal {
+	padding:15px;
+}
+
+.top-modal .name {
+	font-family: 'Montserrat', sans-serif;
+	text-align:center;
+
+	text-transform: uppercase;
+	font-size: 28px;
+	font-weight: 600;
+	color: #01528A;
+	line-height: normal;
+}
+
+.top-modal .name > span {
+	font-family: 'Montserrat', sans-serif;
+	font-weight:300;
+	color: #1781E0;
+}
+
+
+.middle-modal {
+	display:flex;
+	align-items:stretch;
+	justify-content:center;
+	padding:10px;
+	flex-wrap:wrap;
+}
+
+.middle-modal > div {
+	flex:1;
+	margin:10px;
+	padding: 17px;
+	border-radius: 6px;
+	background-color: #FFF;
+	box-shadow: 0 0 5px 0 #505050;
+}
+
+.trait-orange {
+	margin:7px auto 12px auto;
+	flex: 1;
+	height: 3px;
+	width: 100px;
+	border-radius: 5px;
+	background-color: #ff9f1c;
+}
+
+.onglet-modal {
+	padding:10px;
+}
+
+.onglet-modal > .menu {
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+}
+
+.onglet-modal > .menu > div:hover {
+	background-color:#ffffffaa;
+}
+
+.onglet-modal > .menu > div {
+	cursor:pointer;
+	padding:5px 17px;
+	border-radius: 6px 6px 0px 0px;
+	position:relative;
+	border:none;
+	background-color: transparent;
+	font-weight: 300;
+	color: #1781e0;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 0.1em;
+	min-height: 32px;
+	display: flex;
+	align-items: center;
+	margin-left: 1px;
+	margin-right: 1px;
+}
+
+.onglet-modal > .menu > div.selected {
+	background-color: #FFF;
+	box-shadow: 0 0 5px 0 #505050;
+	font-weight: 700;
+}
+
+.onglet-modal > .menu > div.selected::after {
+	content: "";
+	display: block;
+	position: absolute;
+	background-color: #ffffff;
+	width: 110%;
+	height: 5px;
+	left: -5px;
+	bottom: -5px;
+}
+
+.onglet-modal > .contenu {
+	margin:10px;
+	padding: 17px;
+	border-radius: 6px;
+	background-color: #FFF;
+	box-shadow: 0 0 5px 0 #505050;
+	margin-top:0px;
+}
+

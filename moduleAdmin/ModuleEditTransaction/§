@@ -1,0 +1,152 @@
+<div class="col-md-12 col-md-offset-4">
+	<form action="admin_lkje5sjwjpzkhdl42mscpi.php" method="get" accept-charset="utf-8">
+		<div class="form-group">
+			<div class="col-md-4">
+				<select id="selectbasic" name="client" class="form-control">
+				<?php
+					foreach (Dh::getAll() as $elm)
+						if (empty($elm->type) || $elm->type == "client")
+							echo '<option', (!empty($_GET['client']) && $_GET["client"] == $elm->id_dh ?
+								" selected=\"1\" " : " "),
+								'value="', $elm->id_dh, '">',$elm->getPersonnePhysique()->getShortName(),
+								" <---------> ", (empty($elm->type) ? "Prospect" : UcFirst($elm->type)), '</option>';
+					?>
+				</select>
+			 </div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-4">
+				<input type="hidden" name="p" id="token" value="<?php echo $_GET['p']; ?>"/>
+				<button id="singlebutton" class="btn btn-primary">Rechercher</button>
+				<button id="singlebutton" class="btn btn-danger">Effacer</button>
+			</div>
+		</div>
+	</form>
+</div>
+<?php
+	if (empty($_GET["client"]))
+		echo '<h2 style="margin-top: 40vh;">Selectionner un DH</h2>';
+	else {
+?>
+<h2>Voir toutes les transactions</h2>
+<form action="" method="post" accept-charset="utf-8">
+	<table border="1" class="tableTrans">
+		<thead>
+			<tr>
+				<th>Type de bénéficiaire</th>
+				<th>Dénomination sociale</th>
+				<th>NOM</th>
+				<th>Prénom</th>
+				<th>Civilité</th>
+				<th>Mail / numéro de téléphone (si email absent)</th>
+				<th>État transaction</th>
+				<th>Cons</th>
+				<th>Commentaire</th>
+				<th>MP / MS</th>
+				<th>Type transaction</th>
+				<th>Effectuée par</th>
+				<th>SCPI</th>
+				<th>Date Signature BS</th>
+				<th>Nb parts</th>
+				<th>Prix Achat / Vente</th>
+				<th>Type propriete</th>
+				<th>Durée si DT</th>
+				<th>Clé répart (NU)</th>
+				<th>Montant Transaction</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php
+			foreach ($this->transactions as $key => $elm)
+			{
+			?>
+				<tr>
+					<td><?=$elm->id?></td>
+					<td class="inputIn">
+						<?php
+						if (empty($elm->getIdMscpi()))
+						{
+							echo '<input type="number" min="1" name="id_mscpi_' . $elm->id . '" id="id_mscpi_' . $elm->id . '" />';
+						}
+						else
+						{
+							echo $elm->getIdMscpi();
+						}
+						?>
+					</td>
+					<td>
+						<?php
+						if (!empty($elm->getBeneficiaire()))
+						{
+							echo $elm->getBeneficiaire()->getTypeBeneficiaire();
+						}
+						?>
+					</td>
+					<td>
+						<?php
+						if (!empty($elm->getBeneficiaire()) && $elm->getBeneficiaire()->getTypeBeneficiaire() == "Pm")
+						{
+							echo $elm->getBeneficiaire()->getPersonneMorale()[0]->getDenominationSociale();
+						}
+						?>
+					</td>
+					<?php
+					if (!empty($elm->getBeneficiaire()) && ($elm->getBeneficiaire()->getTypeBeneficiaire() == "seul" || $elm->getBeneficiaire()->getTypeBeneficiaire() == "couple"))
+					{
+						?>
+						<td>
+							<?=$elm->getBeneficiaire()->getPersonnePhysique()[0]->getName()?>
+						</td>
+						<td>
+							<?=$elm->getBeneficiaire()->getPersonnePhysique()[0]->getFirstName()?>
+						</td>
+						<td>
+							<?=$elm->getBeneficiaire()->getPersonnePhysique()[0]->getCiviliteFormat()?>
+						</td>
+						<?php
+					}
+					else
+					{
+						?>
+						<td></td>
+						<td></td>
+						<td></td>
+						<?php
+					}
+					?>
+					<td><?=$elm->getDh()->getLogin()?></td>
+					<td></td>
+					<td>
+						<?php
+						if (!empty($elm->getConseiller()))
+							echo $elm->getConseiller()->getLogin();
+						?>
+					</td>
+					<td><?=$elm->getCommentaire()?></td>
+					<td><?=$elm->getMarcher()?></td>
+					<td></td>
+					<td></td>
+					<td><?=$elm->getName()?></td>
+					<td>
+						<?php
+						if (!empty($elm->getDateSignature()))
+							echo $elm->getDateSignature();
+						?>
+					</td>
+					<td><?=$elm->getNbrPart()?></td>
+
+					<td><?=$elm->getPrixPart()?></td>
+					<td><?=$elm->getTypePro()?></td>
+					<td><?=$elm->getDuree()?></td>
+					<td><?=$elm->getClefRepartition()?></td>
+					<td><?=$elm->getMontanInvestissement()?></td>
+				</tr>
+			<?php
+			}
+			?>
+		</tbody>
+	</table>
+	<input type="hidden" name="token" id="token" value="<?php echo $_SESSION['csrf']; ?>"/>
+	<input type="submit" name="actionUpdateTrans" id="actionUpdateTrans" value="updateIt" />
+</form>
+<?php } ?>

@@ -1,0 +1,2 @@
+<?php
+ComponentManager::loadComponentGenerated("ComponentListBeneficiaire");

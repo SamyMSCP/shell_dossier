@@ -1,0 +1,61 @@
+.band {
+	display: flex;
+	flex-direction: row;
+	> {
+		flex: 1;
+	}
+	padding-bottom: $common-padding;
+}
+
+
+.module-visu {
+	text-align: center;
+	> :nth-child(1n){
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+		> {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		height: 50%;
+	}
+	> :nth-child(1) {
+		background-color: nth($dynam-color, 1);
+		color: nth($gray-shade, 1);
+	}
+	> :nth-child(2) {
+		color: nth($dynam-color, 1);
+		.value {
+			color:nth($dynam-color, 5);
+		}
+	}
+
+	.legend {
+		font-family: nth($font, 2);
+		font-weight: bold;
+		font-size: 1em;
+		margin: 0px;
+		padding: 0px;
+	}
+	.value {
+		font-family: nth($font, 1);
+		font-weight: 700;
+		font-size: 2.25em;
+		margin: 0px;
+		padding: 0px;
+	}
+	.addon {
+		font-family: nth($font, 2);
+		font-weight: initial;
+		span {
+			padding: 0px;
+			padding-bottom: 8px;
+			font-weight: bold;
+		}
+		margin: 0px;
+		padding: 0px;
+		padding-bottom: 8px;
+	}
+}

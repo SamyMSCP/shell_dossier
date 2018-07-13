@@ -1,0 +1,27 @@
+.tableDh td{
+	background-color:transparent;
+	text-align:center;
+	padding: 5px;
+	cursor:pointer;
+}
+
+.tableDh th{
+	background-color:#1781e0;
+	text-align:center;
+	color:white;
+	padding: 5px;
+}
+
+.tableDh tr{
+	background-color:white;
+}
+
+.tableDh tr:hover {
+	background-color:#d5e4f1;
+}
+
+.tableDh {
+	width:100%;
+	margin-top: 30px;
+}
+

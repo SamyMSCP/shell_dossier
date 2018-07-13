@@ -1,0 +1,301 @@
+#modal_centreinteretscpi .modal-dialog,
+#modal_centreinteret .modal-dialog, #modal_centreinteret .modal-content
+{
+	max-width: 812px !important;
+	width:100%;
+}
+.modal-mscpi .btn-close:hover {
+	font-weight:900;
+}
+.modal-mscpi .select-mscpi {
+	color: #1781E0;
+	box-shadow: none !important;
+	margin-bottom: 4px;
+	border: none;
+	-moz-appearance: menulist;
+	-webkit-appearance: menulist;
+}
+.modal-mscpi .select-mscpi-nochoice {
+	opacity: 0.5;
+}
+.modal-mscpi .btn-close {
+	cursor:pointer;
+}
+.modal-mscpi .close {
+	clear: right;
+	opacity: 0.5;
+}
+.modal-mscpi .close:hover {
+	opacity: 1;
+}
+.modal-mscpi .close + h4 {
+	margin-left: 30px;
+}
+.modal-mscpi .modal-content {
+	background-color: #F7F7F7;
+	font-family: Open Sans, sans-serif;
+	font-size: 14px;
+	font-weight: 300;
+	color: #505050;
+	box-shadow: none;
+	border: 1px solid #F7F7F7;
+	border-radius: 6px;
+}
+.modal-mscpi .modal-title {
+	font-family: Montserrat, sans-serif;
+	font-size: 2.25em;
+	font-weight: 300;
+	color: #01528A;
+	line-height: default !important;
+	margin-bottom: 20px;
+	letter-spacing: 0.05em;
+}
+.modal-mscpi .modal-subtitle {
+	color: #505050;
+	font-family: Open Sans, sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+.modal-mscpi .modal-header {
+	clear: both;
+}
+.modal-mscpi .modal-header .close {
+	position:relative;
+}
+.modal-mscpi .modal-header .close span {
+	font-size: 33px;
+	color: #FF9F1C;
+	line-height: 30px;
+	opacity: 0.5;
+}
+.modal-mscpi .modal-header .close span:hover {
+	opacity: 1;
+}
+.modal-mscpi .modal-footer {
+	text-align: center;
+	border-top: none;
+	padding: 0 15px 15px !important;
+}
+.modal-mscpi .modal-trait {
+	width: 100px;
+	height: 5px;
+	margin: 15px auto 0 !important;
+	background-color: #FF9F1C;
+	height: 4px;
+	border-radius: 10px;
+}
+.modal-mscpi .desc {
+	margin: 15px;
+	margin-top: 0;
+	font-size: 16px;
+	color: #828282;
+}
+.modal-mscpi .checkbox-mscpi {
+	min-height: 30px;
+}
+.modal-mscpi .checkbox-mscpi input[type=checkbox] {
+	display: none;
+}
+.modal-mscpi .checkbox-mscpi input[type=checkbox] + label {
+	font-weight: 300;
+	margin: 0;
+	margin-left: 15px;
+	line-height: 15px;
+}
+.modal-mscpi .checkbox-mscpi input[type=checkbox] + label span {
+	position: relative;
+	top: -7px;
+}
+.modal-mscpi .checkbox-mscpi input[type=checkbox] + label span + span
+{
+	margin-left: 35px;
+}
+.modal-mscpi .checkbox-mscpi-margsup {
+	margin-top: 5px;
+} 
+.modal-mscpi .checkbox-mscpi-margdown {
+	margin-bottom: 5px;
+} 
+.modal-mscpi .checkbox-mscpi-corrheight {
+	height: 30px;
+}
+.modal-mscpi .checkbox-mscpi-col-2, .checkbox-mscpi-col-3 {
+	float: left;
+}
+.modal-mscpi .checkbox-mscpi-col-2 {
+	max-width: 390px;
+	width:100%;
+	padding-right: 15px;
+}
+.modal-mscpi .row
+{
+	padding-left: 15px;
+}
+.modal-mscpi .checkbox-mscpi-col-3 {
+	width: 260px;
+}
+.modal-mscpi .checkbox-mscpi .checkbox-mscpi {
+	min-height: 25px;
+	margin-left: 30px;
+	font-style: italic;
+}
+.modal-mscpi .checkbox-mscpi input[type=checkbox] + label::before {
+	content: "";
+	display: inline-block;
+	margin-right: 15px;
+	margin-bottom: -5px;
+	width: 20px;
+	height: 20px;
+	border-radius: 2px;
+	border: 1px solid #828282;
+	background-color: transparent;
+}
+.modal-mscpi .checkbox-mscpi .checkbox-mscpi input[type=checkbox] + label::before
+{
+	width: 15px;
+	height: 15px;
+	margin-bottom: -3px;
+}
+.modal-mscpi .checkbox-mscpi input[type=checkbox]:disabled + label, .checkbox-mscpi input[type=checkbox]:disabled + label::before {
+	opacity: 0.5;
+}
+.modal-mscpi .checkbox-mscpi input[type=checkbox]:checked + label::before {
+	background-color: #1781E0;
+}
+.modal-mscpi .checkbox-mscpi input[type=checkbox]:checked + label {
+	color: #1781E0;
+}
+
+.bttn-mscpi-plainorange, .bttn-mscpi-grey {
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	font-size: 16px;
+	padding: 12px 15px 10px;
+	border-radius: 3px;
+	letter-spacing: 0.05em;
+	max-width: 310px;
+	width:100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.bttn-mscpi-plainorange {
+	border: 1px solid #FF9F1C;
+	background-color: #FF9F1C;
+	color: #FFF;
+}
+.bttn-mscpi-plainorange:hover {
+	opacity: 0.5;
+}
+.bttn-mscpi-grey {
+	border: 1px solid #828282;
+	background-color: transparent;
+	color: #828282;
+}
+.bttn-mscpi-grey:hover {
+	background-color: #828282;
+	color: #FFF;
+	transition: all 0.25s ease-in-out;
+}
+.modal-mscpi .bttn-mscpi-ctn {
+	width: 300px;
+}
+.modal-mscpi .bttn-mscpi:hover {
+	text-decoration:none;
+	color: #FF9F1C;
+	cursor: pointer;
+}
+.modal-mscpi .bttn-mscpi {
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	color: #FF9F1C;
+	cursor: pointer;
+	display: inline-block;
+	font-size:16px;
+	font-weight: 400;
+	line-height: 45px;
+	position: relative;
+	text-decoration: none;
+	text-transform: uppercase;
+	vertical-align: middle;
+	width: 100%;
+}
+.modal-mscpi .bttn-mscpi:hover {
+	text-decoration:none;
+	color: #FF9F1C;
+	cursor: pointer;
+}
+.modal-mscpi .bttn-mscpi svg {
+	height: 45px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	border: 1px solid #FF9F1C;
+	border-radius: 4px;
+}
+.modal-mscpi .bttn-mscpi svg rect {
+	fill: none;
+    stroke: #FF9F1C;
+    stroke-width: 1;
+    stroke-linejoin: round;
+    stroke-dasharray: 422, 0;
+}
+.modal-mscpi .bttn-mscpi:hover svg {
+	border: none;
+}
+.modal-mscpi .bttn-mscpi:hover svg rect {
+	stroke-width: 4;
+	stroke-dasharray: 31, 500;
+	stroke-dashoffset: 54;
+	transition: all 1.35s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+
+.modal-mscpi .btn-check-all {
+	padding-left: 15px;
+	padding-bottom: 15px;
+	color: #1781e0;
+	cursor:pointer;
+}
+
+.modal-mscpi .btn-check-all:hover {
+	text-decoration: underline;
+}
+
+
+@media (max-width: 812px) {
+	#modal_centreinteret .modal-content {
+		border-radius: 0px !important;
+	}
+	.modal-mscpi .modal-dialog  {
+		margin-left:0px !important;
+		margin-right:0px !important;
+		width: 100%;
+	}
+	.modal-mscpi .checkbox-mscpi-col-3 {
+		float: initial;
+		margin: 0px auto;
+	}
+	.modal-mscpi .checkbox-mscpi-col-2 {
+		padding-right: 0px;
+		margin-left: auto;
+		margin-right: auto;
+		float: initial;
+	}
+}
+
+@media (max-width: 812px) and (max-height: 570px) {
+	.modal-mscpi .modal-dialog  {
+		margin-top:0px !important;
+	}
+}
+
+@media (max-width: 350px) {
+	.modal-mscpi .bttn-mscpi-ctn {
+		width: 250px;
+	}
+}

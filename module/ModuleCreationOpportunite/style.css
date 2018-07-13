@@ -1,0 +1,44 @@
+
+.bandeauCreationOpportunite {
+	width:100%;
+	padding:45px;
+	display:flex;
+	background-color:#1481e0;
+	margin-top:15px;
+	color:white;
+	font-family: 'Montserrat', sans-serif !important;
+	letter-spacing: 0.05em;
+	font-weight:400;
+	justify-content:center;
+	align-items:center;
+	padding-top: 33px;
+	flex-direction:column;
+	margin-bottom:40px;
+}
+
+.bandeauCreationOpportunite > div {
+	max-width: 1170px;
+	text-align:center;
+	font-size:36px;
+}
+
+.bandeauCreationOpportunite > button {
+	height:40px;
+	background-color:#ff9f1c;
+	border-radius:3px;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 0.05em;
+	font-size:14px;
+	font-weight:400;
+	color:#ffffff;
+	text-align:center;
+	border: none;
+	margin:15px;
+	padding: 0px 20px;
+}
+
+@media (max-width: 600px) {
+	.bandeauCreationOpportunite {
+		display:none;
+	}
+}

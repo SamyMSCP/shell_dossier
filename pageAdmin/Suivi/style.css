@@ -1,0 +1,31 @@
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+}
+
+footer {
+    padding: 30px 0;
+}
+
+@media(min-width:768px) {
+    body {
+        padding-top: 100px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    }
+
+    .navbar-fixed-top .navbar-brand {
+        padding: 15px 0;
+    }
+}
+.ishere{
+    color: #dff0d8;
+}
+th{
+  color : #fff;
+}
+.second-column {
+  width: 50%;
+  float: right;
+  border-left: 1px solid;
+}
+.margin_for{
+  margin-left: 15px;
+}

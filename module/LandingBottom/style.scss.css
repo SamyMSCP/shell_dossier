@@ -1,0 +1,64 @@
+.container-bottom {
+  height: 222px;
+  background-color: #1781e0; }
+  @media screen and (max-width: 768px) {
+    .container-bottom {
+      height: 300px; } }
+  @media screen and (max-width: 510px) {
+    .container-bottom {
+      height: 350px; } }
+  @media screen and (max-width: 360px) {
+    .container-bottom {
+      height: 450px; } }
+  @media screen and (max-width: 320px) {
+    .container-bottom {
+      height: 480px; } }
+  .container-bottom .container-partenariat {
+    position: relative;
+    top: 45px;
+    width: 100%;
+    font-family: "Open Sans";
+    font-size: 24px;
+    letter-spacing: 0;
+    text-align: center;
+    color: #ffffff;
+    font-weight: 300; }
+    .container-bottom .container-partenariat .info-part {
+      text-decoration: underline; }
+  .container-bottom .contact {
+    position: relative;
+    top: 45px; }
+    .container-bottom .contact h4 {
+      font-family: Montserrat;
+      font-size: 24px;
+      font-weight: 500;
+      letter-spacing: 0;
+      text-align: center;
+      color: #FFFFFF; }
+    .container-bottom .contact .button-background {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: 0 0 0 -100px;
+      margin-top: 50px;
+      width: 196px;
+      height: 30px;
+      border-radius: 3px;
+      background-color: #ff9f1c;
+      box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2), 0 0 3px 0 rgba 80 80 80, 0.3; }
+      .container-bottom .contact .button-background:hover {
+        cursor: pointer;
+        background-color: #e88600; }
+      .container-bottom .contact .button-background span {
+        position: relative;
+        top: 6px;
+        bottom: 6px;
+        width: 50px;
+        height: 18px;
+        font-family: Montserrat;
+        font-size: 14px;
+        letter-spacing: 1px;
+        text-align: center;
+        color: #FFFFFF; }
+
+/*# sourceMappingURL=style.scss.css.map */

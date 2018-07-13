@@ -1,0 +1,62 @@
+$purcent: 10%;
+
+.btn-select-courrier {
+	$color: #2ecc71;
+	border: 1px solid $color;
+	background-color: $color;
+	color: #FFF;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	font-size: 16px;
+	padding: 12px 15px 10px;
+	border-radius: 3px;
+	letter-spacing: 0.05em;
+	max-width: 310px;
+	&:hover {
+		border: 1px solid darken($color, $purcent);
+		background-color: darken($color, $purcent);
+		cursor: pointer;
+	}
+}
+
+.btn-tr-save
+{
+	$color: #FF9F1C;
+	border: 1px solid $color;
+	background-color: $color;
+	color: #FFF;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	font-size: 16px;
+	padding: 12px 15px 10px;
+	border-radius: 3px;
+	letter-spacing: 0.05em;
+	max-width: 310px;
+
+	&:hover {
+		border: 1px solid darken($color, $purcent);
+		background-color: darken($color, $purcent);
+	}
+
+}
+.btn-tr-del
+{
+	$color: #EF6228;
+	border: 1px solid $color;
+	background-color: $color;
+	color: #FFF;
+	font-family: Montserrat, sans-serif;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+	font-size: 16px;
+	padding: 12px 15px 10px;
+	border-radius: 3px;
+	letter-spacing: 0.05em;
+	max-width: 310px;
+	&:hover {
+		border: 1px solid darken($color, $purcent);
+		background-color: darken($color, $purcent);
+	}
+}

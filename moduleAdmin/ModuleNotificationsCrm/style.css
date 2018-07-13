@@ -1,0 +1,12 @@
+.suiviCLientTable tr th {
+	background: #1781e0;
+	padding: 10px;
+}
+
+.suiviCLientTable tr td {
+	background: white;
+}
+
+.suiviCLientTable tr td {
+	padding: 5px;
+}

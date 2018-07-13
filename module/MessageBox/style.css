@@ -1,0 +1,10 @@
+#MessageTextBox,
+#MessageBox {
+	z-index:3000 !important;
+}
+
+#MessageTextBox textarea {
+	margin-top: 20px;
+	height: 100px;
+	width:100%;
+}

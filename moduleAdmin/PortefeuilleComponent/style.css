@@ -1,0 +1,104 @@
+.tablePortefeuille {
+	width:100%;
+}
+
+.tablePortefeuille th {
+	background-color:#1781e0;
+	height:inherit;
+}
+
+.tablePortefeuille td {
+	border-bottom:1px solid #CCC;
+	position:relative;
+}
+
+tr.clickable {
+	cursor:pointer;
+}
+
+.subTr {
+	border-top: 3px solid #a9b6c3;
+	background: #e1e9f3 !important;
+}
+
+.subTrPotentiel {
+	background: #f4ebe1 !important;
+}
+
+
+.subTr > td {
+	color: #147fe7;
+	font-weight:700;
+}
+
+.subTotal > td {
+	height: 70px;
+	vertical-align: top !important;
+}
+
+.tablePortefeuilleTotal > td {
+	color: #147fe7;
+	font-weight:700;
+}
+
+.tablePortefeuille tr.clickable:hover > td{
+	background-color:#dce7f1 !important;
+}
+
+.tablePortefeuille select,
+.tablePortefeuille input {
+	border: none;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+}
+
+.isModify {
+	background-color:#ffdfb4 !important;
+}
+
+.modalBig {
+	width: 90%;
+}
+
+.modalTransactionPlus {
+	display:flex;
+	min-height: 80px;
+	margin:20px;
+}
+
+.modalTransactionPlus > div {
+	flex: 1;
+	display:flex;
+	flex-direction: column;
+}
+
+.modalTransactionPlus > div > div{
+	flex:1;
+	display:flex;
+	align-items: center;
+}
+
+.modalTransactionPlus > div > div input {
+	border-radius:4px;
+	max-width: 120px;
+	background: white;
+	font-size: 14px;
+	padding: 8px;
+	height: 14px;
+	color: #01528d;
+	font-weight: 400;
+	text-align: left;
+	margin-left: 5px;
+	border: none;
+	box-shadow: 0px 0px 15px -2px rgba(0, 66, 125, 0.45);
+	cursor:pointer;
+	text-decoration: underline;
+}
+
+.modalTransactionCons {
+	position: absolute;
+	right: 20px;
+}
+
+

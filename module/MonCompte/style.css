@@ -1,0 +1,128 @@
+.votreConsultant {
+	text-align:center;
+}
+.link_set_date:hover {
+	color:#1781e0;
+}
+
+.alert-warning {
+	color: #31708f;
+	background-color: #d9edf7;
+	border: none;
+	-moz-box-shadow: 0px 0px 10px -2px #3c3c3c;
+	-webkit-box-shadow: 0px 0px 10px -2px #3c3c3c;
+	-o-box-shadow: 0px 0px 10px -2px #3c3c3c;
+	box-shadow: 0px 0px 10px -2px #3c3c3c;
+}
+.link_set_date {
+	cursor: pointer;
+	color: #01528a;
+}
+
+.valid, .valid1, .valid2, .valid3, .valid4, .valid5, .valid6, .valid7{
+	width: 30px;
+	margin-left: 5px;
+	display: none;
+}
+.erreur, .erreur1, .erreur2, .erreur3, .erreur4, .erreur5, .erreur6, .erreur7{
+	width: 28px;
+	margin-left: -4px;
+	display: none;
+}
+
+.pass_erreur1, .pass_erreur2, .pass_erreur3, .pass_erreur4, .success_1, .success_2, .erreur5{
+	display: none;
+}
+
+.msgErr > .pass_erreur1,
+.msgErr > .pass_erreur2,
+.msgErr > .pass_erreur3,
+.msgErr > .pass_erreur4 {
+	color:red;
+}
+
+.more_btn{
+	width: 120px;
+	margin-left: -67px;
+}
+.more_dt, .more_info{
+	display: none;
+}
+
+#moredtl{
+	display: none;
+}
+
+.visibility_form{
+	visibility: hidden;
+}
+.table th{
+	color:white;
+}
+
+#mdpNocorrect {
+	display:none;
+	text-align: center;
+	border: 2px solid red;
+}
+
+.inputForm img {
+	height:32px;
+	display:block;
+	position:absolute;
+	right:-52px;
+	top:1px;
+}
+
+.form-set-mdp {
+	max-width:400px;
+	margin-left: auto;
+	margin-right: auto;
+	position:relative;
+}
+
+#modalSetMdp .labelForm,
+#modalSetMdp .inputForm {
+	position:relative;
+	display:inline-block;
+	width: 49% !important;
+}
+
+#modalSetMdp .labelForm {
+	text-align: right;
+	padding-right:10px;
+}
+
+#modalSetMdp .modal-content p {
+	padding: 10px 40px;
+}
+
+.notValid {
+	border: 1px solid #ccc !important;
+}
+
+.notValid + img {
+	display:none;
+}
+
+.instructionMdp {
+	display:none;
+}
+#passwordinput:invalid, #pass2:invalid
+{
+	border-color: #EF6228;
+}
+#passwordinput:valid, #pass2:valid
+{
+	border-color: #20BF55;
+}
+
+.fast .toggle-group { transition: left 0.2s; -webkit-transition: left 0.2s; }
+
+
+@media (max-width: 600px) {
+	.modal_set .modal-lg{
+		margin: 0px !important;
+		width: 100% !important;
+	}
+}

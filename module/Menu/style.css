@@ -1,0 +1,26 @@
+.menu_row {
+	margin-left:0px;
+	margin-right:0px;
+}
+
+.menu a {
+	width:100%;
+	margin-left:0px;
+}
+.menu {
+	padding-left:2px;
+	padding-right:2px;
+}
+.menu_first {
+	padding-left:0px;
+}
+.menu_last {
+	padding-right:0px;
+}
+
+@media (max-width: 992px) {
+	.menu {
+		padding-left:0px;
+		padding-right:0px;
+	}
+}

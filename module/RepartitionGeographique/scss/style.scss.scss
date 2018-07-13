@@ -1,0 +1,87 @@
+@import "_var.scss";
+
+.informative-no-data {
+	background-color: nth($gray-shade, 1) !important;
+	border-radius: 10px;
+	height: 100% !important;
+	flex: 1;
+	h3 {
+		color: nth($gray-shade, 5);
+		font-weight: normal;
+		//color: nth($mscpi-color, 1);
+		font-family: nth($font, 2);
+		font-size: 14px;
+	}
+	.btn-mscpi-transac {
+		background-color: nth($dynam-color, 3);
+		color: nth($gray-shade, 1);
+		font-family: nth($font, 2);
+
+		&:hover {
+			background-color: lighten(nth($dynam-color, 3), 10%);
+		}
+	}
+}
+
+//#repartition_geographique {
+//	max-height: 300px;
+//	max-width: 600px;
+//}
+
+.contour_RepPort, .contour_RepPort {
+	padding-bottom: 0px !important;
+	margin-bottom: 0px !important;
+}
+
+.moduleRepartitionParCategorie {
+	.moduleContent {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		align-content: center;
+		padding-top: 32px;
+		padding-bottom: 20px;
+	}
+	.name_scpi {
+		$col: #064D82;
+		margin-top: 0px !important;
+		margin-bottom: 0;
+		padding-bottom: 0px !important;
+		ul {
+			text-align: left;
+			padding-left: 0px;
+			list-style: none;
+			$i: 7;
+			@while ($i > 0) {
+				.el-color-#{$i} {
+					color: lighten($col, 10 * $i)
+				}
+				$i: $i - 1;
+			}
+			> {
+				width: 100%;
+			}
+			.pill-color {
+				position: absolute;
+				left: 15px;
+			}
+
+			.name {
+				position: relative;
+				left: 32px;
+				font-family: nth($font, 2);
+				font-weight: normal;
+				font-size: 0.9em;
+				margin-bottom: 10px;
+				margin-left: $common-margin;
+				color: nth($gray-shade, 5);
+			}
+			.purcent-info {
+				float: right;
+				font-family: nth($font, 2);
+				font-weight: bold;
+				font-size: 0.9em;
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+.ongletsBoutons {
+	text-align: center;
+}
+
+.ongletsBoutons ul{
+	margin-bottom:0px;
+}
+
+.ongletsBoutons li{
+	display: inline-block;
+	list-style: none;
+	padding: 20px;
+	font-size: 20px;
+	border-radius: 10px 10px 0px 0px;
+	cursor:pointer;
+}
+.selected {
+	background-color: white;
+	font-weight:bold;
+}
+
+.ongletsBoutons li span{
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+
+.onglets {
+	display:none;
+}
+
+.blockOnglet {
+	margin-bottom: 20px;
+	background-color:white;
+	border-radius:10px;
+	width:100%;
+	overflow:hidden;
+	padding:15px;
+}

@@ -1,0 +1,71 @@
+input {
+	border:0px;
+	width:100%;
+	text-align:center;
+}
+
+th, td {
+	text-align:center;
+}
+
+.upload_form input {
+	width:auto;
+}
+ul {
+	list-style: none;
+}
+.tableAvis {
+	margin-left: auto;
+	margin-right: auto;
+	width:100%;
+	margin-bottom:60px;
+}
+
+.tableAvis tr{
+	background-color:white;
+}
+
+.tableAvis td{
+	text-align:center;
+	padding: 20px;
+	cursor:pointer;
+}
+
+.tableAvis th{
+	background-color:#1781e0;
+	text-align:center;
+	color:white;
+	padding: 5px;
+}
+
+
+#btn_valider, #btn_actualiser {
+	text-align:center;
+	font-size: 20px;
+	color: white;
+	background-color: #1781e0;
+	padding:0px;
+}
+
+#btn_actualiser {
+	background-color:orange;
+}
+
+.centerIt {
+	text-align:center;
+	width:100%;
+	font-size: 26px;
+}
+
+
+.AvisColor0 {
+	background-color:#e7d2b5 !important;
+}
+
+.AvisColor1 {
+	background-color:#d1e4f1!important;
+}
+
+.AvisColor2 {
+	background-color:#d2efd2 !important;
+}

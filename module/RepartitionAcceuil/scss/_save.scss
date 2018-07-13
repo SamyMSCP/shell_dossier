@@ -1,0 +1,30 @@
+.contour_RepPort {
+	width:100%;
+	max-width:400px;
+	max-width:350px;
+	height:210px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.moduleRepartition .moduleContent{
+	display:flex;
+	height:100%;
+	align-items: center;
+	flex:1;
+	flex-direction: column;
+	justify-content: space-around;
+	padding-bottom: 5px;
+}
+
+.moduleRepartition .moduleContent h3{
+	font-size:14px;
+	font-weight:700;
+}
+
+
+#name_scpi {
+	text-align: center;
+}

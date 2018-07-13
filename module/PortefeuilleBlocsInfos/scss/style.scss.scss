@@ -1,0 +1,148 @@
+@import "_var";
+
+.background {
+	&.one {
+		background-image: linear-gradient(59deg, $water-blue, #4fa0e8 68%, #8ec2f0);
+		.title {
+			color: $white;
+		}
+
+		.tab-content h3 { color: $white; }
+
+		.nav-year li {
+			a {
+				color: $white;
+			}
+			&.active {
+				color: $white;
+				border-bottom: solid 4px $white;
+			}
+		}
+	}
+	&.two {
+		background-image: linear-gradient(59deg, $deep-sea-blue, #498bbe 80%, #8ec2f0);
+		.title {
+			color: $white;
+		}
+
+		.tab-content h3 { color: $white; }
+
+		.nav-year li {
+			a {
+				color: $white;
+			}
+			&.active {
+				color: $white;
+				border-bottom: solid 4px $white;
+			}
+		}
+	}
+	&.three {
+		background-color: $white;
+		.title {
+			color: $warm-grey;
+		}
+
+		.tab-content h3 { color: $nice-blue; }
+
+		.nav-year li {
+			a {
+				color: $water-blue;
+			}
+			&.active {
+				color: $water-blue;
+				border-bottom: solid 4px $water-blue;
+			}
+		}
+	}
+	&.four {
+		background-color: $white;
+		.title {
+			color: $warm-grey;
+		}
+
+		.tab-content h3 { color: $algae-green; }
+
+		.nav-year li {
+			a {
+				color: $water-blue;
+			}
+			&.active {
+				color: $water-blue;
+				border-bottom: solid 4px $water-blue;
+			}
+		}
+	}
+}
+
+.bloc-info {
+	position: relative;
+	$w: 262px;
+	height: 156px;
+	width: $w;
+	margin: $common-space;
+	border-radius: $common-radius;
+	box-shadow: 0 0 3px 0 $greyish-brown-30;
+	.icon {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		width: 20px;
+		height: 20px;
+	}
+	.title {
+		margin-top: 16px;
+		//padding-left: 45px;
+		width: 172px;
+		margin-left: 45px;
+		text-align: center;
+
+		font-size: 16px;
+		line-height: 1.12;
+		text-align: center;
+	}
+	.tab-content {
+		position: absolute;
+		top: 50px;
+		left: 82px;
+		right: 82px;
+		text-align: center;
+		font-family: 'Montserrat', Serif;
+		font-size: 46px;
+		letter-spacing: 0.1px;
+	}
+
+	.nav-year {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		width: $w - 40;
+		margin-left: 20px;
+		margin-bottom: 0px;
+		position: absolute;
+		bottom: 8.4px;
+		@media Screen and (max-width: 385px) {
+			margin-left: 0px;
+		}
+		li {
+			flex: 1;
+			font-family: Montserrat;
+			font-size: 16px;
+			text-align: center;
+			a {
+				text-decoration: none;
+				&:hover {
+					text-decoration: none;
+				}
+			}
+			&.active {
+				font-family: 'Montserrat', Serif;
+				font-size: 16px;
+				font-weight: bold;
+				text-align: center;
+				padding-bottom: 6px;
+			}
+		}
+	}
+
+}

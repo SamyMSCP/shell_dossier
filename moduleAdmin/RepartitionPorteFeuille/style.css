@@ -1,0 +1,36 @@
+#money {
+	flex:1
+	position:relative;
+}
+
+#money svg {
+	width: 100%;
+	height: 100%;
+}
+
+#euro {
+	left:0px;
+	right:0px;
+}
+
+#euro h1 {
+	font-size: 32px;
+}
+
+@media (max-width: 450px) {
+	#euro h1 {
+		font-size: 35px;
+	}
+}
+
+@media (max-width: 350px) {
+	#euro h1 {
+		font-size: 27px;
+	}
+}
+
+@media (max-width: 300) {
+	#euro h1 {
+		font-size: 22px;
+	}
+}

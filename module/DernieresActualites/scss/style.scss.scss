@@ -1,0 +1,48 @@
+@import "_var";
+
+.mdlContentDernierActu {
+	overflow-y: scroll;
+	overflow-x: hidden;
+	height: 500px;
+
+	@media (max-width: 580px) {
+		height: 255px;
+	}
+
+	li {
+		padding-left: $common-margin;
+		padding-top: 12.5px;
+		padding-bottom: 12.5px;
+
+		&:last-child {
+			padding-bottom: 25px;
+		}
+
+		div {
+			padding: 0;
+			flex: 1;
+		}
+		img {
+			height: 30px;
+			width: auto;
+		}
+		.date-publi {
+			font-family: nth($font, 2);
+			font-weight: normal;
+			font-size: 0.75em;
+			color: nth($gray-shade, 5);
+		}
+		.DernieresActuTitle {
+			font-family: nth($font, 2);
+			font-weight: bold;
+			font-size: 0.9em;
+			color: nth($mscpi-color, 1);
+		}
+		a {
+			font-family: nth($font, 2);
+			font-weight: normal;
+			font-size: 0.75em;
+			color: nth($dynam-color, 1);
+		}
+	}
+}

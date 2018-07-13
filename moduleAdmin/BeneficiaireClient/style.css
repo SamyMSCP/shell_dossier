@@ -1,0 +1,506 @@
+.listBeneficiaire {
+	position:relative;
+	margin:-15px;
+	padding:8px;
+}
+
+.listBeneficiaireElmt1 {
+	position:relative;
+	float:left;
+	margin:0px;
+	width:20%;
+	height:250px;
+	padding:8px;
+}
+
+.listBeneficiaireElmt2_dashed {
+	position:relative;
+	border:5px dashed #1781e0;
+	color:#1781e0;
+	border-radius:10px;
+	width:100%;
+	height:100%;
+	cursor:pointer;
+}
+
+.listBeneficiaireElmt2_dashed:hover {
+	background-color:#d6e5f2;
+}
+.listBeneficiaireElmt2:hover {
+	background-color:#2e6392;
+}
+
+.listBeneficiaireElmt2 {
+	position:relative;
+	background-color:#1781e0;
+	border-radius:10px;
+	width:100%;
+	height:100%;
+	color:#1781e0;
+	cursor:pointer;
+}
+
+.listBeneficiaireElmt2_dashed h2{
+	display:inline-block;
+	font-weight:bold;
+	color:#1781e0;
+	width:100%;
+	top: 26px;
+	font-size: 29px;
+	position: absolute;
+}
+
+.listBeneficiaireElmt2 h3{
+	display:inline-block;
+	font-weight:bold;
+	width:100%;
+	color:white;
+}
+
+.listBeneficiaireElmt2 h2{
+	display:inline-block;
+	font-weight:bold;
+	color:white;
+	width:100%;
+	bottom: 25px;
+	position: absolute;
+}
+
+.listBeneficiaireElmt2 img{
+	height: 100px;
+}
+
+.listBeneficiaireElmt2 div{
+	position: absolute;
+	overflow: hidden;
+	top: 50%;
+	width: 100%;
+	text-align: center;
+}
+
+.listBeneficiaireElmt2_dashed img{
+	height: 80px;
+}
+
+.listBeneficiaireElmt2_dashed div{
+	position: absolute;
+	overflow: hidden;
+	width: 100%;
+	text-align: center;
+	top: 57%;
+}
+
+.newBeneficiaire{
+	text-align:center;
+	display:none;
+}
+
+.newBeneficiaire table{
+	margin-left:auto;
+	margin-right:auto;
+	width:100%;
+}
+
+.newBeneficiaire table th{
+	width:50%;
+	text-align:right;
+}
+
+.newBeneficiaire table td{
+	width:50%;
+}
+
+.newBeneficiaire input, .newBeneficiaire select{
+	width:100%;
+	height:100%;
+	background-color:white;
+	border:none;
+}
+.newBeneficiaire input[type=text], .newBeneficiaire input[type=email]{
+	text-align:left;
+}
+
+.listPpBen {
+	padding:0px;
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+	position: relative;
+	display: inline-block;
+}
+.listPpBen li{
+	color:white;
+	list-style:none;
+}
+
+.modalViewBeneficiaireContour {
+	width:90%;
+}
+.modalViewBeneficiaireContent {
+	background-color:#ebebeb;
+	padding: 0px 20px 20px 20px;
+}
+
+.modalViewBeneficiaireTitre {
+	height: 70px;
+}
+
+.modalViewBeneficiaireTitre h2{
+	text-align:left;
+	font-size:30px;
+	display:inline-block;
+	vertical-align: bottom;
+	margin: 0px;
+}
+
+.modalViewBeneficiaireTitre img{
+	height:70px;
+	margin-left: 20px;
+}
+.traitDonneurModalViewBeneficiaire {
+	width:110px;
+	margin-left:0px;
+	background-color: #ff9f1c;
+	height: 5px;
+	margin-top: 18px;
+	margin-bottom: 20px;
+	border-radius: 3px;
+}
+.modalViewBeneficiaireBlockPp {
+	width:100%;
+	overflow:hidden;
+	margin: 0px -10px 10px -10px;
+}
+
+.modalViewBeneficiairePp1 {
+	display:none;
+	float:left;
+	width:50%;
+	padding: 10px;
+}
+
+.modalViewBeneficiairePp2 {
+	min-width: 570px;
+	color:#1781e0;
+	border-radius:10px;
+	background-color:white;
+	text-align:center;
+}
+
+.nomPp {
+	margin-top:10px;
+	display:inline-block;
+}
+
+.nomPp h3{
+	text-align:center;
+	display:inline-block;
+	vertical-align: bottom;
+	margin: 0px;
+	font-size: 21px;
+	color:#1781e0;
+	margin-top: 20px;
+	font-size: 30px;
+}
+
+.nomPp img{
+	height: 33px;
+	margin-left: 20px;
+	height: 30px;
+}
+
+.traitDonneurModalViewBeneficiairePp {
+	width:110px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color: #ff9f1c;
+	height: 5px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	border-radius: 3px;
+}
+
+.modalViewBeneficiaireBlockInfo {
+	width:100%;
+	overflow:hidden;
+	padding-top: 10px;
+}
+
+.modalViewBeneficiaireBlockInfoIn {
+	width:50%;
+	float:left;
+	text-align: left;
+}
+
+.blkLeft {
+	padding-left: 20px;
+	padding-right: 10px;
+}
+
+.blkRight{
+	padding-right: 20px;
+	padding-left: 10px;
+}
+
+.modalViewBeneficiaireBlockInfoIn ul{
+	padding:0px;
+}
+
+.modalViewBeneficiaireBlockInfoIn li{
+	margin-bottom: 15px;
+	list-style:none;
+	font-size:16px;
+}
+
+.modalViewBeneficiaireBlockInfoIn li img{
+	height:20px;
+	display:inline-block;
+	margin-right:15px;
+}
+
+.beneficiaireViewBtn {
+	position:relative;
+	right:0px;
+//	margin: 0px 20px 10px 10px;
+	margin-bottom:10px;
+}
+
+.beneficiaireViewBtn button{
+	margin-bottom: 10px;
+	font-size:14pt;
+	padding: 0px 5px 0px 5px;
+	width:100%;
+	height: 40px;
+	background-color: #ff9f1c;
+	border: none;
+	color:white;
+	-moz-box-shadow: 0px 0px 10px -2px #3c3c3c;
+	-webkit-box-shadow: 0px 0px 10px -2px #3c3c3c;
+	-o-box-shadow: 0px 0px 10px -2px #3c3c3c;
+	box-shadow: 0px 0px 10px -2px #3c3c3c;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#3c3c3c, Direction=NaN, Strength=10);
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+.beneficiaireViewBtnBleu button {
+	margin-top: 8px;
+	background-color:#1781e0;
+}
+
+.modalViewBeneficiaireBlockBeneficiaire {
+	width:100%;
+	border-radius:10px;
+	background-color:white;
+	padding: 10px;
+	overflow:hidden;
+}
+
+.modalViewBeneficiaireProjet{
+	padding: 0px;
+	color:#1781e0;
+}
+
+.modalViewBeneficiaireProjet h3{
+	color:#1781e0;
+}
+.modalViewBeneficiaireBlockProjets {
+	width:100%;
+	overflow: hidden;
+}
+.modalViewBeneficiaireBlockProjetsIn1 {
+	display:none;
+	float: left;
+	width: 25%;
+}
+
+.modalViewBeneficiaireBlockProjetsIn2 {
+	cursor:pointer;
+	height: 180px;
+	background: #1781e0;
+	border-radius: 10px;
+	margin: 10px;
+	padding-top: 10px;
+}
+
+.modalViewBeneficiaireBlockProjetsIn2 h3{
+	color:white;
+}
+
+.modalViewBeneficiaireProjetEtat {
+	text-align:center;
+}
+
+.modalViewBeneficiaireProjetEtat img {
+	height:50px;
+	display:inline-block;
+}
+
+.modalViewBeneficiaireProjetEtat h3{
+	color:white;
+	display:inline-block;
+	vertical-align: middle;
+}
+.modalViewBeneficiaireBntClose {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	cursor:pointer;
+}
+
+.modalViewBeneficiaireBntClose img{
+	height:50px;
+}
+
+.notComplete {
+	background-color:white !important;
+	color: #ff9f1c !important;
+	border: 2px solid #ff9f1c !important;
+}
+
+@media (min-width: 2350px) {
+	.modalViewBeneficiairePp1 {
+		width:33%;
+	}
+}
+
+@media (max-width: 1550px) {
+	.modalViewBeneficiairePp1 {
+		width:100%;
+	}
+}
+
+@media (max-width: 1400px) {
+	.listBeneficiaireElmt1 {
+		width:25%;
+	}
+}
+
+@media (max-width: 1100px) {
+	.listBeneficiaireElmt1 {
+		width:33%;
+	}
+}
+
+
+@media (max-width: 700px) {
+	.modalViewBeneficiaireBlockInfoIn {
+		width:100%;
+		padding-left:20px;
+		padding-right:20px;
+	}
+}
+
+
+.ongletsBoutons2 {
+	text-align: center;
+}
+
+.ongletsBoutons2 ul{
+	margin-bottom:0px;
+}
+
+.ongletsBoutons2 li{
+	display: inline-block;
+	list-style: none;
+	padding: 20px;
+	font-size: 20px;
+	border-radius: 10px 10px 0px 0px;
+	cursor:pointer;
+}
+.selected {
+	background-color: white;
+	font-weight:bold;
+}
+
+.ongletsBoutons2 li span{
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+
+.onglets2 {
+	display:none;
+}
+
+.blockOnglet2 {
+	margin-bottom: 20px;
+	background-color:white;
+	border-radius:10px;
+	width:100%;
+	overflow:hidden;
+	padding:15px;
+}
+.BlockSituation2 {
+	display:flex;
+	flex-direction:row;
+}
+
+
+.BlockSituation2 .ListeSituation{
+	flex:1;
+}
+
+.BlockSituation2 .ListeSituation ul{
+	border: 3px solid green;
+	height: 100%;
+	padding: 0px;
+}
+
+
+.BlockSituation2 .ListeSituation ul li:hover {
+	background-color:#bdd3e6;
+}
+
+.BlockSituation2 .ListeSituation ul li{
+	list-style:none;
+	padding: 2px 10px 2px 10px;
+	cursor:pointer;
+}
+
+.BlockSituation2 .TableauSituation{
+	flex:5;
+}
+
+.BlockSituation2 .TableauSituation table{
+	width:100%;
+	flex:5;
+}
+
+.BlockSituation2 .TableauSituation table th{
+	width:50%;
+}
+
+.BlockSituation2 .TableauSituation table td{
+	padding:0px;
+}
+.BlockSituation2 .TableauSituation table td input{
+	height:100%;
+	width:100%;
+	min-height: 40px;
+}
+
+.BlockSituation2 .TableauSituation table td input[type="submit"]{
+	color:white;
+	background-color:#1781e0;
+	border:none;
+}
+
+.modalViewBeneficiaireBlockProjetsIn2_dashed {
+	height: 180px;
+	background: white;
+	border-radius: 10px;
+	margin: 10px;
+	padding-top: 10px;
+	border:5px dashed #1781e0;
+	cursor:pointer;
+}
+.modalViewBeneficiaireBlockProjetsIn2_dashed:hover {
+	background-color:#d6e5f2;
+}
+
+.modalViewBeneficiaireBlockProjetsIn1New {
+	display:none;
+	float: left;
+	width: 25%;
+}

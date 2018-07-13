@@ -1,0 +1,230 @@
+.moduleBlock {
+  display: flex;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.module {
+  border-radius: 10px;
+  background: white;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  -moz-box-shadow: 0px 0px 10px -2px #3c3c3c;
+  -webkit-box-shadow: 0px 0px 10px -2px #3c3c3c;
+  -o-box-shadow: 0px 0px 10px -2px #3c3c3c;
+  box-shadow: 0px 0px 10px -2px #3c3c3c;
+  min-height: 200px; }
+  .module .moduleTitle {
+    border-radius: 10px 10px 0px 0px;
+    background-color: #0E6DBB;
+    color: #FFFFFF;
+    height: 50px;
+    padding: 10px;
+    font-size: 16px;
+    display: flex;
+    align-items: center; }
+    .module .moduleTitle span {
+      flex: 1;
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      line-height: 1.1; }
+    .module .moduleTitle img {
+      height: 30px;
+      margin: 0px 15px 0px 15px; }
+  .module .moduleContent {
+    flex: 1; }
+
+@media (max-width: 1686px) {
+  .moduleTitle span {
+    font-size: 16px; } }
+@media (max-width: 1200px) {
+  .mobile_resp {
+    display: none; }
+
+  .moduleBlock {
+    flex-direction: column; }
+
+  .containerPerso {
+    padding-top: 20px;
+    top: 113px;
+    margin-left: 0px;
+    margin-right: 0px;
+    position: relative; }
+
+  .moduleVerticalAlign {
+    margin-right: 0px; }
+
+  .moduleMonPortefeuille {
+    margin-top: 6px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 6px; }
+
+  .moduleDividendes {
+    margin-left: 0px;
+    margin-right: 0px; }
+
+  .moduleRepartition {
+    margin-left: 0px;
+    margin-right: 0px; }
+
+  .moduleDernieresActu {
+    margin-left: 0px;
+    margin-right: 0px; }
+
+  .moduleOpportunite {
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 10px; }
+
+  .moduleSuggestion {
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 10px; }
+
+  .module {
+    border-radius: 0px; }
+
+  .moduleTitle {
+    border-radius: 0px; } }
+@media (max-width: 540px) {
+  .BtnStyle {
+    font-size: 15px; }
+
+  .moduleSuggestionBlockInfo div span {
+    font-size: 6.1vh; }
+
+  .moduleOpportuniteBlockInfo div span {
+    font-size: 4vh; } }
+.band {
+  display: flex;
+  flex-direction: row; }
+  .band > {
+    flex: 1;
+    height: 617px; }
+  @media screen and (max-width: 4096px) and (min-width: 1200px) {
+    .band {
+      padding-bottom: 20px; } }
+  @media screen and (max-width: 1200px) {
+    .band {
+      display: block;
+      flex-direction: column; }
+      .band > {
+        padding: 0px;
+        flex: 1; } }
+
+.module-visu {
+  text-align: center; }
+  .module-visu > :nth-child(1n) {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 50%; }
+    .module-visu > :nth-child(1n) > {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+  .module-visu > :nth-child(1) {
+    background-color: #1781E0;
+    color: #FFFFFF; }
+  .module-visu > :nth-child(2) {
+    color: #1781E0; }
+    .module-visu > :nth-child(2) .value {
+      color: #20BF55; }
+  .module-visu .legend {
+    font-family: "Open Sans";
+    font-weight: bold;
+    font-size: 1em;
+    margin: 0px;
+    padding: 0px; }
+  .module-visu .value {
+    font-family: "Montserrat";
+    font-weight: 700;
+    font-size: 2.25em;
+    margin: 0px;
+    padding: 0px; }
+  .module-visu .addon {
+    font-family: "Open Sans";
+    font-weight: initial;
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 8px; }
+    .module-visu .addon span {
+      padding: 0px;
+      padding-bottom: 8px;
+      font-weight: bold; }
+
+body {
+  background-color: #EBEBEB;
+  color: #01528a; }
+
+.module {
+  border-radius: 16px 16px 0px 0px; }
+
+.containerPerso {
+  padding-top: 20px;
+  top: 113px;
+  margin-left: 40px;
+  margin-right: 40px;
+  position: relative; }
+
+#avert {
+  border: 2px solid #0E6DBB;
+  border-radius: 3px; }
+  #avert div.title {
+    font-family: "Montserrat";
+    font-weight: bold;
+    font-size: 20px;
+    color: #0E6DBB;
+    margin-bottom: 15px; }
+
+.BtnStyle {
+  padding: 0px 25px 0px 25px;
+  height: 40px;
+  background-color: #ff9f1c;
+  border: none;
+  color: white;
+  -moz-box-shadow: 0px 0px 10px -2px #3c3c3c;
+  -webkit-box-shadow: 0px 0px 10px -2px #3c3c3c;
+  -o-box-shadow: 0px 0px 10px -2px #3c3c3c;
+  box-shadow: 0px 0px 10px -2px #3c3c3c;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  font-size: 19px; }
+
+/**/
+.band {
+  flex: 1; }
+
+.module {
+  border-radius: 10px; }
+
+@media (max-width: 580px) {
+  .containerPerso, .module, .moduleTitle {
+    border-radius: 0 !important;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    max-width: 100vw;
+    overflow-x: hidden; }
+
+  .moduleTitle {
+    overflow-y: hidden; }
+
+  body {
+    max-width: 100vw; } }
+
+/*# sourceMappingURL=style.scss.css.map */

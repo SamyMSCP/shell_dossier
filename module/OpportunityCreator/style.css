@@ -1,0 +1,203 @@
+.subrow
+{
+	width: 100%;
+}
+
+.line-spacing
+{
+	width: 100%;
+}
+
+.block-spacing
+{
+	height: 32px;
+	width: 100%;
+}
+
+.legende
+{
+	text-align: left;
+}
+
+.val
+{
+	text-align: right;
+}
+
+#ratioRatioCreate .ui-slider-range { background: #01528a; }
+#ratioRatioCreate { background: #428bca; }
+
+.display-line
+{
+	position: relative;
+	width: 100px;
+	height:4px;
+	background-color: #ff9f1c;
+	margin:15px auto;
+}
+
+.floating-btn
+{
+	z-index: 20;
+	position: fixed;
+	bottom: 3vh;
+	right: 3vw;
+	border-radius: 50%;
+}
+
+
+.price {
+	font-weight: bold;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+.inline {
+	display: inline-block;
+}
+
+span.input-group-addon.colorized{
+	background-color: #01528A;
+	color: #fff;
+}
+
+.close-cross{
+	opacity: 0.5;
+}
+
+.close-cross:hover {
+	opacity: 1;
+}
+
+.modal_creator .modal-header {
+	text-align:center;
+	padding:15px 15px 0px 15px;
+}
+
+.modal_creator .modal-content {
+	background-color: #f7f7f7;
+}
+
+.modal_creator .modal-header > button {
+	margin:15px;
+}
+
+.modal_creator .modal-header > button > img  {
+	height: 26px;
+}
+
+.modal_creator .modal-header > span {
+	font-family: 'Montserrat', sans-serif !important;
+	letter-spacing: 0.05em;
+	font-size:36px;
+	font-weight:300;
+	color:#01528A;
+	line-height: 30px;
+	display:inline-block;
+	margin: 15px;
+}
+
+.modalOpportuniteCreator {
+
+}
+
+.flexParagraph {
+	display:flex;
+	flex-wrap:wrap;
+	color:#828282;
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: normal;
+	font-size:16px;
+	font-weight:400;
+	align-items: center;
+	margin:0px 15px;
+	line-height: 42px;
+}
+
+
+.flexParagraph > span,
+.flexParagraph > input,
+.flexParagraph > select,
+.flexParagraph > div > div,
+.flexParagraph > div {
+	display:flex;
+	flex:0 1 auto;
+	height:32px;
+	margin: 5px 5px;
+	line-height: normal;
+}
+
+.flexParagraph > div  {
+	align-items:center;
+}
+
+.flexParagraph input,
+.flexParagraph select {
+	font-weight:400;
+	background-color: #fff;
+	border-radius: 4px;
+	border:none;
+appearence: none;
+	-webkit-appearence: none;
+	-moz-appearence: none;
+	-o-appearence: none;
+	-ms-appearence: none;
+	color: #1781e0;
+	padding: 5px;
+	width:auto;
+	margin: 5px 10px;
+}
+
+.flexParagraph > input.noBorderRight {
+	margin-right: 0;
+	border-radius:3px 0px 0px 3px;
+}
+
+.flexParagraph > div.unity {
+	margin-left: 0;
+	border-radius:0px 3px 3px 0px;
+	background-color:#1781e0;
+	width:25px;
+	display:flex;
+	justify-content:center;
+	align-items: center;
+	color:white;
+	height:32px;
+}
+
+.btnCreateOpportunite {
+	text-align: center;
+}
+
+.btnCreateOpportunite > button {
+	height:40px;
+	border:1px solid #ff9f1c;
+	border-radius:3px;
+	font-family: 'Montserrat', sans-serif !important;
+	letter-spacing: 0.05em;
+	font-size:16px;
+	font-weight:500;
+	color:#ff9f1c;
+	text-align:center;
+	padding:0px 15px;
+	background-color:transparent;
+	margin: 15px;
+}
+
+.btnCreateOpportunite > button:hover {
+	background-color:#ff9f1c;
+	color:#f7f7f7;
+}
+
+
+
+
+
+
+
+
+
+

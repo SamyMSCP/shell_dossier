@@ -1,0 +1,56 @@
+.profilQuestion {
+	background: white;
+	padding: 20px;
+	border-radius: 15px;
+	margin-bottom: 20px;
+}
+
+.profilQuestion span {
+	color: #1781e0;
+	display: block;
+	margin: 0px 20px;
+	font-size: 14px;
+	color: black;
+	font-weight: 300;
+}
+
+.profilQuestion div {
+	color: #0E6DBB;
+	font-size: 14px;
+	font-weight: 700;
+	margin-bottom: 10px;
+}
+
+.profilGood {
+	color:#20BF55 !important;
+}
+
+.profilFail {
+	color:red !important;
+}
+
+.tableSeeProfil th {
+	background-color:white;
+	color: black;
+	font-size: 14px;
+	font-weight: 400;
+	font-family: 'Open Sans', sans-serif;
+	margin-bottom: 10px;
+	text-align:right;
+	max-width: 1300px;
+	padding: 5px;
+}
+
+.tableSeeProfil td {
+	min-width: 100px;
+	font-weight: 300;
+	text-align: center;
+	padding: 5px;
+}
+
+.tableSeeProfil {
+
+}
+.modalBig {
+	width: 90%;
+}

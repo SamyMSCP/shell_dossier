@@ -1,0 +1,79 @@
+#del_scpi .modal-header {
+  width: 100%;
+  text-align: center;
+  padding: 0px;
+  padding-top: 30px;
+  padding-left: 30px;
+  padding-right: 30px; }
+#del_scpi .modal-title {
+  width: 100%;
+  font-family: "Montserrat";
+  font-size: 32px;
+  letter-spacing: 0.5px;
+  text-align: center; }
+#del_scpi .modal-footer {
+  margin: 15px; }
+#del_scpi .close {
+  margin: 10px; }
+#del_scpi .button {
+  padding: 30px;
+  color: #ffffff !important;
+  font-family: "Montserrat";
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center; }
+  #del_scpi .button.small {
+    padding: 14px;
+    color: #ffffff !important;
+    font-family: "Montserrat";
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center; }
+  #del_scpi .button .text-content {
+    margin-top: 12px; }
+  #del_scpi .button.big {
+    width: 100%;
+    height: 166px; }
+  #del_scpi .button.blue {
+    background-color: #01528a; }
+    #del_scpi .button.blue:hover {
+      background-color: #013457; }
+    #del_scpi .button.blue.light {
+      background-color: #1781e0; }
+      #del_scpi .button.blue.light:hover {
+        background-color: #1266b2; }
+  #del_scpi .button.green {
+    background-color: #20bf55; }
+    #del_scpi .button.green:hover {
+      background-color: #199342; }
+  #del_scpi .button.orange {
+    background-color: #ff9f1c; }
+    #del_scpi .button.orange:hover {
+      background-color: #e88600; }
+  #del_scpi .button.red {
+    background-color: #ef6228; }
+    #del_scpi .button.red:hover {
+      background-color: #d44910; }
+  #del_scpi .button img {
+    max-height: 50px;
+    max-width: 50px; }
+
+.subrow {
+  padding-top: 7px;
+  padding-bottom: 0px !important; }
+
+.row.small {
+  padding-bottom: 10px;
+  font-size: 12px; }
+
+.right {
+  float: right; }
+
+.line {
+  width: 100px;
+  height: 2px;
+  border: solid 4px #ff9f1c;
+  border-radius: 4px;
+  margin-bottom: 30px; }
+
+/*# sourceMappingURL=style.scss.css.map */

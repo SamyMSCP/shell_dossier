@@ -1,0 +1,17 @@
+thead th{
+	color: #FFFFFF;
+	text-align: center;
+}
+tbody td{
+	text-align: center;
+}
+.modal-lg {
+	max-width: 890px;
+}
+#indice img {
+	width: 136px;
+}
+.col-custom {
+	display: inline;
+	margin: 28px;
+}

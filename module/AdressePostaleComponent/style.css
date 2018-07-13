@@ -1,0 +1,101 @@
+#modal_adresse_postale {
+	padding:20px;
+}
+
+#modal_adresse_postale .modal-body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#modal_adresse_postale .modal-body > div {
+	margin: 10px;
+}
+
+.inputFormAdresse {
+	max-width: 500px;
+	display:flex;
+	width:100%;
+}
+
+.inputFormAdresse > div,
+.inputFormAdresse > select,
+.inputFormAdresse > input {
+	display:flex;
+}
+
+.inputFormAdresse > div {
+	flex:2;
+	padding-right: 20px;
+	text-align:right;
+	display:block;
+}
+
+.inputFormAdresse > select,
+.inputFormAdresse > input {
+	border-radius: 0px;
+	height: 24.73px;
+	border-color: rgb(204, 204, 204);
+	background: white;
+	flex: 4;
+	border-width: 1px;
+	border-style: solid;
+	background: white;
+	text-align: left;
+	padding-left: 5px;
+	font-family: 'Open Sans', sans-serif;
+	color: #01528a;
+	min-width:310px;
+}
+
+
+.inputFormAdresse .err {
+	color:red;
+}
+
+.errorMsg {
+	display:flex;
+	margin: 10px;
+	max-width: 500px;
+	width: 100%;
+	margin: -10px 10px 0px 10px !important;
+}
+
+.errorMsg > div:first-child {
+	margin-right: 20px;
+	flex:2;
+}
+
+.errorMsg > div:last-child {
+	color: red;
+	font-weight:bold !important;
+	font-size:12px;
+	flex:4;
+}
+
+.inputError {
+	border-color: red !important;
+}
+
+@media (max-width: 550px) {
+	#modal_adresse_postale {
+		padding: 0px !important;
+	}
+
+	#modal_adresse_postale .modal-content {
+		border-radius: 0px;
+	}
+}
+
+@media (max-width: 470px) {
+	#modal_adresse_postale .modal-content .errorMsg,
+	#modal_adresse_postale .modal-content .inputFormAdresse {
+		flex-direction: column;
+	}
+	#modal_adresse_postale .modal-content .errorMsg > div:first-child,
+	#modal_adresse_postale .modal-content .inputFormAdresse > div:first-child {
+		text-align:left;
+		margin-bottom:10px;
+	}
+}

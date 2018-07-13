@@ -1,0 +1,46 @@
+$greyish-brown: #505050;
+$OpenSans: "Open Sans";
+@import "mixin";
+
+.container-press {
+	@include mq(768px) {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	padding-left: 70px;
+	padding-right: 70px;
+	padding-top: 45px;
+	padding-bottom: 33px;
+
+	.media-body {
+		img {
+			width: 100%;
+		}
+		text-align: center;
+		.citation {
+			font-family: $OpenSans;
+			//font-family: 'OpenSans';
+			font-size: 24px;
+			font-weight: 300;
+			letter-spacing: 0;
+			text-align: center;
+			color: $greyish-brown;
+		}
+		.who {
+			font-family: $OpenSans;
+			//font-family: 'OpenSans';
+			font-size: 14px;
+			letter-spacing: 0;
+			text-align: center;
+			color: $greyish-brown;
+			margin-bottom: 30px;
+		}
+	}
+	.bfm, .logos-presse {
+		object-fit: contain;
+		&.bfm-full {
+			margin-left: 30px;
+		}
+	}
+
+}

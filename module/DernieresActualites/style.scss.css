@@ -1,0 +1,36 @@
+.mdlContentDernierActu {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 500px; }
+  @media (max-width: 580px) {
+    .mdlContentDernierActu {
+      height: 255px; } }
+  .mdlContentDernierActu li {
+    padding-left: 16px;
+    padding-top: 12.5px;
+    padding-bottom: 12.5px; }
+    .mdlContentDernierActu li:last-child {
+      padding-bottom: 25px; }
+    .mdlContentDernierActu li div {
+      padding: 0;
+      flex: 1; }
+    .mdlContentDernierActu li img {
+      height: 30px;
+      width: auto; }
+    .mdlContentDernierActu li .date-publi {
+      font-family: "Open Sans";
+      font-weight: normal;
+      font-size: 0.75em;
+      color: #505050; }
+    .mdlContentDernierActu li .DernieresActuTitle {
+      font-family: "Open Sans";
+      font-weight: bold;
+      font-size: 0.9em;
+      color: #01528A; }
+    .mdlContentDernierActu li a {
+      font-family: "Open Sans";
+      font-weight: normal;
+      font-size: 0.75em;
+      color: #1781E0; }
+
+/*# sourceMappingURL=style.scss.css.map */

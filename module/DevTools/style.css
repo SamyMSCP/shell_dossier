@@ -1,0 +1,200 @@
+.containerPerso {
+	padding-bottom: 53px;
+}
+
+.DevTools {
+	z-index:9000;
+	position: fixed;
+	height: 53px;
+	width: 100%;
+	bottom: 0px;
+	background: rgba(0, 16, 29, 0.8);
+	color:white;
+	display:flex;
+	align-items:flex-start;
+	transition: height 0.5s ease;
+	flex-direction: column;
+}
+
+.DevTools .component {
+	position:relative;
+}
+
+.DevTools.active {
+	height:100%;
+}
+
+.DevTools > .barre  {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	padding:0px 20px;
+	font-size:20px;
+	font-weight:700;
+	border-radius:0px;
+	border-bottom:1px solid red;
+	width:100%;
+}
+
+.DevTools > .barre > div {
+	flex:0 1;
+	text-align: center;
+	margin: 5px;
+}
+
+
+.DevTools  > .barre > .name{
+	flex: 0 1 270px;
+	font-size: 30px;
+}
+
+.DevTools > .barre  > .btn {
+	border: 1px solid #0e6dbb;
+	cursor:pointer;
+}
+
+
+.DevTools > .barre  > .btn.selected,
+.DevTools > .barre  > .btn:hover {
+	background-color:#0e6dbb;
+	color:white;
+}
+
+
+.DevTools > .barre  > .btn.isHide {
+	border-color:transparent;
+	color:grey;
+}
+
+.DevTools > .content {
+	width: 100%;
+	height: 100%;
+}
+
+.DevTools > .content h1 {
+	text-align: left;
+	color: red;
+	text-decoration: underline;
+}
+
+.DevTools > .content h2 {
+	color: red;
+	text-align: left;
+	text-decoration: underline;
+	font-size: 23px;
+}
+
+
+.DevTools > .content button,
+.DevTools > .content input,
+.DevTools > .content select {
+	background-color: #c8e0f5;
+	border: 1px solid #297abf;
+	color: #092944;
+	border-radius: 0px;
+	height:32px;
+	width:100%;
+}
+
+.DevTools > .content button {
+	color:white;
+	background-color: #092944;
+}
+
+.DevTools > .content button:hover {
+	background-color: #297abf;
+}
+
+
+
+.DevTools > .content table {
+	border:2px solid #033967;
+	width:100%;
+}
+
+.DevTools > .content table th{
+	background-color:rgba(40, 122, 191, 0.5);
+	color:white;
+	font-weight:700;
+	text-align:center;
+	padding:5px 20px;
+}
+
+.DevTools > .content table td{
+	background-color: rgba(0, 0, 0, 0.4);
+	color:white;
+	font-weight:400;
+	padding:5px;
+}
+
+.DevTools > .content .ComponentListTable2Table {
+	margin-bottom:20px;
+}
+
+.DevTools > .content .ComponentListTable2Table tr:hover {
+	background-color:rgba(40, 122, 191, 0.08);
+}
+
+.DevTools > .content .ComponentListTable2Table tr.selected {
+	background-color:rgba(40, 122, 191, 0.3);
+}
+
+.DevTools > .content > div  {
+
+	display: flex;
+	overflow-y:scroll;
+}
+
+.DevTools > .content .block {
+	margin:5px;
+	padding:10px;
+	border:1px solid #073f6d;
+	background-color:rgba(0, 0, 0, 0.19);
+	flex:1 0 700px;
+	max-height: 90vh;
+	overflow-y: scroll;
+}
+
+.DevTools > .content .block > div {
+}
+
+.DevTools > .content .entete{
+	width:100%;
+	font-size: 23px;
+	color:#287abf;
+}
+
+
+.DevTools > .content .ComponentTypeBool2btnEdit_TypeBool {
+	display: flex;
+	justify-content: space-around;
+}
+
+.DevTools > .content .ComponentInputCheckboxMscpi_noname .btn{
+	border: 1px solid #297abf;
+	border-radius: 0px;
+	height: 24px;
+	width: 24px;
+}
+
+.DevTools > .content .ComponentInputCheckboxMscpi_noname .btn.checked {
+	background-color:#092944;
+}
+
+.DevTools .pages_btn {
+	margin:10px;
+}
+
+.DevTools .pages_btn > button {
+	width:200px;
+	height:60px;
+}
+
+.DevTools .content table.ComponentTable2EditTable > tr > th {
+	text-align:right;
+}
+
+.DevTools textarea {
+	color: #092944;
+}
+

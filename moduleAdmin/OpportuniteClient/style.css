@@ -1,0 +1,148 @@
+
+.opportuniteClientList table {
+	width: 100%;
+}
+
+.BtnOpportunite button{
+	margin-top: 2px;
+	margin-bottom: 15px;
+	font-size:14pt;
+	padding: 0px 25px 0px 25px;
+	width:332px;
+	height: 40px;
+	background-color: #ff9f1c;
+	border: none;
+	color:white;
+	-moz-box-shadow: 0px 0px 10px -2px #3c3c3c;
+	-webkit-box-shadow: 0px 0px 10px -2px #3c3c3c;
+	-o-box-shadow: 0px 0px 10px -2px #3c3c3c;
+	box-shadow: 0px 0px 10px -2px #3c3c3c;
+	filter:progid:DXImageTransform.Microsoft.Shadow(color=#3c3c3c, Direction=NaN, Strength=10);
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.opportuniteClientList table{
+	width:100%;
+}
+
+.opportuniteClientList tr{
+	width:10%;
+	border-bottom: 1px solid #90a5b7;
+}
+
+.opportuniteClientList tr td{
+	cursor:pointer;
+	height:56px;
+}
+.opportuniteClientList tr:hover > td{
+	background-color:#edf8ff;
+}
+
+.opportuniteClientEditor .modalTitle {
+	font-family: 'Montserrat', sans-serif;
+	font-size:36px;
+	color:#1781e0;
+	font-weight:300;
+	line-height:1;
+	margin: 15px;
+	text-align:center;
+}
+
+
+.opportuniteClientEditor .trait {
+	background-color:#ff9f1c;
+	height:4px;
+	width:100px;
+	margin: 15px auto;
+}
+
+.opportuniteClientEditor select {
+	border-radius:3px;
+	border: 1px solid #dddddd;
+	font-family: 'Open Sans', sans-serif;
+	font-size:14px;
+	font-weight:450;
+	height:30px;
+	flex:1;
+	padding-left: 10px;
+	color:#828282;
+}
+
+.opportuniteClientEditor select.isSet {
+	color:#1781e0;
+}
+
+.opportunity-form {
+	width:450px;
+	height:38px;
+	display:flex;
+	margin: 5px auto;
+}
+
+.opportunity-form > div {
+	display: flex;
+	align-items: center;
+}
+
+.opportunity-form > div:first-child {
+	flex:1;
+	padding-right:10px;
+	justify-content: flex-end;
+	text-align: right;
+}
+
+.opportunity-form > div:last-child {
+	flex:1;
+	justify-content: stretch;
+}
+
+.opportunity-form > div > input,
+.opportunity-form > div > select{
+	font-family: 'Open Sans', sans-serif;
+	border:1px solid #ccc;
+	border-radius: 3px;
+	color:#1781E0;
+	text-align:left;
+	height:32px;
+	font-weight: 400;
+	padding-left: 8px;
+	width:100%;
+}
+
+
+.btnV2 {
+	text-align: center;
+	margin-top:15px;
+}
+
+.btnV2 > button {
+	height:40px;
+	border:1px solid #ff9f1c;
+	border-radius:3px;
+	font-family: 'Montserrat', sans-serif !important;
+	letter-spacing: 0.05em;
+	font-size:16px;
+	font-weight:500;
+	color:#ff9f1c;
+	text-align:center;
+	padding:0px 15px;
+	background-color:transparent;
+	margin: 15px;
+}
+
+.btnV2 > button:hover {
+	background-color:#ff9f1c;
+	color:#f7f7f7;
+}
+
+.close {
+	position: absolute;
+	right: 30px;
+	top: 30px;
+}
+
+.close > img {
+	height: 30px;
+}

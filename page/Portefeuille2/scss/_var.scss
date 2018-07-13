@@ -1,0 +1,27 @@
+// Colors
+$nice-blue: #0e6dbb;
+$water-blue: #1781e0;
+$white: #FFFFFF;
+$mango: #ff9f1c;
+$greyish-brown-30: rgba(80, 80, 80, 0.3);
+
+// Common
+$common-radius: 3px;
+$col-mod: 10%;
+$common-space: 10px;
+
+// Breakpoint
+$breakpoint: (
+		'xs': 360px,
+		'sm': 516px,
+		'md': 768px,
+		'lg': 992px,
+		'xl': 1200px
+);
+
+@mixin mq($arg) {
+	$bp: map-get($breakpoint, $arg);
+	@media screen and (max-width: $bp) {
+		@content
+	}
+}

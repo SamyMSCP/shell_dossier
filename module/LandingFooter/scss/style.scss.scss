@@ -1,0 +1,36 @@
+.container-footer {
+	color: #f7f7f7;
+	background-color: #01528a;
+	height: 50px;
+	a {
+		color: #ffffff;
+	}
+	.info-leg-all {
+		position: relative;
+		left: 16px;
+	}
+	.row {
+		padding-top: 16px;
+	}
+	.dot-separator {
+		font-size: 8px;
+	}
+	.info-leg {
+		button {
+			background-color: #01528a;
+			border: none;
+		}
+		> button .d-open {
+			display: none;
+		}
+		ul {
+			color: #505050 !important;
+		}
+	}
+	.info-leg.open > button .d-open {
+		display: block;
+	}
+	.info-leg.open > button .d-close {
+		display: none;
+	}
+}

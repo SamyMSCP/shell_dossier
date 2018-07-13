@@ -1,0 +1,28 @@
+.right {
+  float: right; }
+
+.list-transaction {
+  padding-top: 30px; }
+  .list-transaction .list-title {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: left;
+    color: #1781e0;
+    border-bottom: solid 4px #1781e0;
+    margin-bottom: 13.2px; }
+  .list-transaction .table-transaction {
+    width: 100%; }
+    .list-transaction .table-transaction tr {
+      border-bottom: solid 0.5px #828282;
+      height: 50px; }
+    .list-transaction .table-transaction thead {
+      background-color: #f7f7f7; }
+      .list-transaction .table-transaction thead th {
+        font-family: 'Open Sans';
+        padding: 10px;
+        font-size: 14px;
+        font-weight: bold;
+        color: #1781e0; }
+
+/*# sourceMappingURL=style.scss.css.map */

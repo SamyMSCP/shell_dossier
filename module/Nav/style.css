@@ -1,0 +1,19 @@
+@media (max-width: 342px) {
+	.pull-right {
+//		margin-right:-14px;
+	}
+}
+
+.etreContacte:hover {
+	color:#8ea1d5;
+	text-decoration:none;
+}
+
+.etreContacte {
+	display: block;
+	text-align: center;
+	float: right!important;
+	position: relative;
+	color: #ffffff;
+	top: 60px;
+}

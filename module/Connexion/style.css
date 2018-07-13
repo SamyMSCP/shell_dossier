@@ -1,0 +1,24 @@
+.inResponsive {
+	display:none;
+}
+
+.noInResponsive {
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.infoNavigateur {
+	color: #000000;
+	margin: 20px;
+	text-align: center;
+}
+
+
+@media (min-width: 992px) {
+	.inResponsive {
+		display:block;
+	}
+	.noInResponsive {
+		display:none;
+	}
+}

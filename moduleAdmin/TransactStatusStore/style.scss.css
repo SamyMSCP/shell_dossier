@@ -1,0 +1,25 @@
+.t-visu, .t-visu tr, .t-visu tr td {
+  border: 1px solid #F0F0F0; }
+
+.t-visu {
+  width: 100%;
+  font-size: 1.5em;
+  font-weight: 400; }
+  .t-visu tr {
+    height: 20px !important; }
+    .t-visu tr td {
+      height: 20px !important;
+      padding: 8px !important;
+      margin: 8px !important; }
+    .t-visu tr:hover {
+      cursor: default; }
+    .t-visu tr:nth-child(even) {
+      background-color: #C0C0C0; }
+      .t-visu tr:nth-child(even):hover {
+        background-color: #c6c6c6; }
+    .t-visu tr:nth-child(odd) {
+      background-color: #E0E0E0; }
+      .t-visu tr:nth-child(odd):hover {
+        background-color: #e6e6e6; }
+
+/*# sourceMappingURL=style.scss.css.map */

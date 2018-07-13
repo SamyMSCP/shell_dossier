@@ -1,0 +1,35 @@
+@import "_var";
+
+.right {
+	float: right;
+}
+
+.list-transaction {
+	padding-top: $common-padding;
+	.list-title {
+		font-family: Montserrat;
+		font-size: 20px;
+		font-weight: 500;
+		text-align: left;
+		color: $water-blue;
+		border-bottom: solid 4px $water-blue;
+		margin-bottom: 13.2px;
+	}
+	.table-transaction {
+		width: 100%;
+		tr {
+			border-bottom: solid 0.5px $warm-grey;
+			height: 50px;
+		}
+		thead {
+			background-color: $white-two;
+			th {
+				font-family: 'Open Sans';
+				padding: 10px;
+				font-size: 14px;
+				font-weight: bold;
+				color: $water-blue;
+			}
+		}
+	}
+}

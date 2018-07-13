@@ -1,0 +1,13 @@
+#NotNow .modal-lg{
+	margin-top: 20vh;
+	background-color: #EBEBEB;
+	max-width: 900px;
+}
+
+#NotNow .modal-lg .modal-body {
+	font-family: ‘Open Sans’, sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	color: #505050;
+	text-align:center;
+}

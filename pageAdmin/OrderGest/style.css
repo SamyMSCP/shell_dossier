@@ -1,0 +1,42 @@
+.containerPerso {
+	padding-top:20px;
+	margin-top:113px;
+	margin-left: 40px;
+	margin-right: 40px;
+	position: relative;
+}
+
+h1, h2, h3, h4, h5, h6, input, .typeoMontSerra{
+	font-family: 'Montserrat', sans-serif;
+	text-align:center;
+	font-weight:bold;
+}
+
+.up::after {
+	content: "⬈";
+	font-size: 1.8em;
+	color:#27ae60;
+}
+
+.down::after {
+	content: "⬊";
+	font-size: 1.8em;
+	color:#c0392b;
+}
+
+.equal::after {
+	content: "=";
+	font-size: 1.6em;
+	color:#808080;
+}
+
+.material-icons.md-18 {
+	position: relative;
+	top: 8px;
+	font-size: 24px;
+	font-weight: 400;
+}
+
+small {
+	cursor: pointer;
+}

@@ -1,0 +1,24 @@
+.footer-module {
+  margin-top: 0px;
+  margin-bottom: 64px;
+  padding: 16px;
+  border: 2px solid #0E6DBB;
+  border-radius: 16px; }
+  .footer-module .footer-title {
+    font-size: 1.25em;
+    margin-bottom: 15px;
+    font-weight: normal;
+    font-family: "Montserrat";
+    color: #0E6DBB; }
+  .footer-module .footerMention {
+    text-align: left !important;
+    font-family: "Open Sans";
+    font-weight: normal;
+    font-size: 0.9em;
+    color: #0E6DBB;
+    line-height: 1.5em; }
+  @media screen and (max-width: 580px) {
+    .footer-module {
+      margin: 16px !important; } }
+
+/*# sourceMappingURL=style.scss.css.map */

@@ -1,0 +1,1203 @@
+body {
+	background-color:#EBEBEB;
+	color:#01528a;
+}
+
+h1, h2, h3, h4, h5, h6, 
+.typeoMontSerra{
+	font-family: 'Montserrat', sans-serif;
+	text-align:center;
+	color: #1781e0;
+	font-weight: 400;
+	letter-spacing: 0.05em;
+}
+
+span {
+	font-family: 'Open Sans', sans-serif;
+}
+h1 {
+	font-size: 36px;
+	margin-bottom:20px;
+	margin-bottom: 20px;
+}
+
+
+.containerPerso {
+	padding-top:20px;
+	top:113px;
+	margin-left: 40px;
+	margin-right: 40px;
+	position: relative;
+}
+
+.ComponentListTable2Table tr {
+	cursor:pointer;
+}
+
+.ComponentListTable2Table tr:hover {
+	background-color:#bbf;
+}
+
+.ComponentTable2EditUlli {
+}
+
+.ComponentTable2ShowUlli {
+}
+
+.ComponentTable2ShowUlli .mail-class {
+} 
+
+
+.ComponentTable2EditDiv div {
+	display:flex;
+}
+
+.ComponentTable2EditDiv {
+	max-width:500px;
+	width:100%;
+	flex-direction:column;
+	align-items:center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.ComponentTable2EditDiv > div {
+	width:100%;
+	min-height:30px;
+	margin:15px 0px;
+}
+
+.ComponentTable2EditDiv > div > div {
+	flex:1;
+	width:100%;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.ComponentTable2EditDiv > div >  .mscpi-form-label {
+	padding-right:20px;
+	font-family: 'Open Sans Regular', sans-serif;
+	font-size: 14px;
+	color: #01528a;
+	justify-content: flex-end;
+	flex:4;
+	font-weight:700;
+}
+
+.ComponentTable2EditDiv > div >  .component {
+	flex:6;
+}
+
+.ComponentTable2EditDiv > div > .component > div {
+	align-items: center;
+}
+
+.ComponentTable2EditDiv > div > .component > div > div,
+.ComponentTable2EditDiv > div > .component > div > input {
+	flex:1;
+}
+
+.ComponentTable2EditDiv > div > div > input {
+	width:100%;
+}
+
+
+
+.block-title {
+	background-color: #0e6dbb;
+	align-items: center;
+	padding: 0px 20px 0px 20px;
+	font-size: 16px;
+	font-family: 'Montserrat', sans-serif;
+	color: white;
+	height: 50px;
+	display: flex;
+	border-radius: 10px;
+}
+
+.block-content {
+	background-color: white;
+	padding: 15px;
+	border-radius: 3px;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	display:none;
+	box-shadow: 0 0 3px 0 rgba(80, 80, 80, 0.3);
+}
+
+.ComponentInputCheckboxToogleMscpi,
+.ComponentInputCheckboxMscpi > div {
+	margin-top:10px;
+	margin-bottom:10px;
+	cursor:pointer;
+}
+
+.ComponentInputCheckboxToogleMscpi .btn,
+.ComponentInputCheckboxMscpi > .btn {
+	border: 1px solid #969696;
+	border-radius: 6px;
+	width: 20px;
+	height: 20px;
+	background: #FFFFFF;
+	vertical-align: middle;
+	transition: width 0.1s, height 0.1s, margin 0.1s;
+	margin: 0px !important;
+	padding: 0px !important;
+}
+
+.ComponentInputCheckboxToogleMscpi > .btn.checked,
+.ComponentInputCheckboxMscpi > .btn.checked {
+	background-color:#0e6dbb;
+}
+
+.ComponentInputCheckboxToogleMscpi > .label,
+.ComponentInputCheckboxMscpi > .label {
+	font-family: 'Open Sans', sans-serif;
+	color:#01528a;
+	font-weight: 400;
+	font-size:14px;
+}
+
+select,
+input[type=number],
+input[type=text] {
+	width: 100%;
+	text-align: left;
+	border-radius: 4px;
+	background: white;
+	color: #1781e0;
+	padding: 6px 12px;
+	font-size: 14px;
+	font-family: 'Open Sans', sans-serif;
+	-webkit-appearance: none;
+	   -moz-appearance: none;
+	height:34px;
+	background-color: #fff;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	flex: 1;
+	border: 2px solid #018A13;
+	border: 1px solid #ccc;
+}
+
+
+
+.ComponentModalBlockMscpi_noname,
+.ComponentSimpleBlockMscpi_noname {
+	margin:15px auto;
+	max-width:1140px;
+	width:100%;
+}
+
+.ComponentModalBlockMscpi_noname > .block-content,
+.ComponentSimpleBlockMscpi_noname > .block-content {
+	display:none;
+}
+
+.ComponentModalBlockMscpi_noname.active > .block-title,
+.ComponentSimpleBlockMscpi_noname.active > .block-title {
+	border-radius: 10px 10px 0px 0px;
+	position:relative;
+}
+
+.ComponentModalBlockMscpi_noname.active > .block-content,
+.ComponentSimpleBlockMscpi_noname.active > .block-content {
+	display:block;
+}
+
+.ComponentSimpleBlockMscpi_noname > .block-content   > .buttons-projet,
+.ComponentModalBlockMscpi_noname > .block-content > .buttons-projet {
+	display: flex;
+	justify-content: center;
+}
+
+.btn-mscpi-2 {
+	margin: 15px;
+	background-color: #dddddd;
+	color: #828282;
+	height: 30px;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+
+	font-family: Montserrat;
+	font-size: 14px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 1px;
+	text-align: center;
+	border:none;
+	padding-left:15px;
+	padding-right:15px;
+}
+
+.ComponentModalBlockMscpi_noname > .block-content   > .buttons-projet > .btn,
+.ComponentSimpleBlockMscpi_noname > .block-content   > .buttons-projet > .btn {
+	margin-left: 15px;
+	margin-right: 15px;
+	width: 200px;
+	height: 30px;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+
+	font-family: Montserrat;
+	font-size: 14px;
+	font-weight: normal;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: normal;
+	letter-spacing: 1px;
+	text-align: center;
+
+}
+
+.mini-bar {
+	text-align:center;
+	margin-bottom: 60px;
+}
+
+.mini-bar > span {
+	font-family: Montserrat;
+	font-size: 18px;
+	font-weight: 300;
+	letter-spacing: 0.5px;
+	text-align: center;
+	color: #828282;
+}
+
+.mini-bar > div {
+	background-color: #dddddd;
+	height:12px;
+	width:100%;
+	margin: 15px 0px;
+	position:relative;
+	border-radius:10px;
+}
+
+.mini-bar > div > div {
+	border-radius:10px;
+	height:100%;
+	position:absolute;
+}
+
+.mini-bar > div > div.bar1 {
+	background-color:#1781e0;
+}
+
+.mini-bar > div > div.bar2 {
+	background-color:#01528a;
+}
+
+.ComponentSimpleBlockMscpi_noname > .block-content  > .component,
+.ComponentModalBlockMscpi_noname > .block-content  > .component {
+	margin:15px;
+}
+
+.ComponentModalBlockMscpi_noname > .block-content  > .buttons-projet {
+	margin-top:15px;
+}
+
+.btn-grey,
+.btn-grey:hover,
+.ComponentModalBlockMscpi_noname > .block-content  > .buttons-projet > .btn-previous,
+.ComponentSimpleBlockMscpi_noname > .block-content  > .buttons-projet > .btn-previous {
+	font-family: 'Montserrat', sans-serif;
+	margin:15px;
+	background-color: #dddddd;
+	color: #828282;
+}
+
+.btn-orange,
+.ComponentModalBlockMscpi_noname > .block-content   > .buttons-projet> .btn-next,
+.ComponentSimpleBlockMscpi_noname > .block-content  > .buttons-projet > .btn-next {
+	margin:15px;
+	background-color: #ff9f1c;
+	color: #ffffff;
+}
+
+
+.ComponentProjectProgressBar {
+	width:100%;
+	display:flex;
+	justify-content:center;
+	margin-top: 40px;
+	margin-bottom: 30px;
+}
+
+.ComponentProjectProgressBar > div {
+	display: flex;
+	align-items: center;
+	width: 80vw;
+}
+
+.ComponentProjectProgressBar > .bar {
+	position:absolute;
+	height:50px;
+	z-index:1;
+}
+
+.ComponentProjectProgressBar > .bar > div {
+	background-color:#dddddd;
+	height:6px;
+	margin: 0px 25px;
+	flex:1;
+}
+
+.ComponentProjectProgressBar > .bar > div > div {
+	background-color:#20BF55;
+	height:100%;
+	max-width:100%;
+}
+
+.ComponentProjectProgressBar > .block {
+	min-height:50px;
+	display:flex;
+	justify-content:space-between;
+	align-items: flex-start;
+	z-index:2;
+}
+
+.ComponentProjectProgressBar > .block > div {
+	display: flex;
+	align-items: center;
+	max-width: 50px;
+	flex-direction: column;
+}
+
+.ComponentProjectProgressBar > .block > div > div.text {
+	text-align: center;
+	margin-top:30px;
+	font-size: 14px !important;
+	color: #969696;
+	font-family: 'Montserrat', sans-serif;
+	font-weight:700;
+	margin-top: 65px;
+	width: 8vw;
+	display:none;
+	position:absolute;
+	background-color: #ffffff82;
+	padding: 10px;
+	border-radius: 3px;
+	border: 1px solid white;
+}
+
+.ComponentProjectProgressBar > .block > div:hover > div.text {
+	display:block;
+}
+
+.ComponentProjectProgressBar > .block > .notOkay > div.text {
+	color: #969696;
+	border: 1px solid #969696;
+}
+
+.ComponentProjectProgressBar > .block > .current > div.text {
+	color: #1781E0 !important;
+	border: 1px solid #1781e0 !important;
+}
+
+.ComponentProjectProgressBar > .block > .okay > div.text  {
+	color:#20BF55 !important;
+	border: 1px solid #20bf55 !important;
+}
+
+.ComponentProjectProgressBar  .circle {
+	width: 50px;
+	height: 50px;
+	border-radius: 25px;
+	margin: 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: Montserrat;
+	font-weight: 300;
+	font-size: 24px !important;
+}
+
+.ComponentProjectProgressBar .okay .circle {
+	background-color: #20bf55;
+	color:white;
+}
+
+.ComponentProjectProgressBar .current .circle {
+	background-color: #1781e0;
+	color:white;
+}
+
+.ComponentProjectProgressBar .notOkay .circle {
+	background-color: #dddddd;
+	color:#828282;
+}
+
+
+.ComponentMessageBox {
+	display: flex;
+	justify-content: center;
+	width:100%;
+}
+
+.ComponentMessageBox > .MessageBoxContent {
+	position:relative;
+	min-width: 400px;
+	width:auto;
+	background-color: rgb(235, 235, 235);
+	border-radius: 15px;
+	padding: 40px 60px 20px 60px;
+	font-size: 14px;
+	max-width: 1000px;
+	text-align: center;
+}
+
+.ComponentMessageBox > .MessageBoxContent > .closeMsgBox {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor:pointer;
+}
+
+
+.ComponentModalBlockMscpi_noname > .block-title > .closeMsgBox {
+	position: absolute;
+	top: 11px;
+	right: 11px;
+	cursor:pointer;
+}
+
+
+.closeMsgBox > img {
+	height:30px;
+	opacity:0.5;
+}
+
+.closeMsgBox:hover > img {
+	opacity:1;
+}
+
+.ComponentMessageBox > .MessageBoxContent > .buttons {
+	display:flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.modal-backdrop.in {
+	opacity: 0.8 !important;
+}
+
+.ComponentSetProjetPersonnePhysique_noname,
+.ComponentSetConjoin_noname {
+	text-align:center;
+}
+
+.ComponentSetProjetPersonnePhysique_noname .ComponentInputCheckboxMscpi_noname,
+.ComponentSetConjoin_noname .ComponentInputCheckboxMscpi_noname {
+	text-align: left;
+	max-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.simpleForm {
+	width:100%;
+	max-width:700px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+
+.simpleForm .component {
+	margin:10px;
+}
+
+.simpleForm > div {
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.simpleForm > div > div {
+	flex:1;
+}
+
+.simpleForm > div > div.component {
+	margin-right:150px;
+}
+
+.simpleForm2 > div > div.component {
+	margin-right:0px;
+}
+
+.simpleForm > div > span {
+	flex:1;
+	text-align:right;
+}
+
+.ComponentTypeBool2btnEdit_TypeBool {
+	display: flex;
+	justify-content: space-around;
+}
+
+.masquer {
+	display:none !important;
+}
+
+.subtitle {
+	margin-top:40px;
+	font-family: 'Open Sans', sans-serif;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom:20px;
+}
+
+.subtitle > div {
+	color:#ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.tableSituation .table > div > div input {
+	height:36px;
+	text-align:center;
+	border-radius: 3px;
+	border: solid 1px #01528a;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	width:100%;
+	color: #01528a;
+}
+
+.tableSituation {
+	display:flex;
+	flex-direction:row;
+}
+
+.tableSituation .table {
+	flex:2;
+}
+
+.tableSituation .table > div {
+	display:flex;
+	flex-direction:row;
+	margin-bottom: 15px;
+}
+
+
+.tableSituation .table > div > div {
+	flex:1;
+	position:relative;
+}
+
+.tableSituation .table > div > span {
+	flex:1;
+	position:relative;
+	display:flex;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	letter-spacing: 0.3px;
+	color: #828282;
+	display: flex;
+	align-items: center;
+	padding-right: 16px;
+	padding-left: 16px;
+}
+
+.tableSituation .table > div > span:first-child {
+	text-align: right;
+	justify-content: flex-end;
+}
+
+.tableSituation .table > div > div .tableSituationButtonsMoin,
+.tableSituation .table > div > div .tableSituationButtonsPlus {
+	position:absolute;
+	cursor:pointer;
+	height:100%;
+	top:0px;
+	width: 42px;
+}
+
+.tableSituation .table > div > div .tableSituationButtonsMoin .ligneHorizontale {
+	height:2.5px;
+	width:20px;
+	background-color:#1781e0;
+	border-radius:2px;
+	top: 17px;
+	position:absolute;
+	left:11px;
+}
+
+.tableSituation .table > div > div .tableSituationButtonsPlus .ligneHorizontale {
+	height:2.5px;
+	width:20px;
+	background-color:#1781e0;
+	border-radius:2px;
+	top: 17px;
+	position:absolute;
+	right:11px;
+}
+
+.tableSituation .table > div > div .tableSituationButtonsPlus .ligneVerticale {
+	height:20px;
+	width:2.2px;
+	background-color:#1781e0;
+	border-radius:2px;
+	top: 8px;
+	position:absolute;
+	right:20px;
+}
+
+.tableSituation .table > div > div .tableSituationButtonsMoin {
+	left: 0px;
+}
+
+.tableSituation .table > div > div .tableSituationButtonsPlus {
+	right:0px;
+}
+
+.tableSituation .graph {
+	flex:1;
+}
+
+.tableSituation .graph .component {
+	padding:0px 65px;
+	display:flex;
+	justify-content:center;
+	width:100%;
+	height:100%;
+}
+
+
+.ComponentTypePourcentEdit,
+.ComponentTypeEurosEdit {
+	position:relative;
+}
+
+.ComponentTypePourcentEdit input,
+.ComponentTypeEurosEdit input {
+	text-align:right;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+.component {
+	position:relative;
+}
+
+
+
+.component.errorInput > select,
+.component.errorInput > input {
+	border-bottom:1px solid red;
+	color:red;
+}
+
+.component.errorInput {
+}
+
+.component .tooltips {
+	pointer-events: none;
+	position: absolute;
+	bottom:40px;
+	z-index: 900;
+	background-color: white;
+	border-radius: 3px;
+	padding:3px 20px;
+	box-shadow: 0 0 3px 0 rgba(80, 80, 80, 0.3);
+	display:none;
+}
+
+.component .tooltips > div {
+	border-radius:3px;
+	width: inherit;
+	color: #505050;
+	font-size: 14px;
+	display: inline;
+	text-align: center;
+}
+.component:hover > .tooltips {
+	display:block;
+}
+
+.errorMsg {
+	font-size: 10px;
+	color: red;
+	pointer-events: none;
+	text-align: right;
+	position: absolute;
+	line-height: 10px;
+	bottom: -22px;
+	width: 500px;
+	text-align: left;
+	z-index: 900;
+}
+
+.errorMsg > div {
+	border-radius:3px;
+	padding:3px 20px;
+	background-color: #ff0000a6;
+	border-radius: 0px 3px 3px 3px;
+	width: inherit;
+	color: white;
+	font-size: 14px;
+	display: inline;
+}
+
+.ComponentTypeEnumCheckboxEdit .simpleForm > div > div,
+.ComponentTypeEnumCheckboxEdit .simpleForm > div > span {
+	flex:1;
+}
+
+.ComponentTypeEnumCheckboxEdit .simpleForm > div > span {
+	padding-right:20px;
+}
+
+div.ComponentTooltips {
+	display:inline-block;
+	z-index:1000;
+	margin: 0px 0px 0px 10px !important;
+}
+
+.ComponentTooltips > img {
+	height:22px;
+	widows:22px;
+	cursor:pointer;
+}
+
+.ComponentTooltips > div.tootipsMsg {
+	position:absolute;
+	pointer-events: none;
+	bottom: 28px;
+	padding: 10px 20px;
+	white-space: nowrap;
+	text-align:center;
+
+	max-width:450px;
+	background: rgba(255,255,255,1);
+	z-index: 1048;
+	position: absolute;
+	margin: 2px 0 0;
+	font-size: 14px;
+	list-style: none;
+	background-color: #fff;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0,0,0,.15);
+	border-radius: 4px;
+	-webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	box-shadow: 0 6px 12px rgba(0,0,0,.175);
+	font-size: 14px !important;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.ComponentTooltips > div.tootipsMsg > h4 {
+	color:#1781e0;
+	margin-bottom:20px;
+}
+
+.ComponentTooltips > div.tootipsMsg > p {
+	color:rgb(80, 80, 80);
+}
+
+.ComponentProjetChoixBeneficiaire .ComponentInputCheckboxMscpi {
+	display:inline-block;
+}
+
+.succeed > .block-title{
+	background-color:rgb(32, 191, 85);
+}
+
+.ComponentTypeTextEdit textarea {
+	width: 100%;
+	min-height: 75px;
+}
+
+.ComponentTypeNafEdit .btnCodeNaf {
+	color: #01528a;
+	font-size: 12px;
+	text-decoration: underline;
+	cursor: pointer;
+	text-align:right;
+}
+
+
+.ComponentModalCoherence,
+.ComponentNafHelper {
+	display: flex;
+	justify-content: center;
+	width:100%;
+}
+
+.ComponentModalCoherence > .ModalCoherenceContent,
+.ComponentNafHelper > .NafHelperContent {
+
+
+	position:relative;
+	min-width: 900px;
+	width:auto;
+	max-width: 1140px;
+	text-align: center;
+	background-color: #ffffff;
+	padding: 15px;
+	border-radius: 3px;
+	box-shadow: 0 0 3px 0 rgba(80, 80, 80, 0.3);
+}
+
+.ComponentModalCoherence > .ModalCoherenceContent > .closeMsgBox,
+.ComponentNafHelper > .NafHelperContent > .closeMsgBox {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	cursor:pointer;
+}
+
+.ComponentModalCoherence > .ModalCoherenceContent > .buttons {
+	display:flex;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+
+.ComponentTypeObjectifEdit .objectif_container {
+	display: flex;
+}
+
+.ComponentTypeObjectifEdit .objectif_choix {
+	flex: 1 0 25%;
+	text-align: center;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	padding-right: 0px;
+}
+
+.ComponentTypeObjectifEdit .objectif_choix > div {
+	flex: 1;
+}
+
+.ComponentTypeObjectifEdit .objectif_choix > div > div {
+	flex: 1;
+	display: flex;
+	padding: 10px;
+	justify-content: center;
+	align-items: center;
+}
+.ComponentTypeObjectifEdit .objectif_list > div > span ,
+.ComponentTypeObjectifEdit .objectif_choix > div > div > span {
+	background: #1781e0;
+	color: white;
+	height: 40px;
+	border-radius: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex: 1;
+}
+
+.ComponentTypeObjectifEdit .objectif_list > div > span.isunset,
+.ComponentTypeObjectifEdit .objectif_choix > div > div > span {
+	background-color: white;
+	color: #1781e0;
+	border: 2px dashed #1781e0;
+	font-weight: 400;
+	flex: 0 1 270px;
+}
+
+
+.ComponentTypeObjectifEdit .objectif_choix > div > div > span.isset {
+	background: #1781e0;
+	color: white;
+}
+
+.ComponentTypeObjectifEdit .objectif_center {
+	flex: 1 0 10%;
+	align-items: center;
+	justify-content: space-around;
+	display: flex;
+	flex-direction: column;
+}
+
+.ComponentTypeObjectifEdit .objectif_list {
+	flex: 1 0 50%;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px;
+}
+
+.ComponentTypeObjectifEdit .objectif_list > div {
+	flex: 1 0 50%;
+	padding: 10px;
+	padding-left: 0px;
+	display: flex;
+}
+
+
+.ComponentTypeObjectifEdit .objectif_list > div > span {
+	font-weight: 400;
+	width: 270px;
+	margin-left: auto;
+	margin-right: auto;
+	flex: 0 1 270px;
+	text-align: center;
+}
+
+span.draggable {
+	cursor: grab;
+	cursor: -webkit-grab;
+	cursor: -moz-grab;
+}
+
+.ComponentProjetPatrimoineRepartition table > tbody > tr > td:first-child,
+.ComponentProjetFinanciereCharges table > tbody > tr > td:first-child ,
+.ComponentProjetFinanciereRevenus table > tbody > tr > td:first-child {
+	text-align:right;
+}
+
+.ComponentProjetPatrimoineRepartition table > tbody > tr > td > div.component,
+.ComponentProjetFinanciereCharges table > tbody > tr > td > div.component,
+.ComponentProjetFinanciereRevenus table > tbody > tr > td > div.component {
+	width: 130px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.tdRadio {
+	text-align: center;
+	min-width: 170px;
+	color: #01528a;
+}
+
+.tableQuiz {
+	width: 100%;
+	margin-top: 20px;
+}
+
+
+.tableQuiz td {
+	color: black;
+	font-size: 16px;
+	padding: 7px 0px 7px 0px;
+	vertical-align: top;
+}
+
+.tableQuiz td > span {
+	font-family: 'Open Sans', sans-serif;
+	display: block;
+	min-height: 44px;
+}
+
+
+.ComponentTypeQuizScpiEdit .correction {
+	color: #01528a;
+	border: 1px solid #01528a;
+	border-radius: 3px;
+	background-color: #01528a21;
+	padding: 20px;
+	text-align: left;
+}
+
+.ComponentProfilInvestisseurNote {
+	width:100%;
+	height:50vh;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	font-size:20px;
+	padding:40px;
+	flex-direction:column;
+}
+
+.ComponentProfilInvestisseurNote > div {
+}
+
+.ComponentProfilInvestisseurNote .ComponentInputCheckboxMscpi {
+	display: flex;
+	align-items: center;
+}
+
+
+.ComponentProfilInvestisseurNote .ComponentTypeShow_TypeFloat {
+	display:inline;
+}
+
+.new_style_container {
+	display: flex;
+	flex-wrap:wrap;
+	justify-content:center;
+}
+
+.new_style_container > .in_container {
+	flex:1 0 240px;
+	max-width:240px;
+	height: 54px;
+	border-radius: 3px;
+	border: solid 2px #1781e0;
+	margin:15px;
+	display:flex;
+	text-align:center;
+	justify-content:center;
+	align-items:center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	font-weight: normal;
+	letter-spacing: 0.3px;
+	cursor:pointer;
+	position:relative;
+	padding:5px;
+
+	background-color: white;
+	color:#1781e0;
+
+}
+
+.big .in_container,
+.new_style_container > .in_container.big {
+	height: 78px;
+}
+
+.new_style_container > .in_container.disabled {
+	cursor: not-allowed;
+}
+
+.new_style_container .in_container.selected {
+	background-color: #1781e0;
+	color:white;
+}
+
+.new_style_container > div .number {
+	font-size:14px;
+	position:absolute;
+	top:0px;
+	left:4px;
+}
+
+.new_style_container > div.selected .number {
+	background:none;
+	color:white;
+}
+
+.list-objectif-move {
+	transition: transform 0.5s;
+}
+
+.list-objectif-item {
+	display: inline-block;
+	margin-right: 10px;
+}
+.list-objectif-enter-active, .list-objectif-leave-active {
+	transition: all 1s;
+}
+.list-objectif-enter, .list-objectif-leave-to  {
+	opacity: 0;
+	transform: translateY(30px);
+}
+
+.form_inline {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	letter-spacing: 0.3px;
+	text-align: center;
+	color: #505050;
+	line-height: 36px;
+	margin-bottom:30px;
+	margin-top:30px;
+}
+
+.form_inline .component input,
+.form_inline .component select{
+	width: 100%;
+}
+
+.form_inline .component,
+.form_inline input,
+.form_inline select{
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	display:inline-block;
+	width:auto;
+	display: inline-block;
+	width: auto;
+	border: none;
+	box-shadow: none;
+	height: 42px;
+	border:1px solid transparent;
+}
+
+.form_inline input,
+.form_inline select{
+	border-color: transparent;
+}
+
+.form_inline select{
+	border-radius: 3px;
+	background-color: #f7f7f7;
+}
+
+.form_inline input {
+	border-radius: 0;
+	border-bottom: 1px solid #1781e0;
+	background: white;
+	text-align:right;
+}
+
+.projet-style-btn-1 {
+	margin-left: 15px;
+	cursor: pointer;
+	width: 240px;
+	color:#1781e0;
+	border: solid 2px #1781e0;
+	background-color:white;
+	padding: 5px;
+	text-align: center;
+	border-radius: 3px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.projet-style-btn-1:hover {
+	color:white;
+	background-color:#1781e0;
+}
+
+.ComponentModalBlockMscpi .ComponentProjectMiniProgressBar {
+	display:none;
+}
+
+.ComponentProjetPatrimoineRepartition input,
+.ComponentProjetPatrimoineRepartition .ComponentTypeEurosEdit {
+	max-width:150px;
+}
+
+.ComponentProjetPatrimoineRepartition input,
+.ComponentProjetPatrimoineRepartition .ComponentTypeEurosEdit > input {
+	text-align:right !important;
+}
+
+.ComponentTextFermable .buttonOpen {
+	display: inline;
+	border: 1px solid #3d569d;
+	padding: 4px 10px;
+	margin-left: 5px;
+	border-radius: 3px;
+	background: #ffffffb3;
+	box-shadow: 0 0 3px 0 rgba(80, 80, 80, 0.3);
+	cursor: pointer;
+}
+
+@media (max-width: 1023px) {
+	.ComponentProjectProgressBar > .block > .notOkay > div.text,
+	.ComponentProjectProgressBar > .block > .okay > div.text  {
+		display:none;
+	}
+
+	.ComponentProjectProgressBar > .block > .current > div.text {
+		width:40vw;
+	}
+}
+
+@media (max-width: 500px) {
+	.ComponentProjectProgressBar > div.text {
+		width:90vw;
+	}
+}

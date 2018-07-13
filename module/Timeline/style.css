@@ -1,0 +1,296 @@
+.Timeline_btn {
+	padding:15px
+}
+
+.select_timeline{
+	text-align-last: center;
+	color: #1781e0;
+}
+
+.Timeline_btn div {
+	background-color: #ffffff;
+	border: solid 2px #01528A;
+	text-align: center;
+	color: #01528A;
+	cursor: pointer;
+	height: 100px;
+	text-align:center;
+}
+
+.Timeline_btn h3 {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	width:100%;
+	margin: 0px;
+	max-width:100%;
+}
+
+.alphaLine {
+	flex: 0 1 0;
+}
+.imgTimeLine {
+	width: 40px;
+	margin-right: 5px;
+}
+
+@media (max-width: 991px) {
+	.alphaLine h3 {
+		font-size:16px;
+	}
+	.text_content{
+		display: none;
+	}
+	.imgTimeLine {
+		width: 30px;
+		margin-right: 5px;
+	}
+}
+@media (min-width: 1000px){
+	.col-md-2{
+		width: 20%;
+	}
+	h3{
+		font-size: 18px;
+	}
+}
+
+.date {
+	width:100%;
+}
+.enAnimation.gauche {
+	left:5px;
+}
+
+.enAnimation.droite{
+	right:5px;
+}
+
+.evenement a:visited, .evenement a:link, .evenement a:active
+{
+	text-decoration:none;
+}
+.evenement {
+	cursor:pointer;
+}
+.evenement:hover {
+
+	text-decoration:none;
+	background-color:#cbd6e7;
+	color:#01528a;
+}
+
+.evenement h3 {
+	color:#01528a;
+}
+
+.text_content {
+	color: #4b638b;
+	font-size: 12px;
+}
+
+.souligne {
+	text-decoration:underline;
+	font-weight:bold;
+}
+
+.blockListeScpi {
+	width:100%;
+	flex: 1 1 0;
+}
+
+.blockListeScpi h3{
+	float:left;
+	margin: 10px;
+	color: #1781e0;
+	font-size: 20px;
+}
+
+.blockTimeline {
+	width:100%;
+}
+
+
+.TimelineElmIn {
+	background-color: #ebebeb;
+	display:flex;
+	flex-direction: column;
+	position:relative;
+	cursor:pointer;
+}
+
+.TimelineElmTitle {
+	margin-top: 10px;
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	width: 100%;
+}
+
+.TimelineElmContent {
+	flex:0 1 0;
+	padding: 0px 15px 15px 15px;
+}
+
+.TimelineElmContent p {
+	text-align: left;
+	color: black;
+	font-weight: normal;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+}
+.TimelineElmTitle img {
+	height: 42px;
+	flex: 0 1 0;
+	margin: 10px 15px 20px 15px;
+}
+.TimelineElmTitle div {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	margin-top: 7px;
+}
+
+.TimelineElmTitle h3 {
+	text-align:left;
+	font-size: 18px;
+	margin: 0px;
+	font-weight: bold;
+	color: #01528a;
+}
+
+.TimelineElmTitle span{
+	text-align:left;
+	margin-top: 4px;
+	color:black;
+	font-weight:normal;
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+}
+.blocTimeline {
+	display: flex;
+	margin-top: 20px;
+	flex-direction: row;
+}
+.blockTimelineLeft, .blockTimelineRight {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.blockTimelineLeft .TimelineElmIn {
+	border-radius: 15px 3px 15px 15px;
+}
+.blockTimelineRight .TimelineElmIn {
+	border-radius: 3px 15px 15px 15px;
+}
+
+.blockTimelineLeft .TimelineElmIn .flecheLeft{
+	position:absolute;
+	top: 2px;
+	right: -50px;
+	width: 50px;
+	height: 30px;
+}
+
+.blockTimelineLeft .TimelineElmIn .flecheRight{
+	display:none;
+}
+
+.blockTimelineLeft .TimelineElm {
+	padding: 10px 30px 10px 0px;
+}
+
+.blockTimelineRight .TimelineElmIn .flecheRight{
+	position:absolute;
+	top: 2px;
+	left: -50px;
+	width: 50px;
+	height: 30px;
+}
+
+.blockTimelineRight .TimelineElmIn .flecheLeft{
+	display:none;
+}
+.blockTimelineRight .TimelineElm {
+	padding: 10px 0px 10px 30px;
+}
+
+.ligneCentrale {
+	background-color: #ff9f1c;
+	width: 5px;
+	border-radius: 5px;
+}
+
+.imgLogo {
+	margin-right: 10px !important;
+	font-size: 26px;
+	cursor:pointer;
+	color:#ff9f1c;
+}
+
+.isFavorite {
+	display:none;
+}
+
+.haveFavorite .isFavorite {
+	display:block;
+}
+
+.haveFavorite .isNotFavorite {
+	display:none;
+}
+
+.TimelineElmFavorite img {
+	height: 42px;
+	flex: 0 1 0;
+	margin: 10px 10px 10px 10px;
+}
+
+.TimelineElmFavorite div {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	margin-top: 7px;
+}
+
+.TimelineElmFavorite h3 {
+	text-align:left;
+	font-size: 18px;
+	margin: 0px;
+	font-weight: bold;
+	color: #01528a;
+}
+
+.TimelineElmFavorite span{
+	text-align:left;
+	margin-top: 4px;
+	color:black;
+	font-weight:normal;
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.TimelineElmFavorite {
+	margin-top: 10px;
+	flex-direction: row;
+	align-items: flex-start;
+	width: 100%;
+	display:none;
+}
+
+.moduleDernieresActuFavoris .TimelineElmFavorite {
+	display: flex;
+
+}
+
+.ContentFavorite {
+	justify-content: flex-start !important;
+	padding: 0px 15px 15px 15px !important;
+}
+
+.TimelineElmIn h3 > a:hover {
+	color: #01528a;
+}

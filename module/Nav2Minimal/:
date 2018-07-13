@@ -1,0 +1,105 @@
+<div class="navBack"></div>
+<div class="navBarOut">
+	<div class="navBarBlueBar">
+	</div>
+	<div class="navBar">
+		<a class="nav-logo" href="index.php?p=TableauDeBord">
+			<img class="navLogo" src="img/logo-meilleurescpi.png" alt="logo">
+		</a>
+		<div class="nav-block-right">
+			<div class="nav-top">
+				<div class="nav-msg">
+					<span>VERSION BETA</span> <a style="cursor: pointer;" data-dismiss="modal" data-toggle="modal" data-target=".modal_avis"><img src="<?=$this->getPath()?>img/ampoule_Blanc.png" alt="" /> AVEZ VOUS DES SUGGESTIONS ?</a>
+				</div>
+				<div class="navUser" id="getSizeName">
+					<span class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" ><?=$this->dh->getPersonnePhysique()->getCiviliteFormat()?> <span class="firstname"><?=ucfirst($this->dh->getPersonnePhysique()->getFirstName())?></span> <?=strtoupper($this->dh->getPersonnePhysique()->getName())?></span>
+					<img class="navFlechBas" data-toggle="dropdown" aria-expanded="true" src="<?=$this->getPath()?>img/FlecheBas-blanc.png" alt="Fleche bas du nom du collaborateur" />
+					<ul class="dropdown-menu" style="left: inherit; right: 0px;" id="setSizeHiddenMenu">
+						<li style="cursor: pointer;"><a href="?p=TableauDeBord">Tableau de bord</a></li>
+						<li style="cursor: pointer;"><a href="?p=Portefeuille">Mon portefeuille</a></li>
+						<li style="cursor: pointer;"><a href="?p=Actu">Actualités</a></li>
+						<li class="divider"><hr /></li>
+						<li style="cursor: pointer;"><a data-toggle="modal" data-target=".modal_set">Modifier mon profil</a></li>
+						<li style="cursor: pointer;"><a href="?p=<?=$_GET['p']?>&help=<?=$_SESSION['anticsrf']?>">Être contacté par mon conseiller</a></li>
+						<li class="divider"><hr /></li>
+						<li><a <?php echo 'href="index.php?logout=' . ft_decrypt_crypt_information($_COOKIE['token']) . '"'; ?>> DÉCONNEXION</a></li>
+					</ul>
+				</div>
+			</div>
+			<?php $stroverlay = ' "onmouseover="this.className += \' btn-selected\'" onmouseout="this.classList.remove(\'btn-selected\')'; ?>
+			<div class="nav-btn-block">
+				<div class="navUser" id="getSizeName">
+					<img src="<?=$this->getPath()?>img/Gender_Homme.png" alt=""/>
+					<span class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true" style="color: #01528a;">Compte</span>
+					<img class="navFlechBas" data-toggle="dropdown" aria-expanded="true" src="<?=$this->getPath()?>img/FlecheBas-blanc.png" alt="Fleche bas du nom du collaborateur"/>
+					<ul class="dropdown-menu" style="left: inherit; right: 0px;" id="setSizeHiddenMenu">
+						<li style="cursor: pointer;"><a href="?p=TableauDeBord">Tableau de bord</a></li>
+						<li style="cursor: pointer;"><a href="?p=Portefeuille">Mon portefeuille</a></li>
+						<li style="cursor: pointer;"><a href="?p=Actu">Actualités</a></li>
+						<li class="divider"><hr /></li>
+						<li><a <?php echo 'href="index.php?logout=' . ft_decrypt_crypt_information($_COOKIE['token']) . '"'; ?>> DÉCONNEXION</a></li>
+					</ul>
+					<div class="nav-btn nav-btn-accueil<?php if ($_GET['p'] == "TableauDeBord") echo " btn-selected"; else echo $stroverlay; ?>">
+						<a class="linkBarNav" href="?p=TableauDeBord">
+							<div/></div>
+							<span>TABLEAU DE BORD</span>
+						</a>
+					</div>
+					<div class="nav-btn nav-btn-monPortefeuille<?php if ($_GET['p'] == "Portefeuille") echo " btn-selected"; else echo $stroverlay; ?>">
+						<a class="linkBarNav" href="?p=Portefeuille">
+							<div/></div>
+							<span>MON PORTEFEUILLE</span>
+						</a>
+					</div>
+					<div class="nav-btn nav-btn-Actualite<?php if ($_GET['p'] == "Actu") echo " btn-selected"; else echo $stroverlay; ?>">
+						<a class="linkBarNav" href="?p=Actu">
+							<div/></div>
+							<span>ACTUALITÉS</span>
+						</a>
+					</div>
+					<?php
+					/*
+					<div class="nav-btn nav-btn-mesProjets">
+						<a href="?p=Accueil">MES PROJETS</a>
+					</div>
+					*/
+					?>
+				</div>
+				<?php
+				/*
+				<div class="navCreate">
+					<button data-toggle="modal" data-target="#createProject">CREER UN PROJET</button>
+				</div>
+				*/
+				?>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade modal_avis" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+	 <div class="modal-dialog">
+		<div class="modal-content">
+			<form method="post">
+			<input type="hidden" name="token" id="token" value="<?php echo $_SESSION['csrf']; ?>"/>
+				<div class="modal-header">
+		    		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" style="text-align: center;">MeilleureSCPI.com - Un avis à nous transmettre ?<h4>
+				</div>
+				<div class="modal-body">
+					<h5>Vous êtes un client BETA testeur du compte client MeilleureSCPI.com</h5>
+					<p>Aidez-nous à améliorer votre outil d'analyse en nous transmettant votre avis. Merci.</p>
+					<div style="font-weight: bold;">
+						<div class="form-group">
+							<textarea class="form-control" name="avis" minlength="10" required="1" placeholder="" style="resize: none; width: 100%;"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button name="send" class="btn" value="2">Envoyer</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,31 @@
+#modal_reinvest .button {
+  min-height: 112px;
+  text-align: center;
+  font-size: 20px;
+  font-family: "Open Sans"; }
+  #modal_reinvest .button.blue {
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #01528a; }
+    #modal_reinvest .button.blue:hover {
+      cursor: pointer;
+      background-color: #013a61; }
+  #modal_reinvest .button.grey {
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #D0D0D0; }
+    #modal_reinvest .button.grey:hover {
+      cursor: pointer;
+      background-color: #bcbcbc; }
+  #modal_reinvest .button.orange {
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #ff9f1c; }
+    #modal_reinvest .button.orange:hover {
+      cursor: pointer;
+      background-color: #f28c00; }
+  #modal_reinvest .button.left {
+    padding-top: 27px !important; }

@@ -1,0 +1,124 @@
+.searchBar {
+	position:relative;
+	margin:20px auto;
+	width:50%;
+	max-width:585px;
+	display:flex;
+	flex-direction: row;
+	padding:2px;
+	border-bottom: 2px solid #1781E0;
+	font-family: 'Montserrat', sans-serif;
+	font-weight:400;
+	height: 60px;
+}
+
+.searchBar > img {
+	height:40px;
+	position:absolute;
+	right:0px;
+	background:#F7F7F7;
+}
+
+.searchBar > div {
+	color:#1781E0;
+	position:absolute;
+	font-size: 32px;
+	pointer-events: none;
+}
+
+.searchBar input {
+	color:#1781E0;
+	font-size:20px;
+	width:100%;
+	height:42px;
+	border: none;
+	text-align:left;
+	font-size: 32px;
+	outline: 0;
+	background:transparent;
+}
+
+.containAccueil {
+	max-width:1173px;
+	width:100%;
+	display:flex;
+	margin-left:auto;
+	margin-right:auto;
+	flex-wrap: wrap;
+}
+
+.containAccueil > div {
+	flex: 1 0 390px;
+	padding:15px;
+}
+
+.containAccueil > div > div {
+	border-radius: 3px;
+	padding:15px;
+	height:160px;
+	box-shadow:0px 0px 5px 0px #505050;
+	position:relative;
+	font-family: 'Montserrat', sans-serif;
+	color:white;
+}
+
+.containAccueil > div > div > .titre{
+	position:absolute;
+	font-size:14px;
+	font-weight:300;
+	letter-spacing:0.15em;
+	top: 11px;
+	left: 15px;
+}
+
+.containAccueil > div > div > .valeur{
+	position:absolute;
+	font-size:80px;
+	font-weight:300;
+	bottom: -13px;
+	left: 14px;
+}
+
+.containAccueil > div > div > img {
+	position:absolute;
+	bottom:15px;
+	right:15px;
+	height:60px;
+}
+
+.bkProjet		{ background-color:#1781E0; }
+.bkClients		{ background-color:#0e6dbb; }
+.bkProspects	{ background-color:#01528A; }
+.bkTransaction	{ background-color:#dddddd;  color:#1781E0 !important; }
+.bkTPrio		{ background-color:#ff9f1c; }
+.bkTRet			{ background-color:#ef6228; }
+
+/*
+.AccBlockHaut {
+	background-color:white;
+	margin:42px auto;
+	border-radius: 5px;
+	width:700px;
+	display:flex;
+	flex-direction: row;
+}
+
+.AccBlockHaut > div {
+	height:150px;
+	flex:1;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	flex-direction: column;
+	color: #3C3C3C;
+}
+
+.AccBlockHaut > div >  img {
+	height:60px;
+}
+
+.AccBlockHaut > div >  .projetcs {
+	height:60px;
+}
+
+*/

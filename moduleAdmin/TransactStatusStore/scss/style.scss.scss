@@ -1,0 +1,38 @@
+@import "_var";
+
+%borderize {
+	border: 1px solid nth($col, 3);
+}
+
+.t-visu {
+	width: 100%;
+	font-size: 1.5em;
+	font-weight: 400;
+	@extend %borderize;
+	tr {
+		@extend %borderize;
+		height: 20px !important;
+		td {
+			@extend %borderize;
+			height: 20px !important;
+			padding: $common-padding !important;
+			margin: $common-margin !important;
+		}
+
+		&:hover {
+			cursor: default;
+		}
+		&:nth-child(even) {
+			&:hover {
+				background-color: lighten(nth($col, 1), $lighten-purcent);
+			}
+			background-color: nth($col, 1);
+		}
+		&:nth-child(odd) {
+			&:hover {
+				background-color: lighten(nth($col, 2), $lighten-purcent);
+			}
+			background-color: nth($col, 2);
+		}
+	}
+}

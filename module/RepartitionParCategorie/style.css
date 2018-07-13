@@ -1,0 +1,26 @@
+.contour_RepCat {
+	width:100%;
+	/*max-width:400px;*/
+	height:210px;
+	max-height: 128px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.moduleRepartitionParCategorie .moduleContent{
+	display:flex;
+	height:100%;
+	align-items:center;
+	flex:1;
+	flex-direction: column;
+	justify-content: space-around;
+	padding-bottom: 5px;
+	padding-top: 20px;
+}
+
+.moduleRepartitionParCategorie .moduleContent h3{
+	font-size:14px;
+	font-weight:700;
+}

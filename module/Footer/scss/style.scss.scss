@@ -1,0 +1,33 @@
+@import "_var.scss";
+
+.footer-module {
+	margin-top: 0px;
+	margin-bottom: 64px;
+
+	padding: 16px;
+
+	.footer-title {
+		font-size: 1.25em;
+		margin-bottom: 15px;
+		font-weight: normal;
+		font-family: nth($font, 1);
+		color: nth($dynam-color, 2);
+		//padding: 16px;
+	}
+	border: 2px solid nth($dynam-color, 2);
+	border-radius: $common-radius;
+
+	.footerMention {
+		text-align: left !important;
+		font-family: nth($font, 2);
+		font-weight: normal;
+		font-size: 0.9em;
+		color: nth($dynam-color, 2);
+		line-height: 1.5em;
+	}
+
+	@media screen and (max-width: 580px) {
+		margin: 16px !important;
+	}
+}
+

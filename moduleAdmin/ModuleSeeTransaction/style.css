@@ -1,0 +1,47 @@
+.tableTrans {
+	width:100%;
+}
+
+.tableTrans th {
+	background-color:#01528a;
+	color:white;
+	padding:5px;
+	text-align:center;
+}
+
+.tableTrans td{
+	padding:2px;
+	color:#01528a;
+	background-color:white;
+	text-align:center;
+}
+
+.inputIn {
+	padding:0px !important;
+}
+
+.inputIn input{
+	width:100%;
+	height:100%;
+	border:none;
+}
+
+.contrendu {
+	width:100%;
+}
+
+.contrendu th, .contrendu td {
+	padding:5px;
+	text-align:center;
+}
+
+.contrendu th {
+	background-color:#01528a;
+	color:white;
+}
+
+.contrendu td {
+	color:#01528a;
+	background-color:white;
+	font-weight:100;
+}

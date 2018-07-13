@@ -1,0 +1,43 @@
+Code 1,Libellé,Code 2,Libellé,Code complet
+1,Agriculteurs exploitants,1,Agriculteurs sur petite exploitation,11
+1,Agriculteurs exploitants,2,Agriculteurs sur moyenne exploitation,12
+1,Agriculteurs exploitants,3,Agriculteurs sur grande exploitation,13
+2,"Artisans, commerçants et chefs d'entreprise",1,Artisans,21
+2,"Artisans, commerçants et chefs d'entreprise",2,Commerçants et assimilés,22
+2,"Artisans, commerçants et chefs d'entreprise",3,Chefs d'entreprise de 10 salariés ou plus,23
+3,Cadres et professions intellectuelles supérieures,1,Professions libérales,31
+3,Cadres et professions intellectuelles supérieures,3,Cadres de la fonction publique,33
+3,Cadres et professions intellectuelles supérieures,4,"Professeurs, professions scientifiques",34
+3,Cadres et professions intellectuelles supérieures,5,"Professions de l'information, des arts et des spectacles",35
+3,Cadres et professions intellectuelles supérieures,7,Cadres administratifs et commerciaux d'entreprise,37
+3,Cadres et professions intellectuelles supérieures,8,Ingénieurs et cadres techniques d'entreprise,38
+4,Professions Intermédiaires,2,"Professeurs des écoles, instituteurs et assimilés",42
+4,Professions Intermédiaires,3,Professions intermédiaires de la santé et  du travail social,43
+4,Professions Intermédiaires,4,"Clergé, religieux",44
+4,Professions Intermédiaires,5,Professions intermédiaires administratives de la fonction publique,45
+4,Professions Intermédiaires,6,Professions intermédiaires administratives et commerciales des entreprises,46
+4,Professions Intermédiaires,7,Techniciens,47
+4,Professions Intermédiaires,8,"Contremaîtres, agents de maîtrise",48
+5,Employés,2,Employés civils et agents de service de la fonction publique,52
+5,Employés,3,Policiers et militaires,53
+5,Employés,4,Employés administratifs d'entreprise,54
+5,Employés,5,Employés de commerce,55
+5,Employés,6,Personnels des services directs aux particuliers,56
+6,Ouvriers,2,Ouvriers qualifiés de type industriel,62
+6,Ouvriers,3,Ouvriers qualifiés de type artisanal,63
+6,Ouvriers,4,Chauffeurs,64
+6,Ouvriers,5,"Ouvriers qualifiés de la manutention, du magasinage et du transport",65
+6,Ouvriers,7,Ouvriers non qualifiés de type industriel,67
+6,Ouvriers,8,Ouvriers non qualifiés de type artisanal,68
+6,Ouvriers,9,Ouvriers agricoles,69
+7,Retraités,1,Anciens agriculteurs exploitants,71
+7,Retraités,2,"Anciens artisans, commerçants, chefs d'entreprise",72
+7,Retraités,4,Anciens cadres,74
+7,Retraités,5,Anciennes professions intermédiaires,75
+7,Retraités,7,Anciens employés,77
+7,Retraités,8,Anciens ouvriers,78
+8,Autres personnes sans activité professionnelle,1,Chômeurs n'ayant jamais travaillé,81
+8,Autres personnes sans activité professionnelle,3,Militaires du contingent,83
+8,Autres personnes sans activité professionnelle,4,"Elèves, étudiants",84
+8,Autres personnes sans activité professionnelle,5,Personnes diverses sans activité  professionnelle de moins de 60 ans (sauf retraités),85
+8,Autres personnes sans activité professionnelle,6,Personnes diverses sans activité professionnelle de 60 ans et plus (sauf retraités),86

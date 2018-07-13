@@ -1,0 +1,121 @@
+.moduleSuggestionImg {
+	background-size: cover;
+	background-position: 50% 0%;
+}
+
+.moduleSuggestion .moduleContent {
+	display:flex;
+	padding:0px;
+	align-items: stretch;
+	position:relative;
+}
+
+.moduleSuggestionImg {
+	flex: 1 1 0;
+	border-radius:0px 0px 10px 0px;
+	z-index:10;
+}
+
+.moduleSuggestionText {
+	padding:20px;
+	flex: 2 1 0;
+	font-size: 24px;
+	font-weight: normal;
+	display:flex;
+	justify-content:space-between;
+	flex-direction:column;
+	align-items:center;
+	z-index:20;
+}
+
+.moduleSuggestionText span {
+	font-family: ‘Open Sans’, sans-serif;
+	font-weight: 700;
+	font-size: 24px;
+	color: #01528A;
+}
+
+.moduleSuggestionBlockInfo {
+	display:flex;
+	justify-content:space-around;
+	flex-direction:row;
+	width:100%;
+}
+
+.moduleSuggestionBlockInfoTDVM {
+	color:#18ad18;
+	font-size:24px;
+	font-weight:bold;
+	margin: 10px;
+	flex: 3 1 0;
+	display: flex;
+	flex-direction: column;
+	justify-content:center;
+}
+
+.moduleSuggestionBlockInfo div span{
+	display:flex;
+	flex-direction:column;
+	font-size:60px;
+	color:#18ad18;
+}
+
+.moduleSuggestionBlockInfoRight {
+
+	flex: 1 1 0;
+}
+
+.moduleSuggestionBlockInfoStatus {
+	color:#18ad18;
+	border: 4px solid #18ad18;
+	margin: 10px 0px 25px 0px;
+	height: 75px;
+	width: 75px;
+	border-radius: 75px;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.moduleSuggestionBlockInfoStatusPicto {
+	margin: 10px 0px 25px 0px;
+	height: 75px;
+	width: 75px;
+	border-radius: 75px;
+	font-size: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.moduleSuggestionBlockInfoTDVM img {
+	height: 24px;
+}
+
+@media (max-width: 1475px) {
+	.moduleSuggestionImg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		opacity: 0.27;
+	}
+}
+
+@media (max-width: 1200px) {
+	.moduleSuggestionImg {
+		display:block;
+		position: relative;
+		width: auto;
+		height: auto;
+		opacity: 1;
+	}
+}
+@media (max-width: 630px) {
+	.moduleSuggestionImg {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		opacity: 0.27;
+	}
+}
