@@ -1,0 +1,31 @@
+$mscpi-color: (#01528A, #4681A9, #8BB0C9, #D0DFE9);
+$dynam-color: (#1781E0, #0E6DBB, #FF9F1C, #EF6228, #20BF55);
+$gray-shade:  (#FFFFFF, #F7F7F7, #DDDDDD, #828282, #505050);
+$font: ("Montserrat", "Open Sans");
+
+$common-margin: 8px;
+$common-padding: 20px;
+$common-radius: 3px;
+
+$font-size: (20px);
+
+
+@mixin debug {
+	* {
+		border: 1px dotted red;
+	}
+}
+
+@mixin flexify {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	> {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		vertical-align: middle;
+	}
+}

@@ -1,0 +1,84 @@
+@media (max-width: 1814px) {
+  .moduleTitle span {
+  }
+}
+
+@media (max-width: 1686px) {
+  .moduleTitle span {
+  }
+}
+
+@media (max-width: 1686px) {
+  .moduleTitle span {
+    font-size:16px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .mobile_resp{
+    display: none;
+  }
+  .moduleBlock {
+    flex-direction: column;
+  }
+
+  .containerPerso {
+    padding-top:20px;
+    top:113px;
+    margin-left: 0px;
+    margin-right: 0px;
+    position: relative;
+  }
+  .moduleVerticalAlign {
+    margin-right: 0px;
+  }
+  .moduleMonPortefeuille {
+    margin-top: 6px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 6px;
+  }
+  .moduleDividendes {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .moduleRepartition {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .moduleDernieresActu {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .moduleOpportunite {
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+  }
+  .moduleSuggestion {
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+  }
+  .module {
+    border-radius: 0px;
+  }
+  .moduleTitle {
+    border-radius: 0px;
+  }
+}
+
+
+@media (max-width: 540px) {
+  .BtnStyle {
+    font-size: 15px;
+  }
+  .moduleSuggestionBlockInfo div span{
+    font-size: 6.1vh;
+  }
+  .moduleOpportuniteBlockInfo div span{
+    font-size: 4vh;
+  }
+}

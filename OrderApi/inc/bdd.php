@@ -4,10 +4,10 @@ if (!isset($__INC_BDD__))
 	header('HTTP/1.0 404 Not Found');
 	exit;
 }
-$host = SERVERNAME;
+$host = 'localhost';
 $base = "mscpi_db";
-$user = USERNAME;
-$pass = PASSWORD;
+$user = 'root';
+$pass = 'toor';
 
 $base_scrap = "scpi_scrap_list";
 $base_ordre = "scpi_order";
