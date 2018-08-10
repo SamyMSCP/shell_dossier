@@ -1023,7 +1023,7 @@ class Dh extends Table
 		$notHaveCrm = $this->getMyClientNotHaveCrm();
 		if (count($notHaveCrm) != 0)
 		{
-			$rt .= "<p style='color:#476682;font-family: sans-serif'>Ces clients n'ont pas de prochaines taches crm : </p/>";
+			$rt .= "<p style='color:#476682;font-family: sans-serif'>Ces clients n'ont pas de prochaines taches crm : </p>";
 			foreach($notHaveCrm  as $key => $elm)
 			{
 				$rt .= "<ul style='color:#476682;font-family: sans-serif;'>";
@@ -1343,74 +1343,105 @@ class Dh extends Table
 	}
 	public function getPrecalculForFrontStore()
 	{
+		//return ($this->getCacheArrayTable());
 		$this->regenerateCacheArrayTable();
 		$dt = new DateTime();
-		$rt = [];
-		foreach ($this->getCacheArrayTable() as $scpi => $elt)
+		$cache = $this->getCacheArrayTable();
+		$rt = [
+			"precalcul" => $cache['precalcul']
+		];
+		foreach ($cache as $scpi => $elt)
 		{
-			if ($scpi != "precalcul")
+			if ($scpi == "precalcul")
+				continue ;
+			foreach ($elt as $t => $transac)
 			{
-				foreach ($elt as $t => $transac)
+				foreach ($transac as $id_transac)
 				{
-					foreach ($transac as $id_transac)
+					if (is_array($id_transac))
 					{
-						if (is_array($id_transac))
+						foreach ($id_transac as $type_tr => $tr)
 						{
-							foreach ($id_transac as $type_tr => $tr)
+							if ($type_tr == 'buy')
 							{
-								if ($type_tr == 'buy')
+								$rt[$scpi][$t][$tr->id][$type_tr] = $tr->getForFrontStore();
+							/*
+								$rt[$scpi][$t][$tr->id][$type_tr] = [
+									"id" => $tr->id,
+									"id_beneficiaire" => $tr->id_beneficiaire,
+									"doByMscpi" => intval($this->doByMscpi()),
+									"doByOther" => ($tr->status_trans != "MS.C") ? true : false,
+									"enr_date" => (!empty($tr->enr_date) && ($enr_date = DateTime::createFromFormat("d/m/Y",ft_decrypt_crypt_information($tr->enr_date)))) ? $enr_date->getTimestamp() : NULL,
+									"nbr_part" => $tr->nbr_part,
+									"cle_repartition" => ($tr->cle_repartition != NULL) ? $tr->getClefRepartition() : NULL,
+									"prix_part" => $tr->prix_part,
+									"status_trans" => $tr->status_trans,
+									"type_pro" => ($tr->type_pro != NULL) ? ft_decrypt_crypt_information($tr->type_pro) : NULL,
+									"type_transaction" => "A",
+									"marche" => $tr->getMarcher(),
+									"MontantInvestissement" => $tr->getMontanInvestissement(),
+									"debut_valorisation" => ($tr->getDateDebutValorisation() != null) ? $tr->getDateDebutValorisation()->getTimestamp() : null,
+									"fin_valorisation" =>  ($tr->getDateFinValorisation() != null) ? $tr->getDateFinValorisation()->getTimestamp() : null,
+									"debut_dividendes" =>  ($tr->getDateDebutDividendes() != null) ? $tr->getDateDebutDividendes()->getTimestamp() : null,
+									"fin_dividendes" =>  ($tr->getDateFinDividendes() != null) ? $tr->getDateFinDividendes()->getTimestamp() : null,
+
+
+									"montant_emprunt" => $tr->montant_emprunt,
+									"type_emprunt" => $tr->type_emprunt,
+									"duree_emprunt" => $tr->duree_emprunt,
+									"date_debut_emprunt" => $tr->date_debut_emprunt,
+									"taux_emprunt" => $tr->taux_emprunt,
+									"mensualite_emprunt" => $tr->mensualite_emprunt,
+									"info_trans" => $tr->getInfoTransaction()
+								];
+								*/
+								$last_buy_transaction_id = $tr->id;
+							}
+							if ($type_tr == 'sell')
+							{
+								foreach ($tr as $sell_tr)
 								{
-									$rt[$scpi][$t][$tr->id][$type_tr] = [
-										"id" => $tr->id,
-										"doByMscpi" => ($tr->status_trans == "MS.C") ? true : false,
-										"doByOther" => ($tr->status_trans != "MS.C") ? true : false,
-										"enr_date" => (!empty($tr->enr_date) && ($enr_date = DateTime::createFromFormat("d/m/Y",ft_decrypt_crypt_information($tr->enr_date)))) ? $enr_date->getTimestamp() : NULL,
-										"nbr_part" => $tr->nbr_part,
-										"cle_repartition" => ($tr->cle_repartition != NULL) ? ft_decrypt_crypt_information($tr->cle_repartition) : NULL,
-										"prix_part" => $tr->prix_part,
-										"status_trans" => $tr->status_trans,
-										"type_pro" => ($tr->type_pro != NULL) ? ft_decrypt_crypt_information($tr->type_pro) : NULL,
-										"type_transaction" => "A"
+									$rt[$scpi][$t][$sell_tr->id_transaction_achat][$type_tr][$sell_tr->id] = [
+										"id" => $sell_tr->id,
+										"id_transaction_achat" => $sell_tr->id_transaction_achat,
+										"doByMscpi" => ($sell_tr->info_trans == "MS.C") ? true : false,
+										"doByOther" => ($sell_tr->info_trans != "MS.C") ? true : false,
+										"enr_date" => (!empty($sell_tr->enr_date) && ($enr_date = DateTime::createFromFormat("d/m/Y", ft_decrypt_crypt_information($sell_tr->enr_date)))) ? $enr_date->getTimestamp() : NULL,
+										"nbr_part" => $sell_tr->nbr_part,
+										"nbr_part_vente" =>  $sell_tr->nbr_part_vente,
+										"prix_part" => $sell_tr->prix_part_vente,
+										"prix_part_vente" => $sell_tr->prix_part_vente,
+										"status_trans" => $sell_tr->status_trans,
+										"type_pro" => ($sell_tr->type_pro != NULL) ? ft_decrypt_crypt_information($sell_tr->type_pro) : NULL,
+										"type_transaction" => "V",
+										"plusMoinValueEuro" => $sell_tr->plusMoinValueEuro,
+										"plusMoinValuePourcent" => $sell_tr->plusMoinValuePourcent,
+										"MontantRevente" => $sell_tr->MontantRevente,
+										"debut_valorisation" => ($sell_tr->getDateDebutValorisation() != null ) ? $sell_tr->getDateDebutValorisation()->getTimestamp() : null,
+										"fin_valorisation" => ($sell_tr->getDateFinValorisation() != null ) ? $sell_tr->getDateFinValorisation()->getTimestamp() : null,
+										"debut_dividendes" => ($sell_tr->getDateDebutDividendes() != null ) ? $sell_tr->getDateDebutDividendes()->getTimestamp() : null,
+										"fin_dividendes" => ($sell_tr->getDateFinDividendes() != null ) ? $sell_tr->getDateFinDividendes()->getTimestamp() : null
 									];
-									$last_buy_transaction_id = $tr->id;
 								}
-								if ($type_tr == 'sell')
-								{
-									foreach ($tr as $sell_tr)
-									{
-										$rt[$scpi][$t][$sell_tr->id_transaction_achat][$type_tr][$sell_tr->id] = [
-											"id" => $sell_tr->id,
-											"id_transaction_achat" => $sell_tr->id_transaction_achat,
-											"doByMscpi" => ($sell_tr->info_trans == "MS.C") ? true : false,
-											"doByOther" => ($sell_tr->info_trans != "MS.C") ? true : false,
-											"enr_date" => (!empty($sell_tr->enr_date) && ($enr_date = DateTime::createFromFormat("d/m/Y", ft_decrypt_crypt_information($sell_tr->enr_date)))) ? $enr_date->getTimestamp() : NULL,
-											"nbr_part" => $sell_tr->nbr_part,
-											"nbr_part_vente" =>  $sell_tr->nbr_part_vente,
-											"prix_part" => $sell_tr->prix_part_vente,
-											"prix_part_vente" => $sell_tr->prix_part_vente,
-											"status_trans" => $sell_tr->status_trans,
-											"type_pro" => ($sell_tr->type_pro != NULL) ? ft_decrypt_crypt_information($sell_tr->type_pro) : NULL,
-											"type_transaction" => "V",
-											"plusMoinValueEuro" => $sell_tr->plusMoinValueEuro,
-											"plusMoinValuePourcent" => $sell_tr->plusMoinValuePourcent,
-											"MontantRevente" => $sell_tr->MontantRevente
-										];
-									}
-								}
-								if ($type_tr == 'precalcul')
-								{
-									if (empty($last_buy_transaction_id))
-										$last_buy_transaction_id = "ERROR";
-									$rt[$scpi][$t][$last_buy_transaction_id][$type_tr] = [
-										"plusMoinValueEuro" => $tr['plusMoinValueEuro'],
-										"plusMoinValuePourcent" => $tr['plusMoinValuePourcent'],
-										"ventePotentielle" => $tr['ventePotentielle'],
-										"nbr_part" => $tr['nbr_part'],
-										"MontantInvestissement" => $tr['MontantInvestissement'],
-										"modal_link" => $transac['precalcul']['modal_link'],
-										"prix_actuel" => $tr['prix_actuel']
-									];
-								}
+							}
+							if ($type_tr == 'precalcul')
+							{
+								if (empty($last_buy_transaction_id))
+									$last_buy_transaction_id = "ERROR";
+								$rt[$scpi][$t][$last_buy_transaction_id][$type_tr] = [
+									//"pourcentageTypeVariable" => $tr['pourcentageTypeVariable'],
+									"dividendes_percu" => $tr['dividendes_percu'],
+									"ventePotentiellePleinPro" => $tr['ventePotentiellePleinPro'],
+									"plusMoinValueEuro" => $tr['plusMoinValueEuro'],
+									"plusMoinValuePourcent" => $tr['plusMoinValuePourcent'],
+									"ventePotentielle" => $tr['ventePotentielle'],
+									"nbr_part" => $tr['nbr_part'],
+									"MontantInvestissement" => $tr['MontantInvestissement'],
+									"modal_link" => $transac['precalcul']['modal_link'],
+									"prix_actuel" => $tr['prix_actuel'],
+									"lastDividendes" => $tr['lastDividendes'],
+									"TDVS" => $tr['TDVS'],
+								];
 							}
 						}
 					}
@@ -1608,18 +1639,37 @@ class Dh extends Table
 
     public static function jour_actuelle(){
         $date=array();
-        $j1 = date("Y-m-d", mktime(0,0,0,date("m"),date("d"),date("Y")));
-        $j2 = date("Y-m-d", mktime(0,0,0,date("m"),date("d")-1,date("Y")));
-        $j3 = date("Y-m-d", mktime(0,0,0,date("m"),date("d")-2,date("Y")));
-        $j4 = date("Y-m-d", mktime(0,0,0,date("m"),date("d")-3,date("Y")));
-        $j5 = date("Y-m-d", mktime(0,0,0,date("m"),date("d")-4,date("Y")));
-        $j6 = date("Y-m-d", mktime(0,0,0,date("m"),date("d")-5,date("Y")));
-        $j7 = date("Y-m-d", mktime(0,0,0,date("m"),date("d")-6,date("Y")));
-        $j8 = date("Y-m-d", mktime(0,0,0,date("m"),date("d")-7,date("Y")));
-        $j9 = date("Y-m-d", mktime(0,0,0,date("m"),date("d")-8,date("Y")));
-        $j10 = date("Y-m-d", mktime(0,0,0,date("m"),date("d")-9,date("Y")));
-        $j11 = date("Y-m-d", mktime(0,0,0,date("m"),date("d")-10,date("Y")));
-        $j12 = date("Y-m-d", mktime(0,0,0,date("m"),date("d")-11,date("Y")));
+        $j1 = date("d/m", mktime(0,0,0,date("m"),date("d")));
+        $j2 = date("d/m", mktime(0,0,0,date("m"),date("d")-1));
+        $j3 = date("d/m", mktime(0,0,0,date("m"),date("d")-2));
+        $j4 = date("d/m", mktime(0,0,0,date("m"),date("d")-3));
+        $j5 = date("d/m", mktime(0,0,0,date("m"),date("d")-4));
+        $j6 = date("d/m", mktime(0,0,0,date("m"),date("d")-5));
+        $j7 = date("d/m", mktime(0,0,0,date("m"),date("d")-6));
+        $j8 = date("d/m", mktime(0,0,0,date("m"),date("d")-7));
+        $j9 = date("d/m", mktime(0,0,0,date("m"),date("d")-8));
+        $j10 = date("d/m", mktime(0,0,0,date("m"),date("d")-9));
+        $j11 = date("d/m", mktime(0,0,0,date("m"),date("d")-10));
+        $j12 = date("d/m", mktime(0,0,0,date("m"),date("d")-11));
+        $j13 = date("d/m", mktime(0,0,0,date("m"),date("d")-12));
+        $j14 = date("d/m", mktime(0,0,0,date("m"),date("d")-13));
+        $j15 = date("d/m", mktime(0,0,0,date("m"),date("d")-14));
+        $j16 = date("d/m", mktime(0,0,0,date("m"),date("d")-15));
+        $j17 = date("d/m", mktime(0,0,0,date("m"),date("d")-16));
+        $j18 = date("d/m", mktime(0,0,0,date("m"),date("d")-17));
+        $j19 = date("d/m", mktime(0,0,0,date("m"),date("d")-18));
+        $j20 = date("d/m", mktime(0,0,0,date("m"),date("d")-19));
+        $j21 = date("d/m", mktime(0,0,0,date("m"),date("d")-20));
+        $j22 = date("d/m", mktime(0,0,0,date("m"),date("d")-21));
+        $j23 = date("d/m", mktime(0,0,0,date("m"),date("d")-22));
+        $j24 = date("d/m", mktime(0,0,0,date("m"),date("d")-23));
+        $j25 = date("d/m", mktime(0,0,0,date("m"),date("d")-24));
+        $j26 = date("d/m", mktime(0,0,0,date("m"),date("d")-25));
+        $j27 = date("d/m", mktime(0,0,0,date("m"),date("d")-26));
+        $j28 = date("d/m", mktime(0,0,0,date("m"),date("d")-27));
+        $j29 = date("d/m", mktime(0,0,0,date("m"),date("d")-28));
+        $j30 = date("d/m", mktime(0,0,0,date("m"),date("d")-29));
+        $j31 = date("d/m", mktime(0,0,0,date("m"),date("d")-30));
 
         $date[]=$j1;
         $date[]=$j2;
@@ -1633,8 +1683,56 @@ class Dh extends Table
         $date[]=$j10;
         $date[]=$j11;
         $date[]=$j12;
-        $jour=array(self::nom_jour($j1), self::nom_jour($j2),self::nom_jour($j3),self::nom_jour($j4),self::nom_jour($j5),self::nom_jour($j6),self::nom_jour($j7),self::nom_jour($j8),self::nom_jour($j9),self::nom_jour($j10),self::nom_jour($j11),self::nom_jour($j12));
-        return $jour;
+        $date[]=$j13;
+        $date[]=$j14;
+        $date[]=$j15;
+        $date[]=$j16;
+        $date[]=$j17;
+        $date[]=$j18;
+        $date[]=$j19;
+        $date[]=$j20;
+        $date[]=$j21;
+        $date[]=$j22;
+        $date[]=$j23;
+        $date[]=$j24;
+        $date[]=$j25;
+        $date[]=$j26;
+        $date[]=$j27;
+        $date[]=$j28;
+        $date[]=$j29;
+        $date[]=$j30;
+        $date[]=$j31;
+        return $date;
+    }
+
+    public static function mois_actuelle(){
+        $date=array();
+        $j1 = date("m/Y",mktime(0, 0, 0, date("m")  , date("d"), date("Y")));
+        $j2 = date("m/Y",mktime(0, 0, 0, date("m")-1  , date("d"), date("Y")));
+        $j3 = date("m/Y",mktime(0, 0, 0, date("m")-2  , date("d"), date("Y")));
+        $j4 = date("m/Y",mktime(0, 0, 0, date("m")-3  , date("d"), date("Y")));
+        $j5 = date("m/Y",mktime(0, 0, 0, date("m")-4  , date("d"), date("Y")));
+        $j6 = date("m/Y",mktime(0, 0, 0, date("m")-5  , date("d"), date("Y")));
+        $j7 = date("m/Y",mktime(0, 0, 0, date("m")-6  , date("d"), date("Y")));
+        $j8 = date("m/Y",mktime(0, 0, 0, date("m")-7  , date("d"), date("Y")));
+        $j9 = date("m/Y",mktime(0, 0, 0, date("m")-8  , date("d"), date("Y")));
+        $j10 = date("m/Y",mktime(0, 0, 0, date("m")-9  , date("d"), date("Y")));
+        $j11 = date("m/Y",mktime(0, 0, 0, date("m")-10  , date("d"), date("Y")));
+        $j12 = date("m/Y",mktime(0, 0, 0, date("m")-11  , date("d"), date("Y")));
+
+        $date[]=$j1;
+        $date[]=$j2;
+        $date[]=$j3;
+        $date[]=$j4;
+        $date[]=$j5;
+        $date[]=$j6;
+        $date[]=$j7;
+        $date[]=$j8;
+        $date[]=$j9;
+        $date[]=$j10;
+        $date[]=$j11;
+        $date[]=$j12;
+        return $date;
     }
 
     public static function getNbrByIdForLastDays($id) {
@@ -1645,7 +1743,7 @@ class Dh extends Table
         $dat = Datetime::createFromFormat("d/m/Y H:i:s", $dat . " 00:00:00")->getTimestamp();
         $req = "SELECT count(*) FROM `DONNEUR D'ORDRE` WHERE create_from= ? and day = date(now());";
         $rt[] = Database::getNoClass(static::$_db, $req, [$id])[0][0];
-        for ($i = 1; $i < 11;$i++)
+        for ($i = 1; $i < 31;$i++)
         {
             $req = "SELECT count(*) FROM `DONNEUR D'ORDRE` WHERE create_from= ? AND day = date(now() - INTERVAL $i DAY);";
             $rt[] = Database::getNoClass(static::$_db, $req, [$id])[0][0];
@@ -1653,18 +1751,63 @@ class Dh extends Table
         return ($rt);
     }
 
+    public static function getNbrByIdForLastMonth($id) {
+        $i = 0;
+        $rt = [];
+        $dat = date("d/m/Y");
+        $datUp = date("d/m/Y");
+        $dat = Datetime::createFromFormat("d/m/Y H:i:s", $dat . " 00:00:00")->getTimestamp();
+        $req = "SELECT count(*) FROM `DONNEUR D'ORDRE` WHERE create_from= ? and Month(day)= Month(date(now())) and (Year(day)=year(date(now())));";
+        $rt[] = Database::getNoClass(static::$_db, $req, [$id])[0][0];
+        for ($i = 1; $i < 12;$i++)
+        {
+            if(date('m')> $i) {
+                $req = "SELECT count(*) FROM `DONNEUR D'ORDRE` WHERE create_from= ? AND (Month(day)= Month(date(now()))-$i) and (Year(day)=year(date(now())));";
+                $rt[] = Database::getNoClass(static::$_db, $req, [$id])[0][0];
+            }
+            else{
+                $req = "SELECT count(*) FROM `DONNEUR D'ORDRE` WHERE create_from= ? AND (Month(day)= Month(date(now()))-$i +13) and (Year(day)=year(date(now()))-1);";
+                $rt[] = Database::getNoClass(static::$_db, $req, [$id])[0][0];
+            }
+        }
+        return ($rt);
+    }
+
+
     public static function getNbrByIdForLastDaysTotal() {
         $i = 0;
         $rt = [];
         $dat = date("d/m/Y");
         $datUp = date("d/m/Y");
         $dat = Datetime::createFromFormat("d/m/Y H:i:s", $dat . " 00:00:00")->getTimestamp();
-        $req = "SELECT count(*) FROM `DONNEUR D'ORDRE` WHERE day = date(now());";
+        $req = "SELECT count(*) FROM `DONNEUR D'ORDRE` WHERE day = date(now() - INTERVAL 1 Month);";
         $rt[] = Database::getNoClass(static::$_db, $req, [])[0][0];
-        for ($i = 1; $i < 11;$i++)
+        for ($i = 1; $i < 31;$i++)
         {
             $req = "SELECT count(*) FROM `DONNEUR D'ORDRE` WHERE day = date(now() - INTERVAL $i DAY);";
             $rt[] = Database::getNoClass(static::$_db, $req, [])[0][0];
+        }
+        return ($rt);
+    }
+
+    public static function getNbrByIdForLastDaysMoisTotal() {
+        $i = 0;
+        $rt = [];
+        $dat = date("d/m/Y");
+        $datUp = date("d/m/Y");
+        $dat = Datetime::createFromFormat("d/m/Y H:i:s", $dat . " 00:00:00")->getTimestamp();
+        $req = "SELECT count(*) FROM `DONNEUR D'ORDRE` WHERE Month(day)= Month(date(now())) and (Year(day)=year(date(now())));";
+        $rt[] = Database::getNoClass(static::$_db, $req, [])[0][0];
+        for ($i = 1; $i < 12;$i++)
+        {
+            if(date('m')> $i){
+                $req = "SELECT count(*) FROM `DONNEUR D'ORDRE` WHERE (Month(day)= Month(date(now()))-$i) and (Year(day)=year(date(now()))) and (create_from = 1 || create_from =2 || create_from = 3 || create_from = 4 || create_from = 5 || create_from = 6 || create_from = 10);";
+                $rt[] = Database::getNoClass(static::$_db, $req, [])[0][0];
+            }
+            else{
+                $req = "SELECT count(*) FROM `DONNEUR D'ORDRE` WHERE (Month(day)= Month(date(now()))-$i +13) and (Year(day)=year(date(now()))-1) and (create_from = 1 || create_from =2 || create_from = 3 || create_from = 4 || create_from = 5 || create_from = 6 || create_from = 10);";
+                $rt[] = Database::getNoClass(static::$_db, $req, [])[0][0];
+            }
         }
         return ($rt);
     }
@@ -1714,7 +1857,7 @@ class Dh extends Table
         $scpi2 = "SELECT distinct(`origin`) FROM `guide_list_api_scpi` WHERE type='Page Contact'";
         $total = Database::getNoClass(static::$_db, $scpi2, [])[0][0];
         $tabTotalDay[] = $total;
-        for ($j = 0; $j < 11; $j++) {
+        for ($j = 0; $j < 31; $j++) {
             $yesterday = date("Y-m-d", mktime(1, 1, 1, date("m"), date("d") - $j, date("Y")));
             $scpi2 = "SELECT Count(*) FROM `guide_list_api_scpi` WHERE type='Page Contact' And day='" . $yesterday . "'";
             $total = Database::getNoClass(static::$_db, $scpi2, [])[0][0];
@@ -1767,7 +1910,7 @@ class Dh extends Table
                     $tabTotalDay[] = "https://www.meilleurescpi.com/investir-en-scpi/";
                     break;
             }
-            for($j=0; $j<11; $j++){
+            for($j=0; $j<31; $j++){
                 $yesterday = date("Y-m-d", mktime(1, 1, 1, date("m"), date("d") - $j, date("Y")));
                 $scpi2="SELECT Count(*) FROM `guide_list_api_scpi` WHERE type='".$landing."' And type_complement = '".$tab[$i]."' And day='".$yesterday."'";
                 $total = Database::getNoClass(static::$_db, $scpi2, [])[0][0];
@@ -1812,7 +1955,7 @@ class Dh extends Table
                     $tabTotalDay[] = "https://moncompte.meilleurescpi.com/index.php?p=LandingL";
                     break;
             }
-            for($j=0; $j<11; $j++){
+            for($j=0; $j<31; $j++){
                 $yesterday = date("Y-m-d", mktime(1, 1, 1, date("m"), date("d") - $j, date("Y")));
                 $scpi2="SELECT Count(*) FROM `guide_list_api_scpi` WHERE type='".$landing."' And type_complement = '".$tab[$i]."' And day='".$yesterday."'";
                 $total = Database::getNoClass(static::$_db, $scpi2, [])[0][0];
@@ -1841,7 +1984,7 @@ class Dh extends Table
             $total = Database::getNoClass(static::$_db, $scpi2, [])[0][0];
             $tabTotalDay[]=$total;
             $tabTotalDay[]="https://www.meilleurescpi.com/scpi/le-guide-la-scpi/";
-            for($j=0; $j<11; $j++){
+            for($j=0; $j<31; $j++){
                 $yesterday = date("Y-m-d", mktime(1, 1, 1, date("m"), date("d") - $j, date("Y")));
                 $scpi2="SELECT Count(*) FROM `guide_list_api_scpi` WHERE type='".$landing."' And type_complement = '".$tab[$i]."' And day='".$yesterday."'";
                 $total = Database::getNoClass(static::$_db, $scpi2, [])[0][0];

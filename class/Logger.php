@@ -288,7 +288,7 @@ class Logger extends Table
 		$dat = Datetime::createFromFormat("d/m/Y H:i:s", $dat . " 00:00:00")->getTimestamp();
 		$req = "SELECT count(*) FROM `logger` WHERE type = ? AND date >= ?;";
 		$rt[] = Database::getNoClass(static::$_db, $req, [$id, $dat])[0][0];
-		for ($i = 0; $i < 10;$i++)
+		for ($i = 0; $i < 31;$i++)
 		{
 			$datUp = $dat;
 			$dat -= 86400;

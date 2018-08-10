@@ -25,7 +25,7 @@
         <tr v-for="(trans,ok) in transactionFormating">
             <td v-for="(el, index) in trans" :class="el.class" @click="openEdit(el.id)" >
 					<span v-if="index === 0" >
-                        <i v-if="el.status=='0 - Transaction potentielle'" class="text-warning fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" title="Il s'agit d'une transaction potentielle."></i>
+                        <i class="text-warning fa fa-question-circle" aria-hidden="true" data-toggle="tooltip" title="Il s'agit d'une transaction potentielle."></i>
 						<i v-if="el.flag" class="text-warning fa fa-exclamation-triangle" aria-hidden="true" data-toggle="tooltip" title="Certaines informations manquent !"></i>
 						<i v-if="el.is_nue_end" class="fa fa-star" aria-hidden="true" data-toggle="tooltip" title="Il s'agit ici d'une transaction Nue propriete arrivee a terme."></i>
 						{{el.scpi}}

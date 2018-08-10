@@ -181,10 +181,11 @@ class LstTransaction
 			$usu = array();
 			foreach ($elm->getData() as $data) {
 				$sup = $data->getStatusTransactionObject();
-				if ($data->doByMscpi() && ($sup->getStatus()[0] < 5 || $sup->getStatus()[0] > 6))
+				if ($data->doByMscpi() && $sup->getStatus()[0] != 6 && $sup->getStatus()[0] != 5)
 					continue ;
 				$data->setDebutFinValorisationDividendes();
 				$data->actualDividendes = $elm;
+				$data->transaction_status = $data->getStatusTransaction();
 				if ($data->getTypeTransaction() != 'V') {
 					if ($data->getTypePro() === "Pleine propriété") {
 						$pleine[$data->id] = array("buy" => $data);
@@ -197,7 +198,7 @@ class LstTransaction
 			}
 			foreach ($elm->getData() as $data) {
 				$sup = $data->getStatusTransactionObject();
-				if ($data->doByMscpi() && ($sup->getStatus()[0] < 5 || $sup->getStatus()[0] > 6))
+				if ($data->doByMscpi() && $sup->getStatus()[0] != 6 && $sup->getStatus()[0] != 5)
 					continue ;
 				if ($data->getTypeTransaction() == 'V') {
 					if ($data->getTypePro() === "Pleine propriété")
@@ -219,6 +220,13 @@ class LstTransaction
 			}
 		}
 		$precalculTotal = array(
+			"pourcentagePleine" => 0,
+			"pourcentageNue" => 0,
+			"pourcentageUsu" => 0,
+			"repartitionCategorie" => [],
+			"repartitionGeographique" => [],
+			"pourcentageTypeVariable" => 0,
+			"pourcentageTypeFixe" => 0,
 			"MontantInvestissement" => 0,
 			"MontantInvestissementMscpi" => 0,
 			"MontantInvestissementOther" => 0,
@@ -266,7 +274,7 @@ class LstTransaction
 			"valeur_ifi_expatrie_2018" => 0,
 			"nbr_part_isf" => 0,
 			"pourAgeMoyenScpi" => 0,
-			"ageMoyenScpi" => 0
+			"ageMoyenScpi" => 0,
 		);
 		foreach ($rt as $key => $elm1) { // Separation par nom de SCPI
 			$precalculSCPI = array(
@@ -365,8 +373,12 @@ class LstTransaction
 						//continue ;
 						exit();
 					}
+
 					$precalcul = array(
+							"TDVS" => 0,
 							"MontantInvestissement" => 0,
+							"ventePotentielle" => 0,
+							"ventePotentiellePleinPro" => 0,
 							"nbr_part" => 0,
 							"doByMscpi" => false,
 							"doByOther" => false,
@@ -380,7 +392,6 @@ class LstTransaction
 							"plusMoinValueEuro" => 0,
 							"nbr_part_isf" => 0
 						);
-
 					// Creation de la liste de toutes les Scpi du portefeuille si besoin
 					if (!in_array($elm3['buy']->getScpi()->name, $precalculTotal['scpiList']))
 						$precalculTotal['scpiList'][] = $elm3['buy']->getScpi()->name;
@@ -419,8 +430,10 @@ class LstTransaction
 					$precalculType['id_scpi'] = $elm3['buy']->getScpi()->id;
 					$precalculType['name'] = $elm3['buy']->getScpi()->name;
 					$precalculType['type_pro'] = $elm3['buy']->getTypePro();
+                    $precalculType['fin_demembrement'] = $elm3['buy']->getDemembrementFini();
+                    //echo(" | type pro : ". $precalculSCPI['type_pro']. " et fin demembrement : ". $precalculType['fin_demembrement']);
 
-					// Recupération des dividendes courante et précédentes pour cette Scpi
+                    // Recupération des dividendes courante et précédentes pour cette Scpi
 					//$precalculSCPI['actualDividendes'] = $elm3['buy']->actualDividendes->getDividende(date("Y"));
 					//$precalculSCPI['lastDividendes'] = $elm3['buy']->actualDividendes->getDividende(date("Y") - 1);
 				
@@ -450,6 +463,8 @@ class LstTransaction
 					//Nouvelle version calcu Dividendes
 					$precalcul['actualDividendes'] = $elm3['buy']->getDividendeYear(date("Y"));
 					$precalcul['lastDividendes'] = $elm3['buy']->getDividendeYear(date("Y") - 1);
+					if (!empty($elm3['buy']->getMontanInvestissement()))
+						$precalcul['TDVS'] = $precalcul['lastDividendes'] / $elm3['buy']->getMontanInvestissement();
 
 					$precalcul['actualDividendesTrimestre']['T1'] = $elm3['buy']->getDividendeYearT(date("Y"), 1);
 					$precalcul['actualDividendesTrimestre']['T2'] = $elm3['buy']->getDividendeYearT(date("Y"), 2);
@@ -495,11 +510,14 @@ class LstTransaction
 					// Récupération de l'information qu'il y a de l'Usufruit, de la Nue pro ou Pleine pro pour le total
 					if (strstr($precalculType["type_pro"], "Usu")){
 						$precalculTotal['haveUsu'] = true;
-					} else if (strstr($precalculType['type_pro'], "Nue")) {
+					} else if (strstr($precalculType['type_pro'], "Nue") && $precalculType['fin_demembrement']== 0) {
 						$precalculTotal['haveNue'] = true;
-					} else {
+					} else if (strstr($precalculType['type_pro'], "Nue") && $precalculType['fin_demembrement']== 1)  {
 						$precalculTotal['havePleine'] = true;
 					}
+					else{
+                        $precalculTotal['havePleine'] = true;
+                    }
 
 					// Pour le comptage du nombre de transaction dans cette scpi et type pro.
 					$precalculType['nbr_transaction'] += 1;
@@ -548,6 +566,14 @@ class LstTransaction
 							}
 						}
 					}
+
+					$d = Datetime::createFromFormat("d/m/Y", "15/02/" . date('Y'));
+					$t = new Datetime();
+					if ($d->getTimestamp() < $t->getTimestamp())
+						$precalcul['dividendes_percu'] = $elm3['buy']->getDividendeYear(date('Y') - 1);
+					else
+						$precalcul['dividendes_percu'] = $elm3['buy']->getDividendeYear(date('Y') - 2);
+
 					//En plus des pleines pro on ajoute au calcul ISF  les parts de nue-propriete dont le demembrement est terminé
 					if ($elm3['buy']->getPatrimoineAtTimestamp($datetime->getTimestamp()) !== false)
 					{
@@ -572,8 +598,9 @@ class LstTransaction
 						$precalculType['nbr_part_isf'] += $precalcul['nbr_part_isf'];
 					}
 
-					$precalcul['MontantInvestissement'] = $precalcul['nbr_part'] * $precalcul['prix_achat'];
+					$precalcul['MontantInvestissement'] = $precalcul['nbr_part'] * $precalcul['prix_achat'] * $elm3["buy"]->getClefRepartition() / 100 ;
 					$precalcul['ventePotentielle'] = $precalcul['nbr_part'] * $elm3["buy"]->getValorisationOnePartAtTimestamp(today());
+					$precalcul['ventePotentiellePleinPro'] = $precalcul['nbr_part'] * $elm3["buy"]->getScpi()->getActualValue();
 					//echo (new DateTime)->setTimestamp(time())->format('d/m/Y') . " : ";
 					//echo $elm3['buy']->getNbrPartsForValorisationAtTimestamp(time()) . " : ";
 					//echo $precalcul['ventePotentielle'] . "<br />";
@@ -614,8 +641,8 @@ class LstTransaction
 						$precalculTotal['ventePotentielleOther'] += $precalcul['ventePotentielle'];
 						$precalculSCPI["vPOther"] += $precalcul['ventePotentielle'];
 					}
-
 					$rt[$key][$key2][$key3]["precalcul"] = $precalcul;
+
 /*
 					if (strstr($elm3["buy"]->getTypePro(), 'Nue'))
 					{
@@ -687,8 +714,23 @@ class LstTransaction
 				else
 					$precalculType['MoyennePrixPart'] = 0;
 
-				// À quoi ca sert de calculer la moyenne des clefs de repartition ??
-				if (strstr($precalculType["type_pro"], "Usu") && $MoyenneCleRepartitionY){
+				$demembrement_fin = -1;
+				if(!is_bool($elm3['buy']->getEnrDate())){
+                    $temps=$elm3['buy']->getEnrDate()->getTimestamp();
+                    $dt= $elm3['buy']->getDemembrement();
+                    $text="+".$dt." year";
+                    $dateAvant = date("Y-m-d", $temps);
+                    $date = strtotime(date("Y-m-d", strtotime($dateAvant)) . $text);
+                    $reste=$date-time();
+                    if($reste<0){
+                        $demembrement_fin=1;
+                    }
+                    else{
+                        $demembrement_fin=0;
+                    }
+                }
+
+				if (strstr($precalculType["type_pro"], "Usu") && $MoyenneCleRepartitionY ){
 					$precalculType['MoyenneCleRepartition'] = $MoyenneCleRepartitionX / $MoyenneCleRepartitionY;
 					$precalculSCPI['MontantInvestissementUsu'] += $precalculType['MontantInvestissement'];
 					$precalculSCPI['ventePotentielleUsu'] += $precalculType['ventePotentielle'];
@@ -696,7 +738,7 @@ class LstTransaction
 						$precalculType['plusMoinValuePourcent'] = 100 * ($precalculType['ventePotentielle'] / $precalculType['MontantInvestissement']) - 100;
 						$precalculType['plusMoinValueEuro'] = $precalculType['ventePotentielle'] - $precalculType['MontantInvestissement'];
 					}
-				} else if (strstr($precalculType['type_pro'], "Nue") && $MoyenneCleRepartitionY) {
+				} else if (strstr($precalculType['type_pro'], "Nue") && $MoyenneCleRepartitionY && $demembrement_fin==0) {
 					$precalculType['MoyenneCleRepartition'] = $MoyenneCleRepartitionX / $MoyenneCleRepartitionY;
 					$precalculSCPI['MontantInvestissementNue'] += $precalculType['MontantInvestissement'];
 					$precalculSCPI['ventePotentielleNue'] += $precalculType['ventePotentielle'];
@@ -765,9 +807,42 @@ class LstTransaction
 				$precalculTotal['ventePotentiellePourTof'] += $precalculSCPI['ventePotentielle'];
 				$precalculTotal['Tof'] += $precalculSCPI['Tof'];
 			}
+
+			if ($precalculSCPI['scpi']->getTypeCapital() == "variable")
+				$precalculTotal['pourcentageTypeVariable'] += $precalculSCPI['ventePotentielle'];
+			else if ($precalculSCPI['scpi']->getTypeCapital() == "fixe")
+				$precalculTotal['pourcentageTypeFixe'] += $precalculSCPI['ventePotentielle'];
+
+			if (!isset($precalculTotal['repartitionCategorie'][$precalculSCPI['scpi']->getCategoryStr()])) {
+				$precalculTotal['repartitionCategorie'][$precalculSCPI['scpi']->getCategoryStr()] = 0;
+			}
+			$precalculTotal['repartitionCategorie'][$precalculSCPI['scpi']->getCategoryStr()] += $precalculSCPI['ventePotentielle'];
+
+			if ($precalculSCPI['scpi']->getPieGeo() != null) {
+				foreach ($precalculSCPI['scpi']->getPieGeo() as $keyGeo => $elmGeo) {
+					if (!isset($precalculTotal['repartitionGeographique'][$keyGeo])) {
+						$precalculTotal['repartitionGeographique'][$keyGeo] = 0;
+					}
+					$precalculTotal['repartitionGeographique'][$keyGeo] += $precalculSCPI['ventePotentielle'] * ($elmGeo / 100);
+				}
+			} else {
+				if (!isset($precalculTotal['repartitionGeographique']["Autre"])) {
+					$precalculTotal['repartitionGeographique']["Autre"] = 0;
+				}
+				$precalculTotal['repartitionGeographique']["Autre"] += $precalculSCPI['ventePotentielle'];
+			}
 		}
-		if ($precalculTotal['ventePotentielle'] > 0)
+		if ($precalculTotal['ventePotentielle'] > 0) {
 			$precalculTotal['ageMoyenScpi'] = $precalculTotal['pourAgeMoyenScpi'] / $precalculTotal['ventePotentielle'];
+			$precalculTotal['pourcentageTypeVariable'] /= 	$precalculTotal['ventePotentielle'];
+			$precalculTotal['pourcentageTypeFixe'] /= 	$precalculTotal['ventePotentielle'];
+			foreach ($precalculTotal['repartitionCategorie'] as $key => &$elm) {
+				$elm /= $precalculTotal['ventePotentielle'];
+			}
+			foreach ($precalculTotal['repartitionGeographique'] as $key => &$elm) {
+				$elm /= $precalculTotal['ventePotentielle'];
+			}
+		}
 
 		if ($precalculTotal['ventePotentiellePourTof'])
 			$precalculTotal['Tof'] /= $precalculTotal['ventePotentiellePourTof'];
@@ -801,6 +876,11 @@ class LstTransaction
 		uasort($rt, function ($a, $b) {
 			return ($a['precalcul']['ventePotentielle'] < $b['precalcul']['ventePotentielle']);
 		});
+		if (!empty($precalculTotal['ventePotentielle'])) {
+			$precalculTotal['pourcentagePleine'] = 100 * $precalculTotal['ventePotentiellePleine'] / $precalculTotal['ventePotentielle'];
+			$precalculTotal['pourcentageNue'] =  100 * $precalculTotal['ventePotentielleNue'] / $precalculTotal['ventePotentielle'];
+			$precalculTotal['pourcentageUsu'] =  100 * $precalculTotal['ventePotentielleUsu'] / $precalculTotal['ventePotentielle'];
+		}
 //		$precalculTotal['actualDividendes'] = $this->getDividendes();
 		$rt['precalcul'] = $precalculTotal;
 	//			exit();

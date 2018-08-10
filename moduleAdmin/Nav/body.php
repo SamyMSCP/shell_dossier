@@ -21,7 +21,10 @@
 							<a href="?p=EditionClient&client=<?= $elm->id_client ?>&onglet=SUIVI&id_crm=<?= $elm->id ?>"
 							   target="_blank">
 								<h5 style="text-align: left;">
-									<?= $elm->getClient()->getShortName() ?>
+									 <?php if($elm->getClient() != null){
+									echo	$elm->getClient()->getShortName();
+										}
+									 ?>
 								</h5>
 								<?= substr(strip_tags($elm->getCommentaire()), 0, 45) ?>...
 								<br/>

@@ -86,7 +86,7 @@
 					<table>
 						<tr>
 							<td style="font-family: 'Montserrat', sans-serif;color:#1781e0;">
-								<div class="opportuniteContent1">DURÉE</div> <!-- dure -->
+								<div class="opportuniteContent1">DURÉE</div>
 								<div class="opportuniteContent2">
 									{{ op.time_demembrement | years }}
 								</div>

@@ -45,35 +45,57 @@ class Transaction extends Table
 		return (Nuepropriete::getInstance()->getDateFinDemembrement($this));
 	}
 
+
 	public function getAllForStore() {
 //		$req = "SELECT * FROM (SELECT * FROM (SELECT *  FROM `TRANSACTION` AS `ts`) t1 INNER JOIN (SELECT `id_transaction`, `status_sub`, `status_sup` FROM `StatusTransaction` AS `st` ORDER BY `date_creation` DESC) t2 ON `t1`.`id` = `t2`.`id_transaction` INNER JOIN `DONNEUR D'ORDRE` AS `dh` ON `dh`.`id_dh` = `t1`.`id_donneur_ordre` INNER JOIN `PERSONNE PHYSIQUE` AS `pp` ON `pp`.`id_phs` = `dh`.`lien_phy` ORDER BY `status_sup` AND `status_sub`) t_all GROUP BY `id_transaction`";
 		$req = "SELECT * FROM `TRANSACTION`";
 		$all =  Database::prepare(static::$_db, $req, [], "Transaction");
-		foreach ($all as $key => $elm) {
-			$nbr_part = ($elm->nbr_part);
-			$prix_part = $elm->prix_part;
-			$req = "SELECT * FROM `StatusTransaction` WHERE `id_transaction` = :id ORDER BY `date_creation` DESC";
-			$b = Database::prepare(static::$_db, $req, ['id' => $elm->id], get_called_class());
+        foreach ($all as $key => $elm) {
+            $nbr_part = ($elm->nbr_part);
+
+            if($elm->cle_repartition != null){
+
+                $cle_repartition=ft_decrypt_crypt_information($elm->cle_repartition);
+            }
+            else $cle_repartition="";
+            $type_pro = $elm->type_pro;
+            if($type_pro != null && ft_decrypt_crypt_information($type_pro) == "Nue propriété"){
+                $prix_part = $elm->prix_part*$cle_repartition/100;
+                $montant_invest=$nbr_part*$prix_part;
+            }
+            else if($type_pro != null && ft_decrypt_crypt_information($type_pro) == "Usufruit"){
+                $cle_repartition=(100 - $cle_repartition);
+                $prix_part = $elm->prix_part*$cle_repartition/100;
+                $montant_invest=$nbr_part*$prix_part;
+            }
+            else{
+                $prix_part = $elm->prix_part;
+                $montant_invest=$nbr_part*$prix_part;
+            }
+
+            $req = "SELECT `id_transaction`, `status_sub`, `status_sup`, `status_mois` FROM `StatusTransaction` WHERE `id_transaction` = :id ORDER BY `date_creation` DESC";
+            $b = Database::prepare(static::$_db, $req, ['id' => $elm->id], get_called_class());
 //			var_dump($b);
-			if (count($b) == 0) {
-				$b['status_sub'] = 0;
-				$b['status_sup'] = 0;
-			}
-			else
-				$b = ['status_sup' => $b[0]->status_sup, 'status_sub' => $b[0]->status_sub];
-			$all[$key] = (object)array_merge((array)$all[$key], (array)$b);
+            if (count($b) == 0) {
+                $b['status_sub'] = 0;
+                $b['status_sup'] = 0;
+            }
+            else
+                $b = ['status_sup' => $b[0]->status_sup, 'status_sub' => $b[0]->status_sub];
+            $all[$key] = (object)array_merge((array)$all[$key], (array)$b);
 
-			$req = "SELECT * FROM `DONNEUR D'ORDRE` WHERE `id_dh` = :id";
-			$c = Database::prepare(static::$_db, $req, ['id' => $all[$key]->id_donneur_ordre], get_called_class());
-			$all[$key] = (object)array_merge((array)$all[$key], (array)$c[0]);
+            $req = "SELECT `id_dh`, `day`, `login`, `conseiller`, `non_sollicitation_par_mail`, `lien_phy` FROM `DONNEUR D'ORDRE` WHERE `id_dh` = :id";
+            $c = Database::prepare(static::$_db, $req, ['id' => $all[$key]->id_donneur_ordre], get_called_class());
+            $all[$key] = (object)array_merge((array)$all[$key], (array)$c[0]);
 
-			$req = "SELECT * FROM `PERSONNE PHYSIQUE` WHERE `id_phs` = :id";
+            $req = "SELECT  `id_phs`,`civilite`, `prenom`,`nom` FROM `PERSONNE PHYSIQUE` WHERE `id_phs` = :id";
 //			var_dump($c);
-			$d = Database::prepare(static::$_db, $req, ['id' => $all[$key]->lien_phy], get_called_class());
-			$all[$key] = (object)array_merge((array)$all[$key], (array)$d[0]);
-			$all[$key]->nbr_part = floatval($nbr_part);
-			$all[$key]->prix_part = floatval($prix_part);
-//			$elm = (object)$all[$key];
+            $d = Database::prepare(static::$_db, $req, ['id' => $all[$key]->lien_phy], get_called_class());
+            $all[$key] = (object)array_merge((array)$all[$key], (array)$d[0]);
+            $all[$key]->nbr_part = floatval($nbr_part);
+            $all[$key]->prix_part = floatval($prix_part);
+            $all[$key]->montant_investissement = $montant_invest;
+            $all[$key]->cle_repartition = $cle_repartition;
 		}
 //		return ($all);
 		foreach ($all as $key => $elm)
@@ -86,8 +108,15 @@ class Transaction extends Table
 				$elm->nom = (is_null($elm->nom) ? "" : ft_decrypt_crypt_information($elm->nom));
 				$elm->civilite = (is_null($elm->civilite) ? "" : ft_decrypt_crypt_information($elm->civilite));
 				$elm->commentaire = (is_null($elm->commentaire) ? "" : ft_decrypt_crypt_information($elm->commentaire));
-//				echo ft_decrypt_crypt_information($elm->enr_date);
-//				die();
+				$elm->conseillerr = (is_null($elm->conseiller) ? "" : Pp::getFromId($elm->conseiller));
+				if($elm->conseillerr != null){
+				    if($elm->conseillerr[0]->getName() != "AZAM"){
+                        $elm->conseillerrr=$elm->conseillerr[0]->getShortName();
+                    }
+                    else{
+                        $elm->conseillerrr="M. Samuel MARTEL";
+                    }
+                }
 				$tmp = DateTime::createFromFormat("d/m/Y", (is_null($elm->enr_date) ? "" : ft_decrypt_crypt_information($elm->enr_date)));
 				if ($tmp === False)
 					$elm->enr_date = 0;
@@ -639,8 +668,11 @@ class Transaction extends Table
 			return ("US");
 	}
 	public function getClefRepartition() {
+        $rt = $this->getTypePro();
 		if (empty($this->cle_repartition))
 			return (100);
+        if ($rt == "Pleine propriété")
+            return (100);
 		if (!isset($this->_clefRepartition)){
 			$this->_clefRepartition = ft_decrypt_crypt_information($this->cle_repartition);
 			if (strstr($this->getTypePro(), "Usu"))
@@ -1019,8 +1051,13 @@ class Transaction extends Table
 			else
 				return ($this->_valorisation = 0);
 		}
+
 		return ($this->_valorisation);
 	}
+
+	/**
+	 * 
+	 */
 	public function getValorisationAtTimestamp($date) {
 		if (1)
 		{
@@ -1228,21 +1265,29 @@ class Transaction extends Table
 		return ($rt[0]->nbr_parts_active);
 	}
 	public function getDateDebutValorisation() {
+		if (empty($this->debut_valorisation))
+			return (null);
 		$rt = new DateTime();
 		$rt->setTimestamp(intval($this->debut_valorisation));
 		return ($rt);
 	}
 	public function getDateFinValorisation() {
+		if (empty($this->fin_valorisation))
+			return (null);
 		$rt = new DateTime();
 		$rt->setTimestamp(intval($this->fin_valorisation));
 		return ($rt);
 	}
 	public function getDateDebutDividendes() {
+		if (empty($this->debut_dividendes))
+			return (null);
 		$rt = new DateTime();
 		$rt->setTimestamp(intval($this->debut_dividendes));
 		return ($rt);
 	}
 	public function getDateFinDividendes() {
+		if (empty($this->fin_dividendes))
+			return (null);
 		$rt = new DateTime();
 		$rt->setTimestamp(intval($this->fin_dividendes));
 		return ($rt);
@@ -1400,7 +1445,7 @@ class Transaction extends Table
 		$rt['id_benf'] = $this->id_beneficiaire;
 		//$rt['id_tr_a'] = $this->id_transaction_achat;
 		$rt['doByMscpi'] = $this->doByMscpi();
-		$benef = $this->getBeneficiaire();
+        $benef = $this->getBeneficiaire();
 		if ($benef)
 		{
 			if ($benef->type_ben == "Pm")
@@ -1528,12 +1573,107 @@ class Transaction extends Table
 		$rt['mensualite_emprunt'] = $this->mensualite_emprunt;
 
 		$rt['montantGlobalDeRevente'] = $this->getMontantGlobalDeRevente();
-
 		return ($rt);
 	}
 
-	public function getForFrontStore()
-	{
+	public function getForFrontStore() {
+
+		$status = $this->getStatusTransactionObject();
+		$rt = [
+			"id" => $this->id,
+			"id_scpi" => $this->id_scpi,
+			"id_beneficiaire" => $this->id_beneficiaire,
+			"scpi" => $this->getScpi()->getName(),
+			"ventePotentiellePleinPro" => $this->getNbrPart() * $this->getScpi()->getActualValue(),
+			"demembrement" => $this->getDemembrement(),
+			"doByMscpi" => intval($this->doByMscpi()),
+			"doByOther" => ($this->status_trans != "MS.C") ? true : false,
+			"enr_date" => (!empty($this->enr_date) && ($enr_date = DateTime::createFromFormat("d/m/Y",ft_decrypt_crypt_information($this->enr_date)))) ? $enr_date->getTimestamp() : NULL,
+			"nbr_part" => $this->nbr_part,
+			"cle_repartition" => ($this->cle_repartition != NULL) ? $this->getClefRepartition() : NULL,
+			"prix_part" => $this->prix_part,
+			"status_trans" => (!empty($status) && !empty($status->getKeyForStore())) ? $status->getKeyForStore() : "0-0",
+			"type_pro" => ($this->type_pro != NULL) ? ft_decrypt_crypt_information($this->type_pro) : NULL,
+			"type_transaction" => ($this->type_transaction=="V")? "V" : "A",
+			"marche" => $this->getMarcher(),
+			"MontantInvestissement" => $this->getMontanInvestissement(),
+			"debut_valorisation" => ($this->getDateDebutValorisation() != null) ? $this->getDateDebutValorisation()->getTimestamp() : null,
+			"fin_valorisation" =>  ($this->getDateFinValorisation() != null) ? $this->getDateFinValorisation()->getTimestamp() : null,
+			"debut_dividendes" =>  ($this->getDateDebutDividendes() != null) ? $this->getDateDebutDividendes()->getTimestamp() : null,
+			"fin_dividendes" =>  ($this->getDateFinDividendes() != null) ? $this->getDateFinDividendes()->getTimestamp() : null,
+			"fait_par_mscpi" => $this->fait_par_mscpi,
+
+			"montant_emprunt" => $this->montant_emprunt,
+			"type_emprunt" => $this->type_emprunt,
+			"duree_emprunt" => $this->duree_emprunt,
+			"date_debut_emprunt" => $this->date_debut_emprunt,
+			"taux_emprunt" => $this->taux_emprunt,
+			"mensualite_emprunt" => $this->mensualite_emprunt,
+			"id_cons" => $this->id_cons,
+			"info_trans" => $this->getInfoTransaction(),
+			"societe" => $this->getSociete(),
+            "non_pp_fin_demembrement" => $this->getDemembrementFini()
+		];
+		return ($rt);
+	}
+
+	public function getSociete() {
+		return ($this->societe);
+	}
+
+	public static function getMarcheLst() {
+		return self::$_marche;
+	}
+	public static function getTypeProLst() {
+		return self::$_typepro;
+	}
+	public static function getTypeDemembrementLst() {
+		return self::$_demembrement;
+	}
+
+/*
+	public function getFinDemembrement() {
+		if (!property_exists($this, "enr_date") || $this->enr_date == "0")
+			return (null);
+		$rt = DelaiJouissance::getDateTimeFromDateId($this->id_scpi, ft_decrypt_crypt_information($this->enr_date));
+		$rt->add(new DateInterval("P10Y"));
+		$rt->sub(new DateInterval("P1D"));
+		return ($rt);
+	}
+*/
+	public function getFinDemembrement() {
+		if ($this->getTypePro() == "Pleine propriété")
+			return (0);
+		else if ($this->getTypePro() == "Nue propriété" && $this->getDateDebutDividendes() != null)
+			return ($this->getDateDebutDividendes()->getTimestamp());
+		else if ($this->getTypePro() == "Usufruit" && $this->getDateFinDividendes() != null)
+			return ($this->getDateFinDividendes()->getTimestamp());
+		return (100000);
+	}
+
+	/* si on a 1, c'est une fin de demembrement, sinon c'est 0 */
+	public function getDemembrementFini() {
+		if ($this->getTypePro() == "Pleine propriété"){
+			return (1);
+		}
+		else if ($this->getTypePro() == "Nue propriété" && $this->getDateDebutDividendes() != null){
+			$date=$this->getDateDebutDividendes()->getTimestamp()-time();
+			if($date<0){
+				return 1;
+			}
+			else return 0;
+		}
+		else if ($this->getTypePro() == "Usufruit" && $this->getDateFinDividendes() != null){
+			$date=$this->getDateFinDividendes()->getTimestamp()-time();
+			if($date<0){
+				return 1;
+			}
+			else return 0;
+		}
+		return (100000);
+	}
+
+	public function getForFrontStoreOld() {
 		$benef = $this->getBeneficiaire();
 		$personnes = ['shortName' => ''];
 		if ($benef)
@@ -1546,6 +1686,8 @@ class Transaction extends Table
 		$rt['beneficiaire'] = $personnes;
 		$rt['id_beneficiaire'] = $this->id_beneficiaire;
 		$rt['scpi'] = $this->getScpi()->getName();
+		$rt['pieGeo'] = $this->getScpi()->pie_geo;
+		$rt['pieBiens'] = $this->getScpi()->pie_biens;
 		// Conseiller ayant réalisé la transaction
 		if (!is_null($this->id_cons) && $this->id_cons > 0)
 			$rt['conseiller'] = $this->getConseiller()->getShortName();
@@ -1591,36 +1733,60 @@ class Transaction extends Table
 		$rt['mensualite_emprunt'] = $this->mensualite_emprunt;
 		$rt['viager'] = $this->viager;
 		$rt['type_transaction'] = $this->getTypeTransaction();
+
+
+		$data = $this->getDh()->getCacheArrayTable();
+		if (isset($data[$rt['scpi']])) {
+			$rt['dividendes'] = $data[$rt['scpi']]['precalcul']['lastDividendes'];
+			$rt['flagMissingInfo'] = $data[$rt['scpi']]['precalcul']['flagMissingInfo'];
+		} else {
+			$rt['dividendes'] = 0;
+			$rt['flagMissingInfo'] = false;
+		}
+		// $rt['finjouissance'] = $data[$rt['scpi']]['precalcul'];
+		// dbg($data[$rt['scpi']]['precalcul']);
+		$rt['debut_jouissance'] = $this->getDelaiJouissance()->getEntreeJouissance();
+		$rt['fin_jouissance'] = $this->calcFinValorisation();
+		$rt['debut_dividendes'] = $this->calcDebutDividendes();
+		// dbg($this);
+		if (isset($data[$rt['scpi']])){
+			switch ($this->getTypePro()) {
+				case 'Pleine propriété':
+					$rt['ventePotentielle'] = $data[$rt['scpi']]['Pleine'][$this->id]['precalcul']['ventePotentielle'];
+					$rt['plus_ou_moins_scpi'] = $data[$rt['scpi']]['Pleine'][$this->id]['precalcul']['plusMoinValuePourcent'];
+					break;
+				case 'Usufruit':
+					$rt['ventePotentielle'] = $data[$rt['scpi']]['Usu'][$this->id]['precalcul']['ventePotentielle'];
+					$rt['plus_ou_moins_scpi'] = $data[$rt['scpi']]['Usu'][$this->id]['precalcul']['plusMoinValuePourcent'];
+					break;
+				case "Nue propriété":
+					$rt['ventePotentielle'] = $data[$rt['scpi']]['Nue'][$this->id]['precalcul']['ventePotentielle'];
+					$rt['ventePotentiellePleinePro'] = $data[$rt['scpi']]['Nue'][$this->id]['precalcul']['ventePotentiellePleinPro'];
+					$rt['plus_ou_moins_scpi'] = $data[$rt['scpi']]['Nue'][$this->id]['precalcul']['plusMoinValuePourcent'];
+					break;
+			}
+			$rt['capital'] = $data[$rt['scpi']]['precalcul']['scpi']->TypeCapital;
+		}
+		else {
+			$rt['ventePotentielle'] = 0;
+			$rt['capital'] = '-';
+		}
+		$d = Datetime::createFromFormat("d/m/Y", "15/02/" . date('Y'));
+		$t = new Datetime();
+		$rt['valorisation'] = $this->getValorisationAtTimestamp(time());
+		// dbg($this);
+
+		//A verifier
+		if ($d->getTimestamp() <
+		$t->getTimestamp())
+			$rt['dividendes_percu'] = $this->getDividendeYear(date('Y') - 1);
+		else
+			$rt['dividendes_percu'] = $this->getDividendeYear(date('Y') - 2);
+		$rt['plus_ou_moins'] = ($this->getPlusMoinValue());
+		$rt['tmp_scpi'] = $data[$rt['scpi']];
+		$rt['main_categorie'] = $this->getScpi()->getCategoryStr();
+		$rt['tof'] = $this->getScpi()->Tof;
+		$rt['tdvm'] = $this->getScpi()->Tdvm;
 		return $rt;
-	}
-
-	public static function getMarcheLst() {
-		return self::$_marche;
-	}
-	public static function getTypeProLst() {
-		return self::$_typepro;
-	}
-	public static function getTypeDemembrementLst() {
-		return self::$_demembrement;
-	}
-
-/*
-	public function getFinDemembrement() {
-		if (!property_exists($this, "enr_date") || $this->enr_date == "0")
-			return (null);
-		$rt = DelaiJouissance::getDateTimeFromDateId($this->id_scpi, ft_decrypt_crypt_information($this->enr_date));
-		$rt->add(new DateInterval("P10Y"));
-		$rt->sub(new DateInterval("P1D"));
-		return ($rt);
-	}
-*/
-	public function getFinDemembrement() {
-		if ($this->getTypePro() == "Pleine propriété")
-			return (0);
-		else if ($this->getTypePro() == "Nue propriété")
-			return ($this->getDateDebutDividendes()->getTimestamp());
-		else if ($this->getTypePro() == "Usufruit")
-			return ($this->getDateFinDividendes()->getTimestamp());
-		return (100000);
 	}
 }

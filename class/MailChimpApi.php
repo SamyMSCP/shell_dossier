@@ -15,7 +15,7 @@ class MailChimpApi
 
 	private static $_api_token = "461a57aad9eabc3884d1936fa1fcfbd6-us2";
 	private static $_username = "anystring";
-	private static $_api_url = "http://us2.api.mailchimp.com/3.0";
+	private static $_api_url = "https://us2.api.mailchimp.com/3.0";
 
 	private $since_date;
 	const MAX_ELEM = 30;

@@ -90,14 +90,14 @@
 					<?php
 					if (!isProd())
 					{
-						?>
+						/*
 						<div class="nav-btn nav-btn-mesProjets<?php if ($GLOBALS['GET']['p'] == "ListeProjets") echo " btn-selected"; else echo $stroverlay; ?>">
 							<a href="?p=ListeProjets"  class="linkBarNav">
 								<div></div>
 								<span class="NavTxt">MES PROJETS</span>
 							</a>
 						</div>
-						<?php
+						*/
 					}
 					/*
 					*/

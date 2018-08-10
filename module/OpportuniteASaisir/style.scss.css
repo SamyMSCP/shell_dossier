@@ -1,6 +1,6 @@
 #op-module {
   height: 548px;
-  border-radius: 10px;
+  border-radius: 3px;
   background-color: #1781E0; }
   #op-module * {
     padding: 0px;
@@ -20,14 +20,14 @@
     height: 50%; }
 
 .opportunite {
-  border-radius: 10px;
+  border-radius: 3px;
   background-color: #1781E0;
   color: #ffffff; }
   @media (max-width: 580px) {
     .opportunite {
       border-radius: 0 !important; } }
   .opportunite .part-up {
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 3px 3px 0px 0px;
     background-image: url("module/OpportuniteListComponent/img/Immeuble8.jpg"); }
     @media (max-width: 580px) {
       .opportunite .part-up {
@@ -40,7 +40,7 @@
     background-repeat: no-repeat;
     background-position: center center; }
     .opportunite .part-up .filter {
-      border-radius: 10px 10px 0px 0px;
+      border-radius: 3px 3px 0px 0px;
       position: absolute;
       width: 100%;
       height: 200px;

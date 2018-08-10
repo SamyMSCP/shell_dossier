@@ -1,13 +1,3 @@
-<script>
-var i = 1;
-function display_btn(){
-	if (i % 2)
-		window.location = <?php echo '"index.php?p=monportefeuille&active=' . $_COOKIE['token'] . '#edit"'; ?>;
-	else
-		window.location = "index.php?p=monportefeuille#edit";
-	i++;
-}
-</script> 
 
 <div class="modal fade mdlNew" id="add_scpi" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog modal-lg" role="document">
@@ -163,30 +153,6 @@ function display_btn(){
 								</div>
 							</div>
 
-							<script>
-								$("#transaction").change(function (){
-									if ($("#transaction option:selected").val() == "Société de gestion"){
-										$("#preci").html("Quelle " + $("#transaction option:selected").val().toLowerCase() + " ?");
-										document.getElementById("informations").setAttribute("disabled", "1");
-										document.getElementById("preci").style.visibility = "hidden";
-										document.getElementById("informations").setAttribute("placeholder", "Avec la societe de gestion directement");
-									}
-									else if ($("#transaction option:selected").val() == "Banque")
-									{
-								document.getElementById("informations").removeAttribute("disabled");
-								$("#preci").html("Quelle " + $("#transaction option:selected").val().toLowerCase() + " ?");
-										document.getElementById("informations").setAttribute("placeholder", "");
-										document.getElementById("preci").style.visibility = "block";
-									}
-									else
-									{
-								document.getElementById("informations").removeAttribute("disabled");
-										document.getElementById("preci").style.visibility = "block";
-										document.getElementById("informations").setAttribute("placeholder", "");
-										$("#preci").html("Quel " + $("#transaction option:selected").val().toLowerCase() + " ?");
-									}
-								})
-							</script>
 							<div class="form-group">
 								<label class="col-xs-4 control-label">Montant emprunté ?</label>
 								<div class="col-xs-4">
@@ -249,23 +215,3 @@ function display_btn(){
 	</div>
 </div>
 
-<script type="text/javascript">
-function more_info_scpi()
-{
-	if ($(".more_dt").css('display') == "none"){
-		$(".more_dt").css("display", "block");
-		$(".visibility_form").css("visibility", "visible");
-		$(".btn_more_dt").html("Moins de détails");
-		$("#isMore").val("1");
-//		$('.more_dt div div input').attr('required', '1');
-	}
-	else{
-		$(".more_dt").css('display', "none");
-		$(".visibility_form").css("visibility", "hidden");
-		$(".btn_more_dt").html("Plus de détails");
-		$('.more_dt div div input').val("");
-		$("#isMore").val("0");
-//		$('.more_dt div div input').removeAttribute('required');
-	}
-}
- </script>

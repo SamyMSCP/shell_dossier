@@ -118,7 +118,13 @@ var mail_app = new Vue({
 			var el = document.getElementById("preview-modal-content");
 //			$.ajax("/ajax.php")
 			var self = this;
-			var dwho = (parseInt(self.who) === 0) ? "<?= Dh::getCurrent()->getLogin() ?>" : "<?= $this->dh->getConseiller()->getLogin() ?>";
+			<?php
+				$conseiller = "-";
+				if (!empty($this->dh->getConseiller())) {
+					$conseiller = $this->dh->getConseiller()->getLogin();
+				}
+			?>
+			var dwho = (parseInt(self.who) === 0) ? "<?= Dh::getCurrent()->getLogin() ?>" : "<?= $conseiller ?>";
 			$.post("/ajax_request.php", {
 				req: "SendMail",
 				action: "Send",

@@ -205,9 +205,18 @@ class StatClients
         $rt->accountCreationsLinxo = Dh::getNbrByIdForLastDays(3);
         $rt->accountCreationsApi = Dh::getNbrByIdForLastDays(10);
         $rt->connexion = Logger::getNbrByIdForLastDays(2);
-		//$rt->visualGuide = Logger::getNbrByIdForLastDays(42);
 		$rt->centreInteret = Logger::getNbrByIdForFirstTime(44);
 		$rt->StatCentreInteret = CentreInteret::getForStats();
+		$rt->accountCreationsMois = Dh::getNbrByIdForLastDaysMoisTotal();
+
+
+        $rt->accountCreationsFrontMois = Dh::getNbrByIdForLastMonth(1);
+        $rt->accountCreationsMailChimpMois = Dh::getNbrByIdForLastMonth(2);
+        $rt->accountCreationsFacebookMois = Dh::getNbrByIdForLastMonth(4);
+        $rt->accountCreationsTwitterMois = Dh::getNbrByIdForLastMonth(5);
+        $rt->accountCreationsLinkedinMois = Dh::getNbrByIdForLastMonth(6);
+        $rt->accountCreationsLinxoMois = Dh::getNbrByIdForLastMonth(3);
+        $rt->accountCreationsApiMois = Dh::getNbrByIdForLastMonth(10);
 
 		$rt->nbrFicheProduitParScpi = Dh::getNbrByElementInscription('Fiche produit');
         $rt->NbrPageContact = Dh::getNbrPageContact();

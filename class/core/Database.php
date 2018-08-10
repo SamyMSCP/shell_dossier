@@ -66,6 +66,13 @@ class Database
 		}
 		return ($datas);
 	}
+
+	/**
+	 * @param $db
+	 * @param $statement
+	 * @param $classname
+	 * @return mixed
+	 */
 	public static function queryArray($db, $statement, $classname) {
 		self::check_connexion($db);
 		$req = self::$_db[$db]->query($statement);
@@ -79,6 +86,13 @@ class Database
 		}
 		return ($datas);
 	}
+
+	/**
+	 * @param $db
+	 * @param $statement
+	 * @param $attr
+	 * @return mixed
+	 */
 	public static function prepareNoClass($db, $statement, $attr) {
 		self::check_connexion($db);
 		foreach ($attr as $key => $elm) {
@@ -88,6 +102,14 @@ class Database
 		$req->execute($attr);
 		return $req->rowCount();
 	}
+
+	/**
+	 * @param $db
+	 * @param $statement
+	 * @param $attr
+	 * @param $classname
+	 * @return mixed
+	 */
 	public static function prepareNoClass2($db, $statement, $attr) {
 		self::check_connexion($db);
 		foreach ($attr as $key => $elm) {
@@ -101,6 +123,7 @@ class Database
 		$req = self::$_db[$db]->prepare($statement);
 		return $req->execute($attr);
 	}
+	
 	public static function prepareNoClassCheckSecurity($db, $statement, $attr, $classname) {
 		self::check_connexion($db);
 		foreach ($attr as $key => $elm) {
@@ -110,6 +133,13 @@ class Database
 		$req = self::$_db[$db]->prepare($statement);
 		return $req->execute($attr);
 	}
+
+	/**
+	 * @param $db
+	 * @param $statement
+	 * @param $attr
+	 * @return bool
+	 */
 	public static function prepareInsert($db, $statement, $attr) {
 		self::check_connexion($db);
 		foreach ($attr as $key => $elm) {
@@ -122,6 +152,14 @@ class Database
 		$datas = self::$_db[$db]->lastInsertId(); ;
 		return ($datas);
 	}
+
+	/**
+	 * @param $db
+	 * @param $statement
+	 * @param $attr
+	 * @param $classname
+	 * @return bool
+	 */
 	public static function prepareInsertCheckSecurity($db, $statement, $attr, $classname) {
 		self::check_connexion($db);
 		foreach ($attr as $key => $elm) {
@@ -135,6 +173,13 @@ class Database
 		$datas = self::$_db[$db]->lastInsertId(); ;
 		return ($datas);
 	}
+
+	/**
+	 * @param $db
+	 * @param $statement
+	 * @param $attr
+	 * @return bool
+	 */
 	public static function prepareInsertNoSecurity($db, $statement, $attr) {
 		self::check_connexion($db);
 		$req = self::$_db[$db]->prepare($statement);
@@ -144,6 +189,14 @@ class Database
 		$datas = self::$_db[$db]->lastInsertId(); ;
 		return ($datas);
 	}
+
+	/**
+	 * @param $db
+	 * @param $statement
+	 * @param $attr
+	 * @param $classname
+	 * @return mixed
+	 */
 	public static function prepareCheckSecurity($db, $statement, $attr, $classname) {
 		self::check_connexion($db);
 		foreach ($attr as $key => $elm) {
@@ -156,6 +209,13 @@ class Database
 		$datas = $req->fetchAll();
 		return ($datas);
 	}
+
+	/**
+	 * @param $db
+	 * @param $statement
+	 * @param $attr
+	 * @return mixed
+	 */
 	public static function getNoClass($db, $statement, $attr) {
 		self::check_connexion($db);
 
@@ -167,6 +227,14 @@ class Database
 		$datas = $req->fetchAll();
 		return ($datas);
 	}
+
+	/**
+	 * @param $db
+	 * @param $statement
+	 * @param $attr
+	 * @param $classname
+	 * @return mixed
+	 */
 	public static function prepare($db, $statement, $attr, $classname) {
 		self::check_connexion($db);
 		foreach ($attr as $key => $elm) {
@@ -178,17 +246,33 @@ class Database
 		$datas = $req->fetchAll();
 		return ($datas);
 	}
+
+	/**
+	 * @param $db
+	 * @param $statement
+	 * @return bool
+	 */
 	public static function exec($db, $statement) {
 		if (self::$_db[$db]->exec($statement))
 			return self::$_db[$db]->lastInsertId();
 		else
 			return false;
 	}
+
+	/**
+	 * @param $name
+	 * @return mixed|null
+	 */
 	public static function getDb($name) {
 		if (isset(self::$_db[$name]))
 			return (self::$_db[$name]);
 		return (null);
 	}
+
+	/**
+	 * @param string $name
+	 * @return bool
+	 */
 	public function beginTransaction($name = "mscpi_db") {
 		if (isset(self::$_db[$name]))
 		{
@@ -196,6 +280,11 @@ class Database
 		}
 		return (false);
 	}
+
+	/**
+	 * @param string $name
+	 * @return bool
+	 */
 	public function commit($name = "mscpi_db") {
 		if (isset(self::$_db[$name]))
 		{
@@ -203,6 +292,11 @@ class Database
 		}
 		return (false);
 	}
+
+	/**
+	 * @param string $name
+	 * @return bool
+	 */
 	public function rollBack($name = "mscpi_db") {
 		if (isset(self::$_db[$name]))
 		{
@@ -211,6 +305,11 @@ class Database
 		return (false);
 	}
 
+	/**
+	 * @param $db
+	 * @param $req
+	 * @return mixed
+	 */
 	public function request($db, $req) {
 		return  (self::$_db[$db]->query($req));
 	}

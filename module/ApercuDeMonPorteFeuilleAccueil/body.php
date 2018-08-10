@@ -2,7 +2,7 @@
 $nb_transac = count($this->dh->getTransaction());
 ?>
 
-<div class="module moduleApercuDeMonPorteFeuille">
+<div class="module moduleApercuDeMonPorteFeuille" id="moduleApercuDeMonPorteFeuille">
 	<div class="moduleTitle">
 		<img src="<?= $this->getPath() . "img/Portefeuille-Blanc.svg" ?>" alt=""/>
 		<span>APER&Ccedil;U DE MON PORTEFEUILLE</span>
@@ -33,7 +33,7 @@ $nb_transac = count($this->dh->getTransaction());
 					d'investissement
 				</th>
 				<th class="col-lg-2 col-md-2 col-sm-2 col-xs-3 sortable-cursor text-uppercase text-center">Montant
-					global de revente
+					global de revente (*)
 				</th>
 				<th class="align-middle col-lg-1 col-md-2 col-sm-2 col-xs-3 sortable-cursor text-uppercase text-center">
 					+ ou - value
@@ -41,6 +41,18 @@ $nb_transac = count($this->dh->getTransaction());
 			</tr>
 			</thead>
 			<tbody>
+			<?php //* ?>
+				<tr class="hover_blue_back text-center row" v-for="trans in this.$store.state.transactions.transactionsList">
+					<td>{{ trans.scpi }} ({{ trans.capital | capital_short }}) <span v-if="trans.flagMissingInfo" class="text-warning"><i class="fa fa-warning"></i></span></td>
+					<td>{{ trans.type_pro | propriete_short }}</td>
+					<td>{{ trans.main_categorie }}</td>
+					<td>{{ trans.tof | percent }}</td>
+					<td>{{ trans.tdvm | percent }}</td>
+					<td>{{ trans | montant_investissement | currency }}</td>
+					<td>{{ trans | montant_revente | currency }}</td>
+					<td>{{ trans | plus_value | percent }}</td>
+				</tr>
+			<?php //*/ ?>
 			<?php
 			/*
 				type -> ['precalcul']['scpi']['TypeCapital']
@@ -51,6 +63,9 @@ $nb_transac = count($this->dh->getTransaction());
 				Montant Global d'investissement -> ['precalcul']['ventePotentielle']
 				+ ou - value -> ['precalcul']["plusMoinValuePourcent"]
 			*/
+			//TODO: Verif avec jonathan du JS et suppr du php
+			/*
+			
 			$index = -1;
 			$trans = $this->dh->getTransaction();
 			foreach ($this->data as $key => $elmData) {
@@ -58,6 +73,7 @@ $nb_transac = count($this->dh->getTransaction());
 				if ($key == 'precalcul')
 					continue;
 				foreach ($elmData as $key2 => $elmData2) {
+					// dbg($elmData2);
 					if ($key2 == 'precalcul')
 						continue;
 					$elm = $elmData2['precalcul'];
@@ -74,7 +90,7 @@ $nb_transac = count($this->dh->getTransaction());
 						$type = "-";
 
 					?>
-					<tr class=" hover_blue_back text-center row <?php if ($elm['flagMissingInfo']) {
+					<tr class="hover_blue_back text-center row <?php if ($elm['flagMissingInfo']) {
 						echo "orange_back";
 						$flagerror = 1;
 					} ?>">
@@ -110,7 +126,7 @@ $nb_transac = count($this->dh->getTransaction());
 							?>
 						</td>
 						<td class="col-lg-2 col-md-2 col-sm-2 col-xs-3">
-							<?= number_format($elm["ventePotentielle"], 2, ",", " ") ?> €
+							<?= number_format($elm["ventePotentielle"], 2, ",", " "); ?> €
 						</td>
 						<?php
 						if (is_numeric($elm["plusMoinValuePourcent"]) && !$elm['flagMissingInfo'] && !strstr($elm["type_pro"], "Usu")) {
@@ -131,6 +147,7 @@ $nb_transac = count($this->dh->getTransaction());
 					<?php
 				}
 			}
+			//*/
 			?>
 			</tbody>
 			<tfoot>
@@ -140,12 +157,8 @@ $nb_transac = count($this->dh->getTransaction());
 				<th class='hidden-xs'></th>
 				<th class='hidden-xs '></th>
 				<th style="text-align:center;">Total :</th>
-				<th class='text-center'><?= number_format($this->data['precalcul']['MontantInvestissement'], 2, ",", " ") ?>
-					€
-				</th>
-				<th class="text-center"><?= number_format($this->data['precalcul']['ventePotentielle'], 2, ",", " ") ?>
-					€
-				</th>
+				<th class='text-center'>{{ montantInvestis | currency }}</th>
+				<th class="text-center">{{ montantTotal | currency }}</th>
 				<?php if (is_numeric($this->data['precalcul']['plusMoinValuePourcent']) && !$this->data['precalcul']['flagMissingInfo']
 					&& !$this->data['precalcul']['haveUsu'] && !$this->data['precalcul']['haveNue']) { ?>
 					<th class='text-center'><?= number_format($this->data['precalcul']['plusMoinValuePourcent'], 2, ",", " ") ?>
@@ -158,16 +171,13 @@ $nb_transac = count($this->dh->getTransaction());
 			</tfoot>
 		</table>
 		<div class="legend-out-table">
-			(V = Variable, F = Fixe, PP = Pleine Propriet&eacute;, NP = Nue Propriete, US = Usufruit)
+			<small>
+				<span class="text-warning"><i class="fa fa-warning"></i></span>: Des informations sont manquantes sur la transaction.<br/>
+				(V = Variable, F = Fixe, PP = Pleine Propriet&eacute;, NP = Nue Propriete, US = Usufruit)<br/>
+				* : Lorem Ipsum Dolor
+			</small>
 		</div>
 	</div>
-	<script type="text/javascript">
-
-		$(document).ready(function () {
-			$("#table").tablesorter();
-			$("#sortscpi").click();
-		})
-	</script>
 
 	<?php } else
 	{
@@ -207,11 +217,6 @@ $nb_transac = count($this->dh->getTransaction());
 				</div>
 			</div>
 		</div>
-		<script type="text/javascript" charset="utf-8">
-			setTimeout(function () {
-				$('.modal_push_scpi').modal('show');
-			}, 5000);
-		</script>
 		<?php
 	}
 	?>

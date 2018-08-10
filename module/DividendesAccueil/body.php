@@ -2,9 +2,12 @@
 	<div class="moduleTitle">
 		<img src="<?= $this->getPath() . "img/Billet-Blanc.svg" ?>" alt=""/>
 		<span>MES DIVIDENDES SCPI</span>
-		<img src="<?= $this->getPath() ?>img/i-Blanc.svg" class="_tooltip_r"
+		<span class="text-left" style="max-width: 35px; margin-right: 10px;">
+			<tooltip title="Mes dividendes estimés" size="big" content="<?= $this->details ?>">
+		</span>
+		<!-- <img src="<?= $this->getPath() ?>img/i-Blanc.svg" class="_tooltip_r"
 			 onmouseover="display_tooltip('Mes dividendes estimés', '<?= $this->details ?>', event)"
-			 onmouseout="disable_msg(event)">
+			 onmouseout="disable_msg(event)"> -->
 	</div>
 	<div class="moduleContent module-visu">
 		<?php

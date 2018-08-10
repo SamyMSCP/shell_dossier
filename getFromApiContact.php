@@ -111,6 +111,7 @@ function updateList($el, $mdb, $l_name) {
                     $date_execution = new DateTime("NOW");
                     $ok = $date_execution->modify("+1 second");
                     $texte = "\nLe client à laissé un message sur meilleurescpi : " . $user['message'] . "<br>" . "Lien : " . $user['origin'] . "<br>" . "Page : " . $user['type']."<br>"."Complement : ".$user['typeComplement'];
+
                     $id_crm = Crm2::insertNew(
                         $dh->id_dh,
                         10,
@@ -308,7 +309,9 @@ function addNewUser($user, $l_name, $mdb,$type,$complement,$orgin) {
 
 //	$dh->setConseillerRandom();
 //	$dh->setConseillerRandom();
-    $dh->updateOneColumn("conseiller", 10);
+    $id_cons=(array(4,2350 )[mt_rand(0, 1)]);
+
+    $dh->updateOneColumn("conseiller", $id_cons);
 
     $dh->setConnectedNoIp();
 
@@ -379,7 +382,7 @@ function addNewUser($user, $l_name, $mdb,$type,$complement,$orgin) {
 
 /* ****************************************************************************************************************** */
 try {
-    updateList(json_decode(Apiv2::getRequestJsonContactPeriod(2)), new Apiv2Db(), "Guide de la SCPI");
+    updateList(json_decode(Apiv2::getRequestJsonContactPeriod(1)), new Apiv2Db(), "Guide de la SCPI");
 }
 catch (Exception $e) {
     echo "\033[31;4;m* NORMAL ERROR: " . $e . "\033[0m;";

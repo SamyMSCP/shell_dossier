@@ -6,11 +6,18 @@
  * Time: 14:29
  */
 ?>
-<span class="tp-component">
-    <img :src="get_image" class="tp-icon" :class="size"
-    @mouseover="enable"
-    @mouseleave="disable">
-    <div class="tp-show" v-if="is_show">
+
+<span
+	class='tooltip-class'
+>
+	<div
+		@mouseover="enable"
+		@mouseleave="disable"
+	>
+		<slot>
+		</slot>
+	</div>
+    <div class="tp-show" v-if="is_show" :class='{alignRight: alignRight}'>
         <div class="header">
             {{ title }}
         </div><br v-if="title !== '' && content !== ''">

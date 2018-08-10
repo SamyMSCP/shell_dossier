@@ -65,7 +65,7 @@
 								<span class="input-group-addon">Expediteur: </span>
 								<select class="form-control" v-model.number="who">
 									<option value="0">Moi (<?= Dh::getCurrent()->getLogin() ?>)</option>
-									<option value="1">Le conseiller (<?= $this->dh->getConseiller()->getLogin() ?>)</option>
+									<option value="1">Le conseiller (<?= (!empty($this->dh->getConseiller())) ? $this->dh->getConseiller()->getLogin() : "-"?>)</option>
 								</select>
 								<span class="input-group-btn">
 									<a class="btn btn-success " @click="sendMail()" data-dismiss="modal">

@@ -3,9 +3,7 @@ function isBackOffice() { return (false); };
 function isFrontOffice() { return (true); };
 require_once("app.php");
 
-setOrigine();
-// function verifiant si un token est valide
-cleanTokenCsrf();
+setOrigine(); // function verifiant si un token est valide cleanTokenCsrf();
 
 
 $p = (!empty($_GET["p"]))? $_GET["p"] : "Index";
@@ -47,13 +45,20 @@ else if ($p == "TableauDeBord") {
 //	$page = new TableauDeBord();
 	checkUser();
 	redirectMonCompte();
-	require_once("page/DashboardV2/controller.php");
-	$page = new DashboardV2();
+	require_once("page/DashboardV2Old/controller.php");
+	$page = new DashboardV2Old();
 }
-else if ($p == "Portefeuille") {
+
+else if ($p == "Portefeuille1") {
 	checkUser();
-	require_once("page/Portefeuille1_5/controller.php");
-	$page = new Portefeuille1_5();
+	require_once("page/Portefeuille/controller.php");
+	$page = new Portefeuille();
+}
+
+else if ($p == "Portefeuille") {
+    checkUser();
+    require_once("page/Portefeuille3/controller.php");
+    $page = new Portefeuille3();
 }
 else if ($p == "Actu") {
 	checkUser();

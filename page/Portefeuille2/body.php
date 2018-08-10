@@ -4,11 +4,12 @@
 <?php
 $nb_transac = count($this->dh->getTransaction());
 ?>
-<div class="containerPerso vueApp">
-	<?= $this->MonCompte ?>
-	<?= $this->TransactionFrontComponent ?>
-	<div class="container-fluid">
-		<div class="row">
+<div class="containerPerso">
+    <?= $this->MonCompte ?>
+    <div class="container-fluid vueApp">
+        <?= $this->TransactionFrontComponent ?>
+
+        <div class="row">
 			<div class="col-xs-12">
 				<multi-action-modale></multi-action-modale>
 				<div class="module main-portefeuille">
@@ -67,7 +68,12 @@ $nb_transac = count($this->dh->getTransaction());
 							<transaction-list type="Pleine propriété" :list="this.$store.state.transactions.transactionsList"></transaction-list>
 							<transaction-list type="Nue propriété" :list="this.$store.state.transactions.transactionsList"></transaction-list>
 							<transaction-list type="Usufruit" :list="this.$store.state.transactions.transactionsList"></transaction-list>
+<<<<<<< HEAD
 							<div class="container">
+=======
+
+                            <div class="container">
+>>>>>>> d059b650c447edd02db737730349906b4737c00c
 								<small>
                                     <i class="text-warning fa fa-question-circle"></i>: Il s'agit d'une transaction potentielle.<br/>
                                     <i class="fa fa-star text-primary"></i>: Transaction Nue Propriété arrivée à terme.<br/>

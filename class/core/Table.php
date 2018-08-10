@@ -9,22 +9,44 @@ abstract class Table
 		"LONGTEXT"
 	);
 
+	/**
+	 * Table constructor.
+	 */
 	public  function __construct() {
 	}
+
+	/**
+	 * @return mixed
+	 */
 	public static function getAll() {
 		$name = (isset(static::$_name)) ? '`' . static::$_name . '`' : get_called_class();
 		return Database::query(static::$_db, "SELECT * FROM " . $name, get_called_class());
 	}
+
+	/**
+	 * @return mixed
+	 */
 	public static function getAllArray() {
 		$name = (isset(static::$_name)) ? '`' . static::$_name . '`' : get_called_class();
 		return Database::queryArray(static::$_db, "SELECT * FROM " . $name, get_called_class());
 	}
 	//prepareNoClassCheckSecurity
+
+	/**
+	 * @param $id
+	 * @return mixed
+	 */
 	public static function getFromId($id) {
 		$name = (isset(static::$_name)) ? '`' . static::$_name . '`' : get_called_class();
 		$req =  "SELECT * FROM " . $name . " WHERE " . static::$_primary_key ." = :id";
 		return Database::prepare(static::$_db, $req, compact("id"), get_called_class());
 	}
+
+	/**
+	 * @param $col
+	 * @param $arr
+	 * @return mixed
+	 */
 	public static function getFromArray($col, $arr) {
 		$name = (isset(static::$_name)) ? '`' . static::$_name . '`' : get_called_class();
 		$req =  "SELECT * FROM " . $name . " WHERE ";
@@ -45,28 +67,54 @@ abstract class Table
 		}
 		return Database::prepare(static::$_db, $req, $arr, get_called_class());
 	}
+
+	/**
+	 * @return mixed
+	 */
 	public static function getNotifCrmAll() {
 		$name = (isset(static::$_name)) ? '`' . static::$_name . '`' : get_called_class();
 		$req =  "SELECT * FROM " . $name . " JOIN CRM ON CRM.`id_dh` = `DONNEUR D'ORDRE`.id_dh WHERE finish IS NULL ORDER BY DATE_f";
 		return Database::prepare(static::$_db, $req, array(), get_called_class());
 	}
+
+	/**
+	 * @param $value
+	 * @return mixed
+	 */
 	public static function getNotifCrmValue($value) {
 		$name = (isset(static::$_name)) ? '`' . static::$_name . '`' : get_called_class();
 		$req =  "SELECT * FROM " . $name . " JOIN CRM ON CRM.`id_dh` = `DONNEUR D'ORDRE`.id_dh WHERE `DONNEUR D'ORDRE`.`conseiller` = :id_dh AND finish IS NULL ORDER BY DATE_f";
 		return Database::prepare(static::$_db, $req, array("id_dh" => $value), get_called_class());
 	}
+
+	/**
+	 * @param $key
+	 * @param $value
+	 * @return mixed
+	 */
 	public static function getFromKeyValue($key, $value) {
 		$name = (isset(static::$_name)) ? '`' . static::$_name . '`' : get_called_class();
 		$req =  "SELECT * FROM " . $name . " WHERE ";
 		$req .= $key . " = :" . $key;
 		return Database::prepare(static::$_db, $req, array($key => $value), get_called_class());
 	}
+
+	/**
+	 * @param $key
+	 * @param $value
+	 * @return mixed
+	 */
 	public static function getFromKeyValueIdDesc($key, $value) {
 		$name = (isset(static::$_name)) ? '`' . static::$_name . '`' : get_called_class();
 		$req =  "SELECT * FROM " . $name . " WHERE ";
 		$req .= $key . " = :" . $key . " ORDER BY ".static::$_primary_key." DESC";
 		return Database::prepare(static::$_db, $req, array($key => $value), get_called_class());
 	}
+
+	/**
+	 * @param $array
+	 * @return mixed
+	 */
 	public static function deleteFromKeysValues($array) {
 		$temoin = 0;
 		$name = (isset(static::$_name)) ? '`' . static::$_name . '`' : get_called_class();
@@ -80,6 +128,11 @@ abstract class Table
 		}
 		return Database::prepareNoClass(static::$_db, $req, $array);
 	}
+
+	/**
+	 * @param $array
+	 * @return mixed
+	 */
 	public static function getFromKeysValues($array) {
 		$temoin = 0;
 		$name = (isset(static::$_name)) ? '`' . static::$_name . '`' : get_called_class();
@@ -92,9 +145,17 @@ abstract class Table
 		}
 		return Database::prepare(static::$_db, $req, $array, get_called_class());
 	}
+
+	/**
+	 * @return bool
+	 */
 	public static function getCols() {
 		return Database::getCols(static::$_db, get_called_class());
 	}
+
+	/**
+	 * @return bool
+	 */
 	public function update() {
 		if (!isset($this->id) || $this->_is_new || $this->id === 0)
 		{
@@ -118,6 +179,11 @@ abstract class Table
 		Database::exec(static::$_db, $req);
 		return true;
 	}
+
+	/**
+	 * @param $var
+	 * @return bool
+	 */
 	private static function check_txt($var){
 		foreach (self::$_needQuotes as $check)
 		{
@@ -126,6 +192,10 @@ abstract class Table
 	}
 	return false;
 	}
+
+	/**
+	 * @return bool
+	 */
 	public function insertInto()
 	{
 		//if (!$this->_is_new)
@@ -171,6 +241,10 @@ abstract class Table
 			die ("Une erreure est survenue pendant l'inserttion");
 		return $this->id;
 	}
+
+	/**
+	 *
+	 */
 	public function create_table() {
 		$temoin = 0;
 		$req = "CREATE TABLE " . get_called_class() . " ( ";
@@ -186,12 +260,25 @@ abstract class Table
 		$req .= ")";
 		Database::exec(static::$_db, $req);
 	}
+
+	/**
+	 * @param $db
+	 */
 	public function setDatabase($db) {
 		static::$_db = $db;
 	}
+
+	/**
+	 *
+	 */
 	public function show() {
 		var_dump($this);
 	}
+
+	/**
+	 * @param $col
+	 * @return bool|mixed
+	 */
 	public function setColumnNull($col) {
 		$name = (isset(static::$_name)) ? '`' . static::$_name . '`' : get_called_class();
 		$req =  "UPDATE " . $name . " SET " . $col . " = NULL  WHERE " . static::$_primary_key ." = ?";
@@ -205,6 +292,12 @@ abstract class Table
 		}
 		return false;
 	}
+
+	/**
+	 * @param $col
+	 * @param $nData
+	 * @return bool|mixed
+	 */
 	public function updateOneColumn($col, $nData) {
 		$name = (isset(static::$_name)) ? '`' . static::$_name . '`' : get_called_class();
 		$req =  "UPDATE " . $name . " SET " . $col . " = ?  WHERE " . static::$_primary_key ." = ?";
@@ -220,6 +313,12 @@ abstract class Table
 		}
 		return false;
 	}
+
+	/**
+	 * @param $col
+	 * @param $nData
+	 * @return mixed
+	 */
 	public function updateOneColumnCheckSecurity($col, $nData) {
 		$name = (isset(static::$_name)) ? '`' . static::$_name . '`' : get_called_class();
 		$req =  "UPDATE " . $name . " SET " . $col . " = ?  WHERE " . static::$_primary_key ." = ?";
@@ -230,6 +329,10 @@ abstract class Table
 		$this->$col = $nData;
 		return Database::prepareNoClassCheckSecurity(static::$_db, $req, $data, get_called_class());
 	}
+
+	/**
+	 * @return mixed
+	 */
 	public function deleteMe() {
 		$name = (isset(static::$_name)) ? '`' . static::$_name . '`' : get_called_class();
 		$req =  "DELETE FROM" . $name . " WHERE " . static::$_primary_key ." = ?";
@@ -239,6 +342,10 @@ abstract class Table
 		$rt = Database::prepareNoClass(static::$_db, $req, $data, get_called_class());
 		return ($rt);
 	}
+
+	/**
+	 * @return mixed
+	 */
 	public function getId() {
 		return ($this->{static::$_primary_key});
 	}

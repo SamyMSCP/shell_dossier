@@ -8,6 +8,5 @@
   cursor: pointer; }
 
 .tooltip-inner {
-  max-width: 350px;
   /* If max-width does not work, try using width instead */
   width: 350px; }

@@ -1,6 +1,6 @@
 #month-module {
   height: 548px;
-  border-radius: 10px !important;
+  border-radius: 3px !important;
   background-color: #FFFFFF; }
   #month-module * {
     padding: 0px;
@@ -20,13 +20,13 @@
     height: 50%; }
 
 .month-suggest {
-  border-radius: 10px !important;
+  border-radius: 3px !important;
   background-color: #FFFFFF; }
   @media (max-width: 580px) {
     .month-suggest {
       border-radius: 0 !important; } }
   .month-suggest .part-up {
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 3px 3px 0px 0px;
     background-image: url("module/OpportuniteListComponent/img/Immeuble8.jpg"); }
     @media (max-width: 580px) {
       .month-suggest .part-up {
@@ -49,7 +49,7 @@
       justify-content: center;
       vertical-align: middle; }
     .month-suggest .part-up .filter {
-      border-radius: 10px 10px 0px 0px;
+      border-radius: 3px 3px 0px 0px;
       position: absolute;
       width: 100%;
       height: 200px;

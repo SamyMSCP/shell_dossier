@@ -16,6 +16,7 @@ else
 		error("Le jeton de sécurité n'est plus valide, merci de réessayer.");
 
 	if (empty($_POST['req']) || empty($_POST['data']))
+
 		error("La requete est mal formatée !");
 
 	header('Content-Type: application/json');
@@ -64,7 +65,17 @@ else if ($req == "CreationDeCompte") {
 	$page = new AjaxCreateAccount();
 	exit();
 }
+else if ($req == "Transaction") {
+	require_once ("ajax_client/AjaxTransaction/controller.php");
+	$page =  new AjaxTransaction();
+	exit();
+}
 
+else if ($req == "TransactionFrontStore") {
+	require_once ("ajax_client/AjaxTransactionFrontStore/controller.php");
+	$page =  new AjaxTransactionFrontStore();
+	exit();
+}
 
 http_response_code(400);
 echo json_encode([]);

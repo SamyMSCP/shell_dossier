@@ -1,3 +1,6 @@
+</script>
+<script type="text/javascript">
+
 <?php
 $colorStart = array(
 		"r" => 173,
@@ -21,47 +24,148 @@ function interpolation($colorStart, $colorEnd, $pourcent)
 ?>
 dataTmp = null;
 $(document).ready(
-		function() {
+	function() {
 		var ctx = $("#repartition_scpi").get(0).getContext("2d");
-		var data = [
-		<?php
-		$temoin = 0;
-		$i = 0;
-		foreach ($this->table as $key => $elm) {
-		if ($key === "precalcul")
-		continue ;
-		if ($temoin == 1)
-		echo " , ";
-		if ($this->table['precalcul']['ventePotentielle'] == 0)
-		echo " { value : " . number_format(1, 2, '.', '') . ", label : '" . $key  .  "', color:'#ffffff'} ";
-		else
-		echo " { value : " . number_format(100 * $elm['precalcul']['ventePotentielle'] / $this->table['precalcul']['ventePotentielle'], 2, '.', '') . ", label : \"" . $key  .  "\" , color:'" . $this->color[$i] . "'} ";
-		$temoin = 1;
-		$i++;
-		if ($i === count($this->color))
-		$i = 0;
+		var data = [];
+		total = 0.0;
+		function getColor(i) {
+			var color =[
+				"#086ab3",
+				"#0b87e4",
+				"#2c9ff5",
+				"#5db5f8",
+				"#8dcbfa",
+				"#bee2fc",
+				"#eff8fe"
+				];
+			return color[i];
 		}
-		?>
-			];
+
+		total = store.state.transactions.precalcul.precalcul.ventePotentielle;
+
+		for (var key in store.state.transactions.precalcul) {
+			var elm = store.state.transactions.precalcul[key];
+			if (key == 'precalcul')
+				continue ;
+			data.push({ value: parseFloat((elm.precalcul.ventePotentielle / total * 100).toFixed(2)),
+				label: key,
+				color: getColor(i)
+			});
+		}
+		data.sort((a,b) => {
+			return b.value - a.value;
+		});
+		data.forEach((trans, i) => {
+			trans.color = getColor(i)
+		});
+		
+		if (data.length > 5) {
+			var autre = data.slice(5);
+			var res = 0;
+			autre.forEach(el => {
+				res += el.value;
+			});
+			data = data.splice(0, 5);
+			data.push({
+				value: parseFloat(res.toFixed(2)),
+				label: "Autre",
+				color: getColor(5)
+			})
+		}
+
+
+
 		var pieOptions = {
 maintainAspectRatio: false,
-		     tooltipFillColor: "rgba(255,255,255,1)",
-		     tooltipFontColor: "#000",
-		     <?php if (!isset($this->pdf)): ?>
-			     animation : true,
-		     responsive: true,
-		     <?php else: ?>
-			     animation : false,
-		     responsive: false,
-		     <?php endif; ?>
-			     tooltipFontSize: 12,
-		     tooltipTemplate:"<%if (label){%><%=label%>: <%}%><%= value %> %"
+			 tooltipFillColor: "rgba(255,255,255,1)",
+			 tooltipFontColor: "#000",
+			 <?php if (!isset($this->pdf)): ?>
+				 animation : true,
+			 responsive: true,
+			 <?php else: ?>
+				 animation : false,
+			 responsive: false,
+			 <?php endif; ?>
+				 tooltipFontSize: 12,
+			 tooltipTemplate:"<%if (label){%><%=label%>: <%}%><%= value %> %"
 		}
 		var piechart = new Chart(ctx).Pie(data, pieOptions);
 		dataTmp = piechart;
-		}
+	}
 );
-//#01528a
-//#adbeca
 
 
+
+</script>
+
+<script type="text/x-template" id="repartitionScpiTemplate">
+	<ul>
+		<li v-for="(trans, key) in getDatas" v-if='key != "precalcul"' :style=' "color:" + trans.color'>
+			<span class="pill-color"><i class="fa fa-circle"></i></span>
+			<span class="name">{{ trans.label  }}</span>
+			<span class="purcent-info">{{ trans.value | pourcent }}</span>
+		</li>
+	</ul>
+</script>
+
+<script>
+	 Vue.component(
+		'repartition-scpi',
+		{
+			data: function() {
+				return ({ });
+			},
+			computed: {
+				getDatas: function() {
+					var data = [];
+					total = 0.0;
+					function getColor(i) {
+						var color =[
+							"#086ab3",
+							"#0b87e4",
+							"#2c9ff5",
+							"#5db5f8",
+							"#8dcbfa",
+							"#bee2fc",
+							"#eff8fe"
+							];
+						return color[i];
+					}
+
+					total = this.$store.state.transactions.precalcul.precalcul.ventePotentielle;
+					for (var key in this.$store.state.transactions.precalcul) {
+						var elm = this.$store.state.transactions.precalcul[key];
+						if (key == 'precalcul')
+							continue ;
+						data.push({ value: parseFloat((elm.precalcul.ventePotentielle / total * 100).toFixed(2)),
+							label: key,
+							color: getColor(i)
+						});
+					}
+					data.sort((a,b) => {
+						return b.value - a.value;
+					});
+					data.forEach((trans, i) => {
+						trans.color = getColor(i)
+					});
+					
+					if (data.length > 5) {
+						var autre = data.slice(5);
+						var res = 0;
+						autre.forEach(el => {
+							res += el.value;
+						});
+						data = data.splice(0, 5);
+						data.push({
+							value: parseFloat(res.toFixed(2)),
+							label: "Autre",
+							color: getColor(5)
+						})
+					}
+					return (data);
+					//return (this.$store.state.transactions.precalcul);
+				},
+			},
+			template: '#repartitionScpiTemplate'
+		}
+	);

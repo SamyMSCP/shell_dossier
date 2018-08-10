@@ -190,15 +190,15 @@ class Apiv2
 		$year = date("Y");
 		foreach ($scpis as $key => $elm) {
 			if (!empty($elm["pie_geo"]["Régions"]))
-				$scpis[$key]["Régions"] = $elm["pie_geo"]["Régions"];
+				$scpis[$key]["Régions"] = floatval($elm["pie_geo"]["Régions"]);
 			if (!empty($elm["pie_geo"]["Ile-de-France"]))
-				$scpis[$key]["Ile-de-France"] = $elm["pie_geo"]["Ile-de-France"];
+				$scpis[$key]["Ile-de-France"] = floatval($elm["pie_geo"]["Ile-de-France"]);
 			if (!empty($elm["pie_geo"]["Paris"]))
-				$scpis[$key]["Paris"] = $elm["pie_geo"]["Paris"];
+				$scpis[$key]["Paris"] = floatval($elm["pie_geo"]["Paris"]);
 			if (!empty($elm["pie_geo"]["Etranger"]))
-				$scpis[$key]["Etranger"] = $elm["pie_geo"]["Etranger"];
+				$scpis[$key]["Etranger"] = floatval($elm["pie_geo"]["Etranger"]);
 			if (!empty($elm["pie_geo"]["Immobilisations"]))
-				$scpis[$key]["Immobilisations"] = $elm["pie_geo"]["Immobilisations"];
+				$scpis[$key]["Immobilisations"] = floatval($elm["pie_geo"]["Immobilisations"]);
 			if ($scpis[$key]["type_id"] == "rendement")
 				$scpis[$key]['type_id'] = 5;
 			else if ($scpis[$key]["type_id"] == "fiscale")

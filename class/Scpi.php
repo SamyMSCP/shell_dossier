@@ -89,7 +89,7 @@ class Scpi extends Apiv2
 		$rt = array();
 		foreach (self::getAll() as $key => $elm)
 		{
-			var_dump($elm);
+			//var_dump($elm);
 			//if ($elm->isShow())
 				$rt[$key] = $elm;
 		}
@@ -121,6 +121,10 @@ class Scpi extends Apiv2
 	{
 		return ($this->isAbsorbed() ? "oui" : "non");
 	}
+	public  function getDateAbsorption() {
+		return (DateTime::createFromFormat("Y-m-d   H:i:s", $this->absorbed_at));
+	}
+
 	public static function	generateCacheAllScpi() {
 	/*
 		$api = parent::getRequestObjects(
@@ -261,6 +265,8 @@ class Scpi extends Apiv2
 	{
 		if (self::$_lstAll == null)
 			self::getAll();
+		if (empty(self::$_lstAll[$id]))
+			return (null);
 		return (self::$_lstAll[$id]);
 	}
 
@@ -434,9 +440,17 @@ class Scpi extends Apiv2
 
 			//BUG: There is a bug here must see whats the problems
 //			if ($elm->getSocieteGestion() !== null)
+
+/*
 			$elm->societeDeGestionName = $elm->getSocieteGestion()->getName();
 			$elm->societeDeGestionAdresse = $elm->getSocieteGestion()->getAdresse();
 			$elm->societeDeGestionId = $elm->getSocieteGestion()->getId();
+*/
+
+			$elm->societeDeGestionName = "-";
+			$elm->societeDeGestionAdresse = "-";
+			$elm->societeDeGestionId = "-";
+
 			$elm->showOpportunite = $elm->checkShowOpportunite();
 			$elm->age = $elm->getAge();
 			$rt[] = $elm;
@@ -448,7 +462,9 @@ class Scpi extends Apiv2
 		$rt = [];
 		foreach (self::getAll() as $key => $elm)
 		{
-			if ($elm->online)
+			// dbg($elm);
+			//if ($elm->online && $elm->isShow())
+			if ($elm->isShow())
 				$rt[] = [
 					'id' => $elm->id,
 					'name' => $elm->name,
@@ -617,6 +633,11 @@ class Scpi extends Apiv2
 		$now = DateTime::createFromFormat("d/m/Y H:i:s", date("d/m/Y") . " 00:00:00")->getTimeStamp();
 		$age = ($now - $date) / (365.25 * 60 * 60 * 24);
 		return ($age);
+	}
+
+
+	public function			getPieGeo() {
+		return ($this->pie_geo);
 	}
 }
 

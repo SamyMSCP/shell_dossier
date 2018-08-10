@@ -408,6 +408,13 @@ else if ($p == "TransactViewer")
 	require_once("pageAdmin/TransactViewer/controller.php");
 	$page = new TransactViewer();
 }
+
+else if ($p == "TableauTransaction")
+{
+    require_once("pageAdmin/TableauTransaction/controller.php");
+    $page = new TableauTransaction();
+}
+
 else if ($p == "GestTemplate") {
 	require_once("pageAdmin/GestTemplate/controller.php");
 	$page = new GestTemplate();
@@ -419,12 +426,6 @@ else if ($p == "Courriers") {
 else if ($p == "UsersByScpi2") {
 	require_once("pageAdmin/UsersByScpi2/controller.php");
 	$page = new UsersByScpi2();
-}
-
-
-else if ($p == "SamyTest") {
-    require_once("pageAdmin/SamyTest/controller.php");
-    $page = new SamyTest();
 }
 
 

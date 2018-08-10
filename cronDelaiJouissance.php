@@ -24,8 +24,6 @@ var_dump(count($ret));
 		foreach ($ret as $transac)
 		{
 			$date_entre_joui = $transac->getDelaiJouissance()->getEntreeJouissanceStr();
-var_dump($date->format('m/Y'), $date_entre_joui);
-
 			if (strpos($date_entre_joui, $date->format('m/Y')) > 1)
 			{
 				$user = $transac->getDh();

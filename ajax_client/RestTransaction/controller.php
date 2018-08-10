@@ -41,8 +41,9 @@ class RestTransaction extends AjaxClient
 			error([]);
 		}
 
-		if (empty($data['scpi']) || !($scpi = Scpi::getFromId($data['scpi'])) || !$scpi->visible)
+		if (empty($data['scpi']) || !($scpi = Scpi::getFromId($data['scpi'])) || !$scpi->isShow())
 			error('SCPI incorrecte.');
+
 
 		$nbr_part = trim($data['part']);
 		if (empty($nbr_part) || !preg_match("/^\d{1,}((\.|,)(\d{1,5}))?$/", $nbr_part))
@@ -53,12 +54,13 @@ class RestTransaction extends AjaxClient
 			error('Propriété incorrecte.');
 
 		$date = 0;
+		$date2 = null;
 		if (!empty($data['date']))
 		{
 			if (!($date2 = DateTime::createFromFormat("Y-m-d", $data["date"])))
 				$date2 = DateTime::createFromFormat("d/m/Y", $data["date"]);
 			if ($date2 instanceof DateTime)
-				$date = ft_crypt_information($date->format("d/m/Y"));
+				$date = ft_crypt_information($date2->format("d/m/Y"));
 			else
 				error("Date d'enregistrement incorrect.");
 		}
@@ -68,6 +70,7 @@ class RestTransaction extends AjaxClient
 			if (!in_array($data['marche'], Transaction::getMarcheLst()))
 				error('Marché incorrect.');
 		}
+		$marche = $data['marche'];
 
 		$prix = 0;
 		if (!empty($data['prix']))
@@ -80,7 +83,8 @@ class RestTransaction extends AjaxClient
 		if ($data['propriete'] == "Pleine propriété")
 		{
 			$duree = null;
-			$cle = null;
+			$cle = "100.0";
+			$viager = 0;
 		}
 		else
 		{
@@ -152,13 +156,13 @@ class RestTransaction extends AjaxClient
 
 		$rt = Transaction::insertOtherTransactionPleine($curDh->id_dh,
 			$information,
-			ft_crypt_information($date),
+			$date,
 			ft_crypt_information($data['marche']),
 			ft_crypt_information($data['propriete']),
 			$nbr_part,
 			$prix,
-			$scpi->getId(),
-			$scpi->getName(),
+			$data['scpi'],
+			ft_crypt_information($scpi->getName()),
 			$duree,
 			ft_crypt_information($cle),
 			$viager,
@@ -171,15 +175,19 @@ class RestTransaction extends AjaxClient
 
 		if (empty($rt))
 			error("Impossible d'ajouter cette transaction.");
-
-		Notif::set("addTransaction", "La transaction a bien été ajoutée à votre portefeuille.");
+// DONT USE THAT, WE USE AJAX !
+//		Notif::set("addTransaction", "La transaction a bien été ajoutée à votre portefeuille.");
+		if ($date2 === null)
+			$date3 = "";
+		else
+			$date3 = $date2->format('d/m/Y');
 		$params = [
 			"scpi" => $scpi->getName(),
 			"nbr_part" => $nbr_part,
 			"prix" => $prix,
 			"type pro" => $data['propriete'],
 			"marcher" => $marche,
-			"date enregistrement" => $date2->format('d/m/Y'),
+			"date enregistrement" => $date3,
 			"duree" => $duree,
 			"cle" => $cle,
 			"information" => $information
@@ -287,7 +295,7 @@ class RestTransaction extends AjaxClient
 				// Nombre de part
 				$nbr_part = floatval(str_replace(',','.', trim($data['nbr_part'])));
 				if (!preg_match("/^\d{1,}((\.|,)(\d{1,5}))?$/", trim($data['nbr_part']))
-					|| $nbr_part < 1.0)
+					|| $nbr_part <= 0.0)
 				{
 					$err[] = "Le nombre de parts est invalide";
 				}
@@ -299,7 +307,7 @@ class RestTransaction extends AjaxClient
 				// Prix par part
 				$prix_part = floatval(str_replace(',','.', trim($data['prix_part'])));
 				if (!preg_match("/^\d{1,}((\.|,)(\d{1,5}))?$/", trim($data['prix_part']))
-					|| $prix_part < 1.0)
+					|| $prix_part <= 0.0)
 				{
 					$err[] = "Le prix par parts est invalide";
 				}
@@ -361,7 +369,7 @@ class RestTransaction extends AjaxClient
 						$t->updateOneColumn('cle_repartition', ft_crypt_information($cle));
 					}
 	// Durée de démembrement
-					if ($data[''])
+					// if ($data[''])
 					$dt = intval($data['dt']);
 					if ($dt < 0 || $dt > 20)
 						$err[] = "Durée de démembrement incorrecte";
@@ -379,7 +387,7 @@ class RestTransaction extends AjaxClient
 				}
 	// Nombre de part
 				$nbr_part = floatval(str_replace(',','.', trim($data['nbr_part'])));
-				if (!preg_match("/^\d{1,}((\.|,)(\d{1,5}))?$/", trim($data['nbr_part'])) || $nbr_part < 1.0)
+				if (!preg_match("/^\d{1,}((\.|,)(\d{1,5}))?$/", trim($data['nbr_part'])) || $nbr_part <= 0.0)
 					$err[] = "Le nombre de parts est invalide";
 				elseif ($nbr_part != $t->getNbrPart())
 					$t->updateOneColumn('nbr_part', $nbr_part);
@@ -433,7 +441,7 @@ class RestTransaction extends AjaxClient
 				error(implode($err, "<br />"));
 			success(["transaction" => $t->getForFrontStore()]);
 		}
-		error("YOU");
+		error("Une erreur c'est produite ! - Fin");
 	}
 
 	public function getAllDocument($data)

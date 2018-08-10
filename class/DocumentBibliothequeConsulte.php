@@ -44,7 +44,7 @@ class DocumentBibliothequeConsulte extends Table
 			3,
 			time(),
 			-2700,
-			"Cet utilisateur a consulté un document sur la page Bibliothèque : " . $doc->name,
+			" : " . $doc->name,
 			[],
 			$isOkay
 		);

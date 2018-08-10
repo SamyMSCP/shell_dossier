@@ -65,9 +65,9 @@
 				var lst = state.lstTransaction;
 				var tmp = lst;
 				var s = state.sort.vol_num;
-				tmp = tmp.sort(function (a, b) {
 
-					return (parseInt(a.nbr_part) * parseInt(a.prix_part) >parseInt(b.nbr_part) * parseInt(b.prix_part)) ? -1 : ((parseInt(b.nbr_part) * parseInt(b.prix_part) > parseInt(a.nbr_part) * parseInt(a.prix_part)) ? 1 : 0);
+				tmp = tmp.sort(function (a, b) {
+					return (parseInt(a.nbr_part) * parseInt(a.prix_part) * parseInt(a.cle_repartition)/100 > parseInt(b.nbr_part) * parseInt(b.prix_part) * parseInt(b.cle_repartition)/100) ? -1 : ((parseInt(b.nbr_part) * parseInt(b.prix_part) * parseInt(b.cle_repartition)/100 > parseInt(a.nbr_part) * parseInt(a.prix_part) * parseInt(a.cle_repartition)/100) ? 1 : 0);
 				});
 				if (s === 1) {
 					tmp = tmp.reverse(tmp);
@@ -180,20 +180,42 @@
 				return (function() {
 					var cons = [];
 					state.lstTransaction.forEach((el) => {
+
 						el.status_sup = parseInt(el.status_sup);
 						// console.log("status: ", typeof el.status_sup, el.status_sup);
 						is_set = cons.find((c) => {return (c.id === el.conseiller)})
 						if (typeof is_set !== "undefined") {
 							if (el.status_sup >= 5)
-								is_set.volume_complete += el.nbr_part * el.prix_part;
-							else
-								is_set.volume_incomplete += el.nbr_part * el.prix_part;
+                                if(el.type_pro != "Pleine propriété"){
+                                    is_set.volume_complete += el.nbr_part * el.prix_part* el.cle_repartition/100;
+                                }
+                                else{
+                                    is_set.volume_complete += el.nbr_part * el.prix_part;
+                                }
+							else{
+                                if(el.type_pro != "Pleine propriété"){
+                                    is_set.volume_incomplete += el.nbr_part * el.prix_part* el.cle_repartition/100;
+                                }
+                                else{
+                                    is_set.volume_incomplete += el.nbr_part * el.prix_part;
+                                }
+                            }
 						}
 						else {
 							if (el.status_sup >= 5)
-								cons.push({id: el.conseiller, volume_complete: el.nbr_part * el.prix_part, volume_incomplete: 0.0});
-							else
-								cons.push({id: el.conseiller, volume_complete: 0.0, volume_incomplete: el.nbr_part * el.prix_part});
+                                if(el.type_pro != "Pleine propriété"){
+                                    cons.push({id: el.conseiller, volume_complete: el.nbr_part * el.prix_part * el.cle_repartition/100, volume_incomplete: 0.0});
+                                }
+                                else{
+                                    cons.push({id: el.conseiller, volume_complete: el.nbr_part * el.prix_part, volume_incomplete: 0.0});
+                                }
+							else{
+                                if(el.type_pro != "Pleine propriété"){
+                                    cons.push({id: el.conseiller, volume_complete: 0.0, volume_incomplete: el.nbr_part * el.prix_part * el.cle_repartition/100});                                }
+                                else{
+                                    cons.push({id: el.conseiller, volume_complete: 0.0, volume_incomplete: el.nbr_part * el.prix_part});
+                                }
+                            }
 						}
 					});
 					return (cons);
@@ -298,7 +320,10 @@
 					let volume = 0;
 					for (var i = 0; i < this.list.length ; i++)
 					{
-						volume += parseInt(this.list[i].nbr_part) * parseFloat(this.list[i].prix_part);
+
+                        //console.log("ajout tableau : ", this.list[i].montant_investissement);
+                        volume += this.list[i].montant_investissement;
+
 					}
 					return (volume).toLocaleString("fr", {style: "currency", currency: "EUR"});
 				}

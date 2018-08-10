@@ -20,3 +20,9 @@
 		document.getElementById("msg_help").children[0].innerHTML = values[$i].label;
 		document.getElementById("m_more").innerHTML = lisibilite_nombre(parseFloat(values[$i].value).toFixed(2)) + " € <br />" + values[$i].pourcent + " %";
 	}
+
+
+var repartitionScpiVue = new Vue({
+	el: "#repartitionScpiVue",
+	store: store
+})
