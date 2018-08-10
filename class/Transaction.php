@@ -81,7 +81,8 @@ class Transaction extends Table
                 $b['status_sup'] = 0;
             }
             else
-                $b = ['status_sup' => $b[0]->status_sup, 'status_sub' => $b[0]->status_sub];
+                $b = ['status_sup' => $b[0]->status_sup, 'status_sub' => $b[0]->status_sub, 'status_mois' => $b[0]->status_mois];
+            ;
             $all[$key] = (object)array_merge((array)$all[$key], (array)$b);
 
             $req = "SELECT `id_dh`, `day`, `login`, `conseiller`, `non_sollicitation_par_mail`, `lien_phy` FROM `DONNEUR D'ORDRE` WHERE `id_dh` = :id";
@@ -139,7 +140,8 @@ class Transaction extends Table
 			}
 			$elm->date_edit_trans = ($elm->date_edit_trans == false) ? 0 : $elm->date_edit_trans;
 			$elm->enr_date = ($elm->enr_date == false) ? 0 : $elm->enr_date;
-			$all[$key] = $elm;
+            $elm->date_valid = date('m', $elm->enr_date);
+            $all[$key] = $elm;
 		}
 		usort($all, 'sortByDateTransaction');
 		return ($all);

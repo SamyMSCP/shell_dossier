@@ -49,7 +49,7 @@ var app = new Vue({
                 onOpen: () => {
                     // console.log("date: ", self.date.start);
                     // console.log("tmp: ", self.date_tmp.start);
-                    //swal.showLoading();
+                    swal.showLoading();
                     Vue.http.post('/ajax_request.php', {
                         req: 'ajaxTransaction',
                         action: 'read',
@@ -63,7 +63,7 @@ var app = new Vue({
                             token: "<?= $_SESSION['csrf'][0] ?>",
                         }),
                     }, {emulateJSON: true}).then(function (res) {
-                        console.warn(res);
+                        // console.warn(res);
                         self.socgest = self.socgest_tmp;
                         let ct = (res.body);
                         ct.socgest = self.socgest;

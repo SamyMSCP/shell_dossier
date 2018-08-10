@@ -6,6 +6,8 @@
  * Time: 12:00
  */
 ?>
+
+
 <div class="container-fluid">
     <table class="t-visu">
         <thead>
@@ -86,19 +88,33 @@
             <td class="text-center" v-if="el.type_pro=='Nue propriété'"> NP </td>
             <td class="text-center" v-if="el.type_pro=='Usufruit'"> Usu </td>
             <td class="text-center"> Status {{ el.status_sup }}-{{ el.status_sub }} </td>
-            <td class="text-center" v-if="el.status_mois == 0">
-                <input type="radio" id="Oui" name="actuel" value="1">
-                <label for="Oui">Oui</label><br>
+            <td class="text-center" v-if="el.status_mois == 0 && el.status_sup < 5">
+                {{el.date_valid}}
+                <div class="box">
+                    <a class="button" href="#popup1">Modifier</a>
+                </div>
 
-                <input type="radio" id="Non" name="actuel" value="0" checked>
-                <label for="Non">Non</label>
+                <div id="popup1" class="overlay">
+                    <div class="popup">
+                        <h2>Validation</h2>
+                        <a class="close" href="#">&times;</a>
+                        <div class="content">
+                            choisir une date de validation :
+                        </div>
+                        <br>
+                        <my-monthpicker v-model='el.enr_date' style="width: 30%; margin-right: auto; margin-left: auto; text-align: center"/>
+                        <br>
+                        <button style="padding: 4px" > valider</button>
+                    </div>
+                </div>
+
             </td>
             <td class="text-center" v-else>
-
+                validé
             </td>
             <td class="text-center"> {{ el.enr_date | moment }}</td>
             <td class="text-center"> {{ el.date_edit_trans | moment }}</td>
-            <td class="text-center">  {{ el.conseillerrr }} </td>
+            <td class="text-center"> {{ el.conseillerrr }} </td>
             <td class="text-center"> {{ el.nbr_part }} </td>
             <td class="text-center" v-if="el.type_pro == 'Pleine propriété'"> 100 </td>
             <td class="text-center" v-else>{{ el.cle_repartition }} </td>

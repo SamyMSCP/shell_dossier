@@ -208,6 +208,62 @@ Vue.filter('distribution_key', function(value)
 		}
 	);
 
+    Vue.component(
+        'myMonthpicker',
+        {
+            props: {
+                value: {
+//					type: Number,
+                    default: 0
+                },
+                id : {
+                    type: String,
+                    default: "myTimePicker"
+                }
+            },
+            template: `
+				<input  :id="id" :value="getDateFormat" type="text" class="form-control" @change="$emit('change')" />
+			`,
+            computed: {
+                getDateFormat:function () {
+                    if (this.value == 0)
+                        return ("-");
+                    return (moment(this.value, "X").format('MM/YYYY'))
+                }
+            },
+            mounted: function() {
+                var that = this;
+                $("#" + this.id).datepicker({
+                    onClose: function(e) {
+                        var newDate = moment(e, "MM/YYYY")
+                        var rt = moment(that.value, "X");
+                        if (
+                            newDate.date() != rt.date() ||
+                            newDate.month() != rt.month() ||
+                            newDate.year() != rt.year()
+                        )
+                        {
+                            rt.set({
+                                date: newDate.date(),
+                                month: newDate.month(),
+                                year: newDate.year(),
+                                hour: 0,
+                                minute: 0,
+                                second: 0,
+                                millisecond: 0
+                            });
+                            that.$emit('change');
+                            that.$emit('input', parseInt(rt.clone().format("X")));
+                        }
+                    },
+                    dateFormat: 'mm/yy',
+                    changeMonth: true,
+                    changeYear: true,
+                })
+            }
+        }
+    );
+
 	Vue.component(
 		'myTimePicker',
 		{
