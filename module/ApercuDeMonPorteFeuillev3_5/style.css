@@ -283,7 +283,7 @@
 }
 
 @media (max-width: 640px) {
-	.btnAddScpi, ,.btnValeurIsf {
+	.btnAddScpi, .btnValeurIsf {
 		display:none !important;
 	}
 }
@@ -307,7 +307,7 @@
 }
 
 @media (min-width: 641px) {
-	.btnAddScpi, ,.btnValeurIsf {
+	.btnAddScpi, .btnValeurIsf {
 		display:flex !important;
 	}
 }

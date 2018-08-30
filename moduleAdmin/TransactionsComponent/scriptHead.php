@@ -282,7 +282,6 @@
 this.ok = id;
                 this.bebe = this.$store.state.scpi.lst;
               for(var i = 0; i < this.bebe.length; i++){
-
 if (this.bebe[i].id == this.ok) {
     this.addresse.ville = this.bebe[i].societeDeGestionAdresse.ville;
     this.nameGestion = this.bebe[i].societeDeGestion.name;

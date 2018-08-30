@@ -15,11 +15,12 @@ require_once(__DIR__ . "/lib/autoprefixer-php/lib/Autoprefixer.php");
 require_once(__DIR__ . "/lib/autoprefixer-php/lib/AutoprefixerException.php");
 $GLOBALS['autoprefixer'] = new Autoprefixer(['last 2 versions']);
 
-if (!isProd())
+if (!isProd() /*|| isBackOffice()*/)
 {
 	ini_set('display_errors', 1);
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL & ~ E_DEPRECATED);
+	//error_reporting(E_ALL);
 }
 else
 	error_reporting(0);
@@ -164,6 +165,7 @@ require_once(__DIR__ . "/class/Logs.php");
 require_once(__DIR__ . "/class/ProfilInvestisseur.php");
 require_once(__DIR__ . "/class/StatusTransaction.php");
 require_once(__DIR__ . "/class/DocumentBibliotheque.php");
+require_once(__DIR__ . "/class/Badges.php");
 require_once(__DIR__ . "/class/DocumentBibliothequeConsulte.php");
 require_once(__DIR__ . "/class/HistoriqueStats.php");
 require_once(__DIR__ . "/class/CodeVille.php");

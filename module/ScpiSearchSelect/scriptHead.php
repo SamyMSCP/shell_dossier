@@ -49,7 +49,9 @@
 			},
 			is_valid: function() {
 				return (this.select > 0);
-			}
+
+			},
+
 		},
 		watch: {
 			value: function (data) {

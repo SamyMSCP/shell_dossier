@@ -13,3 +13,7 @@ if (($tr = $this->dh->getTransaction()))
 $this->StatusTransaction = StatusTransaction::getLst();
 $this->proprieteTransaction = Transaction::getTypeProLst();
 $this->marcherTransaction = Transaction::getMarcheLst();
+
+		//var_dump($this->Transactions);
+		//exit();
+

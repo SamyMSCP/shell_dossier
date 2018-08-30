@@ -1,0 +1,48 @@
+.tooltip-class {
+	color: black;
+	position: relative !important;
+	top: 0px !important;
+}
+
+.tooltip-class .tp-icon {
+	min-width: 18px;
+	max-width: 18px;
+	min-height: 18px;
+	max-height: 18px;
+}
+
+.tooltip-class .tp-icon.big {
+	min-width: 28px;
+	max-width: 28px;
+	min-height: 28px;
+	max-height: 28px;
+}
+
+.tooltip-class .tp-show {
+	z-index: 150;
+	background-color: #F0F0F0;
+	position: absolute;
+	float: both;
+	width: auto;
+	min-width: 255px;
+	border: 1px solid #D0D0D0;
+	border-radius: 4px;
+	padding: 15px;
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+}
+
+.tooltip-class .tp-show.alignRight {
+	right:0px;
+}
+
+.tooltip-class .tp-show .header {
+	color: #1781e0;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 900;
+	font-size: 15px;
+}
+
+.tooltip-class .tp-show .content {
+	color: #01528a;
+	font-family: 'Open Sans', sans-serif;
+}

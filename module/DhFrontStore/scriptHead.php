@@ -38,7 +38,8 @@
 				var tmpActual = {'ci': JSON.parse(JSON.stringify(state.Dh.ci)),
 					'ciscpi': JSON.parse(JSON.stringify(state.Dh.ciscpi))};
 				state.actual = tmpActual;
- 				$('#modal_centreinteret').modal('show');
+				console.log(state.actual);
+			$('#modal_centreinteret').modal('show');
 			},
 			DH_RELOAD_PRECALCUL: function(state, data) {
 				state.precalcul = data.precalcul;

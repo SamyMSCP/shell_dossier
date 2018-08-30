@@ -87,17 +87,23 @@
 							<span class="NavTxt">BIBLIOTHÈQUE</span>
 						</a>
 					</div>
+                    <div class="nav-btn nav-btn-Bibliotheque<?php if ($GLOBALS['GET']['p'] == "Badges") echo " btn-selected"; else echo $stroverlay; ?>">
+                        <a class="linkBarNav" href="?p=Badges">
+                            <div></div>
+                            <span class="NavTxt">BADGES</span>
+                        </a>
+                    </div>
 					<?php
 					if (!isProd())
 					{
-						?>
+						/*
 						<div class="nav-btn nav-btn-mesProjets<?php if ($GLOBALS['GET']['p'] == "ListeProjets") echo " btn-selected"; else echo $stroverlay; ?>">
 							<a href="?p=ListeProjets"  class="linkBarNav">
 								<div></div>
 								<span class="NavTxt">MES PROJETS</span>
 							</a>
 						</div>
-						<?php
+						*/
 					}
 					/*
 					*/

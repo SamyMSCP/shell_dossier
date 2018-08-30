@@ -237,10 +237,10 @@
 							msgBox.show("La réponse n'as pu etre interpretee !");
 					}
 						//console.log(request);
-
 				};
 				request.send(formData);
-				//document.getElementById(inputId).value= "";
+				document.getElementById(inputId).value= "";
+				//document.getElementById(inputId).files[0] = null;
 			}
 		},
 		getters: {

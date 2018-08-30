@@ -1,6 +1,6 @@
 <?php
 $json = json_decode(file_get_contents("module/MonthSuggest/month.json"), true);
-$data = $json[0];
+$data = $json[1];
 ?>
 <div class="modal fade " id="action-month-suggest">
 	<div class="modal-dialog modal-md">

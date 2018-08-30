@@ -59,7 +59,7 @@ if (!in_array($GLOBALS['GET']['p'],["CreationProjet","ListeProjets","InfoProjet"
 	if ($this->table['precalcul']['flagMissingInfo'] == true && $GLOBALS['GET']['p'] != "CreationProjet" && $GLOBALS['GET']['p'] != "ListeProjets" && $GLOBALS['GET']['p'] != "InfoProjet" && $GLOBALS['GET']['p'] != "ResetProfil" && $GLOBALS['GET']['p'] != "Opportunity" )
 	{
 		?>
-		<div class="alert alert-warning fade in">
+		<div id="" class="alert alert-warning fade in lstTransactionNotComplete">
 			<a href="" class="close" data-dismiss="alert" aria-label="close" onclick="ft_notif_stop(1)">&times;</a>
 			<?php
 			ob_start();
@@ -86,11 +86,17 @@ if (!in_array($GLOBALS['GET']['p'],["CreationProjet","ListeProjets","InfoProjet"
 							}
 								if ($GLOBALS['GET']['p'] == 'Portefeuille') {
 								?>
-								<li><span class="link_set_date"  onclick="$('.<?=$value2['precalcul']['modal_link']?>').modal('show')"><?=$key?> <?=$typePro?></span></li>
+								<?php $id_trans = key($value2); ?>
+								<!-- <li v-if="this.$store"v-for="el in this.$store.transactionsList">
+									<span class="btn btn-link" @click="$store.commit('CHANGE_SELECTED', el.id)">{{el.scpi}} - {{el.type_pro}}</span>
+								</li> -->
+								<li><span class="btn btn-link" onclick='showModalTransaction(<?=$id_trans?>)'><?= $key ?><?= $typePro ?></span></li>
 							<?php
 								} else {
 								?>
-								<li><a href="?p=Portefeuille&mod=<?=$value2['precalcul']['modal_link']?>" class="link_set_date"><?=$key?> <?=$typePro?></a></li>
+								<?php $id_trans = key($value2); ?>
+								<!-- <li><span class="btn btn-link"><?=$key?></span></li> -->
+								<li><a href="?p=Portefeuille&mod=<?=$id_trans?>" class="link_set_date"><?=$key?> <?=$typePro?></a></li>
 								<?php 
 								}
 							}

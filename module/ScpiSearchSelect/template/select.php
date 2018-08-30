@@ -42,9 +42,5 @@
 				</div>
 			</div>
 		</div>
-		<div class="col-xs-1">
-			<img class="icon status" src="/assets/status/valid.png" v-if="is_valid"/>
-			<img class="icon status" src="/assets/status/warning.ico" v-else/>
-		</div>
 	</div>
 </div>

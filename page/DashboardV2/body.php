@@ -1,16 +1,13 @@
 <?=$this->Loading?>
-<?= $this->Nav2 ?>
-<?= $this->ToolTip ?>
-<?= $this->NotNow ?>
-<?php
+<?= $this->Nav2 ?> <?= $this->ToolTip ?> <?= $this->NotNow ?> <?php
 if ($this->dh->getPersonnePhysique()->getPhone() == "-")
 	echo $this->ForceSetPhone;
 
 echo $this->AdressePostaleComponent;
 ?>
 
-<div class="containerPerso">
-	<?= $this->MonCompte ?>
+<?= $this->MonCompte ?>
+<div class="containerPerso vueApp">
 	<div class="row band">
 		<div class="col-lg-4 col-md-6 col-sm-12" style="padding-bottom: 15px;">
 			<?= $this->ValorisationPF ?>
@@ -38,10 +35,7 @@ echo $this->AdressePostaleComponent;
 			<?= $this->MonthSuggest ?>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-lg-12 c-footer">
-			<?= $this->Footer ?>
-		</div>
-	</div>
+    <?= $this->AvertissementPortefeuilleV3 ?>
 </div>
-<?= $this->ModuleBarre ?>
+<?= $this->FooterPortefeuilleV3 ?>
+

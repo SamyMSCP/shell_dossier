@@ -42,9 +42,22 @@
 		dayNamesShort: ['Dim','Lun','Mar','Mer','Jeu','Ven','Sam'],
 		dayNamesMin: ['Di','Lu','Ma','Me','Je','Ve','Sa'],
 		dayStatus: 'Utiliser DD comme premier jour de la semaine', dateStatus: 'Choisir le DD, MM d',
-		dateFormat: 'dd/mm/yy', firstDay: 0, 
+		dateFormat: 'dd/mm/yy', firstDay: 0,
 		initStatus: 'Choisir la date', isRTL: false};
 	$.datepicker.setDefaults($.datepicker.regional['fr']);
+
+	function switchModal(depart, arrive) {
+		var goRinvest = function () {
+			$(arrive).modal('show');
+		};
+		$(arrive).on('show.bs.modal', function () {
+			$(depart).off('hidden.bs.modal', goRinvest);
+		})
+		$(depart).on('hidden.bs.modal', goRinvest)
+		$(depart).modal('hide');
+	}
+
 </script>
+
 
 

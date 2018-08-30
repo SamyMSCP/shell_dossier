@@ -137,6 +137,7 @@ class Crm2 extends Table {
 		$id_autotask = 0;
 
 		// Utilisateur pour la notif et l'executant
+        if(Dh::getById($id_client) != null)
 		$id_user = Dh::getById($id_client)->getConseiller()->id_dh;
 
 		$currentDh = Dh::getCurrent();
@@ -158,6 +159,7 @@ class Crm2 extends Table {
 		{
 			//$dh = Dh::getCurrent();
 			$client = Dh::getById($id_client);
+			if($client != null)
 			$titre = $client->getShortName();
 			$comment = self::$_contacts[$contactSelected]['name'] . " " . self::$_sujets[$sujetSelected]['name'] . "<br />" . $commentaire;
 			/*
@@ -185,7 +187,7 @@ class Crm2 extends Table {
 			"isOkay" => $isOkay,
 			"id_user" => $id_user,
 			"id_executant" => $id_log
-				];
+        ];
 
 		$nCrm = Database::prepareInsertCheckSecurity(static::$_db, $req, $data, get_called_class());
 
@@ -265,7 +267,12 @@ class Crm2 extends Table {
 	public function getForStore() {
 		$rt = $this;
 		$rt->projectsId = mb_unserialize($rt->getLstProject());
-		$rt->clientShortName = Dh::getById($rt->id_client)->getShortName();
+		if(Dh::getById($rt->id_client) != null){
+			$rt->clientShortName = Dh::getById($rt->id_client)->getShortName();
+		}
+		else{
+			$rt->clientShortName=''; 
+		}
 		if(isset($rt->conseiller) && $rt->conseiller > 1)
 			$rt->conseillerShortName  = Dh::getById($rt->conseiller)->getShortName();
 		$executant = Dh::getById($rt->id_executant);

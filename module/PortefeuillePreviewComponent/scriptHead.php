@@ -117,65 +117,175 @@
 					});
 					var ret = l.map((el) => {
 						var div = (el.debut_dividendes === null) ? "-" : moment(el.debut_dividendes.date);
-						switch (self.type) {
-							case "Pleine propriété":
+						if(self.type=="Pleine propriété" ){
+						    if(el.type_transaction=="A"){
+                                if(el.tmp_scpi.Pleine[el.id].buy.transaction_status!='0 - Transaction potentielle'){
+                                    var rougePleine = "";
+                                    //if(el.tmp_scpi.Pleine[el.id].buy.transaction_status=='0 - Transaction potentielle') rougePleine="text-secondary";
+                                    var rougeVisiblePleine = "";
+                                    //if(el.tmp_scpi.Pleine[el.id].buy.transaction_status=='0 - Transaction potentielle') rougeVisiblePleine="hidden-xs visible-md visible-lg text-secondary";
+                                    return [
+                                        {scpi: el.scpi, isMscpi: el.doByMscpi, flag: el.flagMissingInfo, id: el.id, is_nue_end: (div !== "-" && el.type_pro === "Nue propriété" && moment().isAfter(div)), class :rougePleine },
+                                        {value: (el.enr_date !== 0) ? moment.unix(el.enr_date).locale("fr").format("L") : "-", class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                        {value: el.marcher, class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                        {value: el.nbr_part, class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                        {value: parseFloat(el.prix_part).toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                        {value: (parseFloat(el.prix_part) * parseFloat(el.nbr_part)).toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                        {value: el.ventePotentielle.toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougePleine,isMscpi: el.doByMscpi,id: el.id},
+                                        {value: (parseFloat(el.prix_part) * parseFloat(el.nbr_part) > 0) ? (el.ventePotentielle - (parseFloat(el.prix_part) * parseFloat(el.nbr_part))).toLocaleString("fr", {style: "currency", currency: "EUR"}) : "-", class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                        {value: isNaN(el.dividendes / (parseFloat(el.prix_part) * parseFloat(el.nbr_part))) ? "-" : (el.dividendes / (parseFloat(el.prix_part) * parseFloat(el.nbr_part))).toLocaleString("fr", {style: "percent", minimumFractionDigits: 2}), class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                        {value: el.dividendes.toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id}
+                                    ];
+                                }
+                            }
+                            else if(el.type_transaction=="V") {
+                                    var rougePleine = "";
+                                    //if(el.tmp_scpi.Pleine[el.id].buy.transaction_status=='0 - Transaction potentielle') rougePleine="text-secondary";
+                                    var rougeVisiblePleine = "";
+                                    //if(el.tmp_scpi.Pleine[el.id].buy.transaction_status=='0 - Transaction potentielle') rougeVisiblePleine="hidden-xs visible-md visible-lg text-secondary";
+                                    return [
+                                        {scpi: el.scpi, isMscpi: el.doByMscpi, flag: el.flagMissingInfo, id: el.id, is_nue_end: (div !== "-" && el.type_pro === "Nue propriété" && moment().isAfter(div)), class :rougePleine },
+                                        {value: (el.enr_date !== 0) ? moment.unix(el.enr_date).locale("fr").format("L") : "-", class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                        {value: el.marcher, class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                        {value: el.nbr_part, class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                        {value: parseFloat(el.prix_part).toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                        {value: (parseFloat(el.prix_part) * parseFloat(el.nbr_part)).toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                        {value: el.ventePotentielle.toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougePleine,isMscpi: el.doByMscpi,id: el.id},
+                                        {value: (parseFloat(el.prix_part) * parseFloat(el.nbr_part) > 0) ? (el.ventePotentielle - (parseFloat(el.prix_part) * parseFloat(el.nbr_part))).toLocaleString("fr", {style: "currency", currency: "EUR"}) : "-", class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                        {value: isNaN(el.dividendes / (parseFloat(el.prix_part) * parseFloat(el.nbr_part))) ? "-" : (el.dividendes / (parseFloat(el.prix_part) * parseFloat(el.nbr_part))).toLocaleString("fr", {style: "percent", minimumFractionDigits: 2}), class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                        {value: el.dividendes.toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id}
+                                    ];
+
+                            }
+                            /*
+                            if(self.type=="Pleine propriété" && el.type_transaction=="A" || el.type_transaction=="V"){
                                 var rougePleine = "";
-                                if(el.tmp_scpi.Pleine[el.id].buy.transaction_status=='0 - Transaction potentielle') rougePleine="text-danger";
+                                //if(el.tmp_scpi.Pleine[el.id].buy.transaction_status=='0 - Transaction potentielle') rougePleine="text-secondary";
                                 var rougeVisiblePleine = "";
-                                if(el.tmp_scpi.Pleine[el.id].buy.transaction_status=='0 - Transaction potentielle') rougeVisiblePleine="hidden-xs visible-md visible-lg text-danger";
+                                //if(el.tmp_scpi.Pleine[el.id].buy.transaction_status=='0 - Transaction potentielle') rougeVisiblePleine="hidden-xs visible-md visible-lg text-secondary";
                                 return [
-									{scpi: el.scpi, isMscpi: el.doByMscpi, flag: el.flagMissingInfo, id: el.id, is_nue_end: (div !== "-" && el.type_pro === "Nue propriété" && moment().isAfter(div)), class :rougePleine, status: el.tmp_scpi.Pleine[el.id].buy.transaction_status },
-									{value: (el.enr_date !== 0) ? moment.unix(el.enr_date).locale("fr").format("L") : "-", class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
-									{value: el.marcher, class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
-									{value: el.nbr_part, class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
-									{value: parseFloat(el.prix_part).toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
-									{value: (parseFloat(el.prix_part) * parseFloat(el.nbr_part)).toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
-									{value: el.ventePotentielle.toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougePleine,isMscpi: el.doByMscpi,id: el.id},
-									{value: (parseFloat(el.prix_part) * parseFloat(el.nbr_part) > 0) ? (el.ventePotentielle - (parseFloat(el.prix_part) * parseFloat(el.nbr_part))).toLocaleString("fr", {style: "currency", currency: "EUR"}) : "-", class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
-									{value: isNaN(el.dividendes / (parseFloat(el.prix_part) * parseFloat(el.nbr_part))) ? "-" : (el.dividendes / (parseFloat(el.prix_part) * parseFloat(el.nbr_part))).toLocaleString("fr", {style: "percent", minimumFractionDigits: 2}), class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
-									{value: el.dividendes.toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id}
-								];
-							case "Nue propriété":
-							// (((parseFloat(el.cle_repartition) / 100.0) * parseFloat(el.prix_part) * parseFloat(el.nbr_part)) > 0) ? (el.ventePotentielle - ((parseFloat(el.cle_repartition) / 100.0) * parseFloat(el.prix_part) * parseFloat(el.nbr_part))).toLocaleString("fr", {style: "currency", currency: "EUR"}) : '-'
+                                    {scpi: el.scpi, isMscpi: el.doByMscpi, flag: el.flagMissingInfo, id: el.id, is_nue_end: (div !== "-" && el.type_pro === "Nue propriété" && moment().isAfter(div)), class :rougePleine },
+                                    {value: (el.enr_date !== 0) ? moment.unix(el.enr_date).locale("fr").format("L") : "-", class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: el.marcher, class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: el.nbr_part, class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: parseFloat(el.prix_part).toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: (parseFloat(el.prix_part) * parseFloat(el.nbr_part)).toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: el.ventePotentielle.toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougePleine,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: (parseFloat(el.prix_part) * parseFloat(el.nbr_part) > 0) ? (el.ventePotentielle - (parseFloat(el.prix_part) * parseFloat(el.nbr_part))).toLocaleString("fr", {style: "currency", currency: "EUR"}) : "-", class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: isNaN(el.dividendes / (parseFloat(el.prix_part) * parseFloat(el.nbr_part))) ? "-" : (el.dividendes / (parseFloat(el.prix_part) * parseFloat(el.nbr_part))).toLocaleString("fr", {style: "percent", minimumFractionDigits: 2}), class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: el.dividendes.toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id}
+                                ];
+
+                            }*/
+
+                        }
+
+                        else if(self.type=="Nue propriété" && el.type_transaction=="A"){
+                            if(el.tmp_scpi.Nue[el.id].buy.transaction_status!='0 - Transaction potentielle'){
                                 var rougeNue = "";
-                                if(el.tmp_scpi.Nue[el.id].buy.transaction_status=='0 - Transaction potentielle') rougeNue="text-danger";
+                                //if(el.tmp_scpi.Nue[el.id].buy.transaction_status=='0 - Transaction potentielle') rougeNue="text-danger";
                                 var rougeVisibleNue = "";
-                                if(el.tmp_scpi.Nue[el.id].buy.transaction_status=='0 - Transaction potentielle') rougeVisibleNue="hidden-xs visible-md visible-lg text-danger";
+                                //if(el.tmp_scpi.Nue[el.id].buy.transaction_status=='0 - Transaction potentielle') rougeVisibleNue="hidden-xs visible-md visible-lg text-danger";
                                 var prix = ((parseFloat(el.cle_repartition) / 100.0) * parseFloat(el.prix_part) * parseFloat(el.nbr_part));
-								return [
-									{scpi: el.scpi, isMscpi: el.doByMscpi, flag: el.flagMissingInfo, id: el.id, class:rougeNue, status: el.tmp_scpi.Nue[el.id].buy.transaction_status},
-									{value: (el.enr_date !== 0) ? moment.unix(el.enr_date).locale("fr").format("L") : "-", class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
-									{value: el.nbr_part, class:rougeNue,isMscpi: el.doByMscpi,id: el.id},
-									{value: (parseFloat(el.cle_repartition) / 100.0).toLocaleString("fr", {style: "percent"}), class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
-									{value: parseFloat(el.prix_part).toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
-									{value: ((parseFloat(el.cle_repartition) / 100.0) * parseFloat(el.prix_part) * parseFloat(el.nbr_part)).toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
-									{value: (el.debut_dividendes === null) ? "-" : moment(el.debut_dividendes.date).format("DD/MM/YYYY"), class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
-									{value: el.ventePotentielle.toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
-									{value: (prix > 0) ? (el.ventePotentielle - prix).toLocaleString("fr", {style: "currency", currency: "EUR"}) : '-', class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
-									// {value: ((el.ventePotentielle - prix) / prix).toLocaleString("fr", {style: "currency", currency: "EUR"}), class:""},
-									{value: (el.ventePotentiellePleinePro).toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougeNue,isMscpi: el.doByMscpi,id: el.id},
-								];
-								// ((parseFloat(trans.cle_repartition) / 100.0) * parseFloat(trans.prix_part) * parseFloat(trans.nbr_part))
-							case "Usufruit":
-                                var rougeUsu = "";
-                                if(el.tmp_scpi.Usu[el.id].buy.transaction_status=='0 - Transaction potentielle') rougeUsu="text-danger";
-                                var rougeVisibleUsu = "";
-                                if(el.tmp_scpi.Usu[el.id].buy.transaction_status=='0 - Transaction potentielle') rougeVisibleUsu="hidden-xs visible-md visible-lg text-danger";
                                 return [
-									{scpi: el.scpi, isMscpi: el.doByMscpi, flag: el.flagMissingInfo, id: el.id, class:rougeUsu, status: el.tmp_scpi.Usu[el.id].buy.transaction_status},
-									{value: (el.enr_date !== 0) ? moment.unix(el.enr_date).locale("fr").format("L") : "-", class: rougeVisibleUsu,isMscpi: el.doByMscpi,id: el.id},
-									{value: el.nbr_part, class: rougeUsu,isMscpi: el.doByMscpi,id: el.id},
-									{value: (parseFloat(el.cle_repartition) / 100.0).toLocaleString("fr", {style: "percent"}), class: rougeVisibleUsu,isMscpi: el.doByMscpi,id: el.id},
-									{value: parseFloat(el.prix_part).toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisibleUsu,isMscpi: el.doByMscpi,id: el.id},
-									{value: (((parseFloat(el.cle_repartition) / 100.0)) * parseFloat(el.prix_part) * parseFloat(el.nbr_part)).toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisibleUsu,isMscpi: el.doByMscpi,id: el.id},
-									{value: el.valorisation.toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeUsu,isMscpi: el.doByMscpi,id: el.id},
-									{value: (el.fin_jouissance === null) ? "-" : moment(el.fin_jouissance.date).format("DD/MM/YYYY"), class: rougeVisibleUsu,isMscpi: el.doByMscpi,id: el.id},
-									{value: el.dividendes_percu.toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisibleUsu,isMscpi: el.doByMscpi,id: el.id},
-									// "Estimation des dividendes restants à toucher"
-								];
-							default:
-							return []
-						}
+                                    {scpi: el.scpi, isMscpi: el.doByMscpi, flag: el.flagMissingInfo, id: el.id, class:rougeNue},
+                                    {value: (el.enr_date !== 0) ? moment.unix(el.enr_date).locale("fr").format("L") : "-", class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: el.nbr_part, class:rougeNue,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: (parseFloat(el.cle_repartition) / 100.0).toLocaleString("fr", {style: "percent"}), class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: parseFloat(el.prix_part).toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: ((parseFloat(el.cle_repartition) / 100.0) * parseFloat(el.prix_part) * parseFloat(el.nbr_part)).toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: (el.debut_dividendes === null) ? "-" : moment(el.debut_dividendes.date).format("DD/MM/YYYY"), class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: el.ventePotentielle.toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: (prix > 0) ? (el.ventePotentielle - prix).toLocaleString("fr", {style: "currency", currency: "EUR"}) : '-', class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
+                                    // {value: ((el.ventePotentielle - prix) / prix).toLocaleString("fr", {style: "currency", currency: "EUR"}), class:""},
+                                    {value: (el.ventePotentiellePleinePro).toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougeNue,isMscpi: el.doByMscpi,id: el.id},
+                                ];
+                            }
+                        }
+                        else if (self.type=="Usufruit" && el.type_transaction=="A"){
+                            if( el.tmp_scpi.Usu[el.id].buy.transaction_status !='0 - Transaction potentielle'){
+                                var rougeUsu = "";
+                                //if(el.tmp_scpi.Usu[el.id].buy.transaction_status=='0 - Transaction potentielle') rougeUsu="text-danger";
+                                var rougeVisibleUsu = "";
+                                //if(el.tmp_scpi.Usu[el.id].buy.transaction_status=='0 - Transaction potentielle') rougeVisibleUsu="hidden-xs visible-md visible-lg text-danger";
+                                return [
+                                    {scpi: el.scpi, isMscpi: el.doByMscpi, flag: el.flagMissingInfo, id: el.id, class:rougeUsu},
+                                    {value: (el.enr_date !== 0) ? moment.unix(el.enr_date).locale("fr").format("L") : "-", class: rougeVisibleUsu,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: el.nbr_part, class: rougeUsu,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: (parseFloat(el.cle_repartition) / 100.0).toLocaleString("fr", {style: "percent"}), class: rougeVisibleUsu,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: parseFloat(el.prix_part).toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisibleUsu,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: (((parseFloat(el.cle_repartition) / 100.0)) * parseFloat(el.prix_part) * parseFloat(el.nbr_part)).toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisibleUsu,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: el.valorisation.toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeUsu,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: (el.fin_jouissance === null) ? "-" : moment(el.fin_jouissance.date).format("DD/MM/YYYY"), class: rougeVisibleUsu,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: el.dividendes_percu.toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisibleUsu,isMscpi: el.doByMscpi,id: el.id},
+                                ];
+                            }
+                        }
+                        else if(self.type=="Pleine propriété" && el.type_transaction=="A" ){
+                            if(el.tmp_scpi.Pleine[el.id].buy.transaction_status=='0 - Transaction potentielle'){
+                                var rougePleine = "";
+                                //if(el.tmp_scpi.Pleine[el.id].buy.transaction_status=='0 - Transaction potentielle') rougePleine="text-secondary";
+                                var rougeVisiblePleine = "";
+                                //if(el.tmp_scpi.Pleine[el.id].buy.transaction_status=='0 - Transaction potentielle') rougeVisiblePleine="hidden-xs visible-md visible-lg text-secondary";
+                                return [
+                                    {scpi: el.scpi, isMscpi: el.doByMscpi, flag: el.flagMissingInfo, id: el.id, is_nue_end: (div !== "-" && el.type_pro === "Nue propriété" && moment().isAfter(div)), class :rougePleine },
+                                    {value: (el.enr_date !== 0) ? moment.unix(el.enr_date).locale("fr").format("L") : "-", class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: el.marcher, class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: el.nbr_part, class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: parseFloat(el.prix_part).toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: (parseFloat(el.prix_part) * parseFloat(el.nbr_part)).toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: el.ventePotentielle.toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougePleine,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: (parseFloat(el.prix_part) * parseFloat(el.nbr_part) > 0) ? (el.ventePotentielle - (parseFloat(el.prix_part) * parseFloat(el.nbr_part))).toLocaleString("fr", {style: "currency", currency: "EUR"}) : "-", class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: isNaN(el.dividendes / (parseFloat(el.prix_part) * parseFloat(el.nbr_part))) ? "-" : (el.dividendes / (parseFloat(el.prix_part) * parseFloat(el.nbr_part))).toLocaleString("fr", {style: "percent", minimumFractionDigits: 2}), class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: el.dividendes.toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisiblePleine,isMscpi: el.doByMscpi,id: el.id}
+                                ];
+                            }
+                        }
+
+                        else if(self.type=="Nue propriété" && el.type_transaction=="A"){
+                            if(el.tmp_scpi.Nue[el.id].buy.transaction_status=='0 - Transaction potentielle'){
+                                var rougeNue = "";
+                                //if(el.tmp_scpi.Nue[el.id].buy.transaction_status=='0 - Transaction potentielle') rougeNue="text-danger";
+                                var rougeVisibleNue = "";
+                                //if(el.tmp_scpi.Nue[el.id].buy.transaction_status=='0 - Transaction potentielle') rougeVisibleNue="hidden-xs visible-md visible-lg text-danger";
+                                var prix = ((parseFloat(el.cle_repartition) / 100.0) * parseFloat(el.prix_part) * parseFloat(el.nbr_part));
+                                return [
+                                    {scpi: el.scpi, isMscpi: el.doByMscpi, flag: el.flagMissingInfo, id: el.id, class:rougeNue},
+                                    {value: (el.enr_date !== 0) ? moment.unix(el.enr_date).locale("fr").format("L") : "-", class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: el.nbr_part, class:rougeNue,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: (parseFloat(el.cle_repartition) / 100.0).toLocaleString("fr", {style: "percent"}), class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: parseFloat(el.prix_part).toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: ((parseFloat(el.cle_repartition) / 100.0) * parseFloat(el.prix_part) * parseFloat(el.nbr_part)).toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: (el.debut_dividendes === null) ? "-" : moment(el.debut_dividendes.date).format("DD/MM/YYYY"), class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: el.ventePotentielle.toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: (prix > 0) ? (el.ventePotentielle - prix).toLocaleString("fr", {style: "currency", currency: "EUR"}) : '-', class:rougeVisibleNue,isMscpi: el.doByMscpi,id: el.id},
+                                    // {value: ((el.ventePotentielle - prix) / prix).toLocaleString("fr", {style: "currency", currency: "EUR"}), class:""},
+                                    {value: (el.ventePotentiellePleinePro).toLocaleString("fr", {style: "currency", currency: "EUR"}), class:rougeNue,isMscpi: el.doByMscpi,id: el.id},
+                                ];
+                            }
+                        }
+                        else if (self.type=="Usufruit" && el.type_transaction=="A"){
+                            if( el.tmp_scpi.Usu[el.id].buy.transaction_status =='0 - Transaction potentielle'){
+                                var rougeUsu = "";
+                                //if(el.tmp_scpi.Usu[el.id].buy.transaction_status=='0 - Transaction potentielle') rougeUsu="text-danger";
+                                var rougeVisibleUsu = "";
+                                //if(el.tmp_scpi.Usu[el.id].buy.transaction_status=='0 - Transaction potentielle') rougeVisibleUsu="hidden-xs visible-md visible-lg text-danger";
+                                return [
+                                    {scpi: el.scpi, isMscpi: el.doByMscpi, flag: el.flagMissingInfo, id: el.id, class:rougeUsu},
+                                    {value: (el.enr_date !== 0) ? moment.unix(el.enr_date).locale("fr").format("L") : "-", class: rougeVisibleUsu,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: el.nbr_part, class: rougeUsu,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: (parseFloat(el.cle_repartition) / 100.0).toLocaleString("fr", {style: "percent"}), class: rougeVisibleUsu,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: parseFloat(el.prix_part).toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisibleUsu,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: (((parseFloat(el.cle_repartition) / 100.0)) * parseFloat(el.prix_part) * parseFloat(el.nbr_part)).toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisibleUsu,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: el.valorisation.toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeUsu,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: (el.fin_jouissance === null) ? "-" : moment(el.fin_jouissance.date).format("DD/MM/YYYY"), class: rougeVisibleUsu,isMscpi: el.doByMscpi,id: el.id},
+                                    {value: el.dividendes_percu.toLocaleString("fr", {style: "currency", currency: "EUR"}), class: rougeVisibleUsu,isMscpi: el.doByMscpi,id: el.id},
+                                ];
+                            }
+                        }
+
+
+                        else return [];
 					});
 					return (ret);
 				}

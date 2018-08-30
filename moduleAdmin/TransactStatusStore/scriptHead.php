@@ -65,6 +65,7 @@
 				var lst = state.lstTransaction;
 				var tmp = lst;
 				var s = state.sort.vol_num;
+
 				tmp = tmp.sort(function (a, b) {
 
 					return (parseInt(a.nbr_part) * parseInt(a.prix_part) >parseInt(b.nbr_part) * parseInt(b.prix_part)) ? -1 : ((parseInt(b.nbr_part) * parseInt(b.prix_part) > parseInt(a.nbr_part) * parseInt(a.prix_part)) ? 1 : 0);
@@ -180,12 +181,21 @@
 				return (function() {
 					var cons = [];
 					state.lstTransaction.forEach((el) => {
+
 						el.status_sup = parseInt(el.status_sup);
 						// console.log("status: ", typeof el.status_sup, el.status_sup);
 						is_set = cons.find((c) => {return (c.id === el.conseiller)})
 						if (typeof is_set !== "undefined") {
 							if (el.status_sup >= 5)
-								is_set.volume_complete += el.nbr_part * el.prix_part;
+							    if(el.type_pro == "Nue propriété"){
+                                    is_set.volume_complete += el.nbr_part * el.prix_part* el.cle_repartition/100;
+                                }
+                                else if(el.type_pro == "Usufruit"){
+                                    is_set.volume_complete += el.nbr_part * el.prix_part * (100-el.cle_repartition)/100;
+                                }
+                                else{
+                                    is_set.volume_complete += el.nbr_part * el.prix_part;
+                                }
 							else
 								is_set.volume_incomplete += el.nbr_part * el.prix_part;
 						}
@@ -298,7 +308,14 @@
 					let volume = 0;
 					for (var i = 0; i < this.list.length ; i++)
 					{
-						volume += parseInt(this.list[i].nbr_part) * parseFloat(this.list[i].prix_part);
+					    if(this.list[i].type_pro!="Usufruit"){
+					        //console.log("ajout tableau : ", this.list[i].montant_investissement);
+                            volume += this.list[i].montant_investissement;
+                        }
+                        else{
+                            //console.log("ajout tableau : ", this.list[i].montant_investissement);
+                            volume += (100-this.list[i].cle_repartition)/100 * this.list[i].nbr_part * this.list[i].prix_part
+                        }
 					}
 					return (volume).toLocaleString("fr", {style: "currency", currency: "EUR"});
 				}

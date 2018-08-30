@@ -13,8 +13,14 @@
 			<div>
 				<span>L'age moyen</span>
 				<?=number_format($this->table['precalcul']['ageMoyenScpi'], 2, ",", " ")?> ans
+				<?php
+				/*
 				Si ce donneur d'ordre a des transaction dans une scpi dont la date n'est pas renseignée : la valeur de l'age moyen est érroné.
+				*/
+				?>
 			</div>
+			<?php
+			/*
 			<div style='font-size:14px;'>
 				<span>Temporaire</span>
 				<ul>
@@ -39,6 +45,8 @@
 				</ul>
 					(ventePotentielle * age) total : <?=$this->table['precalcul']['pourAgeMoyenScpi']?>
 			</div>
+			*/
+			?>
 		</div>
 	</div>
 </div>

@@ -173,46 +173,7 @@
 				},
 				getError: function() {
 					return (this.$store.getters.getError);
-				},
-				/*
-				nbr_parts_valid: function () {
-					return (this.parts > 0)
-				},
-				type_pro_valid: function() {
-					return (true);
-					// return (this.type_pro >= 0 && this.type_pro <= 2)
-				},
-				cle_rep_valid: function() {
-					return (typeof this.cle_rep === "number" && this.cle_rep > 0.0 && this.cle_rep < 100.0)
-				},
-				type_dem_valid: function() {
-					return (this.type_dem === "Temporaire" || this.type_dem === "Viager")
-				},
-				dure_dem_valid: function() {
-					return (typeof this.dem_time === "number" && this.dem_time !== 0)
-				},
-				date_enr_valid: function() {
-					return (moment(this.details.date_enr, "DD/MM/YYYY", true).isValid())
-				},
-				prix_part_valid: function() {
-					return (this.details.prix_part > 0.0)
-				},
-				type_marcher_valid: function () {
-					return (this.details.marcher === "Primaire" || this.details.marcher === "Secondaire" || this.details.marcher === "Gré à Gré")
-				},
-				trans_avec_valid: function () {
-					return (this.details.trans_avec > 0)
-				},
-				duree_emprunt_valid: function () {
-					return (this.details.emprunt.duree > 0)
-				},
-				date_emprunt_valid: function() {
-					return (moment(this.details.emprunt.date_debut, "DD/MM/YYYY", true).isValid())
-				},
-				taux_emprunt_valid: function() {
-					return (this.details.emprunt.taux > 0);
 				}
-				*/
 			}
 
 		});

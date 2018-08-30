@@ -305,7 +305,7 @@ if (typeof exports !== 'undefined') {
                 var finance = new Finance();
                 var contientvaleur = [(-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2))];
                 for (var i = 0; i < state.current_op.time_demembrement; i++) {
-                    contientvaleur.push(((4.5 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)/4.5)*4.25)
+                    contientvaleur.push(((this.getters.tdvm(state.current_op.id_scpi)*0.90 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)/(this.getters.tdvm(state.current_op.id_scpi)*0.90))*this.getters.tdvm(state.current_op.id_scpi)*0.9*0.9)
                 }
 
                 state.irr_Avant_Basse = finance.IRR.apply(this,contientvaleur);
@@ -314,7 +314,7 @@ if (typeof exports !== 'undefined') {
                 var finance = new Finance();
                 var contientvaleur = [(-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2))];
                 for (var i = 0; i < state.current_op.time_demembrement; i++) {
-                    contientvaleur.push((4.5 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100))
+                    contientvaleur.push((this.getters.tdvm(state.current_op.id_scpi)*0.90 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100))
                 }
 
                 state.irr_Avant_Moyen = finance.IRR.apply(this,contientvaleur);
@@ -323,7 +323,7 @@ if (typeof exports !== 'undefined') {
                 var finance = new Finance();
                 var contientvaleur = [(-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2))];
                 for (var i = 0; i < state.current_op.time_demembrement; i++) {
-                    contientvaleur.push(((4.5 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)/4.5)*4.75)
+                    contientvaleur.push(((this.getters.tdvm(state.current_op.id_scpi)*0.90 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)/(this.getters.tdvm(state.current_op.id_scpi)*0.90))*this.getters.tdvm(state.current_op.id_scpi))
                 }
 
                 state.irr_Avant_Haute = finance.IRR.apply(this,contientvaleur);
@@ -332,7 +332,7 @@ if (typeof exports !== 'undefined') {
                 var finance = new Finance();
                 var contientvaleur = [(-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2))];
                 for (var i = 0; i < state.current_op.time_demembrement; i++) {
-                    contientvaleur.push(((4.25 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + (-((4.25 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + ((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) / state.current_op.time_demembrement) ) * 0.3333)))
+                    contientvaleur.push(((this.getters.tdvm(state.current_op.id_scpi)*0.90*0.9 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + (-((this.getters.tdvm(state.current_op.id_scpi)*0.9*0.9 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + ((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) / state.current_op.time_demembrement) ) * 0.3333)))
                 }
 
                 state.irr_Apres_Basse = finance.IRR.apply(this,contientvaleur);
@@ -341,7 +341,7 @@ if (typeof exports !== 'undefined') {
                 var finance = new Finance();
                 var contientvaleur = [(-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2))];
                 for (var i = 0; i < state.current_op.time_demembrement; i++) {
-                    contientvaleur.push(((4.5 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + (-((4.5 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + ((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) / state.current_op.time_demembrement) ) * 0.3333)))
+                    contientvaleur.push(((this.getters.tdvm(state.current_op.id_scpi)*0.90 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + (-((this.getters.tdvm(state.current_op.id_scpi)*0.90 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + ((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) / state.current_op.time_demembrement) ) * 0.3333)))
                 }
 
                 state.irr_Apres_Moyen = finance.IRR.apply(this,contientvaleur);
@@ -350,7 +350,7 @@ if (typeof exports !== 'undefined') {
                 var finance = new Finance();
                 var contientvaleur = [(-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2))];
                 for (var i = 0; i < state.current_op.time_demembrement; i++) {
-                    contientvaleur.push(((4.75 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + (-((4.75 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + ((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) / state.current_op.time_demembrement) ) * 0.3333)))
+                    contientvaleur.push(((this.getters.tdvm(state.current_op.id_scpi) * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + (-((this.getters.tdvm(state.current_op.id_scpi) * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + ((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) / state.current_op.time_demembrement) ) * 0.3333)))
                 }
 
                 state.irr_Apres_Haute = finance.IRR.apply(this,contientvaleur);
@@ -490,30 +490,30 @@ if (typeof exports !== 'undefined') {
                     +'&montant_Usufruit='+((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100))).toFixed(2)
                     +'&montant_Usufruit_negatif='+(-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2))
                     +'&nombre_Parts='+state.current_op.nb_part
-                    +'&tdvm_Previsionnel=4.5'
-                    +'&dividende_Annuel='+(4.5 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)
-                    +'&acompte_Trimestriel='+((4.5 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)/4/state.current_op.nb_part)
-                    +'&dividende_Annuel_Part='+(((4.5 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)/4/state.current_op.nb_part)*4)
-                    +'&flux_Avant_Fiscalite='+(4.5 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)
+                    +'&tdvm_Previsionnel='+(getters.tdvm(state.current_op.id_scpi)*0.9)
+                    +'&dividende_Annuel='+((getters.tdvm(state.current_op.id_scpi)*0.9) * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)
+                    +'&acompte_Trimestriel='+(((getters.tdvm(state.current_op.id_scpi)*0.9) * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)/4/state.current_op.nb_part)
+                    +'&dividende_Annuel_Part='+((((getters.tdvm(state.current_op.id_scpi)*0.9) * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)/4/state.current_op.nb_part)*4)
+                    +'&flux_Avant_Fiscalite='+((getters.tdvm(state.current_op.id_scpi)*0.9) * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)
                     +'&amortissement_Usufruit='+((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) / state.current_op.time_demembrement)
-                    +'&is_A_Payer='+(-((4.5 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + ((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) / state.current_op.time_demembrement) ) * 0.3333)
-                    +'&flux_Apres_Fiscalite='+((4.5 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + (-((4.5 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + ((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) / state.current_op.time_demembrement) ) * 0.3333))
+                    +'&is_A_Payer='+(-(((getters.tdvm(state.current_op.id_scpi)*0.9) * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + ((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) / state.current_op.time_demembrement) ) * 0.3333)
+                    +'&flux_Apres_Fiscalite='+(((getters.tdvm(state.current_op.id_scpi)*0.9) * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + (-(((getters.tdvm(state.current_op.id_scpi)*0.9) * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + ((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) / state.current_op.time_demembrement) ) * 0.3333))
                     +'&hypothese_Medium='+getters.tdvm(state.current_op.id_scpi)*0.9
                     +'&hypothese_Basse='+getters.tdvm(state.current_op.id_scpi)*0.9*0.9
                     +'&hypothese_Haute='+getters.tdvm(state.current_op.id_scpi)
-                    +'&acompte_Trimestriel_Basse='+((((4.5 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)/4/state.current_op.nb_part)/4.5)*4.25)
-                    +'&acompte_Trimestriel_Haute='+((((4.5 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)/4/state.current_op.nb_part)/4.5)*4.75)
-                    +'&dividende_Annuel_Part_Haute='+(((((4.5 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)/4/state.current_op.nb_part)*4)/4.5)*4.75)
-                    +'&dividende_Annuel_Part_Basse='+(((((4.5 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)/4/state.current_op.nb_part)*4)/4.5)*4.25)
+                    +'&acompte_Trimestriel_Basse='+((((getters.tdvm(state.current_op.id_scpi)*0.9 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)/4/state.current_op.nb_part)/(getters.tdvm(state.current_op.id_scpi)*0.9))*getters.tdvm(state.current_op.id_scpi)*0.9*0.9)
+                    +'&acompte_Trimestriel_Haute='+((((getters.tdvm(state.current_op.id_scpi)*0.9 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)/4/state.current_op.nb_part)/(getters.tdvm(state.current_op.id_scpi)*0.9))*getters.tdvm(state.current_op.id_scpi))
+                    +'&dividende_Annuel_Part_Haute='+(((((getters.tdvm(state.current_op.id_scpi)*0.9 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)/4/state.current_op.nb_part)*4)/(getters.tdvm(state.current_op.id_scpi)*0.9))*getters.tdvm(state.current_op.id_scpi))
+                    +'&dividende_Annuel_Part_Basse='+(((((getters.tdvm(state.current_op.id_scpi)*0.9 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100)/4/state.current_op.nb_part)*4)/(getters.tdvm(state.current_op.id_scpi)*0.9))*(getters.tdvm(state.current_op.id_scpi)*0.9)*0.9)
                     +'&irr_Avant_Basse='+state.irr_Avant_Basse
                     +'&irr_Avant_Medium='+state.irr_Avant_Moyen
                     +'&irr_Avant_Haute='+state.irr_Avant_Haute
                     +'&irr_Apres_Basse='+state.irr_Apres_Basse
                     +'&irr_Apres_Medium='+state.irr_Apres_Moyen
                     +'&irr_Apres_Haute='+state.irr_Apres_Haute
-                    +'&gain_Net_Basse='+((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) + (((4.25 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + (-((4.25 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + ((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) / state.current_op.time_demembrement) ) * 0.3333)) * state.current_op.time_demembrement))
-                    +'&gain_Net_Medium='+((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) + (((4.5 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + (-((4.5 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + ((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) / state.current_op.time_demembrement) ) * 0.3333)) * state.current_op.time_demembrement))
-                    +'&gain_net_Haute='+((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) + (((4.75 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + (-((4.75 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + ((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) / state.current_op.time_demembrement) ) * 0.3333)) * state.current_op.time_demembrement))
+                    +'&gain_Net_Basse='+((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) + (((getters.tdvm(state.current_op.id_scpi)*0.9*0.9 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + (-((getters.tdvm(state.current_op.id_scpi)*0.9*0.9 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + ((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) / state.current_op.time_demembrement) ) * 0.3333)) * state.current_op.time_demembrement))
+                    +'&gain_Net_Medium='+((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) + (((getters.tdvm(state.current_op.id_scpi)*0.9 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + (-((getters.tdvm(state.current_op.id_scpi)*0.9 * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + ((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) / state.current_op.time_demembrement) ) * 0.3333)) * state.current_op.time_demembrement))
+                    +'&gain_net_Haute='+((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) + (((getters.tdvm(state.current_op.id_scpi) * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + (-((getters.tdvm(state.current_op.id_scpi) * (state.current_op.nb_part*state.current_op.price_per_part).toFixed(2) / 100) + ((-(((state.current_op.nb_part*state.current_op.price_per_part)-(state.current_op.nb_part*state.current_op.price_per_part*(state.current_op.key_nue/100)))).toFixed(2)) / state.current_op.time_demembrement) ) * 0.3333)) * state.current_op.time_demembrement))
                  ;
             }
 		}

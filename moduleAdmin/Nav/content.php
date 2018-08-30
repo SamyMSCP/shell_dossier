@@ -27,7 +27,8 @@ $list = ["MailResearch",
 	"ExportTransaction",
 	"StatDividendes2",
 	"TransactViewer",
-    "SimulateurUsufruit"
+    "SimulateurUsufruit",
+    "StatInscription"
 ];
 $right = [];
 foreach ($list as $key) {
@@ -46,6 +47,7 @@ foreach ($list as $key) {
 <?php if ($right['OpportunityViewer']) { ?><li><a href="?p=OpportunityViewer">Voir les opportunites</a></li><?php } ?>
 <?php if ($right['VisuDj']) { ?><li><a href="?p=VisuDj">Voir les délais de jouissance</a></li><?php } ?>
 <?php if ($right['TransactViewer']) { ?><li><a href="?p=TransactViewer">Voir les Transactions en détails</a></li><?php } ?>
+<?php if ($right['StatInscription']) { ?><li><a href="?p=StatInscription">Voir les statistiques d'inscriptions</a></li><?php } ?>
 <li class="divider"></li>
 <?php if ($right['GestionScpi']) { ?><li><a href="?p=GestionScpi">Gérer les SCPI</a></li><?php } ?>
 <?php if ($right['GererValeurRealisation']) { ?><li><a href="?p=GererValeurRealisation">Gérer les valeurs de réalisation</a></li><?php } ?>

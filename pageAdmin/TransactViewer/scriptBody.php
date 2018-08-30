@@ -75,6 +75,7 @@ var app = new Vue({
 							return (el.fait_par_mscpi === "0");
 						});
 						ct.transactions = trs;
+						console.log(ct);
 						store.commit('CHANGE_LIST_FROM_AJAX', ct);
 						swal.close();
 					}, function (res) {

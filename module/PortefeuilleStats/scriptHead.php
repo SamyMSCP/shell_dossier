@@ -68,17 +68,16 @@
 						return el.type_pro === "Usufruit" && el.flagMissingInfo === true
 					});
 					return (list.length > 0);
-				}
+				},
 			},
-			watch:{
-				getList: function (value) {
-				    console.log(this.chart.pleine);
-					this.chart.pleine.destroy();
-					this.chart.nue.destroy();
-					this.chart.usu.destroy();
-					this.create_graph();
-				}
-			},
+            watch:{
+                getList: function (value) {
+                    this.chart.pleine.destroy();
+                    this.chart.nue.destroy();
+                    this.chart.usu.destroy();
+                    this.create_graph();
+                }
+            },
 			filters: {
 				money: function (data) {
 					return parseFloat(data).toLocaleString("fr", {style: "currency", currency: "EUR"})

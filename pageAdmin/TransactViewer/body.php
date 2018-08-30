@@ -123,8 +123,8 @@
 				<ul class="nav nav-pills nav-justified">
 					<li v-if="value.length > 1" class="in active">
 						<a v-bind:href="'#content-' + index + '-all'" data-toggle="pill">Tout</a></li>
-					<li v-for="(el, i) in value" v-bind:class="((i == 0 && value.length == 1) ? 'in active' : '')"><a
-								v-bind:href="'#content-'+index+'-'+i" data-toggle="pill">{{el.title}}</a></li>
+					<li v-for="(el, i) in value" v-bind:class="((i == 0 && value.length == 1) ? 'in active' : '')">
+                        <a v-bind:href="'#content-'+index+'-'+i" data-toggle="pill">{{el.title}}</a></li>
 				</ul>
 				<div class="tab-content">
 					<div v-if="value.length > 1" class="tab-pane fade in active"
@@ -133,7 +133,8 @@
 						<transact-viewer-element :sort="$store.state.transactstatestore.sort" :namesearch="namesearch"
 												 :date="date" :socgest="socgest"
 												 :list="$store.getters.getFromStatus('x-0')"
-												 :date_selector="select.data"></transact-viewer-element>
+												 :date_selector="select.data">
+                        </transact-viewer-element>
 					</div>
 					<div class="tab-pane fade" v-for="(el, i) in value"
 						 v-bind:class="((i == 0 && value.length == 1) ? 'in active' : '')"

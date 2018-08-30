@@ -46,7 +46,7 @@
 
 $(document).ready(
 	function () {
-		var ctx = $("#repartition_geographique").get(0).getContext("2d");
+		var ctx = (!!$("#repartition_geographique")) ? $("#repartition_geographique").get(0).getContext("2d") : null;
 		var data = [
 			<?php
 			$temoin = 0;

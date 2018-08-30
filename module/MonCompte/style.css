@@ -119,6 +119,11 @@
 
 .fast .toggle-group { transition: left 0.2s; -webkit-transition: left 0.2s; }
 
+.lstTransactionNotComplete li > span {
+	text-align: left;
+	white-space: normal;
+}
+
 
 @media (max-width: 600px) {
 	.modal_set .modal-lg{

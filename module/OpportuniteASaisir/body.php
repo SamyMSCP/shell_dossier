@@ -1,6 +1,6 @@
 <?php
 $json = json_decode(file_get_contents("module/OpportuniteASaisir/opportunity.json"), true);
-$data = $json[0];
+$data = $json[1];
 ?>
 <div class="modal fade " id="action-a-saisir">
 	<div class="modal-dialog modal-md">

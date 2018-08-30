@@ -22,8 +22,6 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-
                     <td>
                         <select class="form-control aligner-droite" @change="recup_id(nom_Scpi.split(',', 2))" placeholder="modifiez-moi" v-model="nom_Scpi"v-for="item in triedata" >
                             <option value="0">Veuillez choisir une SCPI</option>
@@ -39,7 +37,7 @@
                     </td>
                     <td>{{montant_Global_Investissement = prix_Part * nombre_Parts | deux_chiffres_apres_virgules | remplacement | formatMillier}}</td><!-- lui -->
                     <td>{{montant_Nue_Propriete = montant_Global_Investissement * cle_Repartition_Nue_Propriete / 100 | deux_chiffres_apres_virgules| remplacement | formatMillier}}</td>
-                    <td><input class="aligner-droite" v-model="is" type="number" step="0.1833" min="0.1500" max="0.3333" >
+                    <td><input class="aligner-droite" v-model="is" type="number" step="0.1833" min="0.1500" max="0.3333" ></td>
 
                 </tr>
 

@@ -315,19 +315,19 @@ class RestTransaction  extends Ajax
 			if (intval($data['montant_emprunt']) < 0)
 				$err[] = "Montant emprunt incorrect";
 			else
-				$tr->updateOneColumn('montant_emprunt', intval($date['montant_emprunt']));
+				$tr->updateOneColumn('montant_emprunt', intval($data['montant_emprunt']));
 
 		}
 // Type emprunt
 		if (isset($data['type_emprunt']) && $data['type_emprunt'] != $tr->type_emprunt)
 		{
-			if (!in_array($data['type_emprunt'], ['Amortissable', 'InFine']))
+			if (!in_array($data['type_emprunt'], ['Amortissable', 'In Fine']))
 				$err[] = "Le type d'emprunt est incorrect";
 			else
 				$tr->updateOneColumn('type_emprunt', $data['type_emprunt']);
 		}
 // Duree emprunt
-		if (isset($data['duree_emprunt']) && $data['duree_emprunt'] != $data['duree_emprunt'])
+		if (isset($data['duree_emprunt']) && $data['duree_emprunt'] != $tr->duree_emprunt)
 		{
 			if (intval($data['duree_emprunt']) < 0)
 				$err[] = "Duree d'emprunt incorrect";
@@ -354,10 +354,10 @@ class RestTransaction  extends Ajax
 // Mensualite emprunt
 		if (isset($data['mensualite_emprunt']) && $data['mensualite_emprunt'] != $tr->mensualite_emprunt)
 		{
-			if (!preg_match("/^\d{1,}((\.|,)(\d{1,5}))?$/", $data['taux_emprunt']))
+			if (!preg_match("/^\d{1,}((\.|,)(\d{1,5}))?$/", $data['mensualite_emprunt']))
 				$err[] = "Mensualite d'emprunt incorrect";
 			else
-				$tr->updateOneColumn('', floatval(str_replace(',', '.', $data['taux_emprunt'])));
+				$tr->updateOneColumn('mensualite_emprunt', floatval(str_replace(',', '.', $data['mensualite_emprunt'])));
 		}
 
 		if (!empty($err))

@@ -9,7 +9,7 @@ include("listeNationalite.php")
 		<div class="modal-content">
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><img style="height:30px;" src="<?=$this->getPath()?>img/Close-Jaune.svg" alt="" /></button>
 			<h3>AVERTISSEMENT US Person</h3>
-			<p>Avertissement Us person</p>
+			<p>AvertissementPortefeuilleV3 Us person</p>
 			<div class="lstButton">
 				<div data-dismiss="modal" class="btnCapital" style="text-align: center;">Oui</div>
 			</div>
@@ -23,7 +23,7 @@ include("listeNationalite.php")
 		<div class="modal-content">
 			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><img style="height:30px;" src="<?=$this->getPath()?>img/Close-Jaune.svg" alt="" /></button>
 			<h3>AVERTISSEMENT Personne politiquement exposée</h3>
-			<p>Avertissement personne politiquement exposée</p>
+			<p>AvertissementPortefeuilleV3 personne politiquement exposée</p>
 			<div class="lstButton">
 				<div data-dismiss="modal" class="btnCapital" style="text-align: center;">Oui</div>
 			</div>

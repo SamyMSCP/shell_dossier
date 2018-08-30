@@ -90,7 +90,6 @@ class AjaxTransaction extends Ajax
 			}
 		}
 		$d['transactions'] = $lst_ret;
-//		$d['volume'] = $vol;
 		$d['volume']['volume'] = 0;
 		$d['volume']['parts'] = 0;
 		$d['conseillers_stats'] = $vol_per_conseiller;
