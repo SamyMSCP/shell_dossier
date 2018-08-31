@@ -246,7 +246,7 @@ class LstTransaction
 			"flagMissingInfoPleine" => false,
 			"flagMissingInfoNue" => false,
 			"flagMissingInfoUsu" => false,
-			"haveSante" => false,
+			"haveSpecialiste" => false,
 			"haveCommerce" => false,
 			"haveBureau" => false,
 			"haveAguerri" =>false,
@@ -419,6 +419,22 @@ class LstTransaction
 					if (!in_array($elm3['buy']->getScpi()->id, $precalculTotal['scpiListId']))
 						$precalculTotal['scpiListId'][] = $elm3['buy']->getScpi()->id;
 
+					if(sizeof($precalculTotal['scpiList'])>0){
+                        $precalculTotal['haveDebutant']=true;
+                    }
+                    if(sizeof($precalculTotal['scpiList'])>4){
+                        $precalculTotal['haveAmateur']=true;
+                    }
+                    if(sizeof($precalculTotal['scpiList'])>9){
+                        $precalculTotal['haveSemiPro']=true;
+                    }
+                    if(sizeof($precalculTotal['scpiList'])>14){
+                        $precalculTotal['havePro']=true;
+                    }
+                    if(sizeof($precalculTotal['scpiList'])>19){
+                        $precalculTotal['haveExpert']=true;
+                    }
+
 
 					// Calcul de la valorisation actuelle en fonction du type de propriété pour Une part
 
@@ -540,24 +556,10 @@ class LstTransaction
                         $precalculTotal['havePleine'] = true;
                     }
 
-                    if(isset($precalculTotal['repartitionGeographique']['Ile-de-France'])){
-					    $precalcul['haveIdF']=true;
+                    if($precalculTotal['haveUsu'] && $precalculTotal['haveNue'] && $precalculTotal['havePleine']){
+                        $precalculTotal['havePropComplet'] =true;
                     }
-                    if(isset($precalculTotal['repartitionGeographique']['Paris'])){
-                        $precalcul['haveParis']=true;
-                    }
-                    if(isset($precalculTotal['repartitionGeographique']['Régions'])){
-                        $precalcul['haveRegion']=true;
-                    }
-                    if(isset($precalculTotal['repartitionGeographique']['Etranger'])){
-                        $precalcul['haveEtranger']=true;
-                    }
-                    if(isset($precalculTotal['repartitionGeographique']['Régions'])){
-                        $precalcul['haveRegion']=true;
-                    }
-                    if(isset($precalculTotal['repartitionGeographique']['Régions']) && isset($precalculTotal['repartitionGeographique']['Etranger']) && isset($precalculTotal['repartitionGeographique']['Régions']) && isset($precalculTotal['repartitionGeographique']['Paris']) && isset($precalculTotal['repartitionGeographique']['Ile-de-France'])){
-					    $precalculTotal['haveGlobeTrotters']= true;
-                    }
+
                     if($precalculTotal['haveUsu'] && $precalculTotal['haveNue'] && $precalculTotal['havePleine']){
 					    $precalculTotal['havePropComplet']= true;
                     }
@@ -566,9 +568,9 @@ class LstTransaction
                             $precalculTotal['haveCommerce'] = true;
                         }
                     }
-                    if(isset($precalculTotal['repartitionCategorie']['Sante'])){
-                        if($precalculTotal['repartitionCategorie']['Sante']) {
-                            $precalculTotal['haveSante'] = true;
+                    if(isset($precalculTotal['repartitionCategorie']['Specialisées'])){
+                        if($precalculTotal['repartitionCategorie']['Specialisées']) {
+                            $precalculTotal['haveSpecialiste'] = true;
                         }
                     }
                     if(isset($precalculTotal['repartitionCategorie']['Bureaux'])) {
@@ -577,9 +579,9 @@ class LstTransaction
                         }
                     }
 
-                    if(isset($precalculTotal['repartitionCategorie']['Commerces']) && isset($precalculTotal['repartitionCategorie']['Sante']) && isset($precalculTotal['repartitionCategorie']['Bureaux']))
+                    if(isset($precalculTotal['repartitionCategorie']['Commerces']) && isset($precalculTotal['repartitionCategorie']['Specialisées']) && isset($precalculTotal['repartitionCategorie']['Bureaux']))
                     {
-                        if($precalculTotal['repartitionCategorie']['Bureaux'] && $precalculTotal['repartitionCategorie']['Sante'] && $precalculTotal['repartitionCategorie']['Commerces']){
+                        if($precalculTotal['repartitionCategorie']['Bureaux'] && $precalculTotal['repartitionCategorie']['Specialisées'] && $precalculTotal['repartitionCategorie']['Commerces']){
                             $precalculTotal['haveAguerri'] = true;
                         }
                     }
@@ -858,6 +860,16 @@ class LstTransaction
 				$precalculTotal['pourcentageFiscale'] += $precalculSCPI['nbr_part'];
 			else if ($precalculSCPI['scpi']->type_id == 5)
 				$precalculTotal['pourcentageRendement'] += $precalculSCPI['nbr_part'];
+
+			if($precalculTotal['pourcentageFiscale']>0){
+			    $precalculTotal['haveScpiFiscal']=true;
+            }
+            if($precalculTotal['pourcentageRendement']>0){
+                $precalculTotal['haveScpiRendement']=true;
+            }
+            if($precalculTotal['pourcentageRendement']>0 && $precalculTotal['pourcentageFiscale']>0){
+                $precalculTotal['haveInvestissementDivers']=true;
+            }
 
 			$precalculTotal['actualDividendes'] += $precalculSCPI['actualDividendes'];
 			$precalculTotal['actualDividendesTrimestre']['T1'] += $precalculSCPI['actualDividendesTrimestre']['T1'];

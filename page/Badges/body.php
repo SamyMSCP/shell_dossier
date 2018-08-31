@@ -107,12 +107,12 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
     <div class="barre_bleu"></div>
     <div class="block_list">
         <div class="element">
-            <img v-if="selectedTransaction.haveSante" src="<?=$this->getPath()?>img/allo_docteur.png" />
+            <img v-if="selectedTransaction.haveSpecialiste" src="<?=$this->getPath()?>img/allo_docteur.png" />
             <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/allo_docteur.png" />
             <div class="masque">
-                <span>Badge allo docteur ?</span>
+                <span>Badge specialiste</span>
             </div>
-            <div><h3>Allo docteur ?</h3></div>
+            <div><h3>Specialiste</h3></div>
         </div>
 
         <div class="element">
@@ -177,7 +177,7 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
         </div>
 
         <div class="element">
-            <img v-if="selectedTransaction.haveToutType" src="<?=$this->getPath()?>img/globe_trotter.png" />
+            <img v-if="selectedTransaction.havePropComplet" src="<?=$this->getPath()?>img/globe_trotter.png" />
             <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/globe_trotter.png" />
             <div class="masque">
                 <span>Badge propriété complet</span>
