@@ -200,6 +200,10 @@ h1 {
 	font-family: 'Open Sans', sans-serif;
 }
 
+.image{
+	border-radius: 30px;
+}
+
 @media (max-width: 540px) {
 	.BtnStyle {
 		font-size: 15px;

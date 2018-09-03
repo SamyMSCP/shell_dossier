@@ -19,18 +19,18 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
         <span>Géographie</span>
     </div>
     <div class="barre_bleu"></div>
-    <div class="block_list">
+    <div class="block_list" style="background-color: white">
         <div class="element">
-            <img v-if="selectedTransaction.haveParis" src="<?=$this->getPath()?>img/paris.jpg" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/paris.jpg" />
+            <img class="image" v-if="selectedTransaction.haveParis" src="<?=$this->getPath()?>img/paris.jpg" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/paris.jpg" />
             <div class="masque">
                 <span>Badge Paris</span>
             </div>
             <div><h3>Paris</h3></div>
         </div>
         <div class="element">
-            <img v-if="selectedTransaction.haveIdF" src="<?=$this->getPath()?>img/ile_de_france.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/ile_de_france.png" />
+            <img class="image" v-if="selectedTransaction.haveIdF" src="<?=$this->getPath()?>img/ile_de_france.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/ile_de_france.png" />
             <div class="masque">
                 <span>Badge Ile-de-France</span>
             </div>
@@ -38,8 +38,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
         </div>
 
         <div class="element">
-            <img v-if="selectedTransaction.haveRegion" src="<?=$this->getPath()?>img/region.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/region.png" />
+            <img class="image" v-if="selectedTransaction.haveRegion" src="<?=$this->getPath()?>img/region.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/region.png" />
             <div class="masque">
                 <span>Badge Région</span>
             </div>
@@ -47,8 +47,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
         </div>
 
         <div class="element">
-            <img v-if="selectedTransaction.haveEtranger" src="<?=$this->getPath()?>img/europe.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/europe.png" />
+            <img class="image" v-if="selectedTransaction.haveEtranger" src="<?=$this->getPath()?>img/europe.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/europe.png" />
             <div class="masque">
                 <span>Badge Etranger</span>
             </div>
@@ -56,8 +56,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
         </div>
 
         <div class="element">
-            <img v-if="selectedTransaction.haveGlobeTrotters" src="<?=$this->getPath()?>img/globe_trotter.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/globe_trotter.png" />
+            <img class="image" v-if="selectedTransaction.haveGlobeTrotters" src="<?=$this->getPath()?>img/globe_trotter.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/globe_trotter.png" />
             <div class="masque">
                 <span>Badge Globe Trotters</span>
             </div>
@@ -72,8 +72,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
     <div class="barre_bleu"></div>
     <div class="block_list">
         <div class="element">
-            <img v-if="selectedTransaction.haveScpiRendement" src="<?=$this->getPath()?>img/scpi_de_rendement.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/scpi_de_rendement.png" />
+            <img class="image" v-if="selectedTransaction.haveScpiRendement" src="<?=$this->getPath()?>img/scpi_de_rendement.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/scpi_de_rendement.png" />
             <div class="masque">
                 <span>Badge scpi de rendement</span>
             </div>
@@ -83,8 +83,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
 
 
         <div class="element">
-            <img v-if="selectedTransaction.haveScpiFiscal" src="<?=$this->getPath()?>img/scpi_fiscale.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/scpi_fiscale.png" />
+            <img class="image" v-if="selectedTransaction.haveScpiFiscal" src="<?=$this->getPath()?>img/scpi_fiscale.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/scpi_fiscale.png" />
             <div class="masque">
                 <span>Badge scpi fiscale</span>
             </div>
@@ -92,8 +92,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
         </div>
 
         <div class="element">
-            <img v-if="selectedTransaction.haveInvestissementDivers" src="<?=$this->getPath()?>img/investissement_diversifie.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/investissement_diversifie.png" />
+            <img class="image" v-if="selectedTransaction.haveInvestissementDivers" src="<?=$this->getPath()?>img/investissement_diversifie.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/investissement_diversifie.png" />
             <div class="masque">
                 <span>Badge investissement diversifié</span>
             </div>
@@ -107,8 +107,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
     <div class="barre_bleu"></div>
     <div class="block_list">
         <div class="element">
-            <img v-if="selectedTransaction.haveSpecialiste" src="<?=$this->getPath()?>img/allo_docteur.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/allo_docteur.png" />
+            <img class="image" v-if="selectedTransaction.haveSpecialiste" src="<?=$this->getPath()?>img/allo_docteur.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/allo_docteur.png" />
             <div class="masque">
                 <span>Badge specialiste</span>
             </div>
@@ -116,8 +116,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
         </div>
 
         <div class="element">
-            <img v-if="selectedTransaction.haveCommerce" src="<?=$this->getPath()?>img/super_commercant.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/super_commercant.png" />
+            <img class="image" v-if="selectedTransaction.haveCommerce" src="<?=$this->getPath()?>img/super_commercant.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/super_commercant.png" />
             <div class="masque">
                 <span>Badge Retail</span>
             </div>
@@ -125,8 +125,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
         </div>
 
         <div class="element">
-            <img v-if="selectedTransaction.haveBureau" src="<?=$this->getPath()?>img/homme_affaire.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/homme_affaire.png" />
+            <img class="image" v-if="selectedTransaction.haveBureau" src="<?=$this->getPath()?>img/homme_affaire.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/homme_affaire.png" />
             <div class="masque">
                 <span>Badge Business</span>
             </div>
@@ -134,8 +134,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
         </div>
 
         <div class="element">
-            <img v-if="selectedTransaction.haveAguerri" src="<?=$this->getPath()?>img/epargnant_agueri.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/epargnant_agueri.png" />
+            <img class="image" v-if="selectedTransaction.haveAguerri" src="<?=$this->getPath()?>img/epargnant_agueri.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/epargnant_agueri.png" />
             <div class="masque">
                 <span>Badge epargant aguerri</span>
             </div>
@@ -150,8 +150,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
     <div class="barre_bleu"></div>
     <div class="block_list">
         <div class="element">
-            <img v-if="selectedTransaction.havePleine" src="<?=$this->getPath()?>img/pleine_propriete.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/pleine_propriete.png" />
+            <img class="image" v-if="selectedTransaction.havePleine" src="<?=$this->getPath()?>img/pleine_propriete.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/pleine_propriete.png" />
             <div class="masque">
                 <span>Badge pleine propriété</span>
             </div>
@@ -159,8 +159,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
         </div>
 
         <div class="element">
-            <img v-if="selectedTransaction.haveNue" src="<?=$this->getPath()?>img/nue_propriete.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/nue_propriete.png" />
+            <img class="image" v-if="selectedTransaction.haveNue" src="<?=$this->getPath()?>img/nue_propriete.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/nue_propriete.png" />
             <div class="masque">
                 <span>Badge nue propriété</span>
             </div>
@@ -168,8 +168,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
         </div>
 
         <div class="element">
-            <img v-if="selectedTransaction.haveUsu" src="<?=$this->getPath()?>img/usufruit.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/usufruit.png" />
+            <img class="image" v-if="selectedTransaction.haveUsu" src="<?=$this->getPath()?>img/usufruit.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/usufruit.png" />
             <div class="masque">
                 <span>Badge usufruit</span>
             </div>
@@ -177,8 +177,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
         </div>
 
         <div class="element">
-            <img v-if="selectedTransaction.havePropComplet" src="<?=$this->getPath()?>img/globe_trotter.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/globe_trotter.png" />
+            <img class="image" v-if="selectedTransaction.havePropComplet" src="<?=$this->getPath()?>img/globe_trotter.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/globe_trotter.png" />
             <div class="masque">
                 <span>Badge propriété complet</span>
             </div>
@@ -194,8 +194,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
     <div class="block_list">
 
         <div class="element">
-            <img v-if="selectedTransaction.haveDebutant" src="<?=$this->getPath()?>img/debutant.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/debutant.png" />
+            <img class="image" v-if="selectedTransaction.haveDebutant" src="<?=$this->getPath()?>img/debutant.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/debutant.png" />
             <div class="masque">
                 <span>Badge débutant</span>
             </div>
@@ -203,8 +203,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
         </div>
 
         <div class="element">
-            <img v-if="selectedTransaction.haveAmateur" src="<?=$this->getPath()?>img/amateur.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/amateur.png" />
+            <img class="image" v-if="selectedTransaction.haveAmateur" src="<?=$this->getPath()?>img/amateur.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/amateur.png" />
             <div class="masque">
                 <span>Badge amateur</span>
             </div>
@@ -212,8 +212,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
         </div>
 
         <div class="element">
-            <img v-if="selectedTransaction.haveSemiPro" src="<?=$this->getPath()?>img/semi_pro.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/semi_pro.png" />
+            <img class="image" v-if="selectedTransaction.haveSemiPro" src="<?=$this->getPath()?>img/semi_pro.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/semi_pro.png" />
             <div class="masque">
                 <span>Badge semi-pro</span>
             </div>
@@ -221,8 +221,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
         </div>
 
         <div class="element">
-            <img v-if="selectedTransaction.havePro" src="<?=$this->getPath()?>img/semi_pro.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/semi_pro.png" />
+            <img class="image" v-if="selectedTransaction.havePro" src="<?=$this->getPath()?>img/semi_pro.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/semi_pro.png" />
             <div class="masque">
                 <span>Badge professionel</span>
             </div>
@@ -230,8 +230,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
         </div>
 
         <div class="element">
-            <img v-if="selectedTransaction.haveExpert" src="<?=$this->getPath()?>img/expert.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/expert.png" />
+            <img class="image" v-if="selectedTransaction.haveExpert" src="<?=$this->getPath()?>img/expert.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/expert.png" />
             <div class="masque">
                 <span>Badge expert</span>
             </div>
@@ -247,8 +247,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
     <div class="barre_bleu"></div>
     <div class="block_list">
         <div class="element">
-            <img v-if="selectedTransaction.haveBonEleve" src="<?=$this->getPath()?>img/bon_eleve.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/bon_eleve.png" />
+            <img class="image" v-if="selectedTransaction.haveBonEleve" src="<?=$this->getPath()?>img/bon_eleve.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/bon_eleve.png" />
             <div class="masque">
                 <span>Badge bon élève</span>
             </div>
@@ -256,8 +256,8 @@ if ($dh->getPersonnePhysique()->getPhone() == "-")
         </div>
 
         <div class="element">
-            <img v-if="selectedTransaction.haveAssocieFondateur" src="<?=$this->getPath()?>img/associe_fondateur.png" />
-            <img v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/associe_fondateur.png" />
+            <img class="image" v-if="selectedTransaction.haveAssocieFondateur" src="<?=$this->getPath()?>img/associe_fondateur.png" />
+            <img class="image" v-else style="opacity:0.2;" src="<?=$this->getPath()?>img/associe_fondateur.png" />
             <div class="masque">
                 <span>Badge associé fondateur</span>
             </div>
